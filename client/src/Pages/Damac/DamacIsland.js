@@ -397,35 +397,52 @@ export default function DamacIsland() {
                         ENQUIRE NOW!
                     </h4>
                     <br></br>
-                    <form className="space-y-5">
+                    <form
+                        className="space-y-5"
+                        onSubmit={async (e) => {
+                            e.preventDefault();
+
+                            const form = e.target;
+                            const data = {
+                                name: form.name.value,
+                                phone: form.phone.value,
+                                email: form.email.value,
+                                page_name: "Damac Island"
+                            };
+
+                            await fetch(
+                                "https://script.google.com/macros/s/AKfycbywwic8x5s6aI85f1vDmr3ee5vhG0c261cwMzNg9vSdX8UUsBDKtyhP_ov9L1kdNImEbg/exec?gid=0",
+                                {
+                                    method: "POST",
+                                    headers: { "Content-Type": "application/json" },
+                                    body: JSON.stringify(data),
+                                }
+                            )
+                                .then(() => {
+                                    alert("Form Submitted Successfully!");
+                                    form.reset();
+                                })
+                                .catch(() => {
+                                    alert("Error submitting form!");
+                                });
+                        }}
+                    >
                         <div className="text-left">
                             <label className="font-semibold">Name:</label>
-                            <input
-                                type="text"
-                                className="mt-1 w-full p-3 rounded-xl border border-gray-300 focus:border-black focus:outline-none"
-                            />
+                            <input type="text" name="name" required className="mt-1 w-full p-3 rounded-xl border border-gray-300 focus:border-black focus:outline-none" />
                         </div>
 
                         <div className="text-left">
                             <label className="font-semibold">Email:</label>
-                            <input
-                                type="email"
-                                className="mt-1 w-full p-3 rounded-xl border border-gray-300 focus:border-black focus:outline-none"
-                            />
+                            <input type="email" name="email" required className="mt-1 w-full p-3 rounded-xl border border-gray-300 focus:border-black focus:outline-none" />
                         </div>
 
                         <div className="text-left">
                             <label className="font-semibold">Phone:</label>
-                            <input
-                                type="tel"
-                                className="mt-1 w-full p-3 rounded-xl border border-gray-300 focus:border-black focus:outline-none"
-                            />
+                            <input type="tel" name="phone" required className="mt-1 w-full p-3 rounded-xl border border-gray-300 focus:border-black focus:outline-none" />
                         </div>
 
-                        <button
-                            type="submit"
-                            className="w-full bg-[#00214D] text-white font-bold py-3 rounded-xl hover:bg-black transition-all"
-                        >
+                        <button type="submit" className="w-full bg-[#00214D] text-white font-bold py-3 rounded-xl hover:bg-black transition-all">
                             Submit
                         </button>
                     </form>
