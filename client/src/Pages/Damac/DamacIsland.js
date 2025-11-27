@@ -9,7 +9,7 @@ import DamacIsland4 from "../../Assests/Damac/DamacIsland4.jpg"
 import DamacIsland5 from "../../Assests/Damac/DamacIsland5.jpg"
 import DamacIsland6 from "../../Assests/Damac/DamacIsland6.jpg"
 import DamacIsland8 from "../../Assests/Damac/DamacIsland8.jpg"
-import { motion } from "framer-motion";
+import { motion, styleEffect } from "framer-motion";
 import { Sparkles, Anchor, Trees, Dumbbell, Utensils, Sailboat, Footprints, Tent } from 'lucide-react';
 
 
@@ -26,6 +26,7 @@ export default function DamacIsland() {
         { name: "Jogging Trails", icon: <Footprints className="w-4 h-4" /> },
         { name: "Play Areas", icon: <Sailboat className="w-4 h-4" /> }
     ];
+
     return (
         <div>
             {/* Banner */}
@@ -215,6 +216,7 @@ export default function DamacIsland() {
                         variants={{
                             hidden: { opacity: 0, y: 40 },
                             visible: { opacity: 1, y: 0 }
+
                         }}
                         className="leading-relaxed text-lg md:text-2xl"
                         style={{ color: "#494949" }}
