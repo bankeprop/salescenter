@@ -7,8 +7,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Navigate to="/DamacIsland" />} />
-        <Route path="/Damac" element={<DamacIsland />} />
-        {/* <Route path="/Damac" element={<DamacIsland />} /> */}
+        <Route path="/DamacIsland" element={<DamacIsland />} />
       </Routes>
     </Router>
   );
