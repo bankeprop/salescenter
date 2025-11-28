@@ -16,6 +16,7 @@ import { Sparkles, Anchor, Trees, Dumbbell, Utensils, Sailboat, Footprints, Tent
 const PRIMARY_COLOR = "#494949";
 
 export default function DamacIsland() {
+
     const amenities = [
         { name: "Expansive Green Spaces", icon: <Trees className="w-4 h-4" /> },
         { name: "Private Beachfronts", icon: <Tent className="w-4 h-4" /> },
@@ -26,6 +27,7 @@ export default function DamacIsland() {
         { name: "Jogging Trails", icon: <Footprints className="w-4 h-4" /> },
         { name: "Play Areas", icon: <Sailboat className="w-4 h-4" /> }
     ];
+
 
     return (
         <div>
@@ -410,21 +412,21 @@ export default function DamacIsland() {
                                 page_name: "Damac Island"
                             };
 
-                            await fetch(
-                                "https://script.google.com/macros/s/AKfycbywwic8x5s6aI85f1vDmr3ee5vhG0c261cwMzNg9vSdX8UUsBDKtyhP_ov9L1kdNImEbg/exec?gid=0",
-                                {
-                                    method: "POST",
-                                    headers: { "Content-Type": "application/json" },
-                                    body: JSON.stringify(data),
-                                }
-                            )
-                                .then(() => {
-                                    alert("Form Submitted Successfully!");
-                                    form.reset();
-                                })
-                                .catch(() => {
-                                    alert("Error submitting form!");
-                                });
+                            try {
+                                await fetch(
+                                    "https://script.google.com/macros/s/AKfycbywwic8x5s6aI85f1vDmr3ee5vhG0c261cwMzNg9vSdX8UUsBDKtyhP_ov9L1kdNImEbg/exec?gid=0",
+                                    {
+                                        method: "POST",
+                                        headers: { "Content-Type": "application/json" },
+                                        body: JSON.stringify(data),
+                                    }
+                                );
+
+                                alert("Form Submitted Successfully!");
+                                form.reset();
+                            } catch (error) {
+                                alert("Error submitting form!");
+                            }
                         }}
                     >
                         <div className="text-left">
