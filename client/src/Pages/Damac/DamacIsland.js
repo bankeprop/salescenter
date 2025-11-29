@@ -685,7 +685,11 @@ export default function DamacIsland() {
                         ENQUIRE NOW!
                     </h4>
 
-                    <iframe name="hiddenFrame" style={{ display: "none" }}></iframe>
+                    <iframe
+                        name="hiddenFrame"
+                        title="Hidden form submission frame"
+                        style={{ display: "none" }}
+                    ></iframe>
                     <form
                         id="registerForm"
                         onSubmit={handleBeforeSubmit}
