@@ -21,6 +21,7 @@ const PRIMARY_COLOR = "#494949";
 export default function DamacIsland() {
 
     const [country, setCountry] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
     const countryOptions = [
         { code: "AF", dial: "+93", name: "Afghanistan" },
         { code: "AL", dial: "+355", name: "Albania" },
@@ -267,7 +268,37 @@ export default function DamacIsland() {
         label: `${c.name} (${c.dial})`
     }));
 
-    // Track real submissions so iframe.onload doesn't fire on first render
+    useEffect(() => {
+        let isMounted = true;
+        const imagesToPreload = [
+            Logo,
+            LogoWhite,
+            DamacIsland1,
+            DamacIsland2,
+            DamacIsland3,
+            DamacIsland4,
+            DamacIsland5,
+            DamacIsland6,
+            DamacIsland8
+        ];
+
+        const preloadImage = (src) =>
+            new Promise((resolve) => {
+                const img = new Image();
+                img.src = src;
+                img.onload = resolve;
+                img.onerror = resolve;
+            });
+
+        Promise.all(imagesToPreload.map(preloadImage)).then(() => {
+            if (isMounted) setIsLoading(false);
+        });
+
+        return () => {
+            isMounted = false;
+        };
+    }, []);
+
     const submissionRequested = useRef(false);
 
     const handleBeforeSubmit = (e) => {
@@ -295,7 +326,7 @@ export default function DamacIsland() {
         if (!iframe) return;
 
         iframe.onload = () => {
-            if (!submissionRequested.current) return; // avoid firing on initial page load
+            if (!submissionRequested.current) return;
 
             toast.success("Form submitted successfully!");
             submissionRequested.current = false;
@@ -315,6 +346,159 @@ export default function DamacIsland() {
         { name: "Jogging Trails", icon: <Footprints className="w-4 h-4" /> },
         { name: "Play Areas", icon: <Sailboat className="w-4 h-4" /> }
     ];
+
+    const SkeletonBlock = ({ className }) => (
+        <div className={`animate-pulse rounded-xl bg-gray-200/80 ${className || ""}`} />
+    );
+
+    const SkeletonPage = () => (
+        <div className="text-gray-400 bg-gray-50">
+            <div className="relative w-full">
+                <div className="relative w-full h-[800px] lg:h-[90vh] overflow-hidden">
+                    <SkeletonBlock className="w-full h-full rounded-none" />
+                    <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 px-6">
+                        <SkeletonBlock className="h-6 w-64 rounded-full" />
+                        <SkeletonBlock className="h-16 w-72 rounded-2xl" />
+                        <SkeletonBlock className="h-6 w-48 rounded-full" />
+                    </div>
+                </div>
+            </div>
+
+            <div className="relative w-full px-6 lg:px-[12%] py-[4%] text-white" style={{ backgroundColor: PRIMARY_COLOR }}>
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6 text-center">
+                    <SkeletonBlock className="h-24 w-full sm:w-1/3 bg-white/20" />
+                    <SkeletonBlock className="h-24 w-full sm:w-1/3 bg-white/20" />
+                    <SkeletonBlock className="h-24 w-full sm:w-1/3 bg-white/20" />
+                </div>
+            </div>
+
+            <div
+                className="relative w-full px-6 lg:px-[12%] py-[4%] text-center"
+                style={{
+                    background: "linear-gradient(135deg, #61d9e7ff 0%, #a6faf3ff 50%, #ffe7c7ff 100%)",
+                    color: "#494949"
+                }}
+            >
+                <div className="max-w-6xl mx-auto space-y-4">
+                    <SkeletonBlock className="h-10 w-3/4 mx-auto rounded-2xl" />
+                    <SkeletonBlock className="h-10 w-2/3 mx-auto rounded-2xl" />
+                    <div className="space-y-3">
+                        <SkeletonBlock className="h-4 w-full" />
+                        <SkeletonBlock className="h-4 w-11/12" />
+                        <SkeletonBlock className="h-4 w-10/12" />
+                    </div>
+                </div>
+            </div>
+
+            <div className="relative w-full">
+                <div className="relative w-full">
+                    <div className="relative w-full h-[800px] lg:h-[90vh] overflow-hidden">
+                        <SkeletonBlock className="w-full h-full rounded-none" />
+                    </div>
+                </div>
+            </div>
+
+            <div
+                className="relative w-full px-6 lg:px-[12%] py-[4%] text-center"
+                style={{
+                    background: "linear-gradient(135deg, #61d9e7ff 0%, #a6faf3ff 50%, #ffe7c7ff 100%)",
+                    color: "#494949"
+                }}
+            >
+                <div className="max-w-6xl mx-auto space-y-4">
+                    <SkeletonBlock className="h-10 w-3/4 mx-auto rounded-2xl" />
+                    <SkeletonBlock className="h-10 w-2/3 mx-auto rounded-2xl" />
+                    <div className="space-y-3">
+                        <SkeletonBlock className="h-4 w-full" />
+                        <SkeletonBlock className="h-4 w-11/12" />
+                        <SkeletonBlock className="h-4 w-10/12" />
+                    </div>
+                </div>
+            </div>
+
+            <div className="relative w-full">
+                <div className="relative w-full">
+                    <div className="relative w-full h-[800px] lg:h-[90vh] overflow-hidden">
+                        <SkeletonBlock className="w-full h-full rounded-none" />
+                    </div>
+                </div>
+            </div>
+
+            <div
+                className="w-full"
+                style={{
+                    background: "linear-gradient(135deg, #61d9e7ff 0%, #a6faf3ff 50%, #ffe7c7ff 100%)",
+                    color: "#494949"
+                }}
+            >
+                <div className="relative w-full px-6 lg:px-[12%] py-[4%]">
+                    <div className="text-center max-w-6xl mx-auto mb-16 space-y-4">
+                        <SkeletonBlock className="h-10 w-3/4 mx-auto rounded-2xl" />
+                        <SkeletonBlock className="h-4 w-2/3 mx-auto" />
+                    </div>
+
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                        <div className="bg-white/80 backdrop-blur-md rounded-3xl px-[10%] py-[4%] border border-white shadow-xl flex flex-col justify-center">
+                            <SkeletonBlock className="h-8 w-2/3 mb-6 rounded-lg" />
+                            <div className="space-y-3">
+                                {Array.from({ length: 8 }).map((_, index) => (
+                                    <SkeletonBlock key={index} className="h-4 w-full rounded-lg" />
+                                ))}
+                            </div>
+                        </div>
+
+                        <div className="grid grid-cols-2 gap-6">
+                            <SkeletonBlock className="col-span-2 h-[350px] rounded-3xl" />
+                            <SkeletonBlock className="h-[260px] rounded-3xl" />
+                            <SkeletonBlock className="h-[260px] rounded-3xl" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className="relative w-full">
+                <div className="relative w-full">
+                    <div className="relative w-full h-[800px] lg:h-[90vh] overflow-hidden">
+                        <SkeletonBlock className="w-full h-full rounded-none" />
+                    </div>
+                </div>
+            </div>
+
+            <div
+                className="
+                    relative w-full px-6 lg:px-[12%] text-center
+                    pt-[4%] pb-[55%]
+                    md:pb-[10%]
+                "
+                style={{
+                    background: "linear-gradient(135deg, #61d9e7ff 0%, #a6faf3ff 50%, #ffe7c7ff 100%)",
+                    color: "#494949"
+                }}
+            >
+                <SkeletonBlock className="mx-auto mb-6 w-[180px] md:w-[220px] h-12 rounded-lg" />
+
+                <div className="space-y-3 mb-12">
+                    <SkeletonBlock className="h-8 w-3/4 mx-auto" />
+                    <SkeletonBlock className="h-6 w-2/3 mx-auto" />
+                    <SkeletonBlock className="h-6 w-1/2 mx-auto" />
+                    <SkeletonBlock className="h-8 w-1/2 mx-auto" />
+                </div>
+
+                <div className="max-w-xl mx-auto bg-white shadow-xl rounded-3xl p-8 border border-gray-200 space-y-4">
+                    <SkeletonBlock className="h-8 w-40 mx-auto rounded-lg" />
+                    <SkeletonBlock className="h-12 w-full" />
+                    <SkeletonBlock className="h-12 w-full" />
+                    <SkeletonBlock className="h-12 w-full" />
+                    <SkeletonBlock className="h-12 w-full" />
+                    <SkeletonBlock className="h-12 w-full" />
+                </div>
+            </div>
+        </div>
+    );
+
+    if (isLoading) {
+        return <SkeletonPage />;
+    }
 
 
 
