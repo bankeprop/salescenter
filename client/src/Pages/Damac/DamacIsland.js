@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Select from "react-select";
 import Footer from "../Damac/DamacIslandFooter.js"
 import Logo from "../../Assests/Damac/Damac.png"
@@ -267,6 +267,9 @@ export default function DamacIsland() {
         label: `${c.name} (${c.dial})`
     }));
 
+    // Track real submissions so iframe.onload doesn't fire on first render
+    const submissionRequested = useRef(false);
+
     const handleBeforeSubmit = (e) => {
         const form = document.getElementById("registerForm");
 
@@ -282,12 +285,7 @@ export default function DamacIsland() {
         const fullPhone = `${code}${number}`;
 
         document.getElementById("full_phone").value = fullPhone;
-
-        setTimeout(() => {
-            form.reset();
-            setCountry(null);
-            toast.success("Form submitted successfully!");
-        }, 500);
+        submissionRequested.current = true;
     };
 
 
@@ -297,7 +295,10 @@ export default function DamacIsland() {
         if (!iframe) return;
 
         iframe.onload = () => {
+            if (!submissionRequested.current) return; // avoid firing on initial page load
+
             toast.success("Form submitted successfully!");
+            submissionRequested.current = false;
 
             const form = document.getElementById("registerForm");
             if (form) form.reset();
