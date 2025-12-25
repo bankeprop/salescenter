@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "OptimaCustom";
+  src: url("../../Assests/Emaar/optima_new.ttf") format("truetype");
+  font-display: swap;
+}
+
+.emaar-valley-page {
+  font-family: "OptimaCustom";
+}

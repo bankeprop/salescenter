@@ -1,8 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import Select from "react-select";
-import Footer from "../Damac/DamacIslandFooter.js"
+import Footer from "../../components/Damac/DamacIslandFooter.js"
 import Logo from "../../Assests/Damac/Damac.png"
 import LogoWhite from "../../Assests/Damac/DamacWhite.png"
+import { setFavicon, resetFavicon } from "../../utils/favicon";
 import DamacIsland1 from "../../Assests/Damac/DamacIsland1.jpg"
 import DamacIsland2 from "../../Assests/Damac/DamacIsland2.jpg"
 import DamacIsland3 from "../../Assests/Damac/DamacIsland3.jpg"
@@ -19,6 +20,13 @@ import "react-toastify/dist/ReactToastify.css";
 const PRIMARY_COLOR = "#494949";
 
 export default function DamacIsland() {
+
+    useEffect(() => {
+        document.title = "Damac Islands";
+        setFavicon(Logo);
+
+        return () => resetFavicon();
+    }, []);
 
     const [country, setCountry] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
