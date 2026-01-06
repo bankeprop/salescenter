@@ -4,6 +4,7 @@ import DamacIsland from './Pages/Damac/DamacIsland';
 import EmaarValley from './Pages/Emaar/EmaarValley';
 import EmaarvalleyThanks from './Pages/Emaar/EmaarValleyThank'
 import EmaarHeight from './Pages/Emaar/EmaarHeight';
+import MercedesBenzPlaces from './Pages/Binghati/MercedesBenzPlaces';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/Emaar/EmaarTheValley" element={<EmaarValley />} />
         <Route path="/EmaarvalleyThanks" element={<EmaarvalleyThanks />} />
         <Route path="/Emaar/EmaarHeights" element={<EmaarHeight />} />
+        <Route path="/Binghatti/MercedesBenzPlaces" element={<MercedesBenzPlaces />} />
       </Routes>
     </Router>
   );
