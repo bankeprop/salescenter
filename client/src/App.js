@@ -5,6 +5,7 @@ import EmaarValley from './Pages/Emaar/EmaarValley';
 import EmaarvalleyThanks from './Pages/Emaar/EmaarValleyThank'
 import EmaarHeight from './Pages/Emaar/EmaarHeight';
 import MercedesBenzPlaces from './Pages/Binghati/MercedesBenzPlaces';
+import MercedesThankYou from './Pages/Binghati/MercedesThankYou';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/EmaarvalleyThanks" element={<EmaarvalleyThanks />} />
         <Route path="/Emaar/EmaarHeights" element={<EmaarHeight />} />
         <Route path="/Binghatti/MercedesBenzPlaces" element={<MercedesBenzPlaces />} />
+        <Route path="/Binghatti/ThankYou" element={<MercedesThankYou />} />
       </Routes>
     </Router>
   );
