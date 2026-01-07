@@ -78,6 +78,12 @@ function MercedesBenzPlaces() {
     const goNext360 = () => setActive360((prev) => (prev + 1) % branded360Tabs.length);
     const goPrev360 = () => setActive360((prev) => (prev - 1 + branded360Tabs.length) % branded360Tabs.length);
 
+    const scrollToContactForm = (event) => {
+        event?.preventDefault();
+        const target = contactFormRef.current ?? document.getElementById("contact-form");
+        target?.scrollIntoView({ behavior: "smooth", block: "start" });
+    };
+
     const handleContactSubmit = () => {
         const form = contactFormRef.current;
         if (form) {
@@ -226,10 +232,7 @@ function MercedesBenzPlaces() {
                         </div>
                         <button
                             type="button"
-                            onClick={() => {
-                                const el = document.getElementById("contact-form");
-                                el?.scrollIntoView({ behavior: "smooth" });
-                            }}
+                            onClick={scrollToContactForm}
                             className="mt-4 rounded-md border border-white/50 bg-white/10 px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white backdrop-blur hover:border-white"
                         >
                             Meet Our Brand Ambassador
@@ -315,12 +318,13 @@ function MercedesBenzPlaces() {
 
             <div className="fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-black/85 px-4 py-3 backdrop-blur shadow-[0_-4px_18px_rgba(0,0,0,0.18)] md:hidden">
                 <div className="mx-auto flex max-w-5xl justify-center">
-                    <a
-                        href="#contact-form"
+                    <button
+                        type="button"
+                        onClick={scrollToContactForm}
                         className="inline-flex w-full max-w-xs items-center justify-center rounded-md border border-white/40 bg-white/5 px-4 py-3 text-base font-semibold uppercase tracking-[0.08em] text-white shadow-lg backdrop-blur transition hover:border-white hover:bg-white/10"
                     >
                         Register Your Interest
-                    </a>
+                    </button>
                 </div>
             </div>
         </div>
