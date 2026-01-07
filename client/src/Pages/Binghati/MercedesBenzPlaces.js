@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import "./MercedesBenzPlaces.css";
 import { setFavicon, resetFavicon } from "../../utils/favicon";
 import MercedesVideo from "../../Assests/Binghatti/Mercedes.mp4";
-import LogoVideo from "../../Assests/Binghatti/Logo.mp4";
 import ConceptVideo from "../../Assests/Binghatti/2Video.mp4";
 import EmotionalVideo from "../../Assests/Binghatti/3Video.mp4";
 import IntelligentVideo from "../../Assests/Binghatti/4Video.mp4";
@@ -28,6 +27,11 @@ import img16 from "../../Assests/Binghatti/Img14.webp";
 import img17 from "../../Assests/Binghatti/Img15.webp";
 import img18 from "../../Assests/Binghatti/Img16.webp";
 import Binghatti from "../../Assests/Binghatti/Binghatti.png";
+import BenzLogo from "../../Assests/Binghatti/BenzLogo.jpeg";
+import bed2 from "../../Assests/Binghatti/Bedroom2.png";
+import bed3 from "../../Assests/Binghatti/Bedroom3.png";
+import bed4 from "../../Assests/Binghatti/Bedroom4.png";
+
 
 const brandedSlides = [
     { title: "The Mercedes-Benz Uhlenhaut Coupe Penthouse", subtitle: "Triplex Penthouse", image: img1 },
@@ -48,9 +52,9 @@ const brandedSlides = [
 ];
 
 const branded360Tabs = [
-    { label: "2 BEDROOM", iframe: "https://burjbinghatti.viewin360.co/share/collection/7XzfY?logo=-1&info=0&fs=0&vr=0&sd=1&gyro=1&autop=0&thumbs=-1" },
-    { label: "3 BEDROOMS", iframe: "https://burjbinghatti.viewin360.co/share/collection/7XynQ?logo=-1&info=0&fs=0&vr=0&sd=1&gyro=1&autop=0&thumbs=-1" },
-    { label: "4 BEDROOMS", iframe: "https://burjbinghatti.viewin360.co/share/collection/7Xy6S?logo=-1&info=0&fs=0&vr=0&sd=1&gyro=1&autop=0&thumbs=-1" },
+    { label: "2 BEDROOM", image: bed2 },
+    { label: "3 BEDROOMS", image: bed3 },
+    { label: "4 BEDROOMS", image: bed4 },
 ];
 
 function MercedesBenzPlaces() {
@@ -102,9 +106,7 @@ function MercedesBenzPlaces() {
                 </section>
 
                 <section className="relative flex min-h-screen flex-col items-center justify-center bg-black px-4 py-10 text-center">
-                    <video className="w-full max-w-5xl rounded-2xl object-contain" autoPlay muted loop playsInline>
-                        <source src={LogoVideo} type="video/mp4" />
-                    </video>
+                    <img src={BenzLogo} alt="Mercedes-Benz Places" className="w-full max-w-5xl rounded-2xl object-contain" loading="lazy" />
                     <div className="mt-12 max-w-4xl space-y-6">
                         <p className="text-3xl font-medium text-white">1</p>
                         <p className="text-3xl font-light uppercase tracking-[0.2em] text-white md:text-4xl">A Revolutionary</p>
@@ -236,14 +238,13 @@ function MercedesBenzPlaces() {
                 </section>
 
                 <section className="relative isolate min-h-screen overflow-hidden bg-black">
-                    <iframe
-                        title={current360.label}
-                        src={current360.iframe}
-                        className="absolute inset-0 h-full w-full"
-                        allow="xr-spatial-tracking; gyroscope; accelerometer"
-                        allowFullScreen
+                    <img
+                        src={current360.image}
+                        alt={current360.label}
+                        className="absolute inset-0 h-full w-full object-cover"
+                        loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/50" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60" />
                     <div className="relative z-10 mx-auto flex min-h-screen max-w-6xl items-end justify-between px-4 pb-10 text-white md:px-8">
                         <button
                             type="button"
@@ -311,6 +312,17 @@ function MercedesBenzPlaces() {
                     </div>
                 </section>
             </main>
+
+            <div className="fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-black/85 px-4 py-3 backdrop-blur shadow-[0_-4px_18px_rgba(0,0,0,0.18)] md:hidden">
+                <div className="mx-auto flex max-w-5xl justify-center">
+                    <a
+                        href="#contact-form"
+                        className="inline-flex w-full max-w-xs items-center justify-center rounded-md border border-white/40 bg-white/5 px-4 py-3 text-base font-semibold uppercase tracking-[0.08em] text-white shadow-lg backdrop-blur transition hover:border-white hover:bg-white/10"
+                    >
+                        Register Your Interest
+                    </a>
+                </div>
+            </div>
         </div>
     );
 }
