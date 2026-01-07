@@ -1,124 +1,69 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./MercedesBenzPlaces.css";
+import { setFavicon, resetFavicon } from "../../utils/favicon";
 import MercedesVideo from "../../Assests/Binghatti/Mercedes.mp4";
 import LogoVideo from "../../Assests/Binghatti/Logo.mp4";
 import ConceptVideo from "../../Assests/Binghatti/2Video.mp4";
 import EmotionalVideo from "../../Assests/Binghatti/3Video.mp4";
 import IntelligentVideo from "../../Assests/Binghatti/4Video.mp4";
+import FifthVideo from "../../Assests/Binghatti/5Video.mp4";
+import SixthVideo from "../../Assests/Binghatti/6Video.mp4";
+import SeventhVideo from "../../Assests/Binghatti/7Video.mp4";
 import BinghattiLogo from "../../Assests/Binghatti/BinghattiLogo.png";
+import img1 from "../../Assests/Binghatti/Img1.webp";
+import img2 from "../../Assests/Binghatti/Img2.webp";
+import img3 from "../../Assests/Binghatti/Img3.webp";
+import img4 from "../../Assests/Binghatti/Img4.webp";
+import img5 from "../../Assests/Binghatti/Img5.webp";
+import img6 from "../../Assests/Binghatti/Img6.webp";
+import img7 from "../../Assests/Binghatti/Img7.1.webp";
+import img8 from "../../Assests/Binghatti/Img7.2.webp";
+import img9 from "../../Assests/Binghatti/Img8.webp";
+import img10 from "../../Assests/Binghatti/Img9.webp";
+import img11 from "../../Assests/Binghatti/Img10.webp";
+import img12 from "../../Assests/Binghatti/Img11.webp";
+import img15 from "../../Assests/Binghatti/Img13.webp";
+import img16 from "../../Assests/Binghatti/Img14.webp";
+import img17 from "../../Assests/Binghatti/Img15.webp";
+import img18 from "../../Assests/Binghatti/Img16.webp";
+import Binghatti from "../../Assests/Binghatti/Binghatti.png";
 
 const brandedSlides = [
-    {
-        title: "The Mercedes-Benz Uhlenhaut Coupé Penthouse",
-        subtitle: "Triplex Penthouse",
-        image: "https://binghattiweb.imgix.net/mercedes_1.webp?auto=format,compress",
-    },
-    {
-        title: "The Mercedes-Benz Uhlenhaut Coupé Penthouse",
-        subtitle: "Living & Dining Area - Display 1",
-        image: "https://binghattiweb.imgix.net/mercedes_2.webp?auto=format,compress",
-    },
-    {
-        title: "The Mercedes-Benz Uhlenhaut Coupé Penthouse",
-        subtitle: "Living & Dining Area - Display 2",
-        image: "https://binghattiweb.imgix.net/mercedes_3.webp?auto=format,compress",
-    },
-    {
-        title: "The Mercedes-Benz Gullwing Penthouse",
-        subtitle: "5-BEDROOM PENTHOUSE",
-        image: "https://binghattiweb.imgix.net/mercedes_4.webp?auto=format,compress",
-    },
-    {
-        title: "The Mercedes-Benz Pagoda Suite",
-        subtitle: "2-BEDROOM SUITE",
-        image: "https://binghattiweb.imgix.net/mercedes_5.webp?auto=format,compress",
-    },
-    {
-        title: "The Mercedes-Benz Vision One-Eleven Penthouse",
-        subtitle: "4-BEDROOM PENTHOUSE",
-        image: "https://binghattiweb.imgix.net/mercedes_6.webp?auto=format,compress",
-    },
-    {
-        title: "MERCEDES-BENZ PLACES | BINGHATTI",
-        subtitle: "SPA",
-        image: "https://binghattiweb.imgix.net/mercedes_7.webp?auto=format,compress",
-    },
-    {
-        title: "MERCEDES-BENZ PLACES | BINGHATTI",
-        subtitle: "Private Bathroom - Display 1",
-        image: "https://binghattiweb.imgix.net/mercedes_8.webp?auto=format,compress",
-    },
-    {
-        title: "MERCEDES-BENZ PLACES | BINGHATTI",
-        subtitle: "Private Bathroom - Display 2",
-        image: "https://binghattiweb.imgix.net/mercedes_9.webp?auto=format,compress",
-    },
-    {
-        title: "MERCEDES-BENZ PLACES | BINGHATTI",
-        subtitle: "Lobby",
-        image: "https://binghattiweb.imgix.net/mercedes_10.webp?auto=format,compress",
-    },
-    {
-        title: "MERCEDES-BENZ PLACES | BINGHATTI",
-        subtitle: "Exterior View - Blue Hour Shot",
-        image: "https://binghattiweb.imgix.net/mercedes_11.webp?auto=format,compress",
-    },
-    {
-        title: "MERCEDES-BENZ PLACES | BINGHATTI",
-        subtitle: "Exterior View - Night Shot",
-        image: "https://binghattiweb.imgix.net/mercedes_12.webp?auto=format,compress",
-    },
-    {
-        title: "MERCEDES-BENZ PLACES | BINGHATTI",
-        subtitle: "Exterior View - Dusk Shot",
-        image: "https://binghattiweb.imgix.net/mercedes_13.webp?auto=format,compress",
-    },
-    {
-        title: "MERCEDES-BENZ PLACES | BINGHATTI",
-        subtitle: "Exterior View - Dusk Shot",
-        image: "https://binghattiweb.imgix.net/mercedes_14.webp?auto=format,compress",
-    },
-    {
-        title: "MERCEDES-BENZ PLACES | BINGHATTI",
-        subtitle: "External perspective",
-        image: "https://binghattiweb.imgix.net/mercedes_15.webp?auto=format,compress",
-    },
+    { title: "The Mercedes-Benz Uhlenhaut Coupe Penthouse", subtitle: "Triplex Penthouse", image: img1 },
+    { title: "The Mercedes-Benz Uhlenhaut Coupe Penthouse", subtitle: "Living & Dining Area - Display 1", image: img2 },
+    { title: "The Mercedes-Benz Uhlenhaut Coupe Penthouse", subtitle: "Living & Dining Area - Display 2", image: img3 },
+    { title: "The Mercedes-Benz Gullwing Penthouse", subtitle: "5-BEDROOM PENTHOUSE", image: img4 },
+    { title: "The Mercedes-Benz Pagoda Suite", subtitle: "2-BEDROOM SUITE", image: img5 },
+    { title: "The Mercedes-Benz Vision One-Eleven Penthouse", subtitle: "4-BEDROOM PENTHOUSE", image: img6 },
+    { title: "MERCEDES-BENZ PLACES | BINGHATTI", subtitle: "SPA", image: img7 },
+    { title: "MERCEDES-BENZ PLACES | BINGHATTI", subtitle: "Private Bathroom - Display 1", image: img8 },
+    { title: "MERCEDES-BENZ PLACES | BINGHATTI", subtitle: "Private Bathroom - Display 2", image: img9 },
+    { title: "MERCEDES-BENZ PLACES | BINGHATTI", subtitle: "Lobby", image: img10 },
+    { title: "MERCEDES-BENZ PLACES | BINGHATTI", subtitle: "Exterior View - Blue Hour Shot", image: img11 },
+    { title: "MERCEDES-BENZ PLACES | BINGHATTI", subtitle: "Exterior View - Night Shot", image: img12 },
+    { title: "MERCEDES-BENZ PLACES | BINGHATTI", subtitle: "Exterior View - Dusk Shot", image: img15 },
+    { title: "MERCEDES-BENZ PLACES | BINGHATTI", subtitle: "Exterior View - Dusk Shot", image: img16 },
+    { title: "MERCEDES-BENZ PLACES | BINGHATTI", subtitle: "External perspective", image: img17 },
 ];
 
 const branded360Tabs = [
-    {
-        label: "2 BEDROOM",
-        iframe:
-            "https://burjbinghatti.viewin360.co/share/collection/7XzfY?logo=-1&info=0&fs=0&vr=0&sd=1&gyro=1&autop=0&thumbs=-1",
-    },
-    {
-        label: "3 BEDROOMS",
-        iframe:
-            "https://burjbinghatti.viewin360.co/share/collection/7XynQ?logo=-1&info=0&fs=0&vr=0&sd=1&gyro=1&autop=0&thumbs=-1",
-    },
-    {
-        label: "4 BEDROOMS",
-        iframe:
-            "https://burjbinghatti.viewin360.co/share/collection/7Xy6S?logo=-1&info=0&fs=0&vr=0&sd=1&gyro=1&autop=0&thumbs=-1",
-    },
+    { label: "2 BEDROOM", iframe: "https://burjbinghatti.viewin360.co/share/collection/7XzfY?logo=-1&info=0&fs=0&vr=0&sd=1&gyro=1&autop=0&thumbs=-1" },
+    { label: "3 BEDROOMS", iframe: "https://burjbinghatti.viewin360.co/share/collection/7XynQ?logo=-1&info=0&fs=0&vr=0&sd=1&gyro=1&autop=0&thumbs=-1" },
+    { label: "4 BEDROOMS", iframe: "https://burjbinghatti.viewin360.co/share/collection/7Xy6S?logo=-1&info=0&fs=0&vr=0&sd=1&gyro=1&autop=0&thumbs=-1" },
 ];
-
-const socialLinks = [
-    { label: "Instagram", href: "https://www.instagram.com/binghatti/" },
-    { label: "Facebook", href: "https://www.facebook.com/Binghatti/" },
-    { label: "YouTube", href: "https://www.youtube.com/c/BinghattiDevelopersDubai/" },
-    { label: "LinkedIn", href: "https://www.linkedin.com/company/binghatti/" },
-    { label: "Snapchat", href: "https://www.snapchat.com/add/binghatti" },
-];
-
-const countryCodes = ["UAE (+971)", "UK (+44)", "USA (+1)", "India (+91)", "Saudi (+966)"];
 
 function MercedesBenzPlaces() {
     const [activeSlide, setActiveSlide] = useState(0);
     const [active360, setActive360] = useState(0);
+    const contactFormRef = useRef(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         document.title = "Mercedes Residences in Downtown Dubai | Binghatti UAE";
+        setFavicon(Binghatti);
+
+        return () => resetFavicon();
     }, []);
 
     const currentSlide = useMemo(() => brandedSlides[activeSlide], [activeSlide]);
@@ -129,43 +74,37 @@ function MercedesBenzPlaces() {
     const goNext360 = () => setActive360((prev) => (prev + 1) % branded360Tabs.length);
     const goPrev360 = () => setActive360((prev) => (prev - 1 + branded360Tabs.length) % branded360Tabs.length);
 
+    const handleContactSubmit = () => {
+        const form = contactFormRef.current;
+        if (form) {
+            const pageField = form.querySelector('input[name="page_name"]');
+            const pageUrlField = form.querySelector('input[name="page_url"]');
+            const href = typeof window !== "undefined" ? window.location.href : "";
+            if (pageField) pageField.value = href;
+            if (pageUrlField) pageUrlField.value = href;
+        }
+        setTimeout(() => navigate("/Binghatti/ThankYou"), 500);
+    };
+
     return (
         <div className="mercedes-benz-places-page bg-black text-white min-h-screen">
             <header className="absolute inset-x-0 top-0 z-30 bg-transparent">
                 <div className="flex w-full items-center justify-start px-10 py-5 lg:px-20 lg:py-7">
-                    <img
-                        src={BinghattiLogo}
-                        alt="Binghatti Logo"
-                        className="h-16 w-auto"
-                        loading="lazy"
-                    />
+                    <img src={BinghattiLogo} alt="Binghatti Logo" className="h-16 w-auto" loading="lazy" />
                 </div>
             </header>
 
             <main>
                 <section className="relative isolate min-h-screen overflow-hidden bg-black">
-                    <video
-                        className="absolute inset-0 h-full w-full object-cover"
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                    >
+                    <video className="absolute inset-0 h-full w-full object-cover" autoPlay muted loop playsInline>
                         <source src={MercedesVideo} type="video/mp4" />
                     </video>
                 </section>
 
                 <section className="relative flex min-h-screen flex-col items-center justify-center bg-black px-4 py-10 text-center">
-                    <video
-                        className="w-full max-w-5xl rounded-2xl object-contain"
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                    >
+                    <video className="w-full max-w-5xl rounded-2xl object-contain" autoPlay muted loop playsInline>
                         <source src={LogoVideo} type="video/mp4" />
                     </video>
-
                     <div className="mt-12 max-w-4xl space-y-6">
                         <p className="text-3xl font-medium text-white">1</p>
                         <p className="text-3xl font-light uppercase tracking-[0.2em] text-white md:text-4xl">A Revolutionary</p>
@@ -174,76 +113,51 @@ function MercedesBenzPlaces() {
                             Navigating the frontier of cutting-edge design, a remarkable collaboration emerges. A transformative paradigm unfolds, setting new standards in innovation.
                         </p>
                     </div>
-
                 </section>
 
                 <section className="relative isolate flex min-h-screen items-center justify-center bg-black px-6 py-16 text-center">
-                    <video
-                        className="absolute inset-0 h-full w-full object-cover"
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                    >
+                    <video className="absolute inset-0 h-full w-full object-cover" autoPlay muted loop playsInline>
                         <source src={ConceptVideo} type="video/mp4" />
                     </video>
                     <div className="absolute inset-0 bg-black/30" />
                     <div className="relative z-10 max-w-5xl space-y-6">
                         <p className="text-3xl font-medium text-white">2</p>
                         <div className="space-y-2">
-                            <p className="text-3xl font-light uppercase tracking-[0.2em] text-white md:text-4xl">
-                                Concept
-                            </p>
+                            <p className="text-3xl font-light uppercase tracking-[0.2em] text-white md:text-4xl">Concept</p>
                             <p className="text-4xl font-extrabold uppercase text-white md:text-5xl">Inspiration</p>
                         </div>
                         <p className="text-lg leading-relaxed text-gray-200 md:text-xl">
-                            Rising as a sleek and aerodynamic silhouette, the façade echoes the velocity, precision, and efficiency inherent in the automotive excellence of Mercedes-Benz.
+                            Rising as a sleek and aerodynamic silhouette, the facade echoes the velocity, precision, and efficiency inherent in the automotive excellence of Mercedes-Benz.
                         </p>
                     </div>
                 </section>
 
                 <section className="relative isolate flex min-h-screen items-center justify-center bg-black px-6 py-16 text-center">
-                    <video
-                        className="absolute inset-0 h-full w-full object-cover"
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                    >
+                    <video className="absolute inset-0 h-full w-full object-cover" autoPlay muted loop playsInline>
                         <source src={EmotionalVideo} type="video/mp4" />
                     </video>
                     <div className="absolute inset-0 bg-black/30" />
                     <div className="relative z-10 max-w-5xl space-y-6">
                         <p className="text-3xl font-medium text-white">3</p>
                         <div className="space-y-2">
-                            <p className="text-3xl font-light uppercase tracking-[0.2em] text-white md:text-4xl">
-                                Emotional
-                            </p>
+                            <p className="text-3xl font-light uppercase tracking-[0.2em] text-white md:text-4xl">Emotional</p>
                             <p className="text-4xl font-extrabold uppercase text-white md:text-5xl">Design</p>
                         </div>
                         <p className="text-lg leading-relaxed text-gray-200 md:text-xl">
-                            Fueled by a desire for concepts born from tomorrow, the hyper-tower echoes the smooth strokes of a Mercedes-Benz automobile, paying homage to the brand’s iconic aesthetics.
+                            Fueled by a desire for concepts born from tomorrow, the hyper-tower echoes the smooth strokes of a Mercedes-Benz automobile, paying homage to the brand's iconic aesthetics.
                         </p>
                     </div>
                 </section>
 
                 <section className="relative isolate flex min-h-screen items-center justify-center bg-black px-6 py-16 text-center">
-                    <video
-                        className="absolute inset-0 h-full w-full object-cover"
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                    >
+                    <video className="absolute inset-0 h-full w-full object-cover" autoPlay muted loop playsInline>
                         <source src={IntelligentVideo} type="video/mp4" />
                     </video>
                     <div className="absolute inset-0 bg-black/30" />
                     <div className="relative z-10 max-w-5xl space-y-6">
                         <p className="text-3xl font-medium text-white">4</p>
                         <div className="space-y-2">
-                            <p className="text-3xl font-light uppercase tracking-[0.2em] text-white md:text-4xl">
-                                Intelligent
-                            </p>
+                            <p className="text-3xl font-light uppercase tracking-[0.2em] text-white md:text-4xl">Intelligent</p>
                             <p className="text-4xl font-extrabold uppercase text-white md:text-5xl">Design</p>
                         </div>
                         <p className="text-lg leading-relaxed text-gray-200 md:text-xl">
@@ -252,333 +166,147 @@ function MercedesBenzPlaces() {
                     </div>
                 </section>
 
-
-
-                <section className="relative overflow-hidden bg-black py-16">
-                    <video
-                        className="absolute inset-0 h-full w-full object-cover"
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                        poster="https://binghattiweb.imgix.net/mercedes-transition.webp?auto=format,compress"
-                    >
-                        <source src="https://binghattiweb.imgix.video/merc-web-info-vid.mp4?fm=mp4" type="video/mp4" />
+                <section className="relative isolate min-h-screen overflow-hidden bg-black">
+                    <video className="absolute inset-0 h-full w-full object-cover" autoPlay muted loop playsInline>
+                        <source src={FifthVideo} type="video/mp4" />
                     </video>
-                    <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-black" />
-                    <div className="relative mx-auto flex max-w-6xl flex-col gap-8 px-6 md:px-10 lg:px-16">
-                        <div className="flex items-center justify-between gap-4">
-                            <div>
-                                <p className="text-xs uppercase tracking-[0.3em] text-gray-400">Branded Luxury Collection</p>
-                                <h3 className="text-3xl font-semibold md:text-4xl">
-                                    Own a <span className="font-bold">Collector&apos;s Piece</span>
-                                </h3>
-                            </div>
-                            <div className="flex items-center gap-3">
-                                <button
-                                    type="button"
-                                    onClick={goPrevSlide}
-                                    className="rounded-full border border-white/40 p-2 hover:border-white"
-                                    aria-label="Previous slide"
-                                >
-                                    <span className="block rotate-180 text-lg">➜</span>
-                                </button>
-                                <button
-                                    type="button"
-                                    onClick={goNextSlide}
-                                    className="rounded-full border border-white/40 p-2 hover:border-white"
-                                    aria-label="Next slide"
-                                >
-                                    <span className="block text-lg">➜</span>
-                                </button>
-                            </div>
-                        </div>
-
-                        <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
-                            <div className="overflow-hidden rounded-2xl border border-white/10">
-                                <div
-                                    className="h-[340px] w-full bg-cover bg-center sm:h-[460px] md:h-[520px]"
-                                    style={{ backgroundImage: `url(${currentSlide.image})` }}
-                                />
-                            </div>
-                            <div className="flex flex-col justify-center gap-4">
-                                <p className="text-sm uppercase tracking-[0.3em] text-gray-400">
-                                    {activeSlide + 1} / {brandedSlides.length}
-                                </p>
-                                <h4 className="text-2xl font-semibold md:text-3xl">{currentSlide.title}</h4>
-                                <p className="text-lg uppercase tracking-[0.18em] text-gray-200">{currentSlide.subtitle}</p>
-                                <div className="flex flex-wrap gap-2">
-                                    {brandedSlides.map((_, idx) => (
-                                        <button
-                                            key={idx}
-                                            type="button"
-                                            onClick={() => setActiveSlide(idx)}
-                                            className={`h-1 w-8 rounded-full ${idx === activeSlide ? "bg-white" : "bg-white/30"}`}
-                                            aria-label={`Go to slide ${idx + 1}`}
-                                        />
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="overflow-x-auto pb-2">
-                            <div className="flex gap-3">
-                                {brandedSlides.map((slide, idx) => (
-                                    <button
-                                        key={`${slide.subtitle}-${idx}`}
-                                        onClick={() => setActiveSlide(idx)}
-                                        className={`min-w-[180px] rounded-lg border px-3 py-2 text-left text-xs uppercase tracking-[0.16em] transition ${idx === activeSlide
-                                            ? "border-white bg-white/10 text-white"
-                                            : "border-white/10 text-gray-300 hover:border-white/30"
-                                            }`}
-                                    >
-                                        <span className="block font-semibold">{slide.title}</span>
-                                        <span className="block text-[11px] text-gray-300">{slide.subtitle}</span>
-                                    </button>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
                 </section>
 
-                <section className="relative isolate overflow-hidden bg-black py-16">
-                    <video
-                        className="absolute inset-0 h-full w-full object-cover"
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                        poster="https://binghattiweb.imgix.net/mercedes-benz-places-video-2.webp?auto=format,compress&q=60&w=580&h=1030&fit=crop"
-                    >
-                        <source src="https://binghattiweb.imgix.video/video-5.mp4?fm=mp4" type="video/mp4" />
+                <section className="relative isolate min-h-screen overflow-hidden bg-black px-6 py-12 text-center">
+                    <video className="absolute inset-0 h-full w-full object-cover" autoPlay muted loop playsInline>
+                        <source src={SixthVideo} type="video/mp4" />
                     </video>
-                    <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-black" />
-                    <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-6 md:grid-cols-2 md:px-10 lg:px-16">
-                        <div className="space-y-4">
-                            <p className="text-xs uppercase tracking-[0.3em] text-gray-400">Branded Collection Contact</p>
-                            <h3 className="text-3xl font-semibold uppercase md:text-4xl">
-                                Own a <br />
-                                <span className="font-bold">Collector&apos;s Piece</span>
-                            </h3>
-                            <button className="inline-flex items-center justify-center rounded-sm bg-white px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-black transition hover:bg-gray-200">
-                                Meet Our Brand Ambassador
+                    <div className="absolute inset-0 bg-black/35" />
+                    <div className="relative z-10 mx-auto flex min-h-screen max-w-6xl flex-col items-center justify-center gap-6 text-white">
+                        <h2 className="text-3xl font-semibold uppercase tracking-[0.2em] md:text-4xl">
+                            Branded Luxury <span className="font-light">Collection</span>
+                        </h2>
+                        <div className="relative w-full max-w-5xl">
+                            <button
+                                type="button"
+                                onClick={goPrevSlide}
+                                className="absolute left-0 top-1/2 z-10 -translate-y-1/2 rounded-full border border-white/50 bg-black/30 px-3 py-2 text-2xl leading-none text-white backdrop-blur hover:border-white"
+                                aria-label="Previous slide"
+                            >
+                                {"<"}
+                            </button>
+                            <img
+                                src={currentSlide.image}
+                                alt={currentSlide.title}
+                                className="mx-auto h-[380px] w-[900px] object-cover sm:h-[460px] md:h-[520px]"
+                                loading="lazy"
+                            />
+                            <button
+                                type="button"
+                                onClick={goNextSlide}
+                                className="absolute right-0 top-1/2 z-10 -translate-y-1/2 rounded-full border border-white/50 bg-black/30 px-3 py-2 text-2xl leading-none text-white backdrop-blur hover:border-white"
+                                aria-label="Next slide"
+                            >
+                                {">"}
                             </button>
                         </div>
-                        <div className="space-y-4 rounded-2xl bg-white/5 p-6 backdrop-blur">
-                            <h4 className="text-xl font-semibold">Request More Details</h4>
-                            <form className="space-y-3">
-                                <input
-                                    type="text"
-                                    placeholder="Name"
-                                    className="w-full rounded-md border border-white/20 bg-white/5 px-3 py-2 text-sm text-white placeholder:text-gray-400 focus:border-white/40 focus:outline-none"
-                                />
-                                <div className="grid gap-3 md:grid-cols-2">
-                                    <select className="w-full rounded-md border border-white/20 bg-white/5 px-3 py-2 text-sm text-white focus:border-white/40 focus:outline-none">
-                                        {countryCodes.map((code) => (
-                                            <option key={code} className="bg-black text-white">
-                                                {code}
-                                            </option>
-                                        ))}
-                                    </select>
-                                    <input
-                                        type="tel"
-                                        placeholder="Mobile"
-                                        className="w-full rounded-md border border-white/20 bg-white/5 px-3 py-2 text-sm text-white placeholder:text-gray-400 focus:border-white/40 focus:outline-none"
-                                    />
-                                </div>
-                                <input
-                                    type="email"
-                                    placeholder="Email"
-                                    className="w-full rounded-md border border-white/20 bg-white/5 px-3 py-2 text-sm text-white placeholder:text-gray-400 focus:border-white/40 focus:outline-none"
-                                />
-                                <button
-                                    type="submit"
-                                    className="w-full rounded-md bg-white px-4 py-2 text-sm font-semibold uppercase tracking-[0.18em] text-black transition hover:bg-gray-200"
-                                >
-                                    Confirm Now
-                                </button>
-                            </form>
+                        <div className="space-y-1">
+                            <p className="text-lg uppercase tracking-[0.18em]">{currentSlide.title}</p>
+                            <p className="text-base uppercase tracking-[0.16em] text-gray-200">{currentSlide.subtitle}</p>
                         </div>
                     </div>
                 </section>
 
-                <section className="bg-black px-6 py-16 md:px-10 lg:px-16">
-                    <div className="mx-auto max-w-6xl space-y-6">
-                        <div className="flex items-center justify-between">
-                            <div>
-                                <p className="text-xs uppercase tracking-[0.3em] text-gray-400">Branded 360° Tabs</p>
-                                <h3 className="text-3xl font-semibold md:text-4xl">Explore in 360°</h3>
-                            </div>
-                            <div className="hidden items-center gap-2 md:flex">
-                                <button
-                                    type="button"
-                                    onClick={goPrev360}
-                                    className="rounded-full border border-white/40 p-2 hover:border-white"
-                                    aria-label="Previous 360 tab"
-                                >
-                                    <span className="block rotate-180 text-lg">➜</span>
-                                </button>
-                                <button
-                                    type="button"
-                                    onClick={goNext360}
-                                    className="rounded-full border border-white/40 p-2 hover:border-white"
-                                    aria-label="Next 360 tab"
-                                >
-                                    <span className="block text-lg">➜</span>
-                                </button>
-                            </div>
+                <section className="relative isolate min-h-screen overflow-hidden bg-black px-6 py-12 text-center">
+                    <video className="absolute inset-0 h-full w-full object-cover" autoPlay muted loop playsInline>
+                        <source src={SeventhVideo} type="video/mp4" />
+                    </video>
+                    <div className="absolute inset-0 bg-black/35" />
+                    <div className="relative z-10 mx-auto flex min-h-screen max-w-4xl flex-col items-center justify-center gap-6 text-white">
+                        <div className="space-y-2">
+                            <p className="text-3xl font-light uppercase tracking-[0.2em] md:text-4xl">Own a</p>
+                            <p className="text-4xl font-extrabold uppercase md:text-5xl">Collector&apos;s Piece</p>
                         </div>
-
-                        <div className="grid gap-8 md:grid-cols-[1.2fr_0.8fr]">
-                            <div className="overflow-hidden rounded-2xl border border-white/10">
-                                <iframe
-                                    title={current360.label}
-                                    src={current360.iframe}
-                                    className="h-[420px] w-full md:h-[520px]"
-                                    allow="xr-spatial-tracking; gyroscope; accelerometer"
-                                    allowFullScreen
-                                />
-                            </div>
-                            <div className="flex flex-col justify-between rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
-                                <div className="space-y-3">
-                                    <p className="text-sm uppercase tracking-[0.2em] text-gray-400">Virtual Tours</p>
-                                    <h4 className="text-2xl font-semibold">{current360.label}</h4>
-                                    <p className="text-sm text-gray-300">
-                                        Immerse yourself in the Mercedes-Benz Places residences with interactive 360° walkthroughs of each
-                                        bedroom configuration.
-                                    </p>
-                                </div>
-                                <div className="flex flex-wrap items-center gap-2 pt-4">
-                                    {branded360Tabs.map((tab, idx) => (
-                                        <button
-                                            key={tab.label}
-                                            onClick={() => setActive360(idx)}
-                                            className={`rounded-full px-4 py-2 text-xs uppercase tracking-[0.18em] ${idx === active360
-                                                ? "bg-white text-black"
-                                                : "border border-white/30 text-gray-200 hover:border-white"
-                                                }`}
-                                        >
-                                            {tab.label}
-                                        </button>
-                                    ))}
-                                </div>
-                                <div className="flex items-center gap-3 pt-4 md:hidden">
-                                    <button
-                                        type="button"
-                                        onClick={goPrev360}
-                                        className="flex-1 rounded-md border border-white/40 px-3 py-2 text-sm uppercase tracking-[0.18em]"
-                                    >
-                                        Previous
-                                    </button>
-                                    <button
-                                        type="button"
-                                        onClick={goNext360}
-                                        className="flex-1 rounded-md bg-white px-3 py-2 text-sm font-semibold uppercase tracking-[0.18em] text-black"
-                                    >
-                                        Next
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
+                        <button
+                            type="button"
+                            onClick={() => {
+                                const el = document.getElementById("contact-form");
+                                el?.scrollIntoView({ behavior: "smooth" });
+                            }}
+                            className="mt-4 rounded-md border border-white/50 bg-white/10 px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white backdrop-blur hover:border-white"
+                        >
+                            Meet Our Brand Ambassador
+                        </button>
                     </div>
                 </section>
 
-                <section className="relative isolate overflow-hidden bg-black py-16">
-                    <img
-                        src="https://binghattiweb.imgix.net/mercedes-benz-places-footer-bg.webp?auto=format,compress&q=50&w=1296&dpr=1.2"
-                        alt="Mercedes-Benz Places Footer"
-                        className="absolute inset-0 h-full w-full object-cover"
-                        loading="lazy"
+                <section className="relative isolate min-h-screen overflow-hidden bg-black">
+                    <iframe
+                        title={current360.label}
+                        src={current360.iframe}
+                        className="absolute inset-0 h-full w-full"
+                        allow="xr-spatial-tracking; gyroscope; accelerometer"
+                        allowFullScreen
                     />
-                    <div className="absolute inset-0 bg-gradient-to-r from-black via-black/75 to-black" />
-                    <div className="relative mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-[1fr_1.2fr] md:px-10 lg:px-16">
-                        <div className="space-y-4">
-                            <p className="text-sm uppercase tracking-[0.3em] text-gray-300">Connect with the brand</p>
-                            <h3 className="text-3xl font-semibold uppercase md:text-4xl">
-                                Express <br /> Your <br /> Interest
-                            </h3>
-                            <div className="space-y-2 text-sm text-gray-200">
-                                <a
-                                    className="flex items-center gap-2 hover:text-white"
-                                    href="https://www.binghatti.com/en/contact-us"
-                                    target="_blank"
-                                    rel="noreferrer"
-                                >
-                                    Find a Sales Boutique <span aria-hidden="true">➜</span>
-                                </a>
-                                <a
-                                    className="flex items-center gap-2 hover:text-white"
-                                    href="https://www.binghatti.com/en/property-search"
-                                    target="_blank"
-                                    rel="noreferrer"
-                                >
-                                    Discover the Collection <span aria-hidden="true">➜</span>
-                                </a>
-                            </div>
-                            <div className="flex flex-wrap items-center gap-3">
-                                {socialLinks.map((link) => (
-                                    <a
-                                        key={link.label}
-                                        href={link.href}
-                                        target="_blank"
-                                        rel="noreferrer"
-                                        className="rounded-full border border-white/30 px-3 py-1 text-xs uppercase tracking-[0.18em] text-gray-200 hover:border-white hover:text-white"
-                                    >
-                                        {link.label}
-                                    </a>
-                                ))}
-                            </div>
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/50" />
+                    <div className="relative z-10 mx-auto flex min-h-screen max-w-6xl items-end justify-between px-4 pb-10 text-white md:px-8">
+                        <button
+                            type="button"
+                            onClick={goPrev360}
+                            className="rounded-full border border-white/60 bg-black/30 px-3 py-2 text-2xl leading-none backdrop-blur hover:border-white"
+                            aria-label="Previous 360 view"
+                        >
+                            {"<"}
+                        </button>
+                        <div className="rounded-md border border-white/50 bg-black/30 px-6 py-3 text-sm font-semibold uppercase tracking-[0.18em] backdrop-blur">
+                            {current360.label}
                         </div>
-                        <div className="rounded-2xl bg-black/60 p-6 backdrop-blur">
-                            <div className="grid gap-6 md:grid-cols-[1fr_1fr]">
-                                <div className="space-y-3">
-                                    <div>
-                                        <label className="text-xs uppercase tracking-[0.16em] text-gray-300">Name</label>
-                                        <input
-                                            type="text"
-                                            className="mt-1 w-full rounded-md border border-white/15 bg-white/5 px-3 py-2 text-sm text-white placeholder:text-gray-400 focus:border-white/40 focus:outline-none"
-                                            placeholder="Name"
-                                        />
-                                    </div>
-                                    <div>
-                                        <label className="text-xs uppercase tracking-[0.16em] text-gray-300">Email</label>
-                                        <input
-                                            type="email"
-                                            className="mt-1 w-full rounded-md border border-white/15 bg-white/5 px-3 py-2 text-sm text-white placeholder:text-gray-400 focus:border-white/40 focus:outline-none"
-                                            placeholder="Email"
-                                        />
-                                    </div>
-                                    <div>
-                                        <label className="text-xs uppercase tracking-[0.16em] text-gray-300">Phone</label>
-                                        <input
-                                            type="tel"
-                                            className="mt-1 w-full rounded-md border border-white/15 bg-white/5 px-3 py-2 text-sm text-white placeholder:text-gray-400 focus:border-white/40 focus:outline-none"
-                                            placeholder="Mobile"
-                                        />
-                                    </div>
-                                </div>
-                                <div className="flex flex-col justify-between gap-3">
-                                    <div>
-                                        <label className="text-xs uppercase tracking-[0.16em] text-gray-300">Country</label>
-                                        <select className="mt-1 w-full rounded-md border border-white/15 bg-white/5 px-3 py-2 text-sm text-white focus:border-white/40 focus:outline-none">
-                                            {countryCodes.map((code) => (
-                                                <option key={code} className="bg-black text-white">
-                                                    {code}
-                                                </option>
-                                            ))}
-                                        </select>
-                                    </div>
-                                    <p className="text-xs text-gray-300">
-                                        By submitting, you agree to our terms & conditions.
-                                    </p>
-                                    <button className="w-full rounded-md bg-white px-4 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-black transition hover:bg-gray-200">
-                                        Meet Our Brand Ambassador
-                                    </button>
-                                </div>
+                        <button
+                            type="button"
+                            onClick={goNext360}
+                            className="rounded-full border border-white/60 bg-black/30 px-3 py-2 text-2xl leading-none backdrop-blur hover:border-white"
+                            aria-label="Next 360 view"
+                        >
+                            {">"}
+                        </button>
+                    </div>
+                </section>
+
+                <section className="relative isolate bg-black py-16 md:py-20">
+                    <div className="mx-auto grid max-w-6xl items-stretch gap-12 px-6 md:grid-cols-[1fr_1.2fr] md:px-10 lg:px-16">
+                        <div className="flex flex-col justify-center space-y-8 text-white">
+                            <div className="space-y-2">
+                                <p className="text-5xl font-extrabold uppercase leading-none">Express</p>
+                                <p className="text-5xl font-light uppercase tracking-[0.08em] leading-tight">Your<br />Interest</p>
                             </div>
-                            <p className="mt-6 text-xs text-gray-400">
-                                ©2025 Binghatti. All rights reserved.
-                            </p>
+
+                        </div>
+                        <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-black/60">
+                            <img src={img18} alt="Mercedes-Benz Places" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+                            <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/75 to-black/85" />
+                            <form
+                                id="contact-form"
+                                ref={contactFormRef}
+                                action="https://script.google.com/macros/s/AKfycbywwic8x5s6aI85f1vDmr3ee5vhG0c261cwMzNg9vSdX8UUsBDKtyhP_ov9L1kdNImEbg/exec?gid=0"
+                                method="POST"
+                                target="hiddenFrame"
+                                onSubmit={handleContactSubmit}
+                                className="relative z-10 space-y-8 p-6 sm:p-8 text-white"
+                            >
+                                <div className="space-y-3">
+                                    <label className="text-sm font-semibold uppercase tracking-[0.16em] text-gray-200">Name</label>
+                                    <input type="text" name="name" required className="w-full border-b border-white/40 bg-transparent px-1 py-3 text-white placeholder:text-gray-500 focus:border-white focus:outline-none" placeholder="Name" />
+                                </div>
+                                <div className="space-y-3">
+                                    <label className="text-sm font-semibold uppercase tracking-[0.16em] text-gray-200">Email</label>
+                                    <input type="email" name="email" required className="w-full border-b border-white/40 bg-transparent px-1 py-3 text-white placeholder:text-gray-500 focus:border-white focus:outline-none" placeholder="Email" />
+                                </div>
+                                <div className="space-y-3">
+                                    <label className="text-sm font-semibold uppercase tracking-[0.16em] text-gray-200">Phone</label>
+                                    <input type="tel" name="phone" required className="w-full border-b border-white/40 bg-transparent px-1 py-3 text-white placeholder:text-gray-500 focus:border-white focus:outline-none" placeholder="Mobile" />
+                                </div>
+                                <input type="hidden" name="page_name" value={typeof window !== "undefined" ? window.location.href : ""} />
+                                <input type="hidden" name="page_url" value={typeof window !== "undefined" ? window.location.href : ""} />
+                                <p className="text-xs text-gray-300">By submitting, you agree to our terms &amp; conditions.</p>
+                                <button type="submit" className="w-full rounded-md border border-white/40 bg-gradient-to-r from-white/70 via-white/60 to-white/40 px-4 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-black transition hover:from-white hover:to-white">Meet Our Brand Ambassador</button>
+                            </form>
+                            {/* Hidden iframe keeps the Apps Script action from opening a new tab */}
+                            <iframe name="hiddenFrame" className="hidden" title="submission-target" />
                         </div>
                     </div>
                 </section>
