@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Select from "react-select";
 import Footer from "../../components/Damac/DamacIslandFooter.js"
 import Logo from "../../Assests/Damac/Damac.png"
@@ -21,6 +22,7 @@ const PRIMARY_COLOR = "#494949";
 
 export default function DamacIsland() {
 
+    const navigate = useNavigate();
     useEffect(() => {
         document.title = "Damac Islands";
         setFavicon(Logo);
@@ -29,6 +31,7 @@ export default function DamacIsland() {
     }, []);
 
     const [country, setCountry] = useState(null);
+    const [isSubmitting, setIsSubmitting] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
     const countryOptions = [
         { code: "AF", dial: "+93", name: "Afghanistan" },
@@ -307,42 +310,45 @@ export default function DamacIsland() {
         };
     }, []);
 
-    const submissionRequested = useRef(false);
+    const handleSubmit = async (e) => {
+        e.preventDefault();
 
-    const handleBeforeSubmit = (e) => {
-        const form = document.getElementById("registerForm");
+        if (isSubmitting) return;
 
+        const form = e.target;
         const code = country?.value || "";
-        const number = form.querySelector("#phoneInput")?.value || "";
+        const number = form.querySelector("#phoneInput")?.value?.trim() || "";
 
         if (!code || !number) {
             toast.error("Please select country and enter phone number");
-            e.preventDefault();
             return;
         }
 
         const fullPhone = `${code}${number}`;
+        const phoneField = form.querySelector("#full_phone");
+        if (phoneField) phoneField.value = fullPhone;
 
-        document.getElementById("full_phone").value = fullPhone;
-        submissionRequested.current = true;
-    };
+        const formData = new FormData(form);
+        formData.set("phone", fullPhone);
+        formData.set("page_name", window.location.href);
 
-
-
-    useEffect(() => {
-        const iframe = document.getElementsByName("hiddenFrame")[0];
-        if (!iframe) return;
-
-        iframe.onload = () => {
-            if (!submissionRequested.current) return;
-
+        try {
+            setIsSubmitting(true);
+            await fetch(form.action, {
+                method: "POST",
+                body: formData,
+                mode: "no-cors"
+            });
             toast.success("Form submitted successfully!");
-            submissionRequested.current = false;
-
-            const form = document.getElementById("registerForm");
-            if (form) form.reset();
-        };
-    }, []);
+            form.reset();
+            setCountry(null);
+            navigate("/Damac/DamacIslandThanks");
+        } catch (error) {
+            toast.error("Something went wrong. Please try again.");
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
 
     const amenities = [
         { name: "Expansive Green Spaces", icon: <Trees className="w-4 h-4" /> },
@@ -878,17 +884,11 @@ export default function DamacIsland() {
                         ENQUIRE NOW!
                     </h4>
 
-                    <iframe
-                        name="hiddenFrame"
-                        title="Hidden form submission frame"
-                        style={{ display: "none" }}
-                    ></iframe>
                     <form
                         id="registerForm"
-                        onSubmit={handleBeforeSubmit}
+                        onSubmit={handleSubmit}
                         action="https://script.google.com/macros/s/AKfycbywwic8x5s6aI85f1vDmr3ee5vhG0c261cwMzNg9vSdX8UUsBDKtyhP_ov9L1kdNImEbg/exec?gid=0"
                         method="POST"
-                        target="hiddenFrame"
                         className="space-y-5"
                     >
 
@@ -972,8 +972,12 @@ export default function DamacIsland() {
 
                         <input type="hidden" name="page_name" value={window.location.href} />
 
-                        <button className="w-full bg-[#00214D] text-white py-3 rounded-xl">
-                            Submit
+                        <button
+                            type="submit"
+                            disabled={isSubmitting}
+                            className="w-full bg-[#00214D] text-white py-3 rounded-xl disabled:opacity-70 disabled:cursor-not-allowed"
+                        >
+                            {isSubmitting ? "Submitting..." : "Submit"}
                         </button>
                     </form>
                 </div>
