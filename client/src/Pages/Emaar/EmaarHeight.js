@@ -58,7 +58,7 @@ function EmaarHeight() {
             name: "The Heights Country Club & Wellness",
             image: heroImg,
             beds: "3, 4 & 5 Bed Standalone Villas",
-            price: "Estimated from AED 5.5 Million",
+            price: "Estimated from AED 6 Million",
             note: "Request Brochure",
             href: "#contact",
         },
@@ -146,7 +146,7 @@ function EmaarHeight() {
                         </h1>
 
                         <p className="text-base uppercase tracking-[0.1em] sm:text-lg">
-                            3, 4 & 5 Bed Standalone Villas | Estimated Price From AED 5.5 Million
+                            3, 4 & 5 Bed Standalone Villas | Estimated Price From AED 6 Million
                         </p>
 
                         <a
@@ -411,7 +411,7 @@ function EmaarHeight() {
                             },
                             {
                                 q: "What is the starting price?",
-                                a: "Estimated pricing starts from AED 5.5 Million for the standalone villas.",
+                                a: "Estimated pricing starts from AED 6 Million for the standalone villas.",
                             },
                             {
                                 q: "Where is it located?",
