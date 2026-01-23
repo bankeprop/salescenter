@@ -27,6 +27,31 @@ function EmaarHeight() {
         document.title = "The Heights Country Club & Wellness";
         setFavicon(emaarHeightsLogo);
 
+        if (!window.gtag) {
+            window.dataLayer = window.dataLayer || [];
+            window.gtag = function gtag() {
+                window.dataLayer.push(arguments);
+            };
+        }
+
+        if (!document.getElementById("gtag-js-aw-17277536048")) {
+            const gtagScript = document.createElement("script");
+            gtagScript.async = true;
+            gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=AW-17277536048";
+            gtagScript.id = "gtag-js-aw-17277536048";
+            document.head.appendChild(gtagScript);
+        }
+
+        if (!document.getElementById("gtag-config-aw-17277536048")) {
+            const configScript = document.createElement("script");
+            configScript.id = "gtag-config-aw-17277536048";
+            configScript.text = `
+                gtag('js', new Date());
+                gtag('config', 'AW-17277536048');
+            `;
+            document.head.appendChild(configScript);
+        }
+
         return () => resetFavicon();
     }, []);
 
