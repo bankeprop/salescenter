@@ -533,15 +533,7 @@ export default function DamacIsland() {
                 >
                     <div className="space-y-6 max-w-4xl">
 
-                        <motion.p
-                            style={{ fontFamily: "Cinzel, serif" }}
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ delay: 0.8, duration: 0.5 }}
-                            className="text-xl md:text-4xl font-light uppercase tracking-[.25em] text-gray-200"
-                        >
-                            VALENCIA AT DAMAC LAGOONS
-                        </motion.p>
+
 
                         <motion.div
                             initial={{ opacity: 0 }}
@@ -563,6 +555,15 @@ export default function DamacIsland() {
                             className="text-lg md:text-3xl uppercase tracking-[.4em] text-gray-200"
                         >
                             DAMAC PROPERTIES
+                        </motion.p>
+                        <motion.p
+                            style={{ fontFamily: "Cinzel, serif" }}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 1.5, duration: 0.6 }}
+                            className="text-base md:text-2xl mt-2 text-gray-100"
+                        >
+                            Studios, 1 &amp; 2 Bed Apartments Surrounded By Swimmable Crystal Lagoons
                         </motion.p>
 
                     </div>
