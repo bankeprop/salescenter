@@ -540,7 +540,7 @@ export default function DamacIsland() {
                             transition={{ delay: 0.8, duration: 0.5 }}
                             className="text-xl md:text-4xl font-light uppercase tracking-[.25em] text-gray-200"
                         >
-                            Experience Lagoon Living
+                            VALENCIA AT DAMAC LAGOONS
                         </motion.p>
 
                         <motion.div
@@ -562,7 +562,7 @@ export default function DamacIsland() {
                             transition={{ delay: 1.3, duration: 0.5 }}
                             className="text-lg md:text-3xl uppercase tracking-[.4em] text-gray-200"
                         >
-                            Like Never Before in
+                            DAMAC PROPERTIES
                         </motion.p>
 
                     </div>
