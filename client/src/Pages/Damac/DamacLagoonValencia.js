@@ -28,8 +28,11 @@ const waveBackground = {
 export default function DamacIsland() {
 
     const navigate = useNavigate();
+    const [isFooterVisible, setIsFooterVisible] = useState(false);
+    const FOOTER_REVEAL_SCROLL = 40;
+
     useEffect(() => {
-        document.title = "Damac Islands";
+        document.title = "Damac Lagoon Valencia";
         setFavicon(Logo);
 
         return () => resetFavicon();
@@ -315,6 +318,16 @@ export default function DamacIsland() {
         };
     }, []);
 
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsFooterVisible(window.scrollY > FOOTER_REVEAL_SCROLL);
+        };
+
+        window.addEventListener("scroll", handleScroll, { passive: true });
+
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -529,12 +542,9 @@ export default function DamacIsland() {
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, delay: 0.2 }}
-                    className="absolute inset-0 flex items-center justify-center text-center px-6 lg:px-[12%]"
+                    className="absolute inset-0 flex items-center justify-center text-center px-4 lg:px-[8%]"
                 >
-                    <div className="space-y-6 max-w-4xl">
-
-
-
+                    <div className="space-y-4 sm:space-y-6 max-w-4xl">
                         <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
@@ -544,7 +554,7 @@ export default function DamacIsland() {
                             <img
                                 src={ValenciaLogo}
                                 alt="Lagoon Valencia"
-                                className="w-[260px] md:w-[380px] object-contain"
+                                className="w-[220px] sm:w-[260px] md:w-[380px] object-contain"
                             />
                         </motion.div>
                         <motion.p
@@ -620,7 +630,7 @@ export default function DamacIsland() {
                         style={{ color: "#494949" }}
                     >
                         Experience Lagoon Living<br />
-                        Like Never Before in
+                        Like Never Before
                     </motion.h1>
 
                     <motion.p
@@ -833,9 +843,9 @@ export default function DamacIsland() {
                 <p className="text-lg md:text-xl font-medium mb-2">
                     Iconic Lagoon Community Offering Resort-Style Living
                 </p>
-
+                <br />
                 <p className="text-lg md:text-xl font-semibold mb-8">
-                    5% | 55% | 40% Payment Plan
+                    <span className="font-extrabold">5%</span> Down Payment | <span className="font-extrabold">55%</span> During Construction | <span className="font-extrabold">40%</span> Upon Handover
                 </p>
 
                 <h3 className="text-3xl md:text-4xl font-black mb-12">
@@ -948,49 +958,51 @@ export default function DamacIsland() {
             </div>
             <ToastContainer position="top-right" autoClose={2000} theme="colored" />
 
-            <div
-                className="w-full bg-cover bg-center px-4 sm:px-[5%] lg:px-[12%] py-7 sm:py-7 flex flex-col lg:flex-row items-center justify-between gap-4 fixed bottom-0 left-0 z-50"
-                style={{ backgroundColor: "#87CEFA" }}
-            >
-                <div className="flex items-center gap-4 sm:gap-5 w-full lg:w-auto">
-                    <img
-                        src={Logo}
-                        alt="DAMAC"
-                        className="w-[85px] sm:w-[105px]"
-                    />
-
-                    <div className="leading-tight">
-                        <p className="text-xs sm:text-sm font-medium text-gray-800">Type of Property</p>
-                        <h3 className="text-sm sm:text-base font-semibold text-black">
-                            Studios, 1 & 2-Bedroom Apartments
-                        </h3>
-                    </div>
-                </div>
-
-                <div className="flex flex-wrap lg:flex-nowrap gap-5 sm:gap-10 w-full lg:w-auto text-center lg:text-left">
-                    <div>
-                        <p className="text-xs sm:text-sm font-medium text-gray-800">Starting at</p>
-                        <h3 className="text-sm sm:text-base font-semibold">AED 725K</h3>
-                    </div>
-
-                    <div>
-                        <p className="text-xs sm:text-sm font-medium text-gray-800">Payment Plan</p>
-                        <h3 className="text-sm sm:text-base font-semibold">60/40</h3>
-                    </div>
-
-                    <div>
-                        <p className="text-xs sm:text-sm font-medium text-gray-800">Handover</p>
-                        <h3 className="text-sm sm:text-base font-semibold">2029</h3>
-                    </div>
-                </div>
-
-                <button
-                    onClick={() => document.getElementById("registerForm")?.scrollIntoView({ behavior: "smooth" })}
-                    className="px-4 py-2 bg-black text-white rounded-sm font-semibold hover:opacity-90 transition-all w-full sm:w-auto text-sm sm:text-base"
+            {isFooterVisible && (
+                <div
+                    className="w-full bg-cover bg-center px-4 sm:px-[5%] lg:px-[12%] py-7 sm:py-7 flex flex-col lg:flex-row items-center justify-between gap-4 fixed bottom-0 left-0 z-50 transform transition-all duration-300 translate-y-0 opacity-100"
+                    style={{ backgroundColor: "#87CEFA" }}
                 >
-                    Register Your Interest
-                </button>
-            </div>
+                    <div className="flex items-center gap-4 sm:gap-5 w-full lg:w-auto">
+                        <img
+                            src={Logo}
+                            alt="DAMAC"
+                            className="w-[85px] sm:w-[105px]"
+                        />
+
+                        <div className="leading-tight">
+                            <p className="text-xs sm:text-sm font-medium text-gray-800">Type of Property</p>
+                            <h3 className="text-sm sm:text-base font-semibold text-black">
+                                Studios, 1 & 2-Bedroom Apartments
+                            </h3>
+                        </div>
+                    </div>
+
+                    <div className="flex flex-wrap lg:flex-nowrap gap-5 sm:gap-10 w-full lg:w-auto text-center lg:text-left">
+                        <div>
+                            <p className="text-xs sm:text-sm font-medium text-gray-800">Starting at</p>
+                            <h3 className="text-sm sm:text-base font-semibold">AED 725K</h3>
+                        </div>
+
+                        <div>
+                            <p className="text-xs sm:text-sm font-medium text-gray-800">Payment Plan</p>
+                            <h3 className="text-sm sm:text-base font-semibold">60/40</h3>
+                        </div>
+
+                        <div>
+                            <p className="text-xs sm:text-sm font-medium text-gray-800">Handover</p>
+                            <h3 className="text-sm sm:text-base font-semibold">2029</h3>
+                        </div>
+                    </div>
+
+                    <button
+                        onClick={() => document.getElementById("registerForm")?.scrollIntoView({ behavior: "smooth" })}
+                        className="px-4 py-2 bg-black text-white rounded-sm font-semibold hover:opacity-90 transition-all w-full sm:w-auto text-sm sm:text-base"
+                    >
+                        Register Your Interest
+                    </button>
+                </div>
+            )}
         </div >
     )
 }
