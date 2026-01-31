@@ -10,6 +10,8 @@ import MercedesThankYou from './Pages/Binghati/MercedesThankYou';
 import YasCanel from './Pages/Ohana/YasCanel';
 import DamacLagoonValencia from './Pages/Damac/DamacLagoonValencia';
 import DamacLagoonValenciaThanks from './Pages/Damac/DamacLagoonValenciaThanks';
+import YasIsland from './Pages/Ohana/YasIsland';
+import OhanaThanks from './Pages/Ohana/OhanaThanks';
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
         <Route path="/Binghatti/ThankYou" element={<MercedesThankYou />} />
 
         <Route path="/Ohana/YasCanel" element={<YasCanel />} />
+        <Route path="/Ohana/YasIsland" element={<YasIsland />} />
+        <Route path="/Ohana/Thanks" element={<OhanaThanks />} />
 
       </Routes>
     </Router>
