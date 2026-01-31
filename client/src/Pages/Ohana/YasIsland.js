@@ -152,7 +152,7 @@ function YasIsland() {
 
             {/* Project summary */}
             <section className="relative bg-[#d0cbbb]">
-                <div className="max-w-6xl mx-auto px-4 py-16 grid md:grid-cols-5 gap-10 items-start">
+                <div className="max-w-6xl mx-auto px-4 py-16 grid md:grid-cols-5 gap-10 items-start md:items-center">
                     <div className="md:col-span-5 text-center space-y-4">
                         <p className='font-["Tai_Heritage_Pro"] text-2xl md:text-3xl text-[#0B153B] tracking-wide'>
                             THE WORLD&apos;S FIRST MANCHESTER CITY-BRANDED RESIDENCES @ YAS ISLAND, ABU DHABI
@@ -179,7 +179,7 @@ function YasIsland() {
                     </div>
 
                     <div className="md:col-span-2 bg-[#E7E3D6] border border-[#A3BAC6] p-4 rounded-xl shadow-sm">
-                        <img src={mapImg} alt="Map" className="w-full h-full object-cover rounded-lg" />
+                        <img src={mapImg} alt="Map" className="w-full h-[260px] md:h-[360px] object-cover rounded-lg" />
                     </div>
                 </div>
             </section>
