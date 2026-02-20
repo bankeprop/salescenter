@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import NavBar from "../../components/Emaar/EmaarValleyNavBar";
 import { HomeIcon, TagIcon, BuildingOffice2Icon } from '@heroicons/react/24/solid';
+import Select from "react-select";
 import { setFavicon, resetFavicon } from "../../utils/favicon";
 import "./EmaarValley.css";
 import heroImg from "../../Assests/Emaar/Emmar1.webp";
@@ -23,6 +24,7 @@ function EmaarValley() {
     const [submitting, setSubmitting] = useState(false);
     const [feedback, setFeedback] = useState("");
     const [submitted, setSubmitted] = useState(false);
+    const [country, setCountry] = useState(null);
     const formRef = useRef(null);
 
     useEffect(() => {
@@ -31,6 +33,53 @@ function EmaarValley() {
 
         return () => resetFavicon();
     }, []);
+
+    const countryOptions = [
+        { code: "AE", dial: "+971", name: "United Arab Emirates" },
+        { code: "US", dial: "+1", name: "United States" },
+        { code: "GB", dial: "+44", name: "United Kingdom" },
+        { code: "SA", dial: "+966", name: "Saudi Arabia" },
+        { code: "IN", dial: "+91", name: "India" },
+        { code: "PK", dial: "+92", name: "Pakistan" },
+        { code: "QA", dial: "+974", name: "Qatar" },
+        { code: "KW", dial: "+965", name: "Kuwait" },
+        { code: "OM", dial: "+968", name: "Oman" },
+        { code: "BH", dial: "+973", name: "Bahrain" },
+        { code: "EG", dial: "+20", name: "Egypt" },
+        { code: "NG", dial: "+234", name: "Nigeria" },
+        { code: "ZA", dial: "+27", name: "South Africa" },
+        { code: "PH", dial: "+63", name: "Philippines" },
+        { code: "BD", dial: "+880", name: "Bangladesh" },
+        { code: "LK", dial: "+94", name: "Sri Lanka" },
+        { code: "CA", dial: "+1", name: "Canada" },
+        { code: "AU", dial: "+61", name: "Australia" },
+        { code: "SG", dial: "+65", name: "Singapore" },
+        { code: "MY", dial: "+60", name: "Malaysia" },
+        { code: "ID", dial: "+62", name: "Indonesia" },
+        { code: "DE", dial: "+49", name: "Germany" },
+        { code: "FR", dial: "+33", name: "France" },
+        { code: "ES", dial: "+34", name: "Spain" },
+        { code: "IT", dial: "+39", name: "Italy" },
+        { code: "TR", dial: "+90", name: "Turkey" },
+        { code: "RU", dial: "+7", name: "Russia" },
+        { code: "CN", dial: "+86", name: "China" },
+        { code: "JP", dial: "+81", name: "Japan" },
+        { code: "KR", dial: "+82", name: "South Korea" }
+    ];
+
+    const options = countryOptions.map((c) => ({
+        value: c.dial,
+        code: c.code,
+        label: `${c.name} (${c.dial})`
+    }));
+
+    const defaultCountryOption = options.find((option) => option.code === "AE");
+
+    useEffect(() => {
+        if (!country && defaultCountryOption) {
+            setCountry(defaultCountryOption);
+        }
+    }, [country, defaultCountryOption]);
 
     const features = [
         {
@@ -509,17 +558,35 @@ function EmaarValley() {
                         className="mx-auto max-w-md space-y-4 rounded-2xl  bg-slate-50 p-6 shadow-sm"
                         id="registerForm"
                         ref={formRef}
-                        action="https://script.google.com/macros/s/AKfycbywwic8x5s6aI85f1vDmr3ee5vhG0c261cwMzNg9vSdX8UUsBDKtyhP_ov9L1kdNImEbg/exec?gid=0"
+                        action="https://script.google.com/macros/s/AKfycbxTrPUIKN5-vZAda8_PTCJ_Fdpry7a9P-SKrYNoXGuWIeRHnmb-AptkapEqihZdJiik2g/exec"
                         method="POST"
                         target="hiddenFrame"
-                        onSubmit={() => {
+                        onSubmit={(e) => {
+                            if (submitting) {
+                                e.preventDefault();
+                                return;
+                            }
+
                             setSubmitting(true);
                             setFeedback("");
                             const form = formRef.current;
                             if (form) {
-                                const pageField = form.querySelector('input[name="page_name"]');
-                                if (pageField) pageField.value = window.location.href;
-                                const pageUrlField = form.querySelector('input[name="page_url"]');
+                                const code = country?.value || defaultCountryOption?.value || "";
+                                const number = form.querySelector("#phoneInput")?.value?.trim() || "";
+
+                                if (!code || !number) {
+                                    e.preventDefault();
+                                    setSubmitting(false);
+                                    setSubmitted(false);
+                                    setFeedback("Please select country and enter phone number.");
+                                    return;
+                                }
+
+                                const fullPhone = `${code}${number}`;
+                                const phoneField = form.querySelector('input[name="phone"]');
+                                if (phoneField) phoneField.value = fullPhone;
+
+                                const pageUrlField = form.querySelector('input[name="pageUrl"]');
                                 if (pageUrlField) pageUrlField.value = window.location.href;
                             }
                             setSubmitted(true);
@@ -545,15 +612,65 @@ function EmaarValley() {
                         </label>
                         <label className="block text-sm font-semibold ">
                             Phone:
-                            <input
-                                type="tel"
-                                name="phone"
-                                required
+                            <div className="mt-2 flex gap-2">
+                                <div className="w-1/3">
+                                    <Select
+                                        options={options}
+                                        value={country}
+                                        onChange={setCountry}
+                                        placeholder="Code"
+                                        formatOptionLabel={(option) => (
+                                            <div className="flex items-center gap-2">
+                                                <img
+                                                    src={`https://flagcdn.com/w20/${option.code.toLowerCase()}.png`}
+                                                    srcSet={`https://flagcdn.com/w40/${option.code.toLowerCase()}.png 2x`}
+                                                    alt="flag"
+                                                    width="20"
+                                                    height="15"
+                                                    style={{ objectFit: "contain" }}
+                                                />
+                                                <span className="text-sm">{option.label}</span>
+                                            </div>
+                                        )}
+                                        styles={{
+                                            control: (base) => ({
+                                                ...base,
+                                                minHeight: "42px",
+                                                borderRadius: "0.375rem",
+                                                borderColor: "#cbd5e1"
+                                            }),
+                                            menu: (base) => ({
+                                                ...base,
+                                                maxHeight: "200px",
+                                                overflowY: "auto",
+                                                zIndex: 100
+                                            })
+                                        }}
+                                    />
+                                </div>
+                                <input
+                                    id="phoneInput"
+                                    type="tel"
+                                    required
+                                    pattern="[0-9]{8,14}"
+                                    minLength={8}
+                                    maxLength={14}
+                                    inputMode="numeric"
+                                    className="w-2/3 rounded-md border border-slate-300 px-3 py-2 text-sm text-slate-900"
+                                />
+                            </div>
+                        </label>
+                        <label className="block text-sm font-semibold ">
+                            Message:
+                            <textarea
+                                name="message"
+                                rows={4}
                                 className="mt-2 w-full rounded-md border border-slate-300 px-3 py-2 text-sm text-slate-900"
                             />
                         </label>
-                        <input type="hidden" name="page_name" value={window.location.href} />
-                        <input type="hidden" name="page_url" value={window.location.href} />
+                        <input type="hidden" name="phone" />
+                        <input type="hidden" name="campaignName" value="Emaar - EmaarValley" />
+                        <input type="hidden" name="pageUrl" value={window.location.href} />
                         <div className="flex justify-center mt-4">
                             <button
                                 type="submit"
@@ -574,6 +691,7 @@ function EmaarValley() {
                         onLoad={() => {
                             if (submitting && submitted) {
                                 formRef.current?.reset();
+                                setCountry(defaultCountryOption || null);
                                 setSubmitting(false);
                                 setSubmitted(false);
                                 window.location.href = "/EmaarvalleyThanks";
