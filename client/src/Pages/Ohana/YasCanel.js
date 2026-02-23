@@ -9,7 +9,7 @@ const OHANA_LOGO = "https://cdn.prod.website-files.com/6953e1cc8ce6f26a3cb13814/
 const X_ICON = "https://cdn.prod.website-files.com/6953e1cc8ce6f26a3cb13814/6953e1cc8ce6f26a3cb1387f_x-icon.svg";
 
 const DEADLINE = "2026-01-27T11:00:00+04:00";
-const HUBSPOT_ENDPOINT = "https://api.hsforms.com/submissions/v3/integration/submit/6032824/dfd93c8b-f504-4513-9e6d-3199d9ca1b5c";
+const WEBHOOK_ENDPOINT = "https://script.google.com/macros/s/AKfycbxTrPUIKN5-vZAda8_PTCJ_Fdpry7a9P-SKrYNoXGuWIeRHnmb-AptkapEqihZdJiik2g/exec";
 
 const languages = [
   { code: "en", href: "/" },
@@ -84,6 +84,7 @@ function YasCanel() {
   const [timeLeft, setTimeLeft] = useState(() => countdownValues(DEADLINE));
   const [status, setStatus] = useState("idle"); // idle | submitting | success | error
   const [statusMessage, setStatusMessage] = useState("");
+  const [countryCode, setCountryCode] = useState("+971");
 
   const formRef = useRef(null);
   const contactRef = useRef(null);
@@ -180,40 +181,36 @@ function YasCanel() {
     setStatus("submitting");
     setStatusMessage("");
 
-    const fields = [];
-    formData.forEach((value, name) => {
-      if (name === "company") return;
-      const trimmed = String(value).trim();
-      if (trimmed) {
-        fields.push({ name, value: trimmed });
-      }
-    });
-
     try {
-      const res = await fetch(HUBSPOT_ENDPOINT, {
+      const firstname = String(formData.get("firstname") || "").trim();
+      const lastname = String(formData.get("lastname") || "").trim();
+      const mobile = String(formData.get("mobile") || "").trim();
+      const fullName = `${firstname} ${lastname}`.trim();
+
+      if (!countryCode || !mobile) {
+        setStatus("error");
+        setStatusMessage("Please select country and enter phone number.");
+        return;
+      }
+
+      formData.set("name", fullName);
+      formData.set("phone", `${countryCode}${mobile}`);
+      formData.set("campaignName", "Ohana-YasCanel");
+      formData.set("pageUrl", typeof window !== "undefined" ? window.location.href : "");
+
+      await fetch(WEBHOOK_ENDPOINT, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          fields,
-          context: {
-            pageUri: typeof window !== "undefined" ? window.location.href : "",
-            pageName: document.title,
-          },
-        }),
+        body: formData,
+        mode: "no-cors",
       });
 
-      const json = await res.json();
-      if (res.ok && json.inlineMessage) {
-        setStatus("success");
-        setStatusMessage("");
-        form.reset();
-        setTimeout(() => {
-          window.location.href = "https://comingsoon.ohana.ae/thank-you";
-        }, 1200);
-      } else {
-        setStatus("error");
-        setStatusMessage("Please try again in a moment.");
-      }
+      setStatus("success");
+      setStatusMessage("");
+      form.reset();
+      setCountryCode("+971");
+      setTimeout(() => {
+        window.location.href = "https://comingsoon.ohana.ae/thank-you";
+      }, 1200);
     } catch (error) {
       setStatus("error");
       setStatusMessage("Something went wrong. Please try again.");
@@ -395,16 +392,44 @@ function YasCanel() {
 
                   <label className="space-y-2 text-sm font-semibold uppercase tracking-[0.16em]">
                     <span>Phone Number*</span>
-                    <input
-                      type="tel"
-                      name="phone"
-                      autoComplete="tel"
-                      required
+                    <div className="flex gap-2">
+                      <select
+                        name="countryCode"
+                        value={countryCode}
+                        onChange={(e) => setCountryCode(e.target.value)}
+                        className="w-1/3 rounded-md border border-white/20 bg-transparent px-2 py-3 text-white focus:border-white focus:outline-none"
+                      >
+                        <option value="+971" className="bg-black text-white">+971</option>
+                        <option value="+1" className="bg-black text-white">+1</option>
+                        <option value="+44" className="bg-black text-white">+44</option>
+                        <option value="+91" className="bg-black text-white">+91</option>
+                        <option value="+966" className="bg-black text-white">+966</option>
+                      </select>
+                      <input
+                        id="phoneInput"
+                        type="tel"
+                        name="mobile"
+                        autoComplete="tel"
+                        required
+                        pattern="[0-9]{8,14}"
+                        minLength={8}
+                        maxLength={14}
+                        inputMode="numeric"
+                        className="w-2/3 rounded-md border border-white/20 bg-transparent px-3 py-3 text-white placeholder:text-white/50 focus:border-white focus:outline-none"
+                      />
+                    </div>
+                  </label>
+
+                  <label className="space-y-2 text-sm font-semibold uppercase tracking-[0.16em]">
+                    <span>Message</span>
+                    <textarea
+                      name="message"
+                      rows={3}
                       className="w-full rounded-md border border-white/20 bg-transparent px-3 py-3 text-white placeholder:text-white/50 focus:border-white focus:outline-none"
                     />
                   </label>
 
-                  <label className="space-y-2 text-sm font-semibold uppercase tracking-[0.16em]">
+                  {/* <label className="space-y-2 text-sm font-semibold uppercase tracking-[0.16em]">
                     <span>Are you an investor/client or a broker?*</span>
                     <select
                       name="investor_or_broker"
@@ -424,7 +449,7 @@ function YasCanel() {
                         Other
                       </option>
                     </select>
-                  </label>
+                  </label> */}
 
                   {/* Honeypot field to deter bots */}
                   <div className="hidden">
@@ -433,6 +458,10 @@ function YasCanel() {
                       <input type="text" name="company" tabIndex="-1" autoComplete="off" />
                     </label>
                   </div>
+
+                  <input type="hidden" name="campaignName" value="Ohana - YasCanel" />
+                  <input type="hidden" name="pageUrl" value={typeof window !== "undefined" ? window.location.href : ""} />
+                  <input type="hidden" name="phone" />
 
                   <div className="space-y-2 text-sm">
                     {status === "error" && statusMessage && (

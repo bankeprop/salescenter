@@ -286,6 +286,13 @@ export default function DamacIsland() {
         code: c.code,
         label: `${c.name} (${c.dial})`
     }));
+    const defaultCountryOption = options.find((option) => option.code === "AE");
+
+    useEffect(() => {
+        if (!country && defaultCountryOption) {
+            setCountry(defaultCountryOption);
+        }
+    }, [country, defaultCountryOption]);
 
     useEffect(() => {
         let isMounted = true;
@@ -348,7 +355,8 @@ export default function DamacIsland() {
 
         const formData = new FormData(form);
         formData.set("phone", fullPhone);
-        formData.set("page_name", window.location.href);
+        formData.set("campaignName", "Damac-DamacLagoonValencia");
+        formData.set("pageUrl", window.location.href);
 
         try {
             setIsSubmitting(true);
@@ -359,7 +367,7 @@ export default function DamacIsland() {
             });
             toast.success("Form submitted successfully!");
             form.reset();
-            setCountry(null);
+            setCountry(defaultCountryOption || null);
             navigate("/Damac/DamacLagoonValenciaThanks");
         } catch (error) {
             toast.error("Something went wrong. Please try again.");
@@ -861,7 +869,7 @@ export default function DamacIsland() {
                     <form
                         id="registerForm"
                         onSubmit={handleSubmit}
-                        action="https://script.google.com/macros/s/AKfycbywwic8x5s6aI85f1vDmr3ee5vhG0c261cwMzNg9vSdX8UUsBDKtyhP_ov9L1kdNImEbg/exec?gid=0"
+                        action="https://script.google.com/macros/s/AKfycbxTrPUIKN5-vZAda8_PTCJ_Fdpry7a9P-SKrYNoXGuWIeRHnmb-AptkapEqihZdJiik2g/exec"
                         method="POST"
                         className="space-y-5"
                     >
@@ -887,6 +895,16 @@ export default function DamacIsland() {
                                 required
                                 className="mt-1 w-full p-3 rounded-xl border border-gray-300"
                                 placeholder="Enter Email"
+                            />
+                        </div>
+
+                        {/* Message */}
+                        <div className="text-left">
+                            <textarea
+                                name="message"
+                                rows={4}
+                                className="mt-1 w-full p-3 rounded-xl border border-gray-300 resize-y"
+                                placeholder="Enter Message"
                             />
                         </div>
 
@@ -944,7 +962,8 @@ export default function DamacIsland() {
 
                         <input type="hidden" name="phone" id="full_phone" />
 
-                        <input type="hidden" name="page_name" value={window.location.href} />
+                        <input type="hidden" name="campaignName" value="Damac - DamacLagoonValencia" />
+                        <input type="hidden" name="pageUrl" value={window.location.href} />
 
                         <button
                             type="submit"

@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import DamacIsland from './Pages/Damac/DamacIsland';
 import DamacIslandsThanks from './Pages/Damac/DamacIslandsThanks';
 import EmaarValley from './Pages/Emaar/EmaarValley';
@@ -33,6 +33,7 @@ function App() {
         <Route path="/Ohana/YasCanel" element={<YasCanel />} />
         <Route path="/Ohana/YasIsland" element={<YasIsland />} />
         <Route path="/Ohana/Thanks" element={<OhanaThanks />} />
+        <Route path="/sitemap" element={<Navigate to="/sitemap.xml" replace />} />
 
       </Routes>
     </Router>

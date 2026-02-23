@@ -60,6 +60,7 @@ const branded360Tabs = [
 function MercedesBenzPlaces() {
     const [activeSlide, setActiveSlide] = useState(0);
     const [active360, setActive360] = useState(0);
+    const [countryCode, setCountryCode] = useState("+971");
     const contactFormRef = useRef(null);
     const navigate = useNavigate();
 
@@ -84,13 +85,18 @@ function MercedesBenzPlaces() {
         target?.scrollIntoView({ behavior: "smooth", block: "start" });
     };
 
-    const handleContactSubmit = () => {
+    const handleContactSubmit = (event) => {
         const form = contactFormRef.current;
         if (form) {
-            const pageField = form.querySelector('input[name="page_name"]');
-            const pageUrlField = form.querySelector('input[name="page_url"]');
+            const number = form.querySelector("#phoneInput")?.value?.trim() || "";
+            if (!countryCode || !number) {
+                event.preventDefault();
+                return;
+            }
+            const phoneField = form.querySelector('input[name="phone"]');
+            if (phoneField) phoneField.value = `${countryCode}${number}`;
+            const pageUrlField = form.querySelector('input[name="pageUrl"]');
             const href = typeof window !== "undefined" ? window.location.href : "";
-            if (pageField) pageField.value = href;
             if (pageUrlField) pageUrlField.value = href;
         }
         setTimeout(() => navigate("/Binghatti/ThankYou"), 500);
@@ -286,7 +292,7 @@ function MercedesBenzPlaces() {
                             <form
                                 id="contact-form"
                                 ref={contactFormRef}
-                                action="https://script.google.com/macros/s/AKfycbywwic8x5s6aI85f1vDmr3ee5vhG0c261cwMzNg9vSdX8UUsBDKtyhP_ov9L1kdNImEbg/exec?gid=0"
+                                action="https://script.google.com/macros/s/AKfycbxTrPUIKN5-vZAda8_PTCJ_Fdpry7a9P-SKrYNoXGuWIeRHnmb-AptkapEqihZdJiik2g/exec"
                                 method="POST"
                                 target="hiddenFrame"
                                 onSubmit={handleContactSubmit}
@@ -302,10 +308,38 @@ function MercedesBenzPlaces() {
                                 </div>
                                 <div className="space-y-3">
                                     <label className="text-sm font-semibold uppercase tracking-[0.16em] text-gray-200">Phone</label>
-                                    <input type="tel" name="phone" required className="w-full border-b border-white/40 bg-transparent px-1 py-3 text-white placeholder:text-gray-500 focus:border-white focus:outline-none" placeholder="Mobile" />
+                                    <div className="flex items-center gap-3 border-b border-white/40">
+                                        <select
+                                            value={countryCode}
+                                            onChange={(e) => setCountryCode(e.target.value)}
+                                            className="bg-transparent py-3 text-white focus:outline-none"
+                                        >
+                                            <option value="+971" className="text-black">+971</option>
+                                            <option value="+1" className="text-black">+1</option>
+                                            <option value="+44" className="text-black">+44</option>
+                                            <option value="+91" className="text-black">+91</option>
+                                            <option value="+966" className="text-black">+966</option>
+                                        </select>
+                                        <input
+                                            id="phoneInput"
+                                            type="tel"
+                                            required
+                                            pattern="[0-9]{8,14}"
+                                            minLength={8}
+                                            maxLength={14}
+                                            inputMode="numeric"
+                                            className="w-full bg-transparent px-1 py-3 text-white placeholder:text-gray-500 focus:outline-none"
+                                            placeholder="Mobile"
+                                        />
+                                    </div>
                                 </div>
-                                <input type="hidden" name="page_name" value={typeof window !== "undefined" ? window.location.href : ""} />
-                                <input type="hidden" name="page_url" value={typeof window !== "undefined" ? window.location.href : ""} />
+                                <div className="space-y-3">
+                                    <label className="text-sm font-semibold uppercase tracking-[0.16em] text-gray-200">Message</label>
+                                    <textarea name="message" rows={3} className="w-full border-b border-white/40 bg-transparent px-1 py-3 text-white placeholder:text-gray-500 focus:border-white focus:outline-none" placeholder="Message" />
+                                </div>
+                                <input type="hidden" name="phone" />
+                                <input type="hidden" name="campaignName" value="Binghatti - MercedesBenzPlaces" />
+                                <input type="hidden" name="pageUrl" value={typeof window !== "undefined" ? window.location.href : ""} />
                                 <p className="text-xs text-gray-300">By submitting, you agree to our terms &amp; conditions.</p>
                                 <button type="submit" className="w-full rounded-md border border-white/40 bg-gradient-to-r from-white/70 via-white/60 to-white/40 px-4 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-black transition hover:from-white hover:to-white">Meet Our Brand Ambassador</button>
                             </form>
