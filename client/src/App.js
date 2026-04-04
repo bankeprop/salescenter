@@ -12,6 +12,9 @@ import DamacLagoonValencia from './Pages/Damac/DamacLagoonValencia';
 import DamacLagoonValenciaThanks from './Pages/Damac/DamacLagoonValenciaThanks';
 import YasIsland from './Pages/Ohana/YasIsland';
 import OhanaThanks from './Pages/Ohana/OhanaThanks';
+import OfflineHome from './Pages/OfflineListing/OfflineHome';
+import OfflineDetails from './Pages/OfflineListing/OfflineDetails';
+
 
 function App() {
   return (
@@ -33,6 +36,10 @@ function App() {
         <Route path="/Ohana/YasCanel" element={<YasCanel />} />
         <Route path="/Ohana/YasIsland" element={<YasIsland />} />
         <Route path="/Ohana/Thanks" element={<OhanaThanks />} />
+
+        <Route path="/offline-listing" element={<OfflineHome />} />
+        <Route path="/offline-listing/details/:listingId" element={<OfflineDetails />} />
+
         <Route path="/sitemap" element={<Navigate to="/sitemap.xml" replace />} />
 
       </Routes>
