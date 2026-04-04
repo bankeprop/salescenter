@@ -50,9 +50,10 @@ function OfflineDetails() {
             return;
         }
 
+        const shareMessage = `Hi, I found a good deal.\nTitle: ${listing.title}\nLink: ${window.location.href}`;
         const shareData = {
             title: 'Hot Deals',
-            text: listing.title,
+            text: `Hi, I found a good deal. ${listing.title}`,
             url: window.location.href
         };
 
@@ -67,7 +68,7 @@ function OfflineDetails() {
 
         if (navigator.clipboard) {
             try {
-                await navigator.clipboard.writeText(window.location.href);
+                await navigator.clipboard.writeText(shareMessage);
             } catch (error) {
                 // Ignore clipboard errors.
             }
@@ -131,7 +132,7 @@ function OfflineDetails() {
                     </button>
                 </header>
 
-                <main className="px-2 pt-5">
+                <main className="px-2 pb-24 pt-5">
                     <section className="rounded-[14px] bg-transparent">
                         <div className="overflow-hidden rounded-[14px] p-0">
                             <div className="relative overflow-hidden rounded-[12px]">
@@ -162,13 +163,13 @@ function OfflineDetails() {
                                 </div>
 
                                 <div className="mt-2 flex items-center justify-between gap-2">
-                                    <p className="m-0 text-sm font-medium text-[#7f8791] line-through sm:text-base">{listing.oldPrice}</p>
+                                    <p className="m-0 text-[16px] font-normal text-[#7f8791] line-through sm:text-sm">{listing.oldPrice}</p>
                                     <p className="m-0 font-bold text-[#243445]" style={{ fontSize: '24px' }}>
                                         {listing.newPrice}
                                     </p>
                                 </div>
 
-                                <p className="mt-3 text-sm font-semibold leading-[1.35] text-[#596676]">{listing.title}</p>
+                                {/* <p className="mt-3 text-[12px] font-medium leading-[1.35] text-[#596676]">{listing.title}</p> */}
                                 {listing.referenceNo && (
                                     <p className="mt-1 text-xs font-medium uppercase tracking-[0.4px] text-[#8b95a1]">
                                         Ref: {listing.referenceNo}
@@ -179,8 +180,9 @@ function OfflineDetails() {
                     </section>
 
                     <section className="px-1 pb-7 pt-6">
-                        <h2 className="m-0 text-[28px] font-semibold text-[#25384b]">Description</h2>
                         <p className="mt-3 text-[20px] font-medium leading-[1.35] text-[#2d3f53]">{listing.descriptionTitle}</p>
+                        <br />
+                        <h2 className="m-0 text-[18px] font-semibold text-[#25384b]">Description</h2>
                         <div className="mt-4 space-y-4">
                             {listing.descriptionParagraphs.map((paragraph) => (
                                 <p key={paragraph} className="m-0 text-[16px] leading-[1.55] text-[#2f4359]">
@@ -190,7 +192,7 @@ function OfflineDetails() {
                         </div>
                     </section>
 
-                    <section className="grid grid-cols-2 gap-3 px-1">
+                    <section className="fixed bottom-3 left-1/2 z-20 grid w-[calc(100%-16px)] max-w-[544px] -translate-x-1/2 grid-cols-2 gap-3 px-1">
                         <button
                             type="button"
                             onClick={handleShare}
