@@ -181,7 +181,7 @@ function MercedesBenzPlaces() {
                 </section>
 
                 <section className="relative isolate min-h-screen overflow-hidden bg-black">
-                    <video className="absolute inset-0 h-full w-full object-cover" autoPlay muted loop playsInline>
+                    <video className="absolute inset-0 h-full w-full object-contain md:object-cover" autoPlay muted loop playsInline>
                         <source src={FifthVideo} type="video/mp4" />
                     </video>
                 </section>

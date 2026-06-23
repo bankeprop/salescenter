@@ -5,6 +5,7 @@ import DamacIslandsThanks from './Pages/Damac/DamacIslandsThanks';
 import EmaarValley from './Pages/Emaar/EmaarValley';
 import EmaarvalleyThanks from './Pages/Emaar/EmaarValleyThank'
 import EmaarHeight from './Pages/Emaar/EmaarHeight';
+import EmaarHeightThank from './Pages/Emaar/EmaarHeightThank';
 import MercedesBenzPlaces from './Pages/Binghati/MercedesBenzPlaces';
 import MercedesThankYou from './Pages/Binghati/MercedesThankYou';
 import YasCanel from './Pages/Ohana/YasCanel';
@@ -12,6 +13,9 @@ import DamacLagoonValencia from './Pages/Damac/DamacLagoonValencia';
 import DamacLagoonValenciaThanks from './Pages/Damac/DamacLagoonValenciaThanks';
 import YasIsland from './Pages/Ohana/YasIsland';
 import OhanaThanks from './Pages/Ohana/OhanaThanks';
+import OfflineHome from './Pages/OfflineListing/OfflineHome';
+import OfflineDetails from './Pages/OfflineListing/OfflineDetails';
+
 
 function App() {
   return (
@@ -26,6 +30,7 @@ function App() {
         <Route path="/Emaar/EmaarTheValley" element={<EmaarValley />} />
         <Route path="/EmaarvalleyThanks" element={<EmaarvalleyThanks />} />
         <Route path="/Emaar/EmaarHeights" element={<EmaarHeight />} />
+        <Route path="/Emaar/EmaarHeightsThanks" element={<EmaarHeightThank />} />
 
         <Route path="/Binghatti/MercedesBenzPlaces" element={<MercedesBenzPlaces />} />
         <Route path="/Binghatti/ThankYou" element={<MercedesThankYou />} />
@@ -33,6 +38,10 @@ function App() {
         <Route path="/Ohana/YasCanel" element={<YasCanel />} />
         <Route path="/Ohana/YasIsland" element={<YasIsland />} />
         <Route path="/Ohana/Thanks" element={<OhanaThanks />} />
+
+        <Route path="/offline-listing" element={<OfflineHome />} />
+        <Route path="/offline-listing/details/:listingId" element={<OfflineDetails />} />
+
         <Route path="/sitemap" element={<Navigate to="/sitemap.xml" replace />} />
 
       </Routes>

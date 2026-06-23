@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import NavBar from "../../components/Emaar/EmaarValleyNavBar";
 import { HomeIcon, TagIcon, BuildingOffice2Icon } from '@heroicons/react/24/solid';
 import Select from "react-select";
+import { FaDraftingCompass, FaPalette, FaRulerCombined, FaCity } from "react-icons/fa";
 import { setFavicon, resetFavicon } from "../../utils/favicon";
 import "./EmaarValley.css";
 import heroImg from "../../Assests/Emaar/Emaarheight1.jpg";
@@ -108,22 +109,22 @@ function EmaarHeight() {
         {
             title: "Intricately crafted",
             subtitle: "White volumes with intricate details",
-            icon: "https://www.banke.ae/wp-content/uploads/2025/01/152369-512-150x150.png",
+            icon: <FaDraftingCompass className="h-10 w-10" aria-hidden="true" />,
         },
         {
             title: "Rich tones",
             subtitle: "Beautiful accents throughout",
-            icon: "https://www.banke.ae/wp-content/uploads/2025/01/theatre-300x300.png",
+            icon: <FaPalette className="h-10 w-10" aria-hidden="true" />,
         },
         {
             title: "Timeless modern design",
             subtitle: "Simple and elegant",
-            icon: "https://www.banke.ae/wp-content/uploads/2025/01/area-300x300.png",
+            icon: <FaRulerCombined className="h-10 w-10" aria-hidden="true" />,
         },
         {
             title: "New villas by Emaar",
             subtitle: "3, 4 & 5 Bed Standalone Villas",
-            icon: "https://www.banke.ae/wp-content/uploads/2025/01/city-300x300.png",
+            icon: <FaCity className="h-10 w-10" aria-hidden="true" />,
         },
     ];
 
@@ -132,7 +133,7 @@ function EmaarHeight() {
             name: "The Heights Country Club & Wellness",
             image: heroImg,
             beds: "3, 4 & 5 Bed Standalone Villas",
-            price: "Estimated from AED 6 Million",
+            price: "Estimated from AED 5.5 Million",
             note: "Request Brochure",
             href: "#contact",
         },
@@ -220,7 +221,7 @@ function EmaarHeight() {
                         </h1>
 
                         <p className="text-base uppercase tracking-[0.1em] sm:text-lg">
-                            3, 4 & 5 Bed Standalone Villas | Estimated Price From AED 6 Million
+                            3, 4 & 5 Bed Standalone Villas | Estimated Price From AED 5.5 Million
                         </p>
 
                         <a
@@ -268,12 +269,7 @@ function EmaarHeight() {
                 <div className="mx-auto grid max-w-6xl grid-cols-2 gap-x-8 gap-y-12 text-left sm:grid-cols-2 lg:grid-cols-4">
                     {features.map((item) => (
                         <div key={item.subtitle} className="flex flex-col items-center gap-3">
-                            <img
-                                src={item.icon}
-                                alt={item.subtitle}
-                                className="h-10 w-10"
-                                loading="lazy"
-                            />
+                            {item.icon}
                             <p className="text-lg font-semibold ">{item.title}</p>
                             <p className="text-base">{item.subtitle}</p>
                         </div>
@@ -350,10 +346,10 @@ function EmaarHeight() {
                 </div> */}
                 <div className="mx-auto grid max-w-6xl grid-cols-2 gap-6 pt-10 text-center sm:grid-cols-2 lg:grid-cols-4">
                     {[
-                        { value: "10", label: "Al Maktoum Int'l Airport" },
-                        { value: "10", label: "District 2020" },
-                        { value: "10", label: "Dubai Investment Park" },
-                        { value: "30", label: "Downtown Dubai" },
+                        { value: "10 Min", label: "Al Maktoum Int'l Airport" },
+                        { value: "10 Min", label: "District 2020" },
+                        { value: "10 Min", label: "Dubai Investment Park" },
+                        { value: "30 Min", label: "Downtown Dubai" },
                     ].map((item) => (
                         <div
                             key={item.label}
@@ -485,7 +481,7 @@ function EmaarHeight() {
                             },
                             {
                                 q: "What is the starting price?",
-                                a: "Estimated pricing starts from AED 6 Million for the standalone villas.",
+                                a: "Estimated pricing starts from AED 5.5 Million for the standalone villas.",
                             },
                             {
                                 q: "Where is it located?",
@@ -660,7 +656,7 @@ function EmaarHeight() {
                                 setCountry(defaultCountryOption || null);
                                 setSubmitting(false);
                                 setSubmitted(false);
-                                window.location.href = "/EmaarvalleyThanks";
+                                window.location.href = "/Emaar/EmaarHeightsThanks";
                             }
                         }}
                     />

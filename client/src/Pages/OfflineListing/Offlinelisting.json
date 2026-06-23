@@ -1,0 +1,101 @@
+{
+  "status": "success",
+  "generatedAt": "2026-04-04T11:48:31.590Z",
+  "source": "https://script.googleusercontent.com/macros/echo?user_content_key=AWDtjMXZ7u-02jOaJJfbcZCuSQKOzwxboc63oNtxUnojbzN5_-rQ7hjcokrYfCEV33ZnPpSCPPYR2o71Bnvd886lJbp-3UtS84A0423nvTFsvkjrWCwJTU4PITa_KWGfW1musl07ATgsR0ZOxHmPEYLQCP3yYQLNHM6cDUn1C8jFf7mdGu_fYj-bBesHH6M5NEQgLVJQ37Ct7yhYD_PaxUWzm1FWnsqXuZ4k0YCJwLWt_zj4ox_u3IkDRmCpUF94xEquwDw_Z74BipjGDWRFSoGnuBNClYZEP1wzh8HD2HIJ&lib=MYONLsLBDvMZdJe0GBZcbnt57JL4I04AC",
+  "count": 2,
+  "locationOptions": [
+    "Dubai Marina",
+    "Dubai Downtown"
+  ],
+  "listings": [
+    {
+      "id": "BI-R-20-18430",
+      "referenceNo": "BI-R-20-18430",
+      "image": "https://dubai-hill-estate.com/dashboard/uploads/media/media-20260404082019-41f8e6331b7a8621.jpg",
+      "gallery": [
+        "https://dubai-hill-estate.com/dashboard/uploads/media/media-20260404082019-41f8e6331b7a8621.jpg",
+        "https://dubai-hill-estate.com/dashboard/uploads/media/media-20260404082027-0d5ae4479313d218.jpg",
+        "https://dubai-hill-estate.com/dashboard/uploads/media/media-20260404082010-69f289993f344bbd.jpg"
+      ],
+      "oldPrice": "AED 147,999",
+      "newPrice": "AED 138,999",
+      "discountPercent": 6,
+      "title": "Apartment for rent in Princess Tower, Dubai Marina",
+      "location": "Dubai Marina",
+      "propertyType": "Residential",
+      "listingType": "Buy",
+      "mobileNumber": "971547087869",
+      "descriptionTitle": "Furnished 2-bedroom apartment in Princess Tower, Dubai Marina",
+      "descriptionParagraphs": [
+        "Total area: 110.42 sq. m | 1,188.55 sq. ft",
+        "Bright and comfortable 2-bedroom apartment in Princess Tower featuring sea and community views. Located on the sunny side, the residence benefits from excellent natural light throughout the day, creating a warm and inviting living space.",
+        "The apartment is fully furnished and equipped with all essential kitchen appliances, making it a convenient move-in-ready home in one of Dubai Marinas most recognisable towers.",
+        "APARTMENT HIGHLIGHTS",
+        "Furnished",
+        "Sea & community views",
+        "Sunny side orientation",
+        "Bright interiors",
+        "Fully equipped kitchen with appliances",
+        "BUILDING AMENITIES",
+        "Swimming pool",
+        "Modern gym",
+        "Sauna & steam room",
+        "Hammam",
+        "24/7 security",
+        "PRIME LOCATION",
+        "2 min walk to Carrefour",
+        "5 min walk to Tram station",
+        "15 min walk to Sobha Realty Metro Station",
+        "25 min walk to JBR Beach & Marina Mall",
+        "Restaurants & cafes steps away",
+        "Ideal for couples or families looking for a bright and comfortable home in Dubai Marina. Contact me to arrange a viewing.",
+        "Company name: Banke International Properties LLC RERA ORN: 12108 Address: 415 Emarat Atrium Building, Sheikh Zayed Road, Dubai, UAE Primary email: enquiries@banke.ae Website: [link not available] Company Profile: A real estate firm specializing in investment sales and leasing of both commercial and residential properties. We also offer property management services across Dubai."
+      ]
+    },
+    {
+      "id": "BI-R-20-18432",
+      "referenceNo": "BI-R-20-18432",
+      "image": "https://dubai-hill-estate.com/dashboard/uploads/media/media-20260404082019-41f8e6331b7a8621.jpg",
+      "gallery": [
+        "https://dubai-hill-estate.com/dashboard/uploads/media/media-20260404082019-41f8e6331b7a8621.jpg",
+        "https://dubai-hill-estate.com/dashboard/uploads/media/media-20260404082027-0d5ae4479313d218.jpg",
+        "https://dubai-hill-estate.com/dashboard/uploads/media/media-20260404082010-69f289993f344bbd.jpg"
+      ],
+      "oldPrice": "AED 147,999/Year",
+      "newPrice": "AED 138,999/Year",
+      "discountPercent": 6,
+      "title": "Villa for rent in Princess Tower, Dubai Marina",
+      "location": "Dubai Downtown",
+      "propertyType": "Commercial",
+      "listingType": "Rent",
+      "mobileNumber": "971547087869",
+      "descriptionTitle": "Apartment for rent in Princess Tower, Dubai Marina",
+      "descriptionParagraphs": [
+        "Furnished 2-bedroom apartment in Princess Tower, Dubai Marina",
+        "Total area: 110.42 sq. m | 1,188.55 sq. ft",
+        "Bright and comfortable 2-bedroom apartment in Princess Tower featuring sea and community views. Located on the sunny side, the residence benefits from excellent natural light throughout the day, creating a warm and inviting living space.",
+        "The apartment is fully furnished and equipped with all essential kitchen appliances, making it a convenient move-in-ready home in one of Dubai Marinas most recognisable towers.",
+        "APARTMENT HIGHLIGHTS",
+        "Furnished",
+        "Sea & community views",
+        "Sunny side orientation",
+        "Bright interiors",
+        "Fully equipped kitchen with appliances",
+        "BUILDING AMENITIES",
+        "Swimming pool",
+        "Modern gym",
+        "Sauna & steam room",
+        "Hammam",
+        "24/7 security",
+        "PRIME LOCATION",
+        "2 min walk to Carrefour",
+        "5 min walk to Tram station",
+        "15 min walk to Sobha Realty Metro Station",
+        "25 min walk to JBR Beach & Marina Mall",
+        "Restaurants & cafes steps away",
+        "Ideal for couples or families looking for a bright and comfortable home in Dubai Marina. Contact me to arrange a viewing.",
+        "Company name: Banke International Properties LLC RERA ORN: 12108 Address: 415 Emarat Atrium Building, Sheikh Zayed Road, Dubai, UAE Primary email: enquiries@banke.ae Website: [link not available] Company Profile: A real estate firm specializing in investment sales and leasing of both commercial and residential properties. We also offer property management services across Dubai."
+      ]
+    }
+  ]
+}
