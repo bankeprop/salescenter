@@ -5,6 +5,7 @@ import DamacIslandsThanks from './Pages/Damac/DamacIslandsThanks';
 import EmaarValley from './Pages/Emaar/EmaarValley';
 import EmaarvalleyThanks from './Pages/Emaar/EmaarValleyThank'
 import EmaarHeight from './Pages/Emaar/EmaarHeight';
+import EmaarHeightThank from './Pages/Emaar/EmaarHeightThank';
 import MercedesBenzPlaces from './Pages/Binghati/MercedesBenzPlaces';
 import MercedesThankYou from './Pages/Binghati/MercedesThankYou';
 import YasCanel from './Pages/Ohana/YasCanel';
@@ -29,6 +30,7 @@ function App() {
         <Route path="/Emaar/EmaarTheValley" element={<EmaarValley />} />
         <Route path="/EmaarvalleyThanks" element={<EmaarvalleyThanks />} />
         <Route path="/Emaar/EmaarHeights" element={<EmaarHeight />} />
+        <Route path="/Emaar/EmaarHeightsThanks" element={<EmaarHeightThank />} />
 
         <Route path="/Binghatti/MercedesBenzPlaces" element={<MercedesBenzPlaces />} />
         <Route path="/Binghatti/ThankYou" element={<MercedesThankYou />} />
