@@ -77,6 +77,8 @@ const galleryImages = [
     Img19
 ];
 
+const SAMANA_GTM_ID = 'GTM-WT564CWM';
+
 function AccordionItem({ item, open, onClick }) {
     return (
         <div className="border border-white/10 bg-[#141b2c]">
@@ -109,6 +111,30 @@ function SamanaBussinessHub() {
         phone: '',
         message: ''
     });
+
+    useEffect(() => {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            'gtm.start': new Date().getTime(),
+            event: 'gtm.js'
+        });
+
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = `https://www.googletagmanager.com/gtm.js?id=${SAMANA_GTM_ID}`;
+        script.dataset.samanaGtm = SAMANA_GTM_ID;
+
+        const firstScript = document.getElementsByTagName('script')[0];
+        if (firstScript?.parentNode) {
+            firstScript.parentNode.insertBefore(script, firstScript);
+        } else {
+            document.head.appendChild(script);
+        }
+
+        return () => {
+            script.remove();
+        };
+    }, []);
 
     useEffect(() => {
         const cleanupSeo = applySamanaSeo(
