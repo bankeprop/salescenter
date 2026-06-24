@@ -7,7 +7,6 @@ import {
     ShieldCheck,
     Sparkles,
     MapPinned,
-    ChevronDown,
     Menu,
     Minus,
     Plus,
@@ -105,7 +104,6 @@ function SamanaBussinessHub() {
     const [activeMobileGalleryIndex, setActiveMobileGalleryIndex] = useState(0);
     const mobileGalleryRef = useRef(null);
     const [form, setForm] = useState({
-        type: '',
         name: '',
         email: '',
         phone: '',
@@ -168,16 +166,12 @@ function SamanaBussinessHub() {
         if (isSubmitting) return;
 
         const sanitizedPhone = form.phone.replace(/\D/g, '');
-        const messageWithType = [
-            form.message,
-            form.type ? `Type: ${form.type}` : ''
-        ].filter(Boolean).join('\n\n');
 
         const payload = new FormData();
         payload.set('name', form.name);
         payload.set('email', form.email);
         payload.set('phone', sanitizedPhone);
-        payload.set('message', messageWithType);
+        payload.set('message', form.message);
         payload.set('campaignName', 'Samana Business Hub');
         payload.set('pageUrl', window.location.href);
 
@@ -190,7 +184,6 @@ function SamanaBussinessHub() {
             });
 
             setForm({
-                type: '',
                 name: '',
                 email: '',
                 phone: '',
@@ -940,28 +933,6 @@ function SamanaBussinessHub() {
                         </p>
 
                         <form className="mt-5 flex flex-col space-y-4" onSubmit={handleSubmit}>
-                            <div className="relative">
-                                <select
-                                    name="type"
-                                    value={form.type}
-                                    onChange={handleChange}
-                                    required
-                                    className="w-full appearance-none border border-[#d9b58d]/30 bg-[#0f1526] px-4 py-3 pr-10 text-sm text-white outline-none"
-                                >
-                                    <option value="" disabled>
-                                        Type
-                                    </option>
-                                    <option value="Individual Property Consultant">
-                                        Individual Property Consultant
-                                    </option>
-                                    <option value="Real Estate Brokerage">Real Estate Brokerage</option>
-                                    <option value="Investor">Investor</option>
-                                </select>
-                                <ChevronDown
-                                    size={16}
-                                    className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[#d9b58d]"
-                                />
-                            </div>
                             <input
                                 type="text"
                                 name="name"
@@ -1029,28 +1000,6 @@ function SamanaBussinessHub() {
                         </p>
 
                         <form className="mt-8 space-y-4" onSubmit={handleSubmit}>
-                            <div className="relative">
-                                <select
-                                    name="type"
-                                    value={form.type}
-                                    onChange={handleChange}
-                                    required
-                                    className="w-full appearance-none border border-[#d9b58d]/30 bg-[#0f1526] px-4 py-3 pr-10 text-sm text-white outline-none"
-                                >
-                                    <option value="" disabled>
-                                        Type
-                                    </option>
-                                    <option value="Individual Property Consultant">
-                                        Individual Property Consultant
-                                    </option>
-                                    <option value="Real Estate Brokerage">Real Estate Brokerage</option>
-                                    <option value="Investor">Investor</option>
-                                </select>
-                                <ChevronDown
-                                    size={16}
-                                    className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[#d9b58d]"
-                                />
-                            </div>
                             <input
                                 type="text"
                                 name="name"
