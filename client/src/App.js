@@ -15,6 +15,8 @@ import YasIsland from './Pages/Ohana/YasIsland';
 import OhanaThanks from './Pages/Ohana/OhanaThanks';
 import OfflineHome from './Pages/OfflineListing/OfflineHome';
 import OfflineDetails from './Pages/OfflineListing/OfflineDetails';
+import SamanaBusinessHub from './Pages/Samana/SamanaBusinessHub';
+import SamanaBusinessHubThanks from './Pages/Samana/SamanaBusinessHubThanks';
 
 
 function App() {
@@ -41,6 +43,9 @@ function App() {
 
         <Route path="/offline-listing" element={<OfflineHome />} />
         <Route path="/offline-listing/details/:listingId" element={<OfflineDetails />} />
+
+        <Route path="/samana/samanabusinesshub" element={<SamanaBusinessHub />} />
+        <Route path="/samana/samanabusinesshub/thanks" element={<SamanaBusinessHubThanks />} />
 
         <Route path="/sitemap" element={<Navigate to="/sitemap.xml" replace />} />
 
