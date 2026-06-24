@@ -1,0 +1,221 @@
+{
+  "siteUrl": "https://www.sales-center.ae",
+  "default": {
+    "title": "Sales Center | UAE Property Landing Pages",
+    "description": "Browse curated UAE property launches, commercial offices, residences, and below-market property deals from Sales Center.",
+    "h1": "Sales Center UAE Property Pages",
+    "content": "Sales Center presents selected UAE real estate opportunities across Dubai and Abu Dhabi, including branded residences, family communities, commercial offices, and below-market property deals.",
+    "bullets": [
+      "Dubai and Abu Dhabi property launches",
+      "Residential and commercial investment pages",
+      "Project inquiries and sales registration"
+    ],
+    "robots": "index, follow"
+  },
+  "routes": {
+    "/Damac/DamacIsland": {
+      "title": "Damac Islands | Luxury Island Community in Dubai",
+      "description": "Explore Damac Islands, a luxury island-inspired community in Dubai with waterfront lifestyle amenities, family residences, and investor registration.",
+      "h1": "Damac Islands in Dubai",
+      "content": "Damac Islands brings resort-style living to Dubai with waterfront-inspired residences, leisure spaces, lifestyle amenities, and family-focused community design.",
+      "bullets": [
+        "Luxury island-style residential community",
+        "Waterfront-inspired amenities and leisure spaces",
+        "Register interest for project details"
+      ],
+      "robots": "index, follow"
+    },
+    "/Damac/DamacIslandThanks": {
+      "title": "Thank You | Damac Islands",
+      "description": "Thank you for registering your interest in Damac Islands. Our team will contact you shortly with project details.",
+      "h1": "Thank You for Your Damac Islands Inquiry",
+      "content": "Your Damac Islands inquiry has been received. The sales team will follow up with availability, pricing, and project information.",
+      "bullets": [
+        "Inquiry received",
+        "Sales team follow-up pending"
+      ],
+      "robots": "noindex, follow"
+    },
+    "/Damac/DamacLagoonValencia": {
+      "title": "Damac Lagoons Valencia | Resort-Style Apartments in Dubai",
+      "description": "Discover DAMAC Lagoons Valencia in Dubai with lagoon-facing apartments, resort-style amenities, and homes starting from AED 725,000.",
+      "h1": "Damac Lagoons Valencia",
+      "content": "DAMAC Lagoons Valencia offers lagoon-facing apartments in Dubai with resort-style amenities, crystal lagoons, leisure spaces, and lifestyle-focused living.",
+      "bullets": [
+        "Lagoon-facing apartments in Dubai",
+        "Homes starting from AED 725,000",
+        "Resort-style amenities and leisure spaces"
+      ],
+      "robots": "index, follow"
+    },
+    "/Damac/DamacLagoonValenciaThanks": {
+      "title": "Thank You | Damac Lagoons Valencia",
+      "description": "Thank you for registering your interest in DAMAC Lagoons Valencia. Our team will contact you shortly with project details.",
+      "h1": "Thank You for Your Damac Lagoons Valencia Inquiry",
+      "content": "Your DAMAC Lagoons Valencia inquiry has been received. The sales team will follow up with pricing, availability, and project information.",
+      "bullets": [
+        "Inquiry received",
+        "Sales team follow-up pending"
+      ],
+      "robots": "noindex, follow"
+    },
+    "/Emaar/EmaarTheValley": {
+      "title": "The Valley by Emaar | Family Villas and Townhouses in Dubai",
+      "description": "Explore The Valley by Emaar, a family-friendly Dubai community with villas, townhouses, green spaces, sports areas, and lifestyle amenities.",
+      "h1": "The Valley by Emaar",
+      "content": "The Valley by Emaar is a master-planned family community in Dubai with villas, townhouses, landscaped spaces, sports facilities, and everyday lifestyle amenities.",
+      "bullets": [
+        "Family community by Emaar",
+        "Villas and townhouses in Dubai",
+        "Green spaces, sports areas, and amenities"
+      ],
+      "robots": "index, follow"
+    },
+    "/EmaarvalleyThanks": {
+      "title": "Thank You | The Valley by Emaar",
+      "description": "Thank you for registering your interest in The Valley by Emaar. Our team will contact you shortly with project details.",
+      "h1": "Thank You for Your Emaar Valley Inquiry",
+      "content": "Your inquiry for The Valley by Emaar has been received. The sales team will follow up with project information and availability.",
+      "bullets": [
+        "Inquiry received",
+        "Sales team follow-up pending"
+      ],
+      "robots": "noindex, follow"
+    },
+    "/Emaar/EmaarHeights": {
+      "title": "The Heights Country Club & Wellness by Emaar | Dubai Villas",
+      "description": "Discover The Heights Country Club & Wellness by Emaar, a wellness-inspired Dubai community with villas, greenways, fitness spaces, and country club amenities.",
+      "h1": "The Heights Country Club & Wellness by Emaar",
+      "content": "The Heights Country Club & Wellness by Emaar is a wellness-inspired Dubai community designed around villas, greenways, country club amenities, and active lifestyle spaces.",
+      "bullets": [
+        "Wellness-inspired Emaar community",
+        "Dubai villas with country club amenities",
+        "Greenways, fitness areas, and lifestyle spaces"
+      ],
+      "robots": "index, follow"
+    },
+    "/Emaar/EmaarHeightsThanks": {
+      "title": "Thank You | The Heights Country Club & Wellness",
+      "description": "Thank you for registering your interest in The Heights Country Club & Wellness by Emaar. Our team will contact you shortly.",
+      "h1": "Thank You for Your Heights Inquiry",
+      "content": "Your inquiry for The Heights Country Club & Wellness has been received. The sales team will follow up with project information.",
+      "bullets": [
+        "Inquiry received",
+        "Sales team follow-up pending"
+      ],
+      "robots": "noindex, follow"
+    },
+    "/Binghatti/MercedesBenzPlaces": {
+      "title": "Mercedes-Benz Places by Binghatti | Downtown Dubai Residences",
+      "description": "Explore Mercedes-Benz Places by Binghatti in Downtown Dubai, a branded residential tower with luxury suites, penthouses, and premium amenities.",
+      "h1": "Mercedes-Benz Places by Binghatti",
+      "content": "Mercedes-Benz Places by Binghatti is a branded luxury residential tower in Downtown Dubai with premium suites, penthouses, distinctive design, and elevated amenities.",
+      "bullets": [
+        "Branded residences in Downtown Dubai",
+        "Luxury suites and penthouses",
+        "Developed by Binghatti"
+      ],
+      "robots": "index, follow"
+    },
+    "/Binghatti/ThankYou": {
+      "title": "Thank You | Mercedes-Benz Places",
+      "description": "Thank you for registering your interest in Mercedes-Benz Places by Binghatti. Our team will contact you shortly.",
+      "h1": "Thank You for Your Mercedes-Benz Places Inquiry",
+      "content": "Your Mercedes-Benz Places inquiry has been received. The sales team will follow up with project details and availability.",
+      "bullets": [
+        "Inquiry received",
+        "Sales team follow-up pending"
+      ],
+      "robots": "noindex, follow"
+    },
+    "/Ohana/YasCanel": {
+      "title": "Yas Canal Abu Dhabi | Branded Residences by Ohana",
+      "description": "Register interest for new branded residences at Yas Canal, Abu Dhabi by Ohana Development, surrounded by leisure, sport, and cultural landmarks.",
+      "h1": "Yas Canal Abu Dhabi by Ohana",
+      "content": "Yas Canal by Ohana Development is a waterfront branded residences destination in Abu Dhabi, close to leisure, sport, and cultural landmarks on Yas Island.",
+      "bullets": [
+        "New branded residences at Yas Canal",
+        "Waterfront Abu Dhabi lifestyle destination",
+        "By Ohana Development"
+      ],
+      "robots": "index, follow"
+    },
+    "/Ohana/YasIsland": {
+      "title": "Manchester City Yas Island Residences by Ohana",
+      "description": "Discover Manchester City Yas Island Residences by Ohana, a luxury lifestyle destination on Yas Island surrounded by entertainment and cultural attractions.",
+      "h1": "Manchester City Yas Island Residences",
+      "content": "Manchester City Yas Island Residences by Ohana brings branded luxury living to Yas Island, surrounded by leisure, sport, entertainment, and cultural attractions.",
+      "bullets": [
+        "Luxury branded residences on Yas Island",
+        "By Ohana Development",
+        "Close to Abu Dhabi leisure and entertainment landmarks"
+      ],
+      "robots": "index, follow"
+    },
+    "/Ohana/Thanks": {
+      "title": "Thank You | Ohana Yas Canal",
+      "description": "Thank you for registering your interest in Ohana's Yas Canal residences. Our team will contact you shortly.",
+      "h1": "Thank You for Your Ohana Inquiry",
+      "content": "Your Ohana inquiry has been received. The sales team will follow up with project details and availability.",
+      "bullets": [
+        "Inquiry received",
+        "Sales team follow-up pending"
+      ],
+      "robots": "noindex, follow"
+    },
+    "/offline-listing": {
+      "title": "Below Market Property Deals | Sales Center UAE",
+      "description": "Browse below-market UAE property deals with reduced prices, listing details, project filters, and direct WhatsApp inquiry options.",
+      "h1": "Below Market Property Deals",
+      "content": "Browse selected UAE property deals with reduced prices, location filters, project categories, listing details, and direct inquiry options.",
+      "bullets": [
+        "Below-market property opportunities",
+        "Reduced price listings",
+        "Filter by location, property type, and listing type"
+      ],
+      "robots": "index, follow"
+    },
+    "/samana/samanabusinesshub": {
+      "title": "Samana Business Hub | Offices for Sale on Sheikh Zayed Road",
+      "description": "Premium commercial offices for sale in Samana Business Hub, Sheikh Zayed Road, Dubai. Offices from AED 1.46M with flexible payment plans and metro access.",
+      "h1": "Samana Business Hub | Offices for Sale on Sheikh Zayed Road",
+      "content": "Samana Business Hub offers premium commercial offices for sale on Sheikh Zayed Road, Dubai, with offices from AED 1.46M, flexible payment plans, metro access, and freehold commercial ownership.",
+      "bullets": [
+        "Offices from AED 1.46M",
+        "Flexible payment plans",
+        "Metro access on Sheikh Zayed Road",
+        "Freehold commercial ownership in Dubai"
+      ],
+      "robots": "index, follow",
+      "jsonLd": {
+        "@context": "https://schema.org",
+        "@type": "RealEstateListing",
+        "name": "Samana Business Hub",
+        "description": "Premium commercial offices for sale in Samana Business Hub, Sheikh Zayed Road, Dubai. Offices from AED 1.46M with flexible payment plans and metro access.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Sheikh Zayed Road",
+          "addressLocality": "Dubai",
+          "addressCountry": "AE"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "1460000",
+          "priceCurrency": "AED",
+          "availability": "https://schema.org/InStock"
+        }
+      }
+    },
+    "/samana/samanabusinesshub/thanks": {
+      "title": "Thank You | Samana Business Hub",
+      "description": "Thank you for registering your interest in Samana Business Hub. Our team will contact you shortly with brochure, floor plan, and investment details.",
+      "h1": "Thank You for Your Samana Business Hub Inquiry",
+      "content": "Your Samana Business Hub inquiry has been received. The sales team will follow up with brochure, floor plans, pricing, and investment details.",
+      "bullets": [
+        "Inquiry received",
+        "Brochure and floor plan follow-up pending"
+      ],
+      "robots": "noindex, follow"
+    }
+  }
+}

@@ -1,5 +1,6 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import DamacIsland from './Pages/Damac/DamacIsland';
 import DamacIslandsThanks from './Pages/Damac/DamacIslandsThanks';
 import EmaarValley from './Pages/Emaar/EmaarValley';
@@ -17,11 +18,26 @@ import OfflineHome from './Pages/OfflineListing/OfflineHome';
 import OfflineDetails from './Pages/OfflineListing/OfflineDetails';
 import SamanaBusinessHub from './Pages/Samana/SamanaBusinessHub';
 import SamanaBusinessHubThanks from './Pages/Samana/SamanaBusinessHubThanks';
+import { applyPageSeo, getSeoForPath } from './seo/applyPageSeo';
 
+function SeoManager() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    const applyCurrentPageSeo = () => applyPageSeo(getSeoForPath(pathname));
+    applyCurrentPageSeo();
+
+    const timeoutId = window.setTimeout(applyCurrentPageSeo, 0);
+    return () => window.clearTimeout(timeoutId);
+  }, [pathname]);
+
+  return null;
+}
 
 function App() {
   return (
     <Router>
+      <SeoManager />
       <Routes>
         {/* <Route path="/" element={<Navigate to="/DamacIsland" />} /> */}
         <Route path="/Damac/DamacIsland" element={<DamacIsland />} />
