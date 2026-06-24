@@ -114,8 +114,8 @@ function SamanaBussinessHub() {
 
     useEffect(() => {
         const cleanupSeo = applySamanaSeo(
-            'Samana Business Hub | Commercial Freehold Offices on Sheikh Zayed Road',
-            'Register your interest in Samana Business Hub, a freehold commercial address on Sheikh Zayed Road with premium offices, retail units, lifestyle amenities, and a Q2 2029 handover.'
+            'Samana Business Hub | Offices for Sale on Sheikh Zayed Road',
+            'Premium commercial offices for sale in Samana Business Hub, Sheikh Zayed Road, Dubai. Offices from AED 1.46M with flexible payment plans and metro access.'
         );
         document.documentElement.style.scrollBehavior = 'smooth';
         return () => {

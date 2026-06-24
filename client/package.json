@@ -25,7 +25,7 @@
   "scripts": {
     "prebuild": "node scripts/fetchOfflineListings.js",
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && node scripts/prerenderSeoPages.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
