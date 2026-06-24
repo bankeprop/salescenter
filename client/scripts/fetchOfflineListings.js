@@ -7,6 +7,7 @@ const DEFAULT_WEBHOOK_URL =
     'https://script.googleusercontent.com/macros/echo?user_content_key=AWDtjMXZ7u-02jOaJJfbcZCuSQKOzwxboc63oNtxUnojbzN5_-rQ7hjcokrYfCEV33ZnPpSCPPYR2o71Bnvd886lJbp-3UtS84A0423nvTFsvkjrWCwJTU4PITa_KWGfW1musl07ATgsR0ZOxHmPEYLQCP3yYQLNHM6cDUn1C8jFf7mdGu_fYj-bBesHH6M5NEQgLVJQ37Ct7yhYD_PaxUWzm1FWnsqXuZ4k0YCJwLWt_zj4ox_u3IkDRmCpUF94xEquwDw_Z74BipjGDWRFSoGnuBNClYZEP1wzh8HD2HIJ&lib=MYONLsLBDvMZdJe0GBZcbnt57JL4I04AC';
 
 const WEBHOOK_URL = process.env.OFFLINE_LISTING_WEBHOOK_URL || DEFAULT_WEBHOOK_URL;
+const REQUEST_TIMEOUT_MS = Number(process.env.OFFLINE_LISTING_TIMEOUT_MS || 120000);
 const OUTPUT_PATH = path.resolve(__dirname, '../src/Pages/OfflineListing/Offlinelisting.json');
 
 const sanitizeText = (value) => {
@@ -131,7 +132,7 @@ const normalizeListing = (item, index) => {
 
 const run = async () => {
     const response = await axios.get(WEBHOOK_URL, {
-        timeout: 30000,
+        timeout: REQUEST_TIMEOUT_MS,
         responseType: 'json'
     });
 
