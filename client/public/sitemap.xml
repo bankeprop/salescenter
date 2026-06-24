@@ -1,39 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://example.com/Damac/DamacIsland</loc>
+    <loc>https://www.sales-center.ae/Damac/DamacIsland</loc>
   </url>
   <url>
-    <loc>https://example.com/Damac/DamacIslandThanks</loc>
+    <loc>https://www.sales-center.ae/Damac/DamacIslandThanks</loc>
   </url>
   <url>
-    <loc>https://example.com/Damac/DamacLagoonValencia</loc>
+    <loc>https://www.sales-center.ae/Damac/DamacLagoonValencia</loc>
   </url>
   <url>
-    <loc>https://example.com/Damac/DamacLagoonValenciaThanks</loc>
+    <loc>https://www.sales-center.ae/Damac/DamacLagoonValenciaThanks</loc>
   </url>
   <url>
-    <loc>https://example.com/Emaar/EmaarTheValley</loc>
+    <loc>https://www.sales-center.ae/Emaar/EmaarTheValley</loc>
   </url>
   <url>
-    <loc>https://example.com/EmaarvalleyThanks</loc>
+    <loc>https://www.sales-center.ae/EmaarvalleyThanks</loc>
   </url>
   <url>
-    <loc>https://example.com/Emaar/EmaarHeights</loc>
+    <loc>https://www.sales-center.ae/Emaar/EmaarHeights</loc>
   </url>
   <url>
-    <loc>https://example.com/Binghatti/MercedesBenzPlaces</loc>
+    <loc>https://www.sales-center.ae/Emaar/EmaarHeightsThanks</loc>
   </url>
   <url>
-    <loc>https://example.com/Binghatti/ThankYou</loc>
+    <loc>https://www.sales-center.ae/Binghatti/MercedesBenzPlaces</loc>
   </url>
   <url>
-    <loc>https://example.com/Ohana/YasCanel</loc>
+    <loc>https://www.sales-center.ae/Binghatti/ThankYou</loc>
   </url>
   <url>
-    <loc>https://example.com/Ohana/YasIsland</loc>
+    <loc>https://www.sales-center.ae/Ohana/YasCanel</loc>
   </url>
   <url>
-    <loc>https://example.com/Ohana/Thanks</loc>
+    <loc>https://www.sales-center.ae/Ohana/YasIsland</loc>
+  </url>
+  <url>
+    <loc>https://www.sales-center.ae/Ohana/Thanks</loc>
+  </url>
+  <url>
+    <loc>https://www.sales-center.ae/offline-listing</loc>
+  </url>
+  <url>
+    <loc>https://www.sales-center.ae/samana/samanabusinesshub</loc>
+  </url>
+  <url>
+    <loc>https://www.sales-center.ae/samana/samanabusinesshub/thanks</loc>
   </url>
 </urlset>
