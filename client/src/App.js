@@ -18,6 +18,8 @@ import OfflineHome from './Pages/OfflineListing/OfflineHome';
 import OfflineDetails from './Pages/OfflineListing/OfflineDetails';
 import SamanaBusinessHub from './Pages/Samana/SamanaBusinessHub';
 import SamanaBusinessHubThanks from './Pages/Samana/SamanaBusinessHubThanks';
+import Generic from './Pages/generic';
+import GenericThankYou from './Pages/GenericThankYou';
 import { applyPageSeo, getSeoForPath } from './seo/applyPageSeo';
 
 function SeoManager() {
@@ -62,6 +64,9 @@ function App() {
 
         <Route path="/samana/samanabusinesshub" element={<SamanaBusinessHub />} />
         <Route path="/samana/samanabusinesshub/thanks" element={<SamanaBusinessHubThanks />} />
+
+        <Route path="/sidra-1-dubai-hills-estate" element={<Generic />} />
+        <Route path="/sidra-1-dubai-hills-estate/thank-you" element={<GenericThankYou />} />
 
         <Route path="/sitemap" element={<Navigate to="/sitemap.xml" replace />} />
 
