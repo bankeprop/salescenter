@@ -33,7 +33,7 @@ import Img17 from '../../Assests/Samana/cp2.17.jpg';
 import Img18 from '../../Assests/Samana/cp2.18.jpg';
 import Img19 from '../../Assests/Samana/cp2.19.jpg';
 import MapImg from '../../Assests/Samana/Map_Samana_Business_Hub.png';
-import QRImg from '../../Assests/Samana/QR.jpeg';
+// import QRImg from '../../Assests/Samana/QR.jpeg';
 import SamanaLogo from '../../Assests/Samana/SamanaLogo.png';
 import Samana_Business_Hub_logo from '../../Assests/Samana/Samana_Business_Hub_logo.png';
 import { applySamanaSeo } from './samanaSeo';
@@ -377,11 +377,11 @@ function SamanaBussinessHub() {
                             })}
                         </div>
 
-                        <div className="mt-6 flex items-center gap-4">
+                        {/* <div className="mt-6 flex items-center gap-4">
                             <div className="flex h-16 w-16 items-center justify-center border border-[#d9b58d]/40 bg-white p-1">
                                 <img src={QRImg} alt="QR code" className="h-full w-full object-cover" />
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
 
@@ -452,11 +452,11 @@ function SamanaBussinessHub() {
                                 })}
                             </div>
 
-                            <div className="mt-5 flex items-center gap-4">
+                            {/* <div className="mt-5 flex items-center gap-4">
                                 <div className="flex h-20 w-20 items-center justify-center border border-[#d9b58d]/40 bg-white p-1 sm:h-24 sm:w-24">
                                     <img src={QRImg} alt="QR code" className="h-full w-full object-cover" />
                                 </div>
-                            </div>
+                            </div> */}
 
                         </div>
 
