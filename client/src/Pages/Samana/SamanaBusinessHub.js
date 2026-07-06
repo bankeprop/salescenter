@@ -21,7 +21,6 @@ import {
     TrendingUp,
     X
 } from 'lucide-react';
-import HeadDesktop from '../../Assests/Samana/HeadDesktop.png';
 import PoolImg from '../../Assests/Samana/cp2.8.jpg';
 import Img13 from '../../Assests/Samana/cp2.13.jpg';
 import Img14 from '../../Assests/Samana/cp2.14.jpg';
@@ -31,6 +30,7 @@ import Img18 from '../../Assests/Samana/cp2.18.jpg';
 import MapImg from '../../Assests/Samana/Map_Samana_Business_Hub.png';
 import SamanaLogo from '../../Assests/Samana/SamanaLogo.png';
 import SamanaBusinessHubLogo from '../../Assests/Samana/Samana_Business_Hub_logo.png';
+import Head from '../../Assests/Samana/cp2.1.jpg';
 import { applySamanaSeo } from './samanaSeo';
 
 const SAMANA_GTM_ID = 'GTM-WT564CWM';
@@ -401,7 +401,7 @@ function SamanaBussinessHub() {
             <section
                 id="hero"
                 className="relative flex min-h-[92vh] items-center overflow-hidden bg-[#061524] bg-cover bg-center text-white"
-                style={{ backgroundImage: `linear-gradient(100deg,rgba(4,14,28,.97) 5%,rgba(4,14,28,.86) 40%,rgba(4,14,28,.55) 70%,rgba(4,14,28,.92) 100%), url(${HeadDesktop})` }}
+                style={{ backgroundImage: `linear-gradient(100deg,rgba(4,14,28,.72) 5%,rgba(4,14,28,.58) 40%,rgba(4,14,28,.28) 70%,rgba(4,14,28,.68) 100%), url(${Head})` }}
             >
                 <div className="mx-auto grid w-full max-w-[1280px] gap-12 px-6 py-14 lg:grid-cols-[1.05fr_.95fr] lg:items-start">
                     <div>
