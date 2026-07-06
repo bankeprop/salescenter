@@ -1,115 +1,183 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
+    BriefcaseBusiness,
     Building2,
-    Store,
+    CalendarDays,
+    Check,
+    ChevronDown,
+    Coffee,
+    CreditCard,
+    DollarSign,
+    Dumbbell,
+    FileText,
+    Home,
     Layers3,
-    ShieldCheck,
-    Sparkles,
-    MapPinned,
+    MapPin,
     Menu,
-    Minus,
-    Plus,
+    Monitor,
+    ShieldCheck,
+    Store,
+    TrendingUp,
     X
 } from 'lucide-react';
-import HeroImg from '../../Assests/Samana/cp2.1.jpg';
 import HeadDesktop from '../../Assests/Samana/HeadDesktop.png';
-import Img2 from '../../Assests/Samana/cp2.2.jpg';
-import Img3 from '../../Assests/Samana/cp2.3.jpg';
-import LoungeImg from '../../Assests/Samana/cp2.4.jpg';
-import HeaderImg from '../../Assests/Samana/cp2.5.jpg';
-import GymImg from '../../Assests/Samana/cp2.6.jpg';
-import Img7 from '../../Assests/Samana/cp2.7.jpg';
 import PoolImg from '../../Assests/Samana/cp2.8.jpg';
-import Img9 from '../../Assests/Samana/cp2.9.jpg';
-import TowerImg from '../../Assests/Samana/cp2.10.jpg';
-import Img11 from '../../Assests/Samana/cp2.11.jpg';
-import OfficeImg from '../../Assests/Samana/cp2.12.jpg';
 import Img13 from '../../Assests/Samana/cp2.13.jpg';
 import Img14 from '../../Assests/Samana/cp2.14.jpg';
 import Img15 from '../../Assests/Samana/cp2.15.jpg';
-import WellnessImg from '../../Assests/Samana/cp2.16.jpg';
 import Img17 from '../../Assests/Samana/cp2.17.jpg';
 import Img18 from '../../Assests/Samana/cp2.18.jpg';
-import Img19 from '../../Assests/Samana/cp2.19.jpg';
 import MapImg from '../../Assests/Samana/Map_Samana_Business_Hub.png';
-// import QRImg from '../../Assests/Samana/QR.jpeg';
 import SamanaLogo from '../../Assests/Samana/SamanaLogo.png';
-import Samana_Business_Hub_logo from '../../Assests/Samana/Samana_Business_Hub_logo.png';
+import SamanaBusinessHubLogo from '../../Assests/Samana/Samana_Business_Hub_logo.png';
 import { applySamanaSeo } from './samanaSeo';
-
-const sectionStats = [
-    { value: '18 Floors', label: 'Of Office Spaces', icon: Building2 },
-    { value: '16 Units', label: 'Curated Retail Units', icon: Store },
-    { value: '13', label: 'High-Speed Elevators', icon: Layers3 },
-];
-
-const chapters = [
-    {
-        eyebrow: 'UNIT CATALOGUE',
-        title: 'Designed for Every Scale of Business.',
-        text: 'From 590 sq ft compact units designed for ambitious startups to 17,500 sq ft full-floor headquarters, every unit is freehold, fully owned, and ready to scale.',
-        image: OfficeImg,
-        reverse: false,
-        bullets: ['Retail units', 'Compact offices', 'Mid-size offices', 'Full-floor options']
-    }
-];
-
-const galleryImages = [
-    HeroImg,
-    Img2,
-    Img3,
-    LoungeImg,
-    HeaderImg,
-    GymImg,
-    Img7,
-    PoolImg,
-    Img9,
-    TowerImg,
-    Img11,
-    OfficeImg,
-    Img13,
-    Img14,
-    Img15,
-    WellnessImg,
-    Img17,
-    Img18,
-    Img19
-];
 
 const SAMANA_GTM_ID = 'GTM-WT564CWM';
 
-function AccordionItem({ item, open, onClick }) {
-    return (
-        <div className="border border-white/10 bg-[#141b2c]">
-            <button
-                type="button"
-                onClick={onClick}
-                className="flex w-full items-center justify-between gap-4 px-4 py-4 text-left"
-            >
-                <span className="text-sm font-semibold text-[#efe8dc]">{item.q}</span>
-                {open ? <Minus size={16} className="text-[#d9b58d]" /> : <Plus size={16} className="text-[#d9b58d]" />}
-            </button>
-            {open && <div className="px-4 pb-4 text-sm leading-7 text-[#c9bca9]">{item.a}</div>}
-        </div>
-    );
-}
+const navItems = [
+    { label: 'The Project', href: '#why' },
+    { label: 'Amenities', href: '#amenities' },
+    { label: 'Office Spaces', href: '#offices' },
+    { label: 'Location', href: '#location' }
+];
+
+const featureStrip = [
+    { label: 'Next to Metro', icon: Home },
+    { label: '590-17,500 Sq.Ft.', icon: Layers3 },
+    { label: '100% Freehold', icon: ShieldCheck },
+    { label: 'High Rental Returns', icon: TrendingUp },
+    { label: 'Flexible Payment Plan', icon: CreditCard }
+];
+
+const whyCards = [
+    {
+        title: 'Prime Location',
+        text: "Directly on Sheikh Zayed Road, Dubai's most important commercial artery.",
+        icon: MapPin
+    },
+    {
+        title: 'Metro Connectivity',
+        text: 'Next to a Dubai Metro station for easy access by employees, clients, and visitors.',
+        icon: Home
+    },
+    {
+        title: 'Business Growth Corridor',
+        text: "Positioned between Dubai's logistics, airport, port, and business districts.",
+        icon: TrendingUp
+    },
+    {
+        title: 'Freehold Ownership',
+        text: 'Full freehold title deed available for international investors of any nationality.',
+        icon: ShieldCheck
+    },
+    {
+        title: 'Flexible Payment Plan',
+        text: 'Interest-free instalments including post-handover payments for easier cash flow.',
+        icon: CreditCard
+    },
+    {
+        title: 'High Rental Returns',
+        text: 'Strong demand for grade-A commercial space supports attractive income potential.',
+        icon: Building2
+    }
+];
+
+const locationStats = [
+    ['11,000+', 'Companies', 'Operating within a 5km radius'],
+    ['1 Min', 'To Dubai Metro', 'Direct walking access'],
+    ['10 Min', 'To Expo City', 'Dubai 2030 masterplan'],
+    ['15 Min', 'To DWC Airport', 'Al Maktoum International Airport'],
+    ['20 Min', 'To Business Bay', "Dubai's commercial hub"],
+    ['15 Min', 'To Dubai Marina', 'Coastal business district']
+];
+
+const snapshotStats = [
+    ['Starting Price', 'AED 1.46M', 'Onwards'],
+    ['Office Sizes', '590-17,500', 'Sq.Ft.'],
+    ['Payment Plan', '1%', 'Monthly'],
+    ['Handover', 'Q2 2029', ''],
+    ['Developer', 'Samana', 'Developers'],
+    ['Location', 'Sheikh Zayed Rd', 'Dubai']
+];
+
+const paymentSteps = [
+    { pct: '20%', title: 'On Booking', text: 'Initial reservation', icon: CalendarDays },
+    { pct: '30%', title: 'During Construction', text: 'Flexible instalments', icon: Building2 },
+    { pct: '10%', title: 'On Handover', text: 'Q2 2029', icon: Check },
+    { pct: '40%', title: 'Post Handover', text: 'Ask for schedule', icon: DollarSign }
+];
+
+const officeCards = [
+    {
+        title: '590-760 Sq.Ft.',
+        text: 'Compact offices, ideal for lean teams and startups. From AED 1.46M.',
+        label: 'Compact offices',
+        image: Img14
+    },
+    {
+        title: '804-1,200 Sq.Ft.',
+        text: 'Mid-size offices for growing teams. From AED 1.98M.',
+        label: 'Growing teams',
+        image: Img13
+    },
+    {
+        title: '1,200-2,500 Sq.Ft.',
+        text: 'Large offices for established companies. From AED 2.95M.',
+        label: 'Large offices',
+        image: Img15
+    },
+    {
+        title: '2,500-17,500 Sq.Ft.',
+        text: 'Full-floor offices and headquarters. From AED 6.20M.',
+        label: 'Full-floor options',
+        image: Img18
+    }
+];
+
+const amenities = [
+    { label: 'Infinity Pool & Sky Deck', icon: Store },
+    { label: 'Executive Lounge', icon: BriefcaseBusiness },
+    { label: 'Business Centre', icon: Monitor },
+    { label: 'Meeting & Conference Rooms', icon: FileText },
+    { label: 'Wellness Centre', icon: Dumbbell },
+    { label: 'Cafe & Retail Spaces', icon: Coffee },
+    { label: '24/7 Security & Concierge', icon: ShieldCheck },
+    { label: 'Smart Building Technology', icon: Layers3 }
+];
+
+const faqItems = [
+    {
+        q: 'Can foreign nationals buy an office at Samana Business Hub?',
+        a: 'Yes. The project offers full freehold ownership, so buyers of any nationality can own 100% of their office space.'
+    },
+    {
+        q: 'What is the payment plan?',
+        a: 'The plan is 20% on booking, 30% during construction, 10% on handover, and 40% post-handover.'
+    },
+    {
+        q: 'When is handover?',
+        a: 'Handover is scheduled for Q2 2029.'
+    },
+    {
+        q: 'Can I get financing or a mortgage?',
+        a: 'Our sales team can connect you with banking partners for commercial property financing options.'
+    },
+    {
+        q: 'Is this suitable for end-use as well as investment?',
+        a: 'Yes. Office sizes range from 590 to 17,500 sq.ft., serving both owner-occupiers and investors seeking rental income.'
+    }
+];
 
 function SamanaBussinessHub() {
     const navigate = useNavigate();
-    const [openFaq, setOpenFaq] = useState(0);
     const [isNavOpen, setIsNavOpen] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const [isFormOpen, setIsFormOpen] = useState(false);
-    const [hasAutoOpenedForm, setHasAutoOpenedForm] = useState(false);
-    const [selectedGalleryIndex, setSelectedGalleryIndex] = useState(null);
-    const [activeMobileGalleryIndex, setActiveMobileGalleryIndex] = useState(0);
-    const mobileGalleryRef = useRef(null);
     const [form, setForm] = useState({
         name: '',
         email: '',
         phone: '',
-        message: ''
+        interest: ''
     });
 
     useEffect(() => {
@@ -148,17 +216,6 @@ function SamanaBussinessHub() {
         };
     }, []);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            if (hasAutoOpenedForm || window.scrollY <= 40) return;
-            setIsFormOpen(true);
-            setHasAutoOpenedForm(true);
-        };
-
-        window.addEventListener('scroll', handleScroll, { passive: true });
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, [hasAutoOpenedForm]);
-
     const handleChange = (event) => {
         const { name, value } = event.target;
         setForm((previous) => ({
@@ -167,20 +224,10 @@ function SamanaBussinessHub() {
         }));
     };
 
-    const navItems = [
-        { label: 'Architecture', href: '#architecture' },
-        { label: 'Amenities', href: '#amenities' },
-        { label: 'Gallery', href: '#gallery' },
-        { label: 'Payment Plan', href: '#payment-plan' },
-        { label: 'Location', href: '#location' },
-        { label: 'Contact Us', href: '#contact-inquiry' }
-    ];
-
     const handleNavClick = (href) => {
         const target = document.querySelector(href);
         if (target) {
-            const offset = window.innerWidth < 1024 ? 400 : 0;
-            const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+            const top = target.getBoundingClientRect().top + window.pageYOffset - 84;
             window.scrollTo({ top, behavior: 'smooth' });
         }
         setIsNavOpen(false);
@@ -188,17 +235,15 @@ function SamanaBussinessHub() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-
         if (isSubmitting) return;
 
         const sanitizedPhone = form.phone.replace(/\D/g, '');
-
         const payload = new FormData();
         payload.set('name', form.name);
         payload.set('email', form.email);
         payload.set('phone', sanitizedPhone);
-        payload.set('message', form.message);
-        payload.set('campaignName', 'Samana Business Hub');
+        payload.set('message', form.interest ? `Interest: ${form.interest}` : 'Samana Business Hub investment details');
+        payload.set('campaignName', 'SamanaBusinessHub-HU-GADS-206631');
         payload.set('pageUrl', window.location.href);
 
         try {
@@ -213,86 +258,137 @@ function SamanaBussinessHub() {
                 name: '',
                 email: '',
                 phone: '',
-                message: ''
+                interest: ''
             });
-            setIsFormOpen(false);
             navigate('/samana/samanabusinesshub/thanks');
         } finally {
             setIsSubmitting(false);
         }
     };
 
-    const openGallery = (index) => setSelectedGalleryIndex(index);
-    const closeGallery = () => setSelectedGalleryIndex(null);
-    const goPrevGallery = () =>
-        setSelectedGalleryIndex((current) => (current === null ? current : (current - 1 + galleryImages.length) % galleryImages.length));
-    const goNextGallery = () =>
-        setSelectedGalleryIndex((current) => (current === null ? current : (current + 1) % galleryImages.length));
-
-    const handleMobileGalleryScroll = () => {
-        const container = mobileGalleryRef.current;
-        if (!container) return;
-
-        const nextIndex = Math.round(container.scrollLeft / container.clientWidth);
-        setActiveMobileGalleryIndex(Math.max(0, Math.min(galleryImages.length - 1, nextIndex)));
-    };
+    const renderLeadForm = (title, showTrust = false) => (
+        <form className="rounded-md border border-[#d8a65a]/60 bg-[#030c1a]/95 p-6 shadow-[0_25px_70px_rgba(0,0,0,.35)] sm:p-8" onSubmit={handleSubmit}>
+            <h3 className="text-xl font-black uppercase leading-tight text-white">
+                {title} <span className="text-[#d8a65a]">Details</span>
+            </h3>
+            <div className="mt-5 space-y-3">
+                <input
+                    name="name"
+                    value={form.name}
+                    onChange={handleChange}
+                    required
+                    autoComplete="name"
+                    placeholder="Full Name"
+                    className="h-[52px] w-full rounded border border-[#dfe3e8] bg-white px-4 py-3 text-sm text-[#06101d] outline-none focus:border-[#d8a65a]"
+                />
+                <input
+                    name="phone"
+                    type="tel"
+                    value={form.phone}
+                    onChange={handleChange}
+                    required
+                    autoComplete="tel"
+                    placeholder="Phone Number"
+                    className="h-[52px] w-full rounded border border-[#dfe3e8] bg-white px-4 py-3 text-sm text-[#06101d] outline-none focus:border-[#d8a65a]"
+                />
+                <input
+                    name="email"
+                    type="email"
+                    value={form.email}
+                    onChange={handleChange}
+                    required
+                    autoComplete="email"
+                    placeholder="Email Address"
+                    className="h-[52px] w-full rounded border border-[#dfe3e8] bg-white px-4 py-3 text-sm text-[#06101d] outline-none focus:border-[#d8a65a]"
+                />
+                <div className="relative">
+                    <select
+                        name="interest"
+                        value={form.interest}
+                        onChange={handleChange}
+                        className="h-[52px] w-full appearance-none rounded border border-[#dfe3e8] bg-white px-4 pr-11 text-sm text-[#06101d] outline-none focus:border-[#d8a65a]"
+                    >
+                        <option value="">I am interested in</option>
+                        <option value="Office investment">Office investment</option>
+                        <option value="Own office use">Own office use</option>
+                        <option value="Floor plans and pricing">Floor plans and pricing</option>
+                    </select>
+                    <ChevronDown className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[#06101d]" size={18} />
+                </div>
+            </div>
+            <p className="mt-4 text-[11px] leading-5 text-[#c7cbd1]">
+                By submitting, you agree to be contacted by Samana Developers and its sales representatives about this project.
+            </p>
+            <button
+                type="submit"
+                disabled={isSubmitting}
+                className="mt-5 inline-flex h-14 w-full items-center justify-center rounded bg-[#d8a65a] px-6 text-xs font-black uppercase tracking-[0.03em] text-[#040e1c] transition hover:-translate-y-0.5 hover:shadow-[0_10px_24px_rgba(216,166,90,.4)] disabled:cursor-not-allowed disabled:opacity-70"
+            >
+                {isSubmitting ? 'Submitting...' : 'Get Investment Details'}
+            </button>
+            {showTrust && (
+                <div className="mt-5 grid grid-cols-2 gap-3 text-xs font-bold text-white">
+                    {['Instant Brochure', 'Payment Plan', 'Floor Plans', 'No Spam'].map((item) => (
+                        <span key={item} className="flex items-center gap-2">
+                            <Check size={14} className="text-[#d8a65a]" />
+                            {item}
+                        </span>
+                    ))}
+                </div>
+            )}
+        </form>
+    );
 
     return (
-        <main className="min-h-screen bg-[#0b1020] text-white">
-            <div className="sticky top-0 z-50 border-y border-white/10 bg-[#0b1020]/95 backdrop-blur">
-                <div className="mx-auto flex w-full items-center px-6 py-3 lg:px-[12%]">
-                    <div className="flex items-center gap-3">
-                        <img
-                            src={SamanaLogo}
-                            alt="Samana Logo"
-                            className="h-6 w-auto sm:h-7 lg:h-8"
-                        />
-                    </div>
+        <main className="min-h-screen bg-white pb-20 text-[#06101d] lg:pb-0">
+            <header className="sticky top-0 z-50 border-b border-[#d8a65a]/20 bg-[#061524]/95 backdrop-blur">
+                <div className="mx-auto flex max-w-[1280px] items-center justify-between px-6 py-4">
+                    <button type="button" onClick={() => handleNavClick('#hero')} className="flex items-center gap-3" aria-label="Samana Developers home">
+                        <img src={SamanaLogo} alt="Samana Developers" className="h-8 w-auto" />
+                    </button>
 
-                    <div className="hidden flex-1 items-center justify-end gap-2 lg:flex">
+                    <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary">
                         {navItems.map((item) => (
                             <button
                                 key={item.label}
                                 type="button"
                                 onClick={() => handleNavClick(item.href)}
-                                className={
-                                    item.label === 'Contact Us'
-                                        ? 'rounded-none border border-[#d9b58d] bg-[#d9b58d] px-4 py-2 text-sm font-semibold text-[#0b1020] transition hover:bg-[#efc27a]'
-                                        : 'rounded-none px-4 py-2 text-sm font-medium text-white/80 transition hover:bg-white/5 hover:text-white'
-                                }
+                                className="text-xs font-bold uppercase tracking-[0.04em] text-white/85 transition hover:text-[#d8a65a]"
                             >
                                 {item.label}
                             </button>
                         ))}
-                    </div>
+                    </nav>
 
-                    <div className="ml-auto flex items-center gap-3 lg:hidden">
+                    <div className="flex items-center gap-3">
+                        <button
+                            type="button"
+                            onClick={() => handleNavClick('#hero-form')}
+                            className="hidden rounded border border-[#d8a65a] px-5 py-3 text-xs font-black uppercase text-[#d8a65a] transition hover:bg-[#d8a65a] hover:text-[#040e1c] sm:inline-flex"
+                        >
+                            Get Pricing
+                        </button>
                         <button
                             type="button"
                             onClick={() => setIsNavOpen((prev) => !prev)}
-                            className="inline-flex items-center gap-2 border border-white/10 px-4 py-2 text-sm font-medium text-white lg:hidden"
+                            className="inline-flex text-white lg:hidden"
                             aria-expanded={isNavOpen}
-                            aria-label="Toggle navigation"
+                            aria-label="Toggle menu"
                         >
-                            <Menu size={18} />
-                            Menu
+                            {isNavOpen ? <X size={24} /> : <Menu size={24} />}
                         </button>
                     </div>
                 </div>
 
                 {isNavOpen && (
-                    <div className="border-t border-white/10 bg-[#0b1020] px-6 py-4 lg:hidden">
-                        <div className="mx-auto flex w-full flex-col gap-2 lg:px-[12%]">
-                            {navItems.map((item) => (
+                    <div className="border-t border-[#d8a65a]/20 bg-[#040e1c] px-6 py-4 lg:hidden">
+                        <div className="mx-auto flex max-w-[1280px] flex-col">
+                            {[...navItems, { label: 'Get Pricing', href: '#hero-form' }].map((item) => (
                                 <button
                                     key={item.label}
                                     type="button"
                                     onClick={() => handleNavClick(item.href)}
-                                    className={
-                                        item.label === 'Contact Us'
-                                            ? 'rounded-none border border-[#d9b58d] bg-[#d9b58d] px-4 py-3 text-left text-sm font-semibold text-[#0b1020]'
-                                            : 'rounded-none border border-white/10 px-4 py-3 text-left text-sm text-white/85'
-                                    }
+                                    className="border-b border-white/10 py-3 text-left text-sm font-bold uppercase text-white"
                                 >
                                     {item.label}
                                 </button>
@@ -300,785 +396,283 @@ function SamanaBussinessHub() {
                         </div>
                     </div>
                 )}
-            </div>
+            </header>
 
-            <section className="relative min-h-screen overflow-hidden">
-                <div className="absolute inset-0 hidden md:block">
-                    <img src={HeadDesktop} alt="Samana Business Hub" className="h-full w-full object-cover" />
-                    <div className="absolute inset-0 bg-[#0b1020]/72" />
-                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,16,32,0.25)_0%,rgba(11,16,32,0.8)_100%)]" />
-                </div>
-
-                <div className="md:hidden">
-                    <div className="relative h-[74vh] overflow-hidden">
-                        <img src={HeaderImg} alt="Samana Business Hub" className="h-full w-full object-cover" />
-                        <div className="absolute inset-0 bg-[#0b1020]/72" />
-                        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,16,32,0.25)_0%,rgba(11,16,32,0.8)_100%)]" />
-
-                        <div className="absolute inset-x-0 bottom-0 px-[5%] pb-24">
-                            <div className="flex w-[88vw] max-w-[360px] flex-col items-start sm:max-w-4xl">
-                                {/* <h1 className="font-big-moore mt-6 whitespace-nowrap bg-[linear-gradient(90deg,#fae4cd_0%,#de9d63_52%,#95613e_100%)] bg-clip-text text-[1.95rem] leading-[1] tracking-[-0.04em] text-transparent">
-                  Samana Business Hub
-                </h1> */}
-                                <div className="w-full max-w-[240px] sm:max-w-[360px]">
-                                    <img
-                                        src={Samana_Business_Hub_logo}
-                                        alt="Samana Logo"
-                                        className="block h-auto w-full"
-                                    />
-                                </div>
-                                <h2 className="font-big-moore mt-3 w-full max-w-[340px] whitespace-nowrap text-left text-[1rem] leading-[0.92] tracking-[-0.03em] text-white sm:max-w-none sm:text-[1.45rem] lg:text-[1.65rem]">
-                                    <span className="inline">A New Landmark on Sheikh Zayed Road.</span>
-                                </h2>
-                            </div>
-                        </div>
-
-                        <div className="absolute inset-x-0 bottom-0 px-[5%] pb-8">
-                            <div className="max-w-4xl">
-                                <a
-                                    href="#register"
-                                    onClick={(event) => {
-                                        event.preventDefault();
-                                        setIsFormOpen(true);
-                                    }}
-                                    className="inline-flex w-full max-w-[240px] items-center justify-center gap-3 bg-[#d7aa63] px-5 py-4 text-[0.72rem] font-bold uppercase tracking-[0.14em] whitespace-nowrap text-[#0b1020] transition hover:bg-[#efc27a] sm:w-fit sm:max-w-none sm:px-8 sm:text-sm sm:tracking-[0.25em]"
-                                >
-                                    Register Your Interest
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="px-[5%] pb-5 pt-3 md:hidden">
-                        <p className="max-w-4xl text-base leading-7 text-white">
-                            Samana Business Hub is Dubai's next-generation commercial address, offering premium grade A offices, retail units, and amenity-led workspaces on Sheikh Zayed Road, making it the epicentre of momentum is scheduled for Q2 2029.
+            <section
+                id="hero"
+                className="relative flex min-h-[92vh] items-center overflow-hidden bg-[#061524] bg-cover bg-center text-white"
+                style={{ backgroundImage: `linear-gradient(100deg,rgba(4,14,28,.97) 5%,rgba(4,14,28,.86) 40%,rgba(4,14,28,.55) 70%,rgba(4,14,28,.92) 100%), url(${HeadDesktop})` }}
+            >
+                <div className="mx-auto grid w-full max-w-[1280px] gap-12 px-6 py-14 lg:grid-cols-[1.05fr_.95fr] lg:items-start">
+                    <div>
+                        <div className="text-xs font-black uppercase tracking-[0.15em] text-[#d8a65a]">Premium Investment Opportunity</div>
+                        <img src={SamanaBusinessHubLogo} alt="Samana Business Hub" className="mt-6 h-28 w-auto sm:h-36" />
+                        <h1 className="mt-6 text-[2.35rem] font-black uppercase leading-[0.98] sm:text-[4rem]">
+                            Premium Commercial<br />
+                            <span className="text-[#d8a65a]">Offices</span>
+                        </h1>
+                        <h2 className="mt-4 text-xl font-black uppercase leading-tight sm:text-3xl">On Sheikh Zayed Road, Next to Dubai Metro</h2>
+                        <p className="mt-5 max-w-xl text-base leading-7 text-[#eceef1]">
+                            A landmark business address built for growth. Flexible payment plan, strong rental demand, and 100% freehold ownership open to all nationalities.
                         </p>
-                    </div>
 
-                    <div className="px-[5%] pb-5 pt-3">
-                        <div className="space-y-3">
-                            {sectionStats.map((item, index) => {
+                        <div className="mt-8 grid grid-cols-2 border-y border-white/20 bg-black/25 backdrop-blur sm:grid-cols-3 lg:grid-cols-5">
+                            {featureStrip.map((item, index) => {
                                 const Icon = item.icon;
                                 return (
-                                    <div
-                                        key={item.label}
-                                        className="animate-[slideInUp_0.65s_ease-out_forwards] opacity-0 flex items-center gap-4 pt-4"
-                                        style={{ animationDelay: `${index * 90}ms` }}
-                                    >
-                                        <div className="flex aspect-square h-10 w-10 items-center justify-center border border-[#d9b58d]/50 text-[#d9b58d]">
-                                            <Icon size={20} />
-                                        </div>
-                                        <div>
-                                            <div className="text-base font-semibold tracking-[0.01em] text-white">{item.value}</div>
-                                            <div className="whitespace-nowrap text-xs tracking-[0.08em] text-[#cfb89d]">{item.label}</div>
-                                        </div>
+                                    <div key={item.label} className={`border-white/15 px-3 py-5 text-center ${index !== featureStrip.length - 1 ? 'border-r' : ''}`}>
+                                        <Icon className="mx-auto text-[#d8a65a]" size={26} />
+                                        <strong className="mt-3 block text-[11px] font-bold uppercase leading-tight">{item.label}</strong>
                                     </div>
                                 );
                             })}
                         </div>
-
-                        {/* <div className="mt-6 flex items-center gap-4">
-                            <div className="flex h-16 w-16 items-center justify-center border border-[#d9b58d]/40 bg-white p-1">
-                                <img src={QRImg} alt="QR code" className="h-full w-full object-cover" />
-                            </div>
-                        </div> */}
                     </div>
-                </div>
 
-                <div className="relative mx-auto hidden min-h-screen w-full flex-col justify-end px-6 pb-16 pt-12 md:flex lg:px-[12%]">
-                    <div className="grid gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-end">
-                        <div className="pt-10 max-w-[1180px]">
-                            <div className="mt-6 flex items-center gap-3">
-                                <img
-                                    src={Samana_Business_Hub_logo}
-                                    alt="Samana Logo"
-                                    className="h-72 w-auto sm:h-56 lg:h-64"
-                                />
-                            </div>
-                            <h2 className="font-big-moore mt-3 whitespace-nowrap text-[0.95rem] leading-[1] tracking-[-0.03em] text-white sm:text-[1.45rem] lg:text-[1.65rem]">
-                                <span className="inline">A New Landmark on Sheikh Zayed Road.</span>
-                            </h2>
-                            <p className="mt-6 max-w-[720px] text-base leading-7 text-white sm:mt-8 sm:text-[1.05rem] sm:leading-8">
-                                Samana Business Hub is Dubai's next-generation commercial address, offering premium grade A offices, retail units, and amenity-led workspaces on Sheikh Zayed Road, making it the epicentre of momentum is scheduled for Q2 2029.
-                            </p>
-                            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-                                <a
-                                    href="#register"
-                                    onClick={(event) => {
-                                        event.preventDefault();
-                                        setIsFormOpen(true);
-                                    }}
-                                    className="inline-flex items-center justify-center gap-3 bg-[#d7aa63] px-8 py-4 text-sm font-bold uppercase tracking-[0.25em] text-[#0b1020] transition hover:bg-[#efc27a]"
-                                >
-                                    Register Your Interest
-                                </a>
-                            </div>
-
-                            <div className="mt-5 space-y-3 sm:hidden">
-                                {sectionStats.map((item, index) => {
-                                    const Icon = item.icon;
-                                    return (
-                                        <div
-                                            key={item.label}
-                                            className="animate-[slideInUp_0.65s_ease-out_forwards] opacity-0 flex items-center gap-5 pt-4"
-                                            style={{ animationDelay: `${index * 90}ms` }}
-                                        >
-                                            <div className="flex aspect-square h-10 w-10 items-center justify-center border border-[#d9b58d]/50 text-[#d9b58d]">
-                                                <Icon size={20} />
-                                            </div>
-                                            <div>
-                                                <div className="text-base font-semibold text-white">{item.value}</div>
-                                                <div className="whitespace-nowrap text-xs text-[#cfb89d]">{item.label}</div>
-                                            </div>
-                                        </div>
-                                    );
-                                })}
-                            </div>
-
-                            <div className="mt-8 hidden flex-nowrap gap-0 sm:mt-10 sm:flex">
-                                {sectionStats.map((item) => {
-                                    const Icon = item.icon;
-                                    return (
-                                        <div key={item.label} className="flex min-w-[240px] flex-1 items-center gap-5 pt-4 sm:gap-6">
-                                            <div className="flex aspect-square h-10 w-10 items-center justify-center border border-[#d9b58d]/50 bg-[#0f1526]/40 text-[#d9b58d] sm:h-12 sm:w-12">
-                                                <Icon size={20} />
-                                            </div>
-                                            <div className="min-w-0">
-                                                <div className="whitespace-nowrap text-base font-semibold text-white sm:text-lg">{item.value}</div>
-                                                <div className="whitespace-nowrap text-xs leading-tight text-[#cfb89d] sm:text-sm">{item.label}</div>
-                                            </div>
-                                        </div>
-                                    );
-                                })}
-                            </div>
-
-                            {/* <div className="mt-5 flex items-center gap-4">
-                                <div className="flex h-20 w-20 items-center justify-center border border-[#d9b58d]/40 bg-white p-1 sm:h-24 sm:w-24">
-                                    <img src={QRImg} alt="QR code" className="h-full w-full object-cover" />
-                                </div>
-                            </div> */}
-
-                        </div>
-
-                        <div />
+                    <div id="hero-form" className="scroll-mt-24">
+                        {renderLeadForm('Get Pricing, Floor Plans & Payment', true)}
                     </div>
                 </div>
             </section>
 
-            <section id="one-vision" className="bg-[#0b1020] px-6 py-10 sm:py-24 lg:px-[12%]">
-                <div className="mx-auto flex w-full flex-col justify-start text-left">
-                    <div className="max-w-4xl">
-                        <p className="text-xs uppercase tracking-[0.45em] text-[#d9b58d]">One Vision</p>
-                        <h2 className="font-big-moore mt-5 text-5xl leading-tight text-white sm:text-6xl">
-                            The <span className="text-[#d9b58d] italic">Epicenter</span> of <br />Commercial Growth.
-                        </h2>
-                        <p className="mt-8 max-w-4xl text-lg leading-8 text-[#d8c9b8]">
-                            Designed for businesses shaping the next decade of Dubai, Samana Business Hub brings together grade-A offices, curated retail, and amenity-led workspaces in a single sculptural address on Sheikh Zayed Road. A double-skin glazed facade defines a vertical workplace of 18 office floors above 16 ground-level retail units, served by 13 high-speed elevators.
-                        </p>
-                        <p className="mt-6 max-w-4xl text-lg leading-8 text-[#d8c9b8]">
-                            This is commercial real estate reimagined as lifestyle infrastructure, where pool decks and boardrooms share the same address and a productive day ends with a sunset view rather than a commute home.
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            <section id="architecture" className="relative overflow-hidden bg-[#0b1020] px-6 py-10 sm:py-24 lg:px-[12%]">
-                <div className="absolute inset-0">
-                    <img src={HeroImg} alt="" className="h-full w-full object-cover" />
-                    <div className="absolute inset-0 bg-[#07101f]/84" />
-                    <div className="absolute inset-0 bg-[#050b18]/85" />
-                </div>
-
-                <div className="relative mx-auto grid w-full gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-                    <div>
-                        <p className="text-xs uppercase tracking-[0.45em] text-[#d9b58d]">Architecture</p>
-                        <h2 className="font-big-moore mt-5 max-w-2xl text-5xl leading-[1.02] text-white sm:text-6xl">
-                            A Sculptural <span className="text-[#d9b58d] italic">Statement</span> on the Skyline.
-                        </h2>
-                        <p className="mt-8 max-w-2xl text-lg leading-8 text-white">
-                            The curved double-skin facade is not ornamental. Layered glazing and bronze-finish louvers reduce solar heat gain while giving the tower its signature ribbon profile.
-                        </p>
-                        <p className="mt-6 max-w-2xl text-lg leading-8 text-white">
-                            At night, integrated linear lighting traces the curvature of every floor, turning Samana Business Hub into a recognisable landmark visible along Sheikh Zayed Road.
-                        </p>
-                    </div>
-
-                    <div className="grid gap-4 sm:grid-cols-2">
-                        <div className="border border-white/10 bg-[#141b2c]/95 p-6 shadow-[0_18px_40px_rgba(0,0,0,0.2)]">
-                            <Sparkles className="text-[#d9b58d]" size={24} />
-                            <h3 className="mt-6 text-2xl font-semibold text-white">Double-Skin Facade</h3>
-                            <p className="mt-2 text-[#e1d6c4]">Solar-optimised glazing system</p>
-                        </div>
-                        <div className="border border-white/10 bg-[#141b2c]/95 p-6 shadow-[0_18px_40px_rgba(0,0,0,0.2)]">
-                            <Layers3 className="text-[#d9b58d]" size={24} />
-                            <h3 className="mt-6 text-2xl font-semibold text-white">18 Office Floors</h3>
-                            <p className="mt-2 text-[#e1d6c4]">16 retail units</p>
-                        </div>
-                        <div className="border border-white/10 bg-[#141b2c]/95 p-6 shadow-[0_18px_40px_rgba(0,0,0,0.2)]">
-                            <MapPinned className="text-[#d9b58d]" size={24} />
-                            <h3 className="mt-6 text-2xl font-semibold text-white">Smart Building Systems</h3>
-                            <p className="mt-2 text-[#e1d6c4]">Integrated BMS and IoT</p>
-                        </div>
-                        <div className="border border-white/10 bg-[#141b2c]/95 p-6 shadow-[0_18px_40px_rgba(0,0,0,0.2)]">
-                            <ShieldCheck className="text-[#d9b58d]" size={24} />
-                            <h3 className="mt-6 text-2xl font-semibold text-white">24/7 Security</h3>
-                            <p className="mt-2 text-[#e1d6c4]">Concierge and access control</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {chapters.map((chapter, index) => (
-                <section key={chapter.title} className="bg-[#f3eee7] px-6 py-10 text-[#182033] sm:py-24 lg:px-[12%]">
-                    <div className={`mx-auto grid w-full items-center gap-10 lg:grid-cols-2 ${chapter.reverse ? 'lg:[direction:rtl]' : ''}`}>
-                        <div className={`overflow-hidden ${chapter.reverse ? 'lg:[direction:ltr]' : ''}`}>
-                            <img src={chapter.image} alt={chapter.title} className="h-[420px] w-full object-cover shadow-[0_20px_40px_rgba(0,0,0,0.15)] lg:h-[520px]" />
-                        </div>
-                        <div className={`${chapter.reverse ? 'lg:[direction:ltr]' : ''}`}>
-                            <p className="text-xs uppercase tracking-[0.45em] text-[#a87738]">{chapter.eyebrow}</p>
-                            <h3 className="font-big-moore mt-5 text-[2.4rem] leading-tight text-[#162038] sm:text-[3.4rem]">
-                                {chapter.title}
-                            </h3>
-                            <p className="mt-6 max-w-2xl text-lg leading-8 text-[#384765]">{chapter.text}</p>
-
-                            <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                                {chapter.bullets.map((bullet) => (
-                                    <div
-                                        key={bullet}
-                                        className="flex items-center gap-3 border border-[#a87738]/50 bg-[#f7efe1] px-4 py-3 shadow-[0_10px_24px_rgba(168,119,56,0.12)]"
-                                    >
-                                        <span className="h-3 w-3 shrink-0 rounded-full bg-[#a87738] ring-4 ring-[#a87738]/15" />
-                                        <span className="text-base font-bold text-[#162038]">{bullet}</span>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            ))}
-
-
-            <section id="amenities" className="bg-[#f3eee7] px-6 py-10 sm:py-24 lg:px-[12%]">
-                <div className="mx-auto w-full">
-                    <div className="text-left">
-                        <p className="text-xs uppercase tracking-[0.45em] text-[#a87738]">Amenities</p>
-                        <h2 className="font-big-moore mt-4 text-5xl text-[#162038] sm:text-6xl">
-                            Inspiring <span className="text-[#a87738] italic">Productive</span> Connections.
-                        </h2>
-                        <p className="mt-6 max-w-4xl text-lg leading-8 text-[#384765]">
-                            Three carefully-curated chapters of amenity programming - outdoor, executive and wellness - turn the workday into a complete lifestyle experience.
-                        </p>
-                    </div>
-
-                    <div className="mt-14 space-y-24">
-                        <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
-                            <div className="overflow-hidden">
-                                <img src={PoolImg} alt="Outdoor Sanctuary" className="h-[420px] w-full object-cover" />
-                            </div>
-                            <div>
-                                <p className="text-xs uppercase tracking-[0.45em] text-[#a87738]">Chapter I</p>
-                                <h3 className="font-big-moore mt-5 text-[2.6rem] leading-tight text-[#162038]">Outdoor Sanctuary</h3>
-                                <p className="mt-5 text-lg leading-8 text-[#384765]">
-                                    A sky-deck retreat suspended above Sheikh Zayed Road. An infinity pool, cabana lounges, an open-air amphitheatre, and shaded meeting pods reframe the workday as a moment of calm.
-                                </p>
-                                <div className="mt-8 grid gap-3 sm:grid-cols-2">
-                                    {['Infinity Pool & Cabanas', 'Outdoor Meeting Pods', 'Cigar & Jazz Lounge', 'Yoga & Wellness Deck', 'Open-Air Amphitheatre', 'Landscaped Gardens'].map((item) => (
-                                        <div key={item} className="flex items-center gap-3 text-[#162038]">
-                                            <span className="text-[#a87738]">-</span>
-                                            <span>{item}</span>
-                                        </div>
-                                    ))}
-                                </div>
-                                <button
-                                    type="button"
-                                    onClick={() => setIsFormOpen(true)}
-                                    className="mt-8 inline-flex items-center justify-center border border-[#a87738]/40 bg-[#0b1020] px-6 py-3 text-sm font-semibold uppercase tracking-[0.22em] text-[#f2e2cc] transition hover:bg-[#111b2e]"
-                                >
-                                    Get More Details
-                                </button>
-                            </div>
-                        </div>
-
-                        <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
-                            <div className="lg:order-2 overflow-hidden">
-                                <img src={Img13} alt="Executive Business Club" className="h-[420px] w-full object-cover" />
-                            </div>
-                            <div className="lg:order-1">
-                                <p className="text-xs uppercase tracking-[0.45em] text-[#a87738]">Chapter II</p>
-                                <h3 className="font-big-moore mt-5 text-[2.6rem] leading-tight text-[#162038]">Executive Business Club</h3>
-                                <p className="mt-5 text-lg leading-8 text-[#384765]">
-                                    A members-only floor designed for the way modern business operates. Boardrooms for long meetings, podcast studios for public-facing content, and co-working bays for everything in between.
-                                </p>
-                                <div className="mt-8 grid gap-3 sm:grid-cols-2">
-                                    {['Executive Boardroom', 'Conference & Breakout Rooms', 'Podcast & Recording Studio', 'Co-Working Floor', 'Private Phone Booths', 'High-Speed Fibre · Smart AV'].map((item) => (
-                                        <div key={item} className="flex items-center gap-3 text-[#162038]">
-                                            <span className="text-[#a87738]">-</span>
-                                            <span>{item}</span>
-                                        </div>
-                                    ))}
-                                </div>
-                                <button
-                                    type="button"
-                                    onClick={() => setIsFormOpen(true)}
-                                    className="mt-8 inline-flex items-center justify-center border border-[#a87738]/40 bg-[#0b1020] px-6 py-3 text-sm font-semibold uppercase tracking-[0.22em] text-[#f2e2cc] transition hover:bg-[#111b2e]"
-                                >
-                                    Get More Details
-                                </button>
-                            </div>
-                        </div>
-
-                        <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
-                            <div className="overflow-hidden">
-                                <img src={WellnessImg} alt="Wellness & Lifestyle" className="h-[420px] w-full object-cover" />
-                            </div>
-                            <div>
-                                <p className="text-xs uppercase tracking-[0.45em] text-[#a87738]">Chapter III</p>
-                                <h3 className="font-big-moore mt-5 text-[2.6rem] leading-tight text-[#162038]">Wellness & Lifestyle</h3>
-                                <p className="mt-5 text-lg leading-8 text-[#384765]">
-                                    A complete wellness ecosystem within the tower, including a fully equipped gym, Pilates studio, sauna, and a curated caf? programme that turns the lobby into a destination.
-                                </p>
-                                <div className="mt-8 grid gap-3 sm:grid-cols-2">
-                                    {['State-of-the-Art Gym', 'Pilates & Yoga Studios', 'Sauna & Steam Rooms', 'Indoor & Outdoor Cafés', 'Concierge & Reception', '24/7 Building Security'].map((item) => (
-                                        <div key={item} className="flex items-center gap-3 text-[#162038]">
-                                            <span className="text-[#a87738]">-</span>
-                                            <span>{item}</span>
-                                        </div>
-                                    ))}
-                                </div>
-                                <button
-                                    type="button"
-                                    onClick={() => setIsFormOpen(true)}
-                                    className="mt-8 inline-flex items-center justify-center border border-[#a87738]/40 bg-[#0b1020] px-6 py-3 text-sm font-semibold uppercase tracking-[0.22em] text-[#f2e2cc] transition hover:bg-[#111b2e]"
-                                >
-                                    Get More Details
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="gallery" className="bg-[#0b1020] px-6 py-10 sm:py-24 lg:px-[12%]">
-                <div className="mx-auto w-full">
-                    <div className="text-left">
-                        <p className="text-xs uppercase tracking-[0.45em] text-[#d9b58d]">Gallery</p>
-                        <h2 className="font-big-moore mt-4 text-5xl text-white sm:text-6xl">
-                            A <span className="text-[#d9b58d] italic">Closer</span> Look.
-                        </h2>
-                    </div>
-                    <div className="mt-2 md:hidden">
-                        <div
-                            ref={mobileGalleryRef}
-                            onScroll={handleMobileGalleryScroll}
-                            className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-                        >
-                            {galleryImages.map((src, index) => (
-                                <div key={src} className="min-w-full snap-center overflow-hidden">
-                                    <img src={src} alt={`Gallery ${index + 1}`} className="h-[320px] w-full object-cover" />
-                                </div>
-                            ))}
-                        </div>
-                        <div className="mt-3 flex justify-center gap-2">
-                            {galleryImages.map((src, index) => (
-                                <span
-                                    key={src}
-                                    className={`h-1.5 w-1.5 transition-all ${index === activeMobileGalleryIndex ? 'w-4 bg-[#d9b58d]' : 'bg-white/30'
-                                        }`}
-                                />
-                            ))}
-                        </div>
-                    </div>
-
-                    <div className="mt-10 hidden gap-4 md:grid md:grid-cols-12">
-                        <div className="overflow-hidden md:col-span-7">
-                            <button type="button" onClick={() => openGallery(0)} className="block h-full w-full">
-                                <img src={HeroImg} alt="Gallery 1" className="h-full w-full object-cover" />
-                            </button>
-                        </div>
-                        <div className="grid gap-4 md:col-span-5">
-                            <button type="button" onClick={() => openGallery(1)} className="block">
-                                <img src={Img2} alt="Gallery 2" className="h-[210px] w-full object-cover" />
-                            </button>
-                            <button type="button" onClick={() => openGallery(2)} className="block">
-                                <img src={Img3} alt="Gallery 3" className="h-[210px] w-full object-cover" />
-                            </button>
-                        </div>
-                        <button type="button" onClick={() => openGallery(3)} className="block md:col-span-4">
-                            <img src={LoungeImg} alt="Gallery 4" className="h-[190px] w-full object-cover" />
-                        </button>
-                        <button type="button" onClick={() => openGallery(4)} className="block md:col-span-4">
-                            <img src={HeaderImg} alt="Gallery 5" className="h-[190px] w-full object-cover" />
-                        </button>
-                        <button type="button" onClick={() => openGallery(5)} className="block md:col-span-4">
-                            <img src={GymImg} alt="Gallery 6" className="h-[190px] w-full object-cover" />
-                        </button>
-                        <button type="button" onClick={() => openGallery(6)} className="block md:col-span-4">
-                            <img src={Img7} alt="Gallery 7" className="h-[190px] w-full object-cover" />
-                        </button>
-                        <button type="button" onClick={() => openGallery(7)} className="block md:col-span-4">
-                            <img src={PoolImg} alt="Gallery 8" className="h-[190px] w-full object-cover" />
-                        </button>
-                        <button type="button" onClick={() => openGallery(8)} className="block md:col-span-4">
-                            <img src={Img9} alt="Gallery 9" className="h-[190px] w-full object-cover" />
-                        </button>
-                        <button type="button" onClick={() => openGallery(9)} className="block md:col-span-4">
-                            <img src={TowerImg} alt="Gallery 10" className="h-[190px] w-full object-cover" />
-                        </button>
-                        <button type="button" onClick={() => openGallery(10)} className="block md:col-span-4">
-                            <img src={Img11} alt="Gallery 11" className="h-[190px] w-full object-cover" />
-                        </button>
-                        <button type="button" onClick={() => openGallery(11)} className="block md:col-span-4">
-                            <img src={OfficeImg} alt="Gallery 12" className="h-[190px] w-full object-cover" />
-                        </button>
-                        <button type="button" onClick={() => openGallery(12)} className="block md:col-span-4">
-                            <img src={Img13} alt="Gallery 13" className="h-[190px] w-full object-cover" />
-                        </button>
-                        <button type="button" onClick={() => openGallery(13)} className="block md:col-span-4">
-                            <img src={Img14} alt="Gallery 14" className="h-[190px] w-full object-cover" />
-                        </button>
-                        <button type="button" onClick={() => openGallery(14)} className="block md:col-span-4">
-                            <img src={Img15} alt="Gallery 15" className="h-[190px] w-full object-cover" />
-                        </button>
-                        <button type="button" onClick={() => openGallery(15)} className="block md:col-span-4">
-                            <img src={WellnessImg} alt="Gallery 16" className="h-[190px] w-full object-cover" />
-                        </button>
-                        <button type="button" onClick={() => openGallery(16)} className="block md:col-span-4">
-                            <img src={Img17} alt="Gallery 17" className="h-[190px] w-full object-cover" />
-                        </button>
-                        <button type="button" onClick={() => openGallery(17)} className="block md:col-span-4">
-                            <img src={Img18} alt="Gallery 18" className="h-[190px] w-full object-cover" />
-                        </button>
-                    </div>
-                </div>
-            </section>
-
-            {selectedGalleryIndex !== null && (
-                <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 px-4 py-6">
-                    <button
-                        type="button"
-                        onClick={closeGallery}
-                        className="absolute right-4 top-4 inline-flex h-10 w-10 items-center justify-center border border-white/20 bg-white/10 text-white transition hover:bg-white/20"
-                        aria-label="Close gallery"
-                    >
-                        <X size={18} />
-                    </button>
-
-                    <button
-                        type="button"
-                        onClick={goPrevGallery}
-                        className="absolute left-4 top-1/2 inline-flex -translate-y-1/2 items-center justify-center border border-white/20 bg-white/10 px-3 py-2 text-white transition hover:bg-white/20"
-                        aria-label="Previous image"
-                    >
-                        ‹
-                    </button>
-
-                    <div className="w-full max-w-6xl">
-                        <img
-                            src={galleryImages[selectedGalleryIndex]}
-                            alt={`Gallery ${selectedGalleryIndex + 1}`}
-                            className="max-h-[80vh] w-full object-contain"
-                        />
-                        <div className="mt-4 text-center text-xs uppercase tracking-[0.3em] text-[#cfb89d]">
-                            {selectedGalleryIndex + 1} / {galleryImages.length}
-                        </div>
-                    </div>
-
-                    <button
-                        type="button"
-                        onClick={goNextGallery}
-                        className="absolute right-4 top-1/2 inline-flex -translate-y-1/2 items-center justify-center border border-white/20 bg-white/10 px-3 py-2 text-white transition hover:bg-white/20"
-                        aria-label="Next image"
-                    >
-                        ›
-                    </button>
-                </div>
-            )}
-
-            <section id="payment-plan" className="bg-[#0b1020] px-6 py-10 sm:py-24 lg:px-[12%]">
-                <div className="mx-auto w-full">
-                    <div className="text-left">
-                        <p className="text-xs uppercase tracking-[0.45em] text-[#d9b58d]">Payment Plan</p>
-                    </div>
-                    <h2 className="font-big-moore mt-4 text-5xl text-white sm:text-6xl">
-                        Interest-Free <span className="text-[#d9b58d] italic">Payment Plan</span>.
+            <section id="why" className="px-6 py-16">
+                <div className="mx-auto max-w-[1280px]">
+                    <h2 className="text-center text-2xl font-black uppercase sm:text-3xl">
+                        Why Investors Are Choosing <span className="text-[#b9803c]">Samana Business Hub</span>
                     </h2>
-
-                    <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-4">
-                        {[
-                            { pct: '20%', title: 'On Booking', text: 'Initial reservation & SPA execution' },
-                            { pct: '30%', title: 'During Construction', text: '1% x 30 Months' },
-                            { pct: '10%', title: 'On-Handover', text: 'June 2029' },
-                            { pct: '40%', title: 'Post Handover', text: '1% x 40 Months' }
-                        ].map((item) => (
-                            <div key={item.title} className="text-left">
-                                <div className="font-serif text-4xl text-[#d7aa63]">{item.pct}</div>
-                                <div className="mt-3 text-sm uppercase tracking-[0.25em] text-[#cfb89d]">{item.title}</div>
-                                <div className="mt-2 text-xs text-[#a99d8b]">{item.text}</div>
-                            </div>
-                        ))}
+                    <div className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                        {whyCards.map((card) => {
+                            const Icon = card.icon;
+                            return (
+                                <div key={card.title} className="rounded-md border border-[#f0ede6] bg-white p-6 shadow-[0_10px_30px_rgba(6,21,36,.10)]">
+                                    <Icon className="text-[#d8a65a]" size={34} />
+                                    <h3 className="mt-4 text-sm font-black uppercase">{card.title}</h3>
+                                    <p className="mt-2 text-sm leading-6 text-[#4a5568]">{card.text}</p>
+                                </div>
+                            );
+                        })}
                     </div>
-
                 </div>
             </section>
 
-            <section id="location" className="bg-[#0b1020] px-6 py-10 sm:py-24 lg:px-[12%]">
-                <div className="relative mx-auto grid w-full gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+            <section id="location" className="bg-[#061524] px-6 py-16 text-white">
+                <div className="mx-auto grid max-w-[1280px] gap-12 lg:grid-cols-2 lg:items-center">
                     <div>
-                        <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
-                            <div className="sm:max-w-[70%]">
-                                <p className="text-xs uppercase tracking-[0.45em] text-[#d9b58d]">Location</p>
-                                <h2 className="mt-4 font-big-moore text-5xl text-white sm:text-6xl lg:whitespace-nowrap">
-                                    On <span className="text-[#d9b58d] italic">Sheikh Zayed</span> Road.
-                                </h2>
-                            </div>
-                        </div>
-                        <p className="mt-6 max-w-lg text-lg leading-8 text-[#d8c9b8]">
-                            Direct frontage on Dubai's most prestigious commercial artery. The list below shows approximate driving times to key destinations.
-                        </p>
-
-                        <div className="mt-8">
-                            <p className="text-xs uppercase tracking-[0.35em] text-[#cfb89d]">Approximate Travel Times</p>
-                            <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                                {[
-                                    ['Expo City Dubai', '10 Min'],
-                                    ['Dubai Investment Park (DIP)', '10 Min'],
-                                    ['Al Maktoum International Airport (DWC)', '10 Min'],
-                                    ['Jumeirah Beach Residence (JBR)', '15 Min'],
-                                    ['Dubai Marina', '15 Min'],
-                                    ['Business Bay', '20 Min'],
-                                    ['Downtown Dubai / Burj Khalifa', '20 Min'],
-                                    ['DIFC', '20 Min']
-                                ].map(([label, time]) => (
-                                    <div key={label} className="flex items-center justify-between gap-3 border border-white/10 bg-white/5 px-4 py-3 text-[#efe8dc]">
-                                        <span className="font-medium">{label}</span>
-                                        <span className="shrink-0 border border-[#d9b58d]/40 bg-[#d9b58d]/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#d9b58d]">
-                                            {time}
-                                        </span>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                    {/* <a
-            href="#register"
-            onClick={(event) => {
-              event.preventDefault();
-              setIsFormOpen(true);
-            }}
-            className="hidden lg:inline-flex absolute right-0 top-0 items-center justify-center border border-[#d9b58d] bg-[#d9b58d] px-5 py-3 text-xs font-bold uppercase tracking-[0.22em] text-[#0b1020] transition hover:bg-[#efc27a]"
-          >
-            Contact Us
-          </a> */}
-                    <div className="self-end overflow-hidden border border-white/10">
-                        <img src={MapImg} alt="Map location" className="h-[420px] w-full object-cover" />
-                    </div>
-                </div>
-            </section>
-
-            <section className="bg-[#0b1020] px-6 py-10 sm:py-24 lg:px-[12%]">
-                <div className="mx-auto w-full">
-                    <div className="text-left">
-                        <p className="text-xs uppercase tracking-[0.45em] text-[#d9b58d]">Investment</p>
-                        <h2 className="font-big-moore mt-4 text-5xl text-white sm:text-6xl">
-                            Why <span className="text-[#d9b58d] italic">Commercial</span>, Why Now.
-                        </h2>
-                    </div>
-                    <div className="mt-12 grid gap-4 md:grid-cols-3">
-                        {[
-                            ['Commercial Capital Growth', 'Dubai commercial yields outperform residential assets, with prime Sheikh Zayed Road offices delivering 8-10% gross rental returns.'],
-                            ['Freehold Ownership', 'Full freehold title deed for international investors, allowing you to own and lease in your own name.'],
-                            ['Golden Visa Eligible', 'Investments above AED 2M may qualify for the 10-year UAE Golden Visa for the investor and family.'],
-                            ['Zero Property Tax', 'No annual property tax and no capital gains tax, helping you maximise returns on every transaction.'],
-                            ['Appreciation Potential', 'Sheikh Zayed Road commercial inventory remains tightly supplied; pre-handover entry locks in below-market pricing.'],
-                            ['Trusted Developer', 'Samana Developers - 50+ projects delivered across Dubai with a proven on-time handover record.']
-                        ].map(([title, text]) => (
-                            <div key={title} className="border border-white/10 bg-[#141b2c] p-5">
-                                <h3 className="text-lg font-semibold text-white">{title}</h3>
-                                <p className="mt-2 text-sm leading-7 text-[#bdb1a0]">{text}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            <section id="faq" className="bg-[#0b1020] px-6 py-10 sm:py-24 lg:px-[12%]">
-                <div className="mx-auto grid w-full gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-stretch">
-                    <div className="text-left">
-                        <p className="text-xs uppercase tracking-[0.45em] text-[#d9b58d]">Common Questions</p>
-                        <h2 className="font-big-moore mt-4 text-5xl text-white sm:text-6xl">FAQs</h2>
-                        <div className="mt-10 space-y-3">
-                            {[
-                                {
-                                    q: 'Where is Samana Business Hub located?',
-                                    a: "Samana Business Hub is located directly on Sheikh Zayed Road, next to the Dubai Metro, strategically located in Dubai's growth corridor between the world's biggest airport and the UAE's largest seaport, Jebel Ali Port."
-                                },
-                                {
-                                    q: 'Is this a freehold project for foreign investors?',
-                                    a: 'Yes. Samana Business Hub offers full freehold ownership with a registered DLD title deed for buyers of any nationality, with no restrictions on leasing.'
-                                },
-                                {
-                                    q: 'When is the handover date?',
-                                    a: 'Construction handover is scheduled for June 2029 (Q2 2029).'
-                                },
-                                {
-                                    q: 'What is the payment plan structure?',
-                                    a: '20% on booking, 30% during construction (1% x 30 Monthly), 10% on handover (June 2029), and 40% post-handover (1% x 40 Monthly)  one of the most balanced commercial plans on Sheikh Zayed Road.'
-                                },
-                                {
-                                    q: 'Can I finance a commercial unit through a UAE bank?',
-                                    a: 'Yes. Most UAE banks offer commercial mortgages up to 50-60% LTV for completed and selected off-plan commercial properties. Our team can introduce you to preferred banking partners.'
-                                },
-                                {
-                                    q: 'What rental yield can I expect?',
-                                    a: 'Sheikh Zayed Road Grade-A commercial space currently translates to gross yields of 8–10%, significantly above prime residential.'
-                                },
-                                {
-                                    q: 'Are unit fit-outs included?',
-                                    a: 'Offices are delivered shell-and-core ready for tenant fit-out.'
-                                },
-                                {
-                                    q: 'What service charges apply?',
-                                    a: 'Estimated service charges are AED 18-20 per sq ft annually, covering common-area maintenance, security, lifts, and amenity operations.'
-                                }
-                            ].map((item, index) => (
-                                <AccordionItem
-                                    key={item.q}
-                                    item={item}
-                                    open={openFaq === index}
-                                    onClick={() => setOpenFaq((prev) => (prev === index ? -1 : index))}
-                                />
+                        <div className="text-xs font-black uppercase tracking-[0.15em] text-[#d8a65a]">At the Heart of Dubai's Growth</div>
+                        <h2 className="mt-2 text-3xl font-black uppercase">On Sheikh Zayed Road</h2>
+                        <div className="mt-7 grid grid-cols-2 gap-6">
+                            {locationStats.map(([value, title, text]) => (
+                                <div key={title}>
+                                    <strong className="block text-3xl font-black leading-none text-[#d8a65a]">{value}</strong>
+                                    <b className="mt-2 block text-xs uppercase">{title}</b>
+                                    <span className="mt-1 block text-xs text-[#c7cbd1]">{text}</span>
+                                </div>
                             ))}
                         </div>
                     </div>
-
-                    <div id="contact-inquiry" className="flex flex-col border border-[#d9b58d]/30 bg-[#141b2c] p-5 sm:p-6 lg:mt-[132px]">
-                        <p className="text-left text-xs uppercase tracking-[0.45em] text-[#d9b58d]">Priority Investor Access</p>
-                        <h2 className="font-big-moore mt-2 text-left text-4xl text-white">Register Your Interest</h2>
-                        <p className="mt-2 text-left text-sm text-[#bdb1a0]">
-                            Receive the full project brochure, floor plans, and investment details.
-                        </p>
-
-                        <form className="mt-5 flex flex-col space-y-4" onSubmit={handleSubmit}>
-                            <input
-                                type="text"
-                                name="name"
-                                value={form.name}
-                                onChange={handleChange}
-                                required
-                                placeholder="Name"
-                                className="w-full border border-[#d9b58d]/30 bg-[#0f1526] px-4 py-3 text-sm text-white outline-none placeholder:text-[#8e846f]"
-                            />
-                            <input
-                                type="email"
-                                name="email"
-                                value={form.email}
-                                onChange={handleChange}
-                                required
-                                placeholder="Email"
-                                className="w-full border border-[#d9b58d]/30 bg-[#0f1526] px-4 py-3 text-sm text-white outline-none placeholder:text-[#8e846f]"
-                            />
-                            <input
-                                type="tel"
-                                name="phone"
-                                value={form.phone}
-                                onChange={handleChange}
-                                required
-                                placeholder="Phone"
-                                className="w-full border border-[#d9b58d]/30 bg-[#0f1526] px-4 py-3 text-sm text-white outline-none placeholder:text-[#8e846f]"
-                            />
-                            <textarea
-                                rows={4}
-                                name="message"
-                                value={form.message}
-                                onChange={handleChange}
-                                required
-                                placeholder="Message"
-                                className="w-full border border-[#d9b58d]/30 bg-[#0f1526] px-4 py-3 text-sm text-white outline-none placeholder:text-[#8e846f]"
-                            />
-                            <button
-                                type="submit"
-                                disabled={isSubmitting}
-                                className="w-full bg-[#d7aa63] px-4 py-3 text-sm font-bold uppercase tracking-[0.3em] text-[#0b1020]"
-                            >
-                                {isSubmitting ? 'Submitting...' : 'Submit Inquiry'}
-                            </button>
-                        </form>
+                    <div className="relative min-h-[320px] overflow-hidden rounded-md">
+                        <img src={MapImg} alt="Map showing Samana Business Hub location on Sheikh Zayed Road" className="absolute inset-0 h-full w-full object-cover" />
+                        <div className="absolute inset-0 bg-[#061524]/25" />
+                        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#d8a65a] px-5 py-3 text-center text-xs font-black uppercase text-[#040e1c] shadow-[0_8px_20px_rgba(0,0,0,.3)]">
+                            Samana<br />Business Hub
+                        </div>
                     </div>
                 </div>
             </section>
 
-            {isFormOpen && (
-                <section className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 px-6 py-10">
-                    <div className="relative w-full max-w-xl border border-[#d9b58d]/30 bg-[#141b2c] p-6 shadow-[0_30px_80px_rgba(0,0,0,0.4)] sm:p-8">
-                        <button
-                            type="button"
-                            onClick={() => setIsFormOpen(false)}
-                            className="absolute right-3 top-3 inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/80 hover:bg-white/10"
-                            aria-label="Close form"
-                        >
-                            <X size={16} />
-                        </button>
-
-                        <p className="text-left text-xs uppercase tracking-[0.45em] text-[#d9b58d]">Priority Investor Access</p>
-                        <h2 className="font-big-moore mt-4 text-left text-4xl text-white">Register Your Interest</h2>
-                        <p className="mt-3 text-left text-sm text-[#bdb1a0]">
-                            Receive the full project brochure, floor plans, and investment details.
-                        </p>
-
-                        <form className="mt-8 space-y-4" onSubmit={handleSubmit}>
-                            <input
-                                type="text"
-                                name="name"
-                                value={form.name}
-                                onChange={handleChange}
-                                required
-                                placeholder="Name"
-                                className="w-full border border-[#d9b58d]/30 bg-[#0f1526] px-4 py-3 text-sm text-white outline-none placeholder:text-[#8e846f]"
-                            />
-                            <input
-                                type="email"
-                                name="email"
-                                value={form.email}
-                                onChange={handleChange}
-                                required
-                                placeholder="Email"
-                                className="w-full border border-[#d9b58d]/30 bg-[#0f1526] px-4 py-3 text-sm text-white outline-none placeholder:text-[#8e846f]"
-                            />
-                            <input
-                                type="tel"
-                                name="phone"
-                                value={form.phone}
-                                onChange={handleChange}
-                                required
-                                placeholder="Phone"
-                                className="w-full border border-[#d9b58d]/30 bg-[#0f1526] px-4 py-3 text-sm text-white outline-none placeholder:text-[#8e846f]"
-                            />
-                            <textarea
-                                rows={4}
-                                name="message"
-                                value={form.message}
-                                onChange={handleChange}
-                                required
-                                placeholder="Message"
-                                className="w-full border border-[#d9b58d]/30 bg-[#0f1526] px-4 py-3 text-sm text-white outline-none placeholder:text-[#8e846f]"
-                            />
-                            <button
-                                type="submit"
-                                disabled={isSubmitting}
-                                className="w-full bg-[#d7aa63] px-4 py-3 text-sm font-bold uppercase tracking-[0.3em] text-[#0b1020]"
-                            >
-                                {isSubmitting ? 'Submitting...' : 'Submit Inquiry'}
-                            </button>
-                        </form>
+            <section className="px-6 py-14 text-center">
+                <div className="mx-auto max-w-[1280px]">
+                    <h2 className="text-2xl font-black uppercase sm:text-3xl">Investment Snapshot</h2>
+                    <div className="mt-9 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+                        {snapshotStats.map(([label, value, suffix]) => (
+                            <div key={label} className="rounded-md bg-white px-3 py-6 shadow-[0_10px_30px_rgba(6,21,36,.10)]">
+                                <small className="text-[11px] font-black uppercase text-[#4a5568]">{label}</small>
+                                <strong className="my-2 block text-lg font-black">{value}</strong>
+                                <small className="text-[11px] font-black uppercase text-[#4a5568]">{suffix || '\u00a0'}</small>
+                            </div>
+                        ))}
                     </div>
-                </section>
-            )}
+                </div>
+            </section>
 
-            <footer className="border-t border-white/10 bg-[#0a0f1d] px-[5%] py-6 text-center text-xs uppercase tracking-[0.22em] text-[#cdb89a] sm:px-[12%]">
-                Samana Developers © 2026
+            <section id="payment-plan" className="bg-[#061524] px-6 py-14 text-white">
+                <div className="mx-auto grid max-w-[1280px] gap-10 lg:grid-cols-[auto_1fr_auto] lg:items-center">
+                    <div className="text-center lg:text-left">
+                        <div className="text-xs font-black uppercase tracking-[0.15em] text-[#d8a65a]">Flexible & Interest-Free</div>
+                        <h2 className="mt-2 text-3xl font-black uppercase">Payment Plan</h2>
+                    </div>
+                    <div className="grid grid-cols-2 gap-5 text-center lg:grid-cols-4">
+                        {paymentSteps.map((step) => {
+                            const Icon = step.icon;
+                            return (
+                                <div key={step.title}>
+                                    <div className="mx-auto mb-3 flex h-16 w-16 items-center justify-center rounded-full bg-[#d8a65a] text-[#040e1c]">
+                                        <Icon size={26} />
+                                    </div>
+                                    <strong className="block text-2xl font-black text-[#d8a65a]">{step.pct}</strong>
+                                    <b className="mt-1 block text-[11px] uppercase">{step.title}</b>
+                                    <span className="text-[11px] text-[#c7cbd1]">{step.text}</span>
+                                </div>
+                            );
+                        })}
+                    </div>
+                    <div className="rounded-md border border-[#d8a65a]/60 p-6 text-center lg:max-w-[260px]">
+                        <p className="text-sm leading-6 text-[#d8dce3]">Get the full instalment schedule sent to your inbox in under 2 minutes.</p>
+                        <button type="button" onClick={() => handleNavClick('#hero-form')} className="mt-4 w-full rounded bg-[#d8a65a] px-5 py-4 text-xs font-black uppercase text-[#040e1c]">
+                            Get Payment Plan
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="offices" className="px-6 py-16 text-center">
+                <div className="mx-auto max-w-[1280px]">
+                    <h2 className="text-2xl font-black uppercase sm:text-3xl">Office Spaces Designed for Every Business</h2>
+                    <div className="mt-9 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                        {officeCards.map((card) => (
+                            <div key={card.title} className="flex overflow-hidden rounded-md bg-white text-left shadow-[0_10px_30px_rgba(6,21,36,.10)]">
+                                <div className="flex w-full flex-col">
+                                    <div className="relative h-48">
+                                        <img src={card.image} alt={card.label} className="h-full w-full object-cover" />
+                                        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,21,36,0)_45%,rgba(6,21,36,.75)_100%)]" />
+                                        <span className="absolute bottom-3 left-3 rounded bg-[#061524]/60 px-3 py-1 text-[11px] font-black uppercase tracking-[0.05em] text-white">{card.label}</span>
+                                    </div>
+                                    <div className="flex flex-1 flex-col gap-3 p-5">
+                                        <h3 className="text-lg font-black">{card.title}</h3>
+                                        <p className="text-sm leading-6 text-[#4a5568]">{card.text}</p>
+                                        <button
+                                            type="button"
+                                            onClick={() => handleNavClick('#hero-form')}
+                                            className="mt-auto rounded border border-[#d8a65a] px-5 py-3 text-xs font-black uppercase text-[#b9803c]"
+                                        >
+                                            Get Floor Plan
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            <section id="amenities" className="bg-[#f7f3ed] px-6 py-14 text-center">
+                <div className="mx-auto max-w-[1280px]">
+                    <h2 className="text-2xl font-black uppercase sm:text-3xl">Premium Amenities for Productive Business</h2>
+                    <div className="mt-9 grid grid-cols-2 gap-7 lg:grid-cols-4">
+                        {amenities.map((item) => {
+                            const Icon = item.icon;
+                            return (
+                                <div key={item.label} className="flex flex-col items-center gap-3">
+                                    <Icon className="text-[#d8a65a]" size={30} />
+                                    <b className="text-sm leading-5">{item.label}</b>
+                                </div>
+                            );
+                        })}
+                    </div>
+                </div>
+            </section>
+
+            <section id="gallery" className="px-6 py-16 pt-10">
+                <div className="mx-auto max-w-[1280px]">
+                    <h2 className="text-center text-2xl font-black uppercase sm:text-3xl">
+                        A Building Designed to Impress <span className="text-[#b9803c]">Clients & Employees</span>
+                    </h2>
+                    <div className="mt-9 grid gap-6 lg:grid-cols-[1.3fr_1fr]">
+                        {[
+                            { image: PoolImg, label: 'Rooftop Infinity Pool & Sky Deck' },
+                            { image: Img17, label: 'Cafe & Lounge' }
+                        ].map((item) => (
+                            <div key={item.label} className="relative min-h-[340px] overflow-hidden rounded-md shadow-[0_10px_30px_rgba(6,21,36,.10)]">
+                                <img src={item.image} alt={item.label} className="absolute inset-0 h-full w-full object-cover" />
+                                <div className="absolute inset-x-0 bottom-0 bg-[linear-gradient(180deg,rgba(6,21,36,0),rgba(6,21,36,.75))] p-5 text-sm font-black uppercase text-white">
+                                    {item.label}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            <section className="border-y border-[#eee] px-6 py-9 text-center">
+                <p className="text-xs font-bold uppercase tracking-[0.1em] text-[#4a5568]">Regulated & Verified</p>
+                <div className="mt-4 flex flex-wrap justify-center gap-7 text-sm font-bold text-[#4a5568]">
+                    {['RERA Registered Project', 'DLD Registered', 'Escrow Protected Payments'].map((item) => (
+                        <span key={item} className="flex items-center gap-2">
+                            <ShieldCheck size={20} className="text-[#b9803c]" />
+                            {item}
+                        </span>
+                    ))}
+                </div>
+            </section>
+
+            <section id="faq" className="mx-auto max-w-[820px] px-6 py-16">
+                <h2 className="text-center text-2xl font-black uppercase sm:text-3xl">Common Questions</h2>
+                <div className="mt-7">
+                    {faqItems.map((item) => (
+                        <details key={item.q} className="group border-b border-[#e7e2d8] py-5">
+                            <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-black">
+                                {item.q}
+                                <span className="text-2xl leading-none text-[#b9803c] group-open:hidden">+</span>
+                                <span className="hidden text-2xl leading-none text-[#b9803c] group-open:inline">-</span>
+                            </summary>
+                            <p className="mt-3 text-sm leading-6 text-[#4a5568]">{item.a}</p>
+                        </details>
+                    ))}
+                </div>
+            </section>
+
+            <section id="contact" className="bg-[#061524] px-6 py-16 text-white">
+                <div className="mx-auto grid max-w-[1280px] gap-12 lg:grid-cols-[1fr_420px] lg:items-center">
+                    <div>
+                        <div className="text-xs font-black uppercase tracking-[0.15em] text-[#d8a65a]">Limited Units Remaining</div>
+                        <h2 className="mt-3 max-w-xl text-3xl font-black uppercase leading-tight sm:text-4xl">Ready to Invest in Sheikh Zayed Road?</h2>
+                        <p className="mt-4 max-w-xl text-sm leading-6 text-[#d8dce3]">
+                            Speak with our sales team today to secure current pricing, floor plans, and the full payment schedule before the next price release.
+                        </p>
+                        <ul className="mt-6 grid gap-3 text-sm sm:grid-cols-2">
+                            {['RERA Registered', 'Freehold Ownership', '1% Monthly Plan', 'Handover Q2 2029'].map((item) => (
+                                <li key={item} className="flex items-center gap-2">
+                                    <Check size={16} className="text-[#d8a65a]" />
+                                    {item}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    {renderLeadForm('Get Investment')}
+                </div>
+            </section>
+
+            <footer className="bg-[#07111f] px-6 py-8 text-[#c7cbd1]">
+                <div className="mx-auto grid max-w-[1280px] gap-6 text-sm sm:grid-cols-2 lg:grid-cols-4">
+                    <div>
+                        <img src={SamanaLogo} alt="Samana Developers" className="h-8 w-auto" />
+                        <p className="mt-4 leading-6">Premium commercial offices at Samana Business Hub on Sheikh Zayed Road.</p>
+                    </div>
+                    <div>
+                        <h5 className="text-xs font-black uppercase text-white">Project</h5>
+                        <p className="mt-3 leading-6">Samana Business Hub<br />Sheikh Zayed Road, Dubai</p>
+                    </div>
+                    <div>
+                        <h5 className="text-xs font-black uppercase text-white">Enquiries</h5>
+                        <button type="button" onClick={() => handleNavClick('#hero-form')} className="mt-3 text-left leading-6 text-[#c7cbd1]">
+                            Request pricing and floor plans
+                        </button>
+                    </div>
+                    <div>
+                        <h5 className="text-xs font-black uppercase text-white">Developer</h5>
+                        <p className="mt-3 leading-6">Samana Developers (c) 2026</p>
+                    </div>
+                </div>
             </footer>
+
+            <div className="fixed inset-x-0 bottom-0 z-[60] flex gap-2 border-t border-[#d8a65a]/40 bg-[#040e1c] p-3 lg:hidden" aria-label="Quick actions">
+                <button type="button" onClick={() => handleNavClick('#hero-form')} className="w-full rounded bg-[#d8a65a] px-3 py-3 text-xs font-black uppercase text-[#040e1c]">
+                    Get Pricing
+                </button>
+            </div>
         </main>
     );
 }
 
 export default SamanaBussinessHub;
+
