@@ -609,7 +609,7 @@ function SamanaBussinessHub() {
                 </div>
             </section>
 
-            <footer className="bg-[#07111f] px-6 py-8 text-[#c7cbd1]">
+            {/* <footer className="bg-[#07111f] px-6 py-8 text-[#c7cbd1]">
                 <div className="mx-auto grid max-w-[1280px] gap-6 text-sm sm:grid-cols-2 lg:grid-cols-4">
                     <div>
                         <img src={SamanaLogo} alt="Samana Developers" className="h-8 w-auto" />
@@ -630,7 +630,7 @@ function SamanaBussinessHub() {
                         <p className="mt-3 leading-6">Samana Developers (c) 2026</p>
                     </div>
                 </div>
-            </footer>
+            </footer> */}
 
             <div className="fixed inset-x-0 bottom-0 z-[60] flex gap-2 border-t border-[#d8a65a]/40 bg-[#040e1c] p-3 lg:hidden" aria-label="Quick actions">
                 <button type="button" onClick={() => handleNavClick('#hero-form')} className="w-full rounded bg-[#d8a65a] px-3 py-3 text-xs font-black uppercase text-[#040e1c]">
