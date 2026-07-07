@@ -9,7 +9,6 @@ import {
     Coffee,
     CreditCard,
     DollarSign,
-    Dumbbell,
     FileText,
     Home,
     Layers3,
@@ -17,23 +16,18 @@ import {
     Menu,
     Monitor,
     ShieldCheck,
-    Store,
     TrendingUp,
     X
 } from 'lucide-react';
-import PoolImg from '../../Assests/Samana/cp2.8.jpg';
 import Img13 from '../../Assests/Samana/cp2.13.jpg';
 import Img14 from '../../Assests/Samana/cp2.14.jpg';
 import Img15 from '../../Assests/Samana/cp2.15.jpg';
-import Img17 from '../../Assests/Samana/cp2.17.jpg';
 import Img18 from '../../Assests/Samana/cp2.18.jpg';
 import MapImg from '../../Assests/Samana/Map_Samana_Business_Hub.png';
 import SamanaLogo from '../../Assests/Samana/SamanaLogo.png';
 import SamanaBusinessHubLogo from '../../Assests/Samana/Samana_Business_Hub_logo.png';
 import Head from '../../Assests/Samana/cp2.1.jpg';
 import { applySamanaSeo } from './samanaSeo';
-
-const SAMANA_GTM_ID = 'GTM-WT564CWM';
 
 const navItems = [
     { label: 'The Project', href: '#why' },
@@ -52,33 +46,33 @@ const featureStrip = [
 
 const whyCards = [
     {
-        title: 'Prime Location',
-        text: "Directly on Sheikh Zayed Road, Dubai's most important commercial artery.",
-        icon: MapPin
-    },
-    {
-        title: 'Metro Connectivity',
-        text: 'Next to a Dubai Metro station for easy access by employees, clients, and visitors.',
-        icon: Home
-    },
-    {
-        title: 'Business Growth Corridor',
-        text: "Positioned between Dubai's logistics, airport, port, and business districts.",
+        title: 'Early Launch Pricing',
+        text: "Secure today's pricing before future revisions.",
         icon: TrendingUp
     },
     {
-        title: 'Freehold Ownership',
-        text: 'Full freehold title deed available for international investors of any nationality.',
-        icon: ShieldCheck
+        title: 'Metro Connected',
+        text: '1-minute walk to Dubai Metro for employees and clients.',
+        icon: Home
     },
     {
-        title: 'Flexible Payment Plan',
-        text: 'Interest-free instalments including post-handover payments for easier cash flow.',
+        title: 'Flexible 1% Monthly Plan',
+        text: 'Spread your investment with easy payments.',
         icon: CreditCard
     },
     {
-        title: 'High Rental Returns',
-        text: 'Strong demand for grade-A commercial space supports attractive income potential.',
+        title: 'Freehold Ownership',
+        text: '100% ownership for all nationalities.',
+        icon: ShieldCheck
+    },
+    {
+        title: 'Prime Sheikh Zayed Road Address',
+        text: "Dubai's leading commercial corridor.",
+        icon: MapPin
+    },
+    {
+        title: 'High Rental Demand',
+        text: 'Located in an established business district with strong leasing potential.',
         icon: Building2
     }
 ];
@@ -93,12 +87,12 @@ const locationStats = [
 ];
 
 const snapshotStats = [
-    ['Starting Price', 'AED 1.46M', 'Onwards'],
-    ['Office Sizes', '590-17,500', 'Sq.Ft.'],
-    ['Payment Plan', '1%', 'Monthly'],
+    ['Starting Price', 'From AED 1.46M', ''],
+    ['Payment Plan', 'Pay Just 20%', 'to Book'],
     ['Handover', 'Q2 2029', ''],
-    ['Developer', 'Samana', 'Developers'],
-    ['Location', 'Sheikh Zayed Rd', 'Dubai']
+    ['Ownership', '100% Freehold', ''],
+    ['Location', 'Sheikh Zayed Road', 'Next to Metro'],
+    ['Investment Potential', 'Strong Rental Demand', '']
 ];
 
 const paymentSteps = [
@@ -136,14 +130,12 @@ const officeCards = [
 ];
 
 const amenities = [
-    { label: 'Infinity Pool & Sky Deck', icon: Store },
-    { label: 'Executive Lounge', icon: BriefcaseBusiness },
+    { label: 'Executive Business Lounge', icon: BriefcaseBusiness },
+    { label: 'Fully Equipped Meeting Rooms', icon: FileText },
     { label: 'Business Centre', icon: Monitor },
-    { label: 'Meeting & Conference Rooms', icon: FileText },
-    { label: 'Wellness Centre', icon: Dumbbell },
     { label: 'Cafe & Retail Spaces', icon: Coffee },
-    { label: '24/7 Security & Concierge', icon: ShieldCheck },
-    { label: 'Smart Building Technology', icon: Layers3 }
+    { label: 'Smart Building Technology', icon: Layers3 },
+    { label: '24/7 Security & Concierge', icon: ShieldCheck }
 ];
 
 const faqItems = [
@@ -179,30 +171,6 @@ function SamanaBussinessHub() {
         phone: '',
         interest: ''
     });
-
-    useEffect(() => {
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-            'gtm.start': new Date().getTime(),
-            event: 'gtm.js'
-        });
-
-        const script = document.createElement('script');
-        script.async = true;
-        script.src = `https://www.googletagmanager.com/gtm.js?id=${SAMANA_GTM_ID}`;
-        script.dataset.samanaGtm = SAMANA_GTM_ID;
-
-        const firstScript = document.getElementsByTagName('script')[0];
-        if (firstScript?.parentNode) {
-            firstScript.parentNode.insertBefore(script, firstScript);
-        } else {
-            document.head.appendChild(script);
-        }
-
-        return () => {
-            script.remove();
-        };
-    }, []);
 
     useEffect(() => {
         const cleanupSeo = applySamanaSeo(
@@ -311,7 +279,6 @@ function SamanaBussinessHub() {
                         <option value="">I am interested in</option>
                         <option value="Office investment">Office investment</option>
                         <option value="Own office use">Own office use</option>
-                        <option value="Floor plans and pricing">Floor plans and pricing</option>
                     </select>
                     <ChevronDown className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[#06101d]" size={18} />
                 </div>
@@ -324,11 +291,11 @@ function SamanaBussinessHub() {
                 disabled={isSubmitting}
                 className="mt-5 inline-flex h-14 w-full items-center justify-center rounded bg-[#d8a65a] px-6 text-xs font-black uppercase tracking-[0.03em] text-[#040e1c] transition hover:-translate-y-0.5 hover:shadow-[0_10px_24px_rgba(216,166,90,.4)] disabled:cursor-not-allowed disabled:opacity-70"
             >
-                {isSubmitting ? 'Submitting...' : 'Get Investment Details'}
+                {isSubmitting ? 'Submitting...' : 'Get Investment Pack'}
             </button>
             {showTrust && (
                 <div className="mt-5 grid grid-cols-2 gap-3 text-xs font-bold text-white">
-                    {['Instant Brochure', 'Payment Plan', 'Floor Plans', 'No Spam'].map((item) => (
+                    {['Instant Brochure', 'Payment Plan', 'Floor Plans', 'Availability'].map((item) => (
                         <span key={item} className="flex items-center gap-2">
                             <Check size={14} className="text-[#d8a65a]" />
                             {item}
@@ -408,12 +375,12 @@ function SamanaBussinessHub() {
                         <div className="text-xs font-black uppercase tracking-[0.15em] text-[#d8a65a]">Premium Investment Opportunity</div>
                         <img src={SamanaBusinessHubLogo} alt="Samana Business Hub" className="mt-6 h-28 w-auto sm:h-36" />
                         <h1 className="mt-6 text-[2.35rem] font-black uppercase leading-[0.98] sm:text-[4rem]">
-                            Premium Commercial<br />
-                            <span className="text-[#d8a65a]">Offices</span>
+                            Invest in Dubai's Fastest<br />
+                            <span className="text-[#d8a65a]">Growing Business Address</span>
                         </h1>
                         <h2 className="mt-4 text-xl font-black uppercase leading-tight sm:text-3xl">On Sheikh Zayed Road, Next to Dubai Metro</h2>
                         <p className="mt-5 max-w-xl text-base leading-7 text-[#eceef1]">
-                            A landmark business address built for growth. Flexible payment plan, strong rental demand, and 100% freehold ownership open to all nationalities.
+                            Freehold commercial offices on Sheikh Zayed Road with flexible payment plans, next to Dubai Metro and strong rental demand.
                         </p>
 
                         <div className="mt-8 grid grid-cols-2 border-y border-white/20 bg-black/25 backdrop-blur sm:grid-cols-3 lg:grid-cols-5">
@@ -430,7 +397,7 @@ function SamanaBussinessHub() {
                     </div>
 
                     <div id="hero-form" className="scroll-mt-24">
-                        {renderLeadForm('Get Pricing, Floor Plans & Payment', true)}
+                        {renderLeadForm('Get Complete Investment Pack', true)}
                     </div>
                 </div>
             </section>
@@ -438,7 +405,7 @@ function SamanaBussinessHub() {
             <section id="why" className="px-6 py-16">
                 <div className="mx-auto max-w-[1280px]">
                     <h2 className="text-center text-2xl font-black uppercase sm:text-3xl">
-                        Why Investors Are Choosing <span className="text-[#b9803c]">Samana Business Hub</span>
+                        WHY INVEST NOW
                     </h2>
                     <div className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
                         {whyCards.map((card) => {
@@ -557,7 +524,7 @@ function SamanaBussinessHub() {
 
             <section id="amenities" className="bg-[#f7f3ed] px-6 py-14 text-center">
                 <div className="mx-auto max-w-[1280px]">
-                    <h2 className="text-2xl font-black uppercase sm:text-3xl">Premium Amenities for Productive Business</h2>
+                    <h2 className="text-2xl font-black uppercase sm:text-3xl">Everything Your Business Needs Under One Roof</h2>
                     <div className="mt-9 grid grid-cols-2 gap-7 lg:grid-cols-4">
                         {amenities.map((item) => {
                             const Icon = item.icon;
@@ -572,7 +539,7 @@ function SamanaBussinessHub() {
                 </div>
             </section>
 
-            <section id="gallery" className="px-6 py-16 pt-10">
+            {/* <section id="gallery" className="px-6 py-16 pt-10">
                 <div className="mx-auto max-w-[1280px]">
                     <h2 className="text-center text-2xl font-black uppercase sm:text-3xl">
                         A Building Designed to Impress <span className="text-[#b9803c]">Clients & Employees</span>
@@ -591,9 +558,9 @@ function SamanaBussinessHub() {
                         ))}
                     </div>
                 </div>
-            </section>
+            </section> */}
 
-            <section className="border-y border-[#eee] px-6 py-9 text-center">
+            {/* <section className="border-y border-[#eee] px-6 py-9 text-center">
                 <p className="text-xs font-bold uppercase tracking-[0.1em] text-[#4a5568]">Regulated & Verified</p>
                 <div className="mt-4 flex flex-wrap justify-center gap-7 text-sm font-bold text-[#4a5568]">
                     {['RERA Registered Project', 'DLD Registered', 'Escrow Protected Payments'].map((item) => (
@@ -603,7 +570,7 @@ function SamanaBussinessHub() {
                         </span>
                     ))}
                 </div>
-            </section>
+            </section> */}
 
             <section id="faq" className="mx-auto max-w-[820px] px-6 py-16">
                 <h2 className="text-center text-2xl font-black uppercase sm:text-3xl">Common Questions</h2>
@@ -624,13 +591,13 @@ function SamanaBussinessHub() {
             <section id="contact" className="bg-[#061524] px-6 py-16 text-white">
                 <div className="mx-auto grid max-w-[1280px] gap-12 lg:grid-cols-[1fr_420px] lg:items-center">
                     <div>
-                        <div className="text-xs font-black uppercase tracking-[0.15em] text-[#d8a65a]">Limited Units Remaining</div>
-                        <h2 className="mt-3 max-w-xl text-3xl font-black uppercase leading-tight sm:text-4xl">Ready to Invest in Sheikh Zayed Road?</h2>
+                        <div className="text-xs font-black uppercase tracking-[0.15em] text-[#d8a65a]">Secure Today's Pricing</div>
+                        <h2 className="mt-3 max-w-xl text-3xl font-black uppercase leading-tight sm:text-4xl">READY TO INVEST IN SHEIKH ZAYED ROAD?</h2>
                         <p className="mt-4 max-w-xl text-sm leading-6 text-[#d8dce3]">
-                            Speak with our sales team today to secure current pricing, floor plans, and the full payment schedule before the next price release.
+                            Request the latest pricing, floor plans, available units, and complete payment schedule before the next price revision.
                         </p>
                         <ul className="mt-6 grid gap-3 text-sm sm:grid-cols-2">
-                            {['RERA Registered', 'Freehold Ownership', '1% Monthly Plan', 'Handover Q2 2029'].map((item) => (
+                            {['From AED 2,070 per Sq.Ft.', '1% Monthly Payment Plan', '100% Freehold Ownership'].map((item) => (
                                 <li key={item} className="flex items-center gap-2">
                                     <Check size={16} className="text-[#d8a65a]" />
                                     {item}
