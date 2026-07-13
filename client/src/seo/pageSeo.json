@@ -56,6 +56,25 @@
         ]
       }
     },
+    "/theforge/thanks": {
+      "title": "Thank You | The Forge Liverpool",
+      "description": "Thank you for requesting The Forge Liverpool investment details. Our team will contact you shortly with brochure, pricing, floor plans and availability.",
+      "h1": "Thank You for Your The Forge Liverpool Inquiry",
+      "content": "Your The Forge Liverpool inquiry has been received. Our team will follow up with brochure, pricing, floor plans and current availability.",
+      "bullets": [
+        "Inquiry received",
+        "Investment team follow-up pending"
+      ],
+      "robots": "noindex, follow",
+      "siteName": "The Forge Liverpool",
+      "locale": "en_GB",
+      "language": "en-GB",
+      "author": "The Forge Liverpool",
+      "publisher": "The Forge Liverpool",
+      "favicon": "/TheForge/favicon.png",
+      "ogImage": "/TheForge/favicon.png",
+      "ogImageAlt": "The Forge Liverpool"
+    },
     "/Damac/DamacIsland": {
       "title": "Damac Islands | Luxury Island Community in Dubai",
       "description": "Explore Damac Islands, a luxury island-inspired community in Dubai with waterfront lifestyle amenities, family residences, and investor registration.",

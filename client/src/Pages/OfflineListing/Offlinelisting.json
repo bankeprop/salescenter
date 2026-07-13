@@ -1,8 +1,8 @@
 {
   "status": "success",
-  "generatedAt": "2026-06-24T10:05:13.044Z",
+  "generatedAt": "2026-07-13T08:53:45.027Z",
   "source": "https://script.googleusercontent.com/macros/echo?user_content_key=AWDtjMXZ7u-02jOaJJfbcZCuSQKOzwxboc63oNtxUnojbzN5_-rQ7hjcokrYfCEV33ZnPpSCPPYR2o71Bnvd886lJbp-3UtS84A0423nvTFsvkjrWCwJTU4PITa_KWGfW1musl07ATgsR0ZOxHmPEYLQCP3yYQLNHM6cDUn1C8jFf7mdGu_fYj-bBesHH6M5NEQgLVJQ37Ct7yhYD_PaxUWzm1FWnsqXuZ4k0YCJwLWt_zj4ox_u3IkDRmCpUF94xEquwDw_Z74BipjGDWRFSoGnuBNClYZEP1wzh8HD2HIJ&lib=MYONLsLBDvMZdJe0GBZcbnt57JL4I04AC",
-  "count": 41,
+  "count": 42,
   "locationOptions": [
     "Business Bay",
     "Dubai Hills",
@@ -15,7 +15,8 @@
     "Meydan",
     "Emaar South",
     "Dubai Hills Estate",
-    "Dubai Science Park"
+    "Dubai Science Park",
+    "Sidra III, Dubai Hills Estate"
   ],
   "listings": [
     {
@@ -1193,6 +1194,24 @@
       "descriptionParagraphs": [
         "Fully Upgraded 4BR Villa Private Swimming Pool Vacant on Transfer BUA: 3,474 sqft Plot: 3,953 sqft Prime Family Community Asking Price: AED 8M"
       ]
+    },
+    {
+      "id": "42",
+      "referenceNo": "",
+      "image": "https://dubai-hill-estate.com/dashboard/uploads/media/media-20260630135303-f13982e53997d825.jpg",
+      "gallery": [
+        "https://dubai-hill-estate.com/dashboard/uploads/media/media-20260630135303-f13982e53997d825.jpg"
+      ],
+      "oldPrice": "AED 11,500,000",
+      "newPrice": "AED 11,500,000",
+      "discountPercent": 0,
+      "title": "4 Bedroom Upgraded E3 Villa with Private Pool in Sidra III",
+      "location": "Sidra III, Dubai Hills Estate",
+      "propertyType": "Villa",
+      "listingType": "Sale",
+      "mobileNumber": "971583063709",
+      "descriptionTitle": "Beautifully upgraded E3 villa in Sidra III, Dubai Hills Estate, offering a plot size of 4,875 sqft and a built-up area of 3,593 sqft. This spacious 4-bedroom, 5-bathroom home features large windows, built-in wardrobes, upgraded parquet flooring, and an extended layout for enhanced living space. The property comes furnished with a washing machine, dishwasher, oven, and fridge. Additional highlights include a private pool, enclosed courtyard, covered parking, a fully enclosed master bedroom balcony, an extended first bedroom with integrated balcony space, an outdoor bathroom with shower and toilet, and a pergola with a dedicated BBQ areaideal for luxury family living in one of Dubai's most sought-after communities.",
+      "descriptionParagraphs": []
     }
   ]
 }
