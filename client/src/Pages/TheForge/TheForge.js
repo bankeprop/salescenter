@@ -803,7 +803,33 @@ function Amenities() {
 
 function InvestmentSnapshot() {
   const cells = [
-    { label: "From", value: "£200,000" },
+    {
+      label: "From",
+      value: (
+        <span className="inline-flex flex-wrap items-center justify-center gap-x-2">
+          <span>£200,000</span>
+          <span>/</span>
+          <span className="inline-flex items-center gap-1.5">
+            <svg
+              aria-label="UAE dirham"
+              className="h-[0.8em] w-[0.8em] shrink-0"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6 3v18M6 3h3.5C16 3 20 6.4 20 12s-4 9-10.5 9H6M3 10h18M3 14h18"
+                stroke="currentColor"
+                strokeWidth="2.4"
+                strokeLinecap="square"
+                strokeLinejoin="round"
+              />
+            </svg>
+            <span>983,000</span>
+          </span>
+        </span>
+      ),
+    },
     { label: "Deposit", value: "25%" },
     { label: "Rental Yield", value: "7%" },
     { label: "Projected Growth", value: "27.6% by 2029" },
