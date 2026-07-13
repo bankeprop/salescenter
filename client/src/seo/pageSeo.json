@@ -13,6 +13,49 @@
     "robots": "index, follow"
   },
   "routes": {
+    "/theforge": {
+      "title": "The Forge Liverpool Apartments | UK Property Investment",
+      "description": "Invest in The Forge Liverpool apartments in the £2bn Pumpfields regeneration zone. Explore prices, floor plans, amenities, rental demand and projected growth for UAE investors.",
+      "h1": "The Forge Liverpool Property Investment",
+      "content": "The Forge offers premium Liverpool city-centre apartments in the Pumpfields regeneration zone, with resident amenities and dedicated support for UAE property investors.",
+      "bullets": [
+        "Premium Liverpool city-centre apartments",
+        "Located in the £2bn Pumpfields regeneration zone",
+        "Dedicated support for UAE investors"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "keywords": "The Forge Liverpool, Liverpool apartments for sale, Liverpool property investment, UK property investment UAE, Pumpfields regeneration, buy to let Liverpool, Liverpool rental investment",
+      "siteName": "The Forge Liverpool",
+      "locale": "en_GB",
+      "language": "en-GB",
+      "author": "The Forge Liverpool",
+      "publisher": "The Forge Liverpool",
+      "favicon": "/TheForge/favicon.png",
+      "ogImage": "/TheForge/favicon.png",
+      "ogImageAlt": "The Forge Liverpool property investment",
+      "jsonLd": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "name": "The Forge Liverpool Apartments",
+            "description": "Premium Liverpool city-centre apartments in the Pumpfields regeneration zone for UK and international property investors.",
+            "url": "https://www.sales-center.ae/theforge",
+            "inLanguage": "en-GB"
+          },
+          {
+            "@type": "ApartmentComplex",
+            "name": "The Forge",
+            "description": "Premium city-centre apartments in Liverpool's Pumpfields regeneration zone.",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Liverpool",
+              "addressCountry": "GB"
+            }
+          }
+        ]
+      }
+    },
     "/Damac/DamacIsland": {
       "title": "Damac Islands | Luxury Island Community in Dubai",
       "description": "Explore Damac Islands, a luxury island-inspired community in Dubai with waterfront lifestyle amenities, family residences, and investor registration.",

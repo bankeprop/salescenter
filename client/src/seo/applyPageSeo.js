@@ -33,6 +33,14 @@ function upsertCanonical(href) {
   link.href = href;
 }
 
+function applyFavicon(href) {
+  document.head
+    .querySelectorAll('link[rel="icon"], link[rel="shortcut icon"], link[rel="apple-touch-icon"]')
+    .forEach((link) => {
+      link.href = href;
+    });
+}
+
 export function getSeoForPath(pathname) {
   const normalizedPath = normalizePath(pathname);
   const routeSeo = pageSeo.routes[normalizedPath];
@@ -65,8 +73,10 @@ export function getSeoForPath(pathname) {
 
 export function applyPageSeo(seo) {
   const canonicalUrl = new URL(seo.canonicalPath || '/', DEFAULT_SITE_URL).href;
+  const imageUrl = seo.ogImage ? new URL(seo.ogImage, DEFAULT_SITE_URL).href : null;
 
   document.title = seo.title;
+  document.documentElement.lang = seo.language || 'en';
   upsertMeta('meta[name="description"]', {
     name: 'description',
     content: seo.description
@@ -75,6 +85,9 @@ export function applyPageSeo(seo) {
     name: 'robots',
     content: seo.robots || 'index, follow'
   });
+  upsertMeta('meta[name="keywords"]', { name: 'keywords', content: seo.keywords || '' });
+  upsertMeta('meta[name="author"]', { name: 'author', content: seo.author || '' });
+  upsertMeta('meta[name="publisher"]', { name: 'publisher', content: seo.publisher || '' });
   upsertMeta('meta[property="og:type"]', {
     property: 'og:type',
     content: 'website'
@@ -91,6 +104,10 @@ export function applyPageSeo(seo) {
     property: 'og:url',
     content: canonicalUrl
   });
+  upsertMeta('meta[property="og:site_name"]', { property: 'og:site_name', content: seo.siteName || 'Sales Center' });
+  upsertMeta('meta[property="og:locale"]', { property: 'og:locale', content: seo.locale || 'en_AE' });
+  upsertMeta('meta[property="og:image"]', { property: 'og:image', content: imageUrl || '' });
+  upsertMeta('meta[property="og:image:alt"]', { property: 'og:image:alt', content: seo.ogImageAlt || seo.title });
   upsertMeta('meta[name="twitter:card"]', {
     name: 'twitter:card',
     content: 'summary_large_image'
@@ -103,5 +120,7 @@ export function applyPageSeo(seo) {
     name: 'twitter:description',
     content: seo.description
   });
+  upsertMeta('meta[name="twitter:image"]', { name: 'twitter:image', content: imageUrl || '' });
   upsertCanonical(canonicalUrl);
+  applyFavicon(seo.favicon || '/favicon.ico');
 }
