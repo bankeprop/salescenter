@@ -21,6 +21,7 @@ import SamanaBusinessHubThanks from './Pages/Samana/SamanaBusinessHubThanks';
 import Generic from './Pages/generic';
 import GenericThankYou from './Pages/GenericThankYou';
 import TheForge from './Pages/TheForge/TheForge';
+import TheForgeThanks from './Pages/TheForge/TheForgeThanks';
 import { applyPageSeo, getSeoForPath } from './seo/applyPageSeo';
 
 function SeoManager() {
@@ -70,6 +71,8 @@ function App() {
         <Route path="/sidra-1-dubai-hills-estate/thank-you" element={<GenericThankYou />} />
 
         <Route path="/theforge" element={<TheForge />} />
+        <Route path="/theforge/thanks" element={<TheForgeThanks />} />
+
 
         <Route path="/sitemap" element={<Navigate to="/sitemap.xml" replace />} />
 

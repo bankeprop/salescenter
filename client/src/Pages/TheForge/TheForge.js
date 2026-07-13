@@ -19,6 +19,7 @@ import {
   Wifi,
   Wine,
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 import heroImg from "../../Assests/TheForge/hero-liverpool.jpg";
 import lifestyleImg from "../../Assests/TheForge/liverpool-lifestyle.jpg";
@@ -95,6 +96,16 @@ function Counter({ end, suffix = "", prefix = "", decimals = 0 }) {
   );
 }
 
+function SectionCta({ dark = false, center = false, label = "Get Investment Details" }) {
+  return (
+    <div className={`mt-6 flex ${center ? "justify-center" : "justify-start"}`}>
+      <a href="#brochure-form" className={dark ? "btn-gold" : "btn-primary"}>
+        {label} <ArrowRight size={18} />
+      </a>
+    </div>
+  );
+}
+
 /* -------------------- Nav -------------------- */
 function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -143,7 +154,7 @@ function Nav() {
               {l.label}
             </a>
           ))}
-          <a href="#brochure" className="btn-primary !py-3 !px-6 text-sm">
+          <a href="#brochure-form" className="btn-primary !py-3 !px-6 text-sm">
             Get Brochure <ArrowRight size={16} />
           </a>
         </nav>
@@ -173,7 +184,7 @@ function Nav() {
               </a>
             ))}
             <a
-              href="#brochure"
+              href="#brochure-form"
               onClick={() => setOpen(false)}
               className="btn-primary"
             >
@@ -227,7 +238,7 @@ function Hero() {
             masterplan.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
-            <a href="#brochure" className="btn-primary">
+            <a href="#brochure-form" className="btn-primary">
               Download Investment Brochure <ArrowRight size={18} />
             </a>
             <a href="#consultation" className="btn-outline">
@@ -307,6 +318,9 @@ function TrustBar() {
           </div>
         ))}
       </div>
+      <div className="container-forge">
+        <SectionCta center label="Request The Forge Brochure" />
+      </div>
     </section>
   );
 }
@@ -320,7 +334,7 @@ function WhyLiverpool() {
     { icon: MapPin, label: "60M annual visitors" },
   ];
   return (
-    <section id="why-liverpool" className="py-24 lg:py-32">
+    <section id="why-liverpool" className="py-16 lg:py-20">
       <div className="container-forge grid lg:grid-cols-2 gap-14 items-center">
         <div className="reveal">
           <div className="rounded-3xl overflow-hidden shadow-[var(--shadow-elegant)]">
@@ -356,7 +370,7 @@ function WhyLiverpool() {
                   className="w-11 h-11 rounded-full flex items-center justify-center"
                   style={{
                     background:
-                      "color-mix(in oklab, var(--navy) 10%, transparent)",
+                      "color-mix(in oklab, var(--gold) 25%, transparent)",
                   }}
                 >
                   <Icon size={20} style={{ color: "var(--navy)" }} />
@@ -365,6 +379,7 @@ function WhyLiverpool() {
               </div>
             ))}
           </div>
+          <SectionCta label="Explore The Investment" />
         </div>
       </div>
     </section>
@@ -387,10 +402,9 @@ function Regeneration() {
   return (
     <section
       id="regeneration"
-      className="py-24 lg:py-32 text-white"
+      className="py-16 lg:py-20 text-white"
       style={{
-        background:
-          "linear-gradient(180deg, var(--navy-deep) 0%, var(--charcoal) 100%)",
+        background: "linear-gradient(180deg, #7C7E7C 0%, #1B1B1B 100%)",
       }}
     >
       <div className="container-forge">
@@ -431,6 +445,7 @@ function Regeneration() {
             </div>
           ))}
         </div>
+        <SectionCta dark label="Request Regeneration Details" />
       </div>
     </section>
   );
@@ -448,7 +463,7 @@ function TheForge() {
     { icon: Sparkles, label: "Rooftop Garden" },
   ];
   return (
-    <section id="the-forge" className="py-24 lg:py-32 bg-secondary/40">
+    <section id="the-forge" className="py-16 lg:py-20 bg-secondary/40">
       <div className="container-forge">
         <div className="max-w-3xl reveal">
           <span className="eyebrow">Why The Forge</span>
@@ -472,6 +487,7 @@ function TheForge() {
             </div>
           ))}
         </div>
+        <SectionCta label="View Apartments & Pricing" />
       </div>
     </section>
   );
@@ -488,7 +504,7 @@ function Location() {
     { label: "Knowledge Quarter", time: "12 min walk" },
   ];
   return (
-    <section id="location" className="py-24 lg:py-32">
+    <section id="location" className="py-16 lg:py-20">
       <div className="container-forge grid lg:grid-cols-5 gap-12 items-start">
         <div className="lg:col-span-2 reveal">
           <span className="eyebrow">Location</span>
@@ -527,6 +543,7 @@ function Location() {
               className="absolute inset-0 h-full w-full object-cover"
             />
           </div>
+          <SectionCta label="Get Location & Project Details" />
         </div>
       </div>
     </section>
@@ -535,7 +552,7 @@ function Location() {
 
 function RentalDemand() {
   return (
-    <section className="py-24 lg:py-32 bg-secondary/40">
+    <section className="py-16 lg:py-20 bg-secondary/40">
       <div className="container-forge grid lg:grid-cols-2 gap-14 items-center">
         <div className="reveal">
           <span className="eyebrow">Rental Demand</span>
@@ -586,6 +603,7 @@ function RentalDemand() {
             </div>
           ))}
         </div>
+        <SectionCta label="Request Rental Projections" />
       </div>
     </section>
   );
@@ -610,7 +628,7 @@ function InvestmentCase() {
     },
   ];
   return (
-    <section id="investment" className="py-24 lg:py-32">
+    <section id="investment" className="py-16 lg:py-20">
       <div className="container-forge">
         <div className="max-w-3xl reveal">
           <span className="eyebrow">The Investment Case</span>
@@ -623,7 +641,11 @@ function InvestmentCase() {
             <div key={title} className="card-luxury reveal">
               <div
                 className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6"
-                style={{ background: "var(--navy)", color: "var(--ivory)" }}
+                style={{
+                  background:
+                    "color-mix(in oklab, var(--gold) 25%, transparent)",
+                  color: "var(--navy)",
+                }}
               >
                 <Icon size={22} />
               </div>
@@ -681,6 +703,7 @@ function InvestmentCase() {
             ))}
           </svg>
         </div>
+        <SectionCta label="Get Full Investment Details" />
       </div>
     </section>
   );
@@ -703,7 +726,7 @@ function Amenities() {
     "Concierge",
   ];
   return (
-    <section className="py-24 lg:py-32 bg-secondary/40">
+    <section className="py-16 lg:py-20 bg-secondary/40">
       <div className="container-forge">
         <div className="max-w-3xl reveal">
           <span className="eyebrow">Premium Amenities</span>
@@ -750,6 +773,7 @@ function Amenities() {
             </div>
           ))}
         </div>
+        <SectionCta label="Request Amenities & Floor Plans" />
       </div>
     </section>
   );
@@ -764,10 +788,9 @@ function InvestmentSnapshot() {
   ];
   return (
     <section
-      className="py-24 lg:py-32 text-white"
+      className="py-16 lg:py-20 text-white"
       style={{
-        background:
-          "linear-gradient(135deg, var(--charcoal) 0%, var(--navy-deep) 100%)",
+        background: "linear-gradient(180deg, #7C7E7C 0%, #1B1B1B 100%)",
       }}
     >
       <div className="container-forge text-center reveal">
@@ -796,7 +819,7 @@ function InvestmentSnapshot() {
         ))}
       </div>
       <div className="mt-14 flex justify-center">
-        <a href="#brochure" className="btn-gold">
+        <a href="#brochure-form" className="btn-gold">
           Request Full Investment Breakdown <ArrowRight size={18} />
         </a>
       </div>
@@ -813,7 +836,7 @@ function InvestorSupport() {
     { icon: Building2, label: "Property Management" },
   ];
   return (
-    <section className="py-24 lg:py-32">
+    <section className="py-16 lg:py-20">
       <div className="container-forge">
         <div className="max-w-3xl reveal">
           <span className="eyebrow">UAE Investor Support</span>
@@ -831,7 +854,11 @@ function InvestorSupport() {
               <div key={s.label} className="reveal text-center">
                 <div
                   className="mx-auto w-16 h-16 rounded-full flex items-center justify-center relative z-10 mb-4"
-                  style={{ background: "var(--navy)", color: "var(--ivory)" }}
+                  style={{
+                    background:
+                      "color-mix(in oklab, var(--gold) 25%, transparent)",
+                    color: "var(--navy)",
+                  }}
                 >
                   <s.icon size={22} />
                 </div>
@@ -887,6 +914,7 @@ function SelectField({ name, label, options, full }) {
 }
 
 function LeadForm() {
+  const navigate = useNavigate();
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -921,7 +949,7 @@ function LeadForm() {
     payload.set("email", email);
     payload.set("phone", phone);
     payload.set("message", message);
-    payload.set("campaignName", "TheForgeLiverpool-HU");
+    payload.set("campaignName", "The Forge Liverpool");
     payload.set("pageUrl", window.location.href);
 
     try {
@@ -934,6 +962,7 @@ function LeadForm() {
       });
       form.reset();
       setSubmitted(true);
+      navigate("/theforge/thanks");
     } catch (error) {
       setSubmitError("Something went wrong. Please try again.");
     } finally {
@@ -942,7 +971,7 @@ function LeadForm() {
   }
 
   return (
-    <section id="brochure" className="py-24 lg:py-32 bg-secondary/40">
+    <section id="brochure" className="py-16 lg:py-20 bg-secondary/40">
       <div className="container-forge grid lg:grid-cols-2 gap-14 items-center">
         <div className="reveal">
           <div className="rounded-3xl overflow-hidden shadow-[var(--shadow-elegant)]">
@@ -954,7 +983,7 @@ function LeadForm() {
             />
           </div>
         </div>
-        <div className="reveal">
+        <div id="brochure-form" className="reveal scroll-mt-24 lg:scroll-mt-32">
           <span className="eyebrow">Investment Brochure</span>
           <h2 className="mt-4 text-4xl md:text-5xl">
             Download the full investment pack.
@@ -1040,7 +1069,7 @@ function LeadForm() {
 
 function Consultation() {
   return (
-    <section id="consultation" className="relative py-32 overflow-hidden">
+    <section id="consultation" className="relative py-20 lg:py-24 overflow-hidden">
       <img
         src={consultationImg}
         alt="Private consultation with Dubai skyline view"
@@ -1067,10 +1096,10 @@ function Consultation() {
           UAE.
         </p>
         <div className="mt-10 flex flex-wrap justify-center gap-4">
-          <a href="#brochure" className="btn-gold">
+          <a href="#brochure-form" className="btn-gold">
             <Video size={18} /> Book Zoom Meeting
           </a>
-          <a href="#brochure" className="btn-outline">
+          <a href="#brochure-form" className="btn-outline">
             <Users size={18} /> Book Teams Meeting
           </a>
         </div>
@@ -1100,7 +1129,7 @@ function FAQ() {
   ];
   const [open, setOpen] = useState(0);
   return (
-    <section className="py-24 lg:py-32">
+    <section className="py-16 lg:py-20">
       <div className="container-forge max-w-4xl">
         <div className="reveal">
           <span className="eyebrow">FAQ</span>
@@ -1141,10 +1170,9 @@ function FAQ() {
 function FinalCTA() {
   return (
     <section
-      className="py-24 lg:py-28 text-white"
+      className="py-16 lg:py-20 text-white"
       style={{
-        background:
-          "linear-gradient(135deg, var(--navy-deep) 0%, var(--charcoal) 100%)",
+        background: "linear-gradient(180deg, #7C7E7C 0%, #1B1B1B 100%)",
       }}
     >
       <div className="container-forge text-center max-w-4xl mx-auto reveal">
@@ -1157,7 +1185,7 @@ function FinalCTA() {
           specialists today.
         </p>
         <div className="mt-10 flex flex-wrap justify-center gap-4">
-          <a href="#brochure" className="btn-gold">
+          <a href="#brochure-form" className="btn-gold">
             Download Brochure <ArrowRight size={18} />
           </a>
           <a href="#consultation" className="btn-outline">
@@ -1178,25 +1206,54 @@ function Footer() {
     >
       <div className="container-forge grid md:grid-cols-4 gap-10">
         <div className="md:col-span-2">
-          <div className="font-display text-2xl text-white">
-            The Forge <span className="gold-text">·</span> Liverpool
-          </div>
+          <img
+            src={logoImg}
+            alt="The Forge Liverpool"
+            className="h-16 w-auto object-contain"
+            style={{ marginLeft: "-28px" }}
+          />
         </div>
       </div>
       <div className="container-forge mt-14 pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-4 text-xs text-white/50">
-        <div>
-          © {new Date().getFullYear()} The Forge Liverpool
-        </div>
+        <div>&copy; {new Date().getFullYear()} The Forge Liverpool</div>
       </div>
     </footer>
   );
 }
 
 function FloatingActions() {
+  const [showMobileCta, setShowMobileCta] = useState(false);
+
+  useEffect(() => {
+    const updateVisibility = () => {
+      const hero = document.getElementById("top");
+      const brochure = document.getElementById("brochure");
+      const hasPassedHero = hero
+        ? hero.getBoundingClientRect().bottom <= 80
+        : false;
+      const brochureRect = brochure?.getBoundingClientRect();
+      const isBrochureVisible = brochureRect
+        ? brochureRect.top < window.innerHeight && brochureRect.bottom > 80
+        : false;
+
+      setShowMobileCta(hasPassedHero && !isBrochureVisible);
+    };
+
+    updateVisibility();
+    window.addEventListener("scroll", updateVisibility, { passive: true });
+    window.addEventListener("resize", updateVisibility);
+    return () => {
+      window.removeEventListener("scroll", updateVisibility);
+      window.removeEventListener("resize", updateVisibility);
+    };
+  }, []);
+
+  if (!showMobileCta) return null;
+
   return (
     <>
       <div className="fixed bottom-0 inset-x-0 z-40 lg:hidden p-3 bg-background/95 backdrop-blur border-t border-border">
-        <a href="#brochure" className="btn-primary w-full">
+        <a href="#brochure-form" className="btn-primary w-full">
           Get Investment Brochure <ArrowRight size={18} />
         </a>
       </div>
