@@ -57,6 +57,28 @@ function useReveal() {
   }, []);
 }
 
+function useSmoothHashScroll() {
+  useEffect(() => {
+    const handleClick = (event) => {
+      const link = event.target.closest(".TheForge a[href^='#']");
+      if (!link) return;
+
+      const hash = link.getAttribute("href");
+      if (!hash || hash === "#") return;
+
+      const target = document.querySelector(hash);
+      if (!target) return;
+
+      event.preventDefault();
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      window.history.pushState(null, "", hash);
+    };
+
+    document.addEventListener("click", handleClick);
+    return () => document.removeEventListener("click", handleClick);
+  }, []);
+}
+
 /* -------------------- Animated counter -------------------- */
 function Counter({ end, suffix = "", prefix = "", decimals = 0 }) {
   const [n, setN] = useState(0);
@@ -886,7 +908,7 @@ function Field({ name, label, type = "text", error, defaultValue }) {
         type={type}
         defaultValue={defaultValue}
         maxLength={120}
-        className="mt-2 w-full rounded-xl border border-border bg-card px-4 py-3 outline-none focus:border-accent transition"
+        className="mt-2 h-[58px] w-full rounded-xl border border-border bg-card px-4 outline-none focus:border-accent transition"
       />
       {error && (
         <span className="text-xs text-destructive mt-1 block">{error}</span>
@@ -894,21 +916,28 @@ function Field({ name, label, type = "text", error, defaultValue }) {
     </label>
   );
 }
-function SelectField({ name, label, options, full }) {
+function SelectField({ name, label, options, full, defaultValue = "" }) {
   return (
     <label className={`block ${full ? "sm:col-span-2" : ""}`}>
       <span className="text-xs uppercase tracking-widest text-muted-foreground">
         {label}
       </span>
-      <select
-        name={name}
-        className="mt-2 w-full rounded-xl border border-border bg-card px-4 py-3 outline-none focus:border-accent transition"
-      >
-        <option value="">Select</option>
-        {options.map((o) => (
-          <option key={o}>{o}</option>
-        ))}
-      </select>
+      <span className="relative mt-2 block">
+        <select
+          name={name}
+          defaultValue={defaultValue}
+          className="h-[58px] w-full appearance-none rounded-xl border border-border bg-card px-4 pr-11 outline-none focus:border-accent transition"
+        >
+          <option value="">Select</option>
+          {options.map((o) => (
+            <option key={o}>{o}</option>
+          ))}
+        </select>
+        <ChevronDown
+          size={18}
+          className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-foreground"
+        />
+      </span>
     </label>
   );
 }
@@ -1015,9 +1044,21 @@ function LeadForm() {
                 error={errors.email}
               />
               <Field name="whatsapp" label="WhatsApp" type="tel" />
-              <Field
+              <SelectField
                 name="country"
                 label="Country"
+                options={[
+                  "India",
+                  "United Kingdom",
+                  "United States",
+                  "United Arab Emirates",
+                  "Pakistan",
+                  "China",
+                  "Iran",
+                  "Jordan",
+                  "Zimbabwe",
+                  "Germany",
+                ]}
                 defaultValue="United Arab Emirates"
               />
               <SelectField
@@ -1263,6 +1304,7 @@ function FloatingActions() {
 
 export default function ForgeLandingPage() {
   useReveal();
+  useSmoothHashScroll();
   return (
     <div className="TheForge min-h-screen">
       <Nav />

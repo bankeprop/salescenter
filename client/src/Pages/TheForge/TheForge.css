@@ -40,11 +40,16 @@
   background: var(--background);
   font-family: "DM Sans", Inter, sans-serif;
   -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
 }
 .TheForge *,
 .TheForge *::before,
 .TheForge *::after {
   border-color: var(--border);
+}
+.TheForge input,
+.TheForge select {
+  line-height: 1.4;
 }
 .btn-primary,
 .btn-outline,
