@@ -24,6 +24,8 @@ import TheForge from './Pages/TheForge/TheForge';
 import TheForgeThanks from './Pages/TheForge/TheForgeThanks';
 import { applyPageSeo, getSeoForPath } from './seo/applyPageSeo';
 import Hudriyat from './Pages/Modon/Hudriyat';
+import HudriyatThanks from './Pages/Modon/HudriyatThanks';
+import Obsidian from './Pages/Salboy/Obsidian';
 
 function SeoManager() {
   const { pathname } = useLocation();
@@ -75,6 +77,9 @@ function App() {
         <Route path="/theforge/thanks" element={<TheForgeThanks />} />
 
         <Route path="/hudayriyat" element={<Hudriyat />} />
+        <Route path="/hudayriyat/thanks" element={<HudriyatThanks />} />
+
+        <Route path="/obsidian" element={<Obsidian />} />
 
         <Route path="/sitemap" element={<Navigate to="/sitemap.xml" replace />} />
 

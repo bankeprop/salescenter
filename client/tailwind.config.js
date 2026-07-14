@@ -19,6 +19,12 @@ module.exports = {
         destructive: "var(--destructive)",
         border: "var(--border)",
         ivory: "var(--ivory)",
+        gold: "rgb(var(--obsidian-gold) / <alpha-value>)",
+        charcoal: "rgb(var(--obsidian-charcoal) / <alpha-value>)",
+        graphite: "rgb(var(--obsidian-graphite) / <alpha-value>)",
+      },
+      backgroundImage: {
+        "gold-gradient": "var(--gradient-gold)",
       },
     },
   },

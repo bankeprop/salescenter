@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Check, ChevronDown, MapPin, Flag, Building2, Utensils, Waves, Trophy, GraduationCap, Bike, Trees, BriefcaseBusiness } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import modonLogo from "../../Assests/Modon/Logo.png";
 
 const heroImage = "https://dubai-hill-estate.com/dashboard/uploads/media/media-20260713100138-c9bfe5011e33ff01.jpg";
@@ -13,8 +14,8 @@ const section = "px-4 py-16 sm:px-8 md:py-24 lg:px-10";
 const container = "mx-auto w-full max-w-[1640px]";
 
 function LeadForm({ id }) {
-    const [sent, setSent] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const navigate = useNavigate();
     const handleSubmit = async (event) => {
         event.preventDefault();
         if (isSubmitting) return;
@@ -31,7 +32,7 @@ function LeadForm({ id }) {
         try {
             setIsSubmitting(true);
             await fetch(webhookEndpoint, { method: "POST", body: payload, mode: "no-cors" });
-            setSent(true);
+            navigate("/hudayriyat/thanks");
         } finally {
             setIsSubmitting(false);
         }
@@ -39,14 +40,7 @@ function LeadForm({ id }) {
 
     return (
         <form id={id} onSubmit={handleSubmit} className="border border-neutral-300 bg-white p-6 text-neutral-900 md:p-9">
-            {sent ? (
-                <div className="py-16 text-center" role="status">
-                    <p className={eyebrow}>Request Received</p>
-                    <h3 className="mt-2 text-3xl font-medium">Thank you</h3>
-                    <p className="mx-auto mt-3 max-w-md text-neutral-500">Our sales team will contact you within 24 hours with private pricing and availability.</p>
-                </div>
-            ) : (
-                <>
+            <>
                     <p className={eyebrow}>Register Your Interest</p>
                     <h3 className="mt-1 text-3xl font-medium md:text-4xl">Request project details</h3>
                     <p className="mt-1 text-neutral-500">Advisor callback within 24 hours. No spam.</p>
@@ -62,8 +56,7 @@ function LeadForm({ id }) {
                         <label className="flex items-start gap-2 text-xs text-neutral-500"><input className="mt-0.5 size-4 accent-neutral-900" type="checkbox" required defaultChecked /><span>I agree to be contacted about this project and accept the Privacy Policy.</span></label>
                         <button disabled={isSubmitting} className={`${button} bg-[#3f3a37] text-white hover:bg-neutral-900 disabled:cursor-not-allowed disabled:opacity-60`} type="submit">{isSubmitting ? "Submitting..." : "Request Price"}</button>
                     </div>
-                </>
-            )}
+            </>
         </form>
     );
 }
