@@ -75,6 +75,57 @@
       "ogImage": "/TheForge/favicon.png",
       "ogImageAlt": "The Forge Liverpool"
     },
+    "/hudayriyat": {
+      "title": "Hudayriyat Golf Estates Villas | Modon Abu Dhabi",
+      "description": "Explore 4–6 bedroom golf-front villas and mansions at Hudayriyat Golf Estates by Modon, with a 40/60 payment plan and Q3 2030 handover.",
+      "h1": "Golf-Front Villas and Signature Mansions at Hudayriyat Golf Estates",
+      "content": "Hudayriyat Golf Estates by Modon offers a limited collection of freehold golf-front villas and signature mansions on Hudayriyat Island, Abu Dhabi.",
+      "bullets": [
+        "4–6 bedroom golf-front residences",
+        "40/60 payment plan",
+        "Freehold ownership for eligible buyers of all nationalities",
+        "Expected handover in Q3 2030"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "keywords": "Hudayriyat Golf Estates, Hudayriyat Island villas, Modon villas Abu Dhabi, golf villas Abu Dhabi, luxury mansions Abu Dhabi",
+      "siteName": "Hudayriyat Golf Estates",
+      "locale": "en_AE",
+      "language": "en-AE",
+      "author": "Sales Center UAE",
+      "publisher": "Sales Center UAE",
+      "favicon": "/Modon/M_favicon.png",
+      "ogImage": "/Modon/Logo.png",
+      "ogImageAlt": "Modon logo",
+      "jsonLd": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://www.sales-center.ae/hudayriyat#webpage",
+            "url": "https://www.sales-center.ae/hudayriyat",
+            "name": "Hudayriyat Golf Estates Villas by Modon",
+            "description": "A limited collection of 4–6 bedroom golf-front villas and signature mansions on Hudayriyat Island, Abu Dhabi.",
+            "inLanguage": "en-AE",
+            "mainEntity": {
+              "@id": "https://www.sales-center.ae/hudayriyat#residence"
+            }
+          },
+          {
+            "@type": "Residence",
+            "@id": "https://www.sales-center.ae/hudayriyat#residence",
+            "name": "Hudayriyat Golf Estates",
+            "description": "Golf-front villas and signature mansions developed by Modon on Hudayriyat Island.",
+            "image": "https://www.sales-center.ae/Modon/Logo.png",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Abu Dhabi",
+              "addressRegion": "Abu Dhabi",
+              "addressCountry": "AE"
+            }
+          }
+        ]
+      }
+    },
     "/Damac/DamacIsland": {
       "title": "Damac Islands | Luxury Island Community in Dubai",
       "description": "Explore Damac Islands, a luxury island-inspired community in Dubai with waterfront lifestyle amenities, family residences, and investor registration.",

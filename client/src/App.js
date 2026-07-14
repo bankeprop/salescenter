@@ -23,6 +23,7 @@ import GenericThankYou from './Pages/GenericThankYou';
 import TheForge from './Pages/TheForge/TheForge';
 import TheForgeThanks from './Pages/TheForge/TheForgeThanks';
 import { applyPageSeo, getSeoForPath } from './seo/applyPageSeo';
+import Hudriyat from './Pages/Modon/Hudriyat';
 
 function SeoManager() {
   const { pathname } = useLocation();
@@ -73,6 +74,7 @@ function App() {
         <Route path="/theforge" element={<TheForge />} />
         <Route path="/theforge/thanks" element={<TheForgeThanks />} />
 
+        <Route path="/hudayriyat" element={<Hudriyat />} />
 
         <Route path="/sitemap" element={<Navigate to="/sitemap.xml" replace />} />
 
