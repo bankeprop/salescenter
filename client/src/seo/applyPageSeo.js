@@ -41,6 +41,25 @@ function applyFavicon(href) {
     });
 }
 
+function applyJsonLd(jsonLd) {
+  const selector = 'script[data-page-seo="json-ld"]';
+  let script = document.head.querySelector(selector);
+
+  if (!jsonLd) {
+    script?.remove();
+    return;
+  }
+
+  if (!script) {
+    script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.dataset.pageSeo = 'json-ld';
+    document.head.appendChild(script);
+  }
+
+  script.textContent = JSON.stringify(jsonLd).replace(/</g, '\\u003c');
+}
+
 export function getSeoForPath(pathname) {
   const normalizedPath = normalizePath(pathname);
   const routeSeo = pageSeo.routes[normalizedPath];
@@ -123,4 +142,13 @@ export function applyPageSeo(seo) {
   upsertMeta('meta[name="twitter:image"]', { name: 'twitter:image', content: imageUrl || '' });
   upsertCanonical(canonicalUrl);
   applyFavicon(seo.favicon || '/favicon.ico');
+  applyJsonLd(
+    seo.jsonLd || {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: seo.title,
+      description: seo.description,
+      url: canonicalUrl
+    }
+  );
 }

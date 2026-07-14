@@ -45,7 +45,7 @@ function renderJsonLd(page, routePath) {
       url: canonicalUrl(routePath)
     };
 
-  return `<script type="application/ld+json">${escapeScriptJson(jsonLd)}</script>`;
+  return `<script type="application/ld+json" data-page-seo="json-ld">${escapeScriptJson(jsonLd)}</script>`;
 }
 
 function renderHeadTags(page, routePath) {
