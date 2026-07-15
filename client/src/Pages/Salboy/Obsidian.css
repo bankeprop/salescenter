@@ -37,6 +37,20 @@
   color: transparent;
 }
 
+.obsidian-page .obsidian-hero-price {
+  font-variant-numeric: lining-nums tabular-nums;
+  font-feature-settings: "lnum" 1, "tnum" 1;
+}
+
+.obsidian-page .obsidian-select {
+  color-scheme: dark;
+}
+
+.obsidian-page .obsidian-select option {
+  background-color: rgb(3 12 23);
+  color: white;
+}
+
 .obsidian-page .bg-gold-gradient {
   background-image: var(--gradient-gold);
 }

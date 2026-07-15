@@ -26,6 +26,7 @@ import { applyPageSeo, getSeoForPath } from './seo/applyPageSeo';
 import Hudriyat from './Pages/Modon/Hudriyat';
 import HudriyatThanks from './Pages/Modon/HudriyatThanks';
 import Obsidian from './Pages/Salboy/Obsidian';
+import ObsidianThanks from './Pages/Salboy/ObsidianThanks';
 
 function SeoManager() {
   const { pathname } = useLocation();
@@ -80,6 +81,7 @@ function App() {
         <Route path="/hudayriyat/thanks" element={<HudriyatThanks />} />
 
         <Route path="/obsidian" element={<Obsidian />} />
+        <Route path="/obsidian/thanks" element={<ObsidianThanks />} />
 
         <Route path="/sitemap" element={<Navigate to="/sitemap.xml" replace />} />
 

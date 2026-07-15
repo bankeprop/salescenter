@@ -86,6 +86,20 @@
         ]
       }
     },
+    "/obsidian/thanks": {
+      "title": "Thank You | Obsidian Manchester",
+      "description": "Thank you for requesting Obsidian Manchester investment details. Our team will contact you shortly with availability, floor plans and pricing.",
+      "h1": "Thank You for Your Obsidian Manchester Inquiry",
+      "content": "Your Obsidian Manchester inquiry has been received. Our property specialist will follow up with availability, floor plans and personalised investment details.",
+      "bullets": [
+        "Inquiry received",
+        "Property specialist follow-up pending"
+      ],
+      "robots": "noindex, follow",
+      "siteName": "Obsidian Manchester",
+      "locale": "en_GB",
+      "language": "en-GB"
+    },
     "/theforge": {
       "title": "The Forge Liverpool Apartments | UK Property Investment",
       "description": "Invest in The Forge Liverpool apartments in the £2bn Pumpfields regeneration zone. Explore prices, floor plans, amenities, rental demand and projected growth for UAE investors.",

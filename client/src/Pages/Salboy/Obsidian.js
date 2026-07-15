@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Obsidian.css";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { DirhamSymbol } from "dirham/react";
 import {
     ArrowRight,
-    Play,
     Download,
     MapPin,
     Dumbbell,
@@ -103,7 +103,7 @@ function Hero() {
                                     <div className="text-[11px] uppercase tracking-[0.3em] text-white/50">
                                         Starting from
                                     </div>
-                                    <div className="font-serif text-4xl text-white sm:text-5xl">£249,000</div>
+                                    <div className="obsidian-hero-price font-serif text-4xl text-white sm:text-5xl">AED 1.2M</div>
                                 </div>
                             </div>
                         </div>
@@ -119,10 +119,7 @@ function Hero() {
                                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                             </a>
                             <a href="#contact" className="inline-flex items-center gap-3 rounded-full border border-white/25 bg-white/5 px-6 py-4 text-sm uppercase tracking-[0.2em] text-white backdrop-blur transition hover:bg-white/10">
-                                <span className="grid h-6 w-6 place-items-center rounded-full bg-gold text-charcoal">
-                                    <Play className="h-3 w-3 fill-charcoal" />
-                                </span>
-                                Watch Development
+                                Book an Appointment
                             </a>
                         </div>
                     </Reveal>
@@ -155,7 +152,7 @@ function OfferStrip() {
                         <div>
                             <div className="text-[10px] uppercase tracking-[0.3em] text-gold">Limited Offer</div>
                             <div className="font-serif text-xl text-white md:text-2xl">
-                                Free Stamp Duty — Save more than £40,000*
+                                Free Stamp Duty — Save more than AED 200K*
                             </div>
                         </div>
                     </div>
@@ -163,7 +160,7 @@ function OfferStrip() {
                         href="#investment"
                         className="hidden shrink-0 items-center gap-2 rounded-full border border-gold/50 px-5 py-2.5 text-xs uppercase tracking-[0.2em] text-gold transition hover:bg-gold hover:text-charcoal md:inline-flex"
                     >
-                        Discover Your Saving <ArrowRight className="h-3.5 w-3.5" />
+                        Grab the Opportunity <ArrowRight className="h-3.5 w-3.5" />
                     </a>
                 </div>
             </Reveal>
@@ -176,12 +173,12 @@ function OfferStrip() {
 /* ------------------------------------------------------------------ */
 function CityLiving() {
     const stats = [
-        { label: "Apartments from", value: "£249K" },
+        { label: "Apartments from", value: "AED 1.2M" },
         { label: "Expected Yield", value: "Up to 6%" },
         { label: "Payment Plan", value: "25 / 75" },
         { label: "Lease", value: "999 Yr" },
         { label: "Completion", value: "Q4 2026" },
-        { label: "Reservation", value: "£2,000" },
+        { label: "Reservation", value: "AED 10K" },
     ];
 
     return (
@@ -249,10 +246,10 @@ function CityLiving() {
 /* ------------------------------------------------------------------ */
 function Apartments() {
     const items = [
-        { name: "Studio", price: "£249,000", img: interiorLiving },
-        { name: "One Bedroom", price: "£312,000", img: interiorBedroom },
-        { name: "Two Bedroom", price: "£376,000", img: interiorLiving },
-        { name: "Three Bedroom", price: "£570,000", img: interiorBedroom },
+        { name: "Studio", price: "AED 1.2M", img: interiorLiving },
+        { name: "One Bedroom", price: "AED 1.5M", img: interiorBedroom },
+        { name: "Two Bedroom", price: "AED 1.85M", img: interiorLiving },
+        { name: "Three Bedroom", price: "AED 2.8M", img: interiorBedroom },
     ];
     return (
         <section id="apartments" className="relative bg-graphite py-20 md:py-28 lg:py-32">
@@ -598,11 +595,11 @@ function Talent() {
 function Investment() {
     const features = [
         { title: "Free Stamp Duty", note: "Potential saving over £40,000" },
-        { title: "Apartments from £249,000", note: "Entry-level city-centre pricing" },
+        { title: "Apartments from AED 1.2M", note: "Entry-level city-centre pricing" },
         { title: "Up to 6% Gross Yield", note: "Strong rental fundamentals" },
         { title: "25% on Exchange", note: "75% on completion" },
         { title: "999-Year Leasehold", note: "Long-term ownership" },
-        { title: "10-Year Warranty", note: "New-build protection" },
+        // { title: "10-Year Warranty", note: "New-build protection" },
         { title: "Q4 2026 Completion", note: "Registered developer" },
         { title: "Interest Free Payment Plan", note: "Managed through completion" },
     ];
@@ -650,7 +647,6 @@ function Investment() {
                                 label: "Reservation Deposit",
                                 value: (
                                     <>
-                                        <span>£2,000 /</span>
                                         <span className="inline-flex items-baseline">
                                             <DirhamSymbol
                                                 size="0.72em"
@@ -768,7 +764,7 @@ function UAE() {
 /* ------------------------------------------------------------------ */
 function LeadForm() {
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const [isSubmitted, setIsSubmitted] = useState(false);
+    const navigate = useNavigate();
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -800,7 +796,7 @@ function LeadForm() {
                 mode: "no-cors",
             });
             formElement.reset();
-            setIsSubmitted(true);
+            navigate("/obsidian/thanks");
         } finally {
             setIsSubmitting(false);
         }
@@ -858,7 +854,7 @@ function LeadForm() {
                                 <select
                                     name="apartmentType"
                                     defaultValue=""
-                                    className="mt-2 w-full border-b border-white/15 bg-transparent py-3 text-white outline-none focus:border-gold"
+                                    className="obsidian-select mt-2 w-full border-b border-white/15 bg-transparent py-3 text-white outline-none focus:border-gold"
                                 >
                                     <option value="" className="bg-charcoal">
                                         Select
@@ -877,7 +873,7 @@ function LeadForm() {
                                 <select
                                     name="budget"
                                     defaultValue=""
-                                    className="mt-2 w-full border-b border-white/15 bg-transparent py-3 text-white outline-none focus:border-gold"
+                                    className="obsidian-select mt-2 w-full border-b border-white/15 bg-transparent py-3 text-white outline-none focus:border-gold"
                                 >
                                     <option value="" className="bg-charcoal">
                                         Select
@@ -908,11 +904,6 @@ function LeadForm() {
                             >
                                 {isSubmitting ? "Submitting..." : "Get Investment Details"} <ArrowRight className="h-4 w-4" />
                             </button>
-                            {isSubmitted && (
-                                <p className="text-center text-sm text-white/70 md:col-span-2" role="status">
-                                    Thank you. Your request has been received.
-                                </p>
-                            )}
                         </form>
 
                         <div className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-[10px] uppercase tracking-[0.3em] text-white/40">
@@ -954,7 +945,7 @@ function FinalCTA() {
                     <h2 className="mx-auto mt-6 font-serif text-5xl leading-[1.05] text-white md:text-7xl">
                         Own a premium Manchester apartment
                         <span className="block italic text-gold-gradient">
-                            from £249,000 /{" "}
+                            from {""}
                             <span className="inline-flex items-baseline whitespace-nowrap">
                                 <DirhamSymbol
                                     size="0.7em"
@@ -962,7 +953,7 @@ function FinalCTA() {
                                     color="url(#obsidian-dirham-gradient)"
                                     className="mr-1 inline-block self-center"
                                 />
-                                1,230,000
+                                1.2 M
                             </span>
                             .
                         </span>
