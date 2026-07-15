@@ -41,21 +41,21 @@ function LeadForm({ id }) {
     return (
         <form id={id} onSubmit={handleSubmit} className="border border-neutral-300 bg-white p-6 text-neutral-900 md:p-9">
             <>
-                    <p className={eyebrow}>Register Your Interest</p>
-                    <h3 className="mt-1 text-3xl font-medium md:text-4xl">Request project details</h3>
-                    <p className="mt-1 text-neutral-500">Advisor callback within 24 hours. No spam.</p>
-                    <div className="mt-6 grid gap-4">
-                        <Field label="Full Name *"><input required name="name" autoComplete="name" /></Field>
-                        <div className="grid gap-4 sm:grid-cols-2">
-                            <Field label="Mobile *"><input required type="tel" name="phone" placeholder="+971 5X XXX XXXX" autoComplete="tel" /></Field>
-                            <Field label="Email"><input type="email" name="email" autoComplete="email" /></Field>
-                        </div>
-                        <Field label="Investment Range">
-                            <select name="budget" defaultValue=""><option value="" disabled>Select investment range</option><option>Below AED 25M</option><option>AED 25M – 35M</option><option>AED 35M +</option></select>
-                        </Field>
-                        <label className="flex items-start gap-2 text-xs text-neutral-500"><input className="mt-0.5 size-4 accent-neutral-900" type="checkbox" required defaultChecked /><span>I agree to be contacted about this project and accept the Privacy Policy.</span></label>
-                        <button disabled={isSubmitting} className={`${button} bg-[#3f3a37] text-white hover:bg-neutral-900 disabled:cursor-not-allowed disabled:opacity-60`} type="submit">{isSubmitting ? "Submitting..." : "Request Price"}</button>
+                <p className={eyebrow}>Register Your Interest</p>
+                <h3 className="mt-1 text-3xl font-medium md:text-4xl">Request project details</h3>
+                <p className="mt-1 text-neutral-500">Advisor callback within 24 hours. No spam.</p>
+                <div className="mt-6 grid gap-4">
+                    <Field label="Full Name *"><input required name="name" autoComplete="name" /></Field>
+                    <div className="grid gap-4 sm:grid-cols-2">
+                        <Field label="Mobile *"><input required type="tel" name="phone" placeholder="+971 5X XXX XXXX" autoComplete="tel" /></Field>
+                        <Field label="Email"><input type="email" name="email" autoComplete="email" /></Field>
                     </div>
+                    <Field label="Investment Range">
+                        <select name="budget" defaultValue=""><option value="" disabled>Select investment range</option><option>Below AED 25M</option><option>AED 25M – 35M</option><option>AED 35M +</option></select>
+                    </Field>
+                    <label className="flex items-start gap-2 text-xs text-neutral-500"><input className="mt-0.5 size-4 accent-neutral-900" type="checkbox" required defaultChecked /><span>I agree to be contacted about this project and accept the Privacy Policy.</span></label>
+                    <button disabled={isSubmitting} className={`${button} bg-[#3f3a37] text-white hover:bg-neutral-900 disabled:cursor-not-allowed disabled:opacity-60`} type="submit">{isSubmitting ? "Submitting..." : "Request Price"}</button>
+                </div>
             </>
         </form>
     );
@@ -104,14 +104,14 @@ function Hudriyat() {
         <div className="min-h-screen scroll-smooth bg-[#f7f6f2] font-sans text-neutral-900">
             <header className="absolute inset-x-0 top-0 z-20 px-4 text-white sm:px-8 lg:px-10"><div className={`${container} flex h-[92px] items-center`}><img className="h-auto w-36 md:w-44" src={modonLogo} alt="Modon" /></div></header>
             <main>
-                <section className="relative min-h-[860px] bg-cover bg-center px-4 pb-16 pt-32 text-white sm:px-8 md:pt-36 lg:px-10" style={{ backgroundImage: `linear-gradient(180deg,rgba(7,13,18,.76),rgba(7,13,18,.28) 45%,rgba(7,13,18,.62)),url(${heroImage})` }}>
-                    <div className={`${container} grid min-h-[680px] items-center gap-14 lg:grid-cols-[1.15fr_.85fr] lg:gap-20`}>
+                <section className="relative min-h-[720px] bg-cover bg-center px-4 pb-12 pt-28 text-white sm:px-8 md:pt-32 lg:px-10" style={{ backgroundImage: `linear-gradient(90deg,rgba(7,13,18,.9) 0%,rgba(7,13,18,.7) 38%,rgba(7,13,18,.2) 72%,transparent 100%),linear-gradient(180deg,rgba(7,13,18,.76),rgba(7,13,18,.28) 45%,rgba(7,13,18,.62)),url(${heroImage})` }}>
+                    <div className={`${container} grid min-h-[560px] items-center gap-12 lg:grid-cols-[1.15fr_.85fr] lg:gap-20`}>
                         <div>
                             <p className="inline-flex border border-white/50 bg-black/20 px-4 py-3 text-[11px] uppercase tracking-[.18em]">✦ New Launch · Hudayriyat Island, Abu Dhabi</p>
                             <h1 className="mt-8 font-display text-5xl font-normal leading-[1.03] sm:text-6xl lg:text-[64px]">Golf-Front Villas &<br />Signature Mansions</h1>
-                            <p className="mt-6 max-w-3xl text-lg leading-relaxed text-white/90 md:text-[22px]">A limited release of 4–6 bedroom residences overlooking a championship 18-hole course. Freehold ownership, 40/60 payment plan, Q3 2030 handover.</p>
-                            <ul className="mt-8 grid gap-3 text-base sm:grid-cols-2">{["40 / 60 payment plan", "Freehold, all nationalities", "18-hole championship course", "Handover Q3 2030"].map(x => <li key={x} className="flex items-center gap-3"><span className="flex size-[18px] items-center justify-center rounded-full border border-white"><Check size={11} /></span>{x}</li>)}</ul>
-                            <a href="#lead-form" className={`${button} mt-9 bg-[#3f3a37] text-white hover:bg-neutral-900`}>Get Price</a>
+                            <p className="mt-6 max-w-3xl text-lg leading-relaxed text-white/90 md:text-[22px]">A limited collection of 4–6 bedroom residences overlooking an 18-hole championship golf course on Hudayriyat Island.</p>
+                            <ul className="mt-8 grid gap-3 text-base sm:grid-cols-2">{["Book with just 5%", "Freehold for all nationalities", "Championship golf and sea views", "Handover Q3 2030"].map(x => <li key={x} className="flex items-center gap-3"><span className="flex size-[18px] items-center justify-center rounded-full border border-white"><Check size={11} /></span>{x}</li>)}</ul>
+                            <a href="#lead-form" className={`${button} mt-9 bg-[#3f3a37] text-white hover:bg-neutral-900`}>Download Brochure</a>
                             <p className="mt-4 text-xs text-white/70">Only 60 residences remaining in Phase 1</p>
                         </div>
                         <LeadForm id="lead-form" />
