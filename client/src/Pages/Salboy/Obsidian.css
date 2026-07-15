@@ -1,0 +1,100 @@
+.obsidian-page {
+  --obsidian-charcoal: 3, 12, 23;
+  --obsidian-graphite: 23 23 23;
+  --obsidian-gold: 222 160 140;
+  --gradient-gold: linear-gradient(135deg, #dea08c 0%, #e84b14 100%);
+  --gradient-hero-overlay: linear-gradient(180deg, rgb(10 10 10 / 35%) 0%, rgb(8 8 8 / 55%) 55%, rgb(8 8 8 / 95%) 100%);
+  --gradient-radial-gold: radial-gradient(ellipse at top, rgb(222 160 140 / 18%), transparent 60%);
+  --shadow-gold: 0 20px 60px -20px rgb(232 75 20 / 35%);
+  background: rgb(var(--obsidian-charcoal));
+  color: white;
+  font-family: Inter, Manrope, ui-sans-serif, system-ui, sans-serif;
+  font-feature-settings: "ss01", "cv11";
+  -webkit-font-smoothing: antialiased;
+}
+
+.obsidian-page .font-serif,
+.obsidian-page h1,
+.obsidian-page h2,
+.obsidian-page h3,
+.obsidian-page h4 {
+  font-family: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.obsidian-page .text-gold-gradient {
+  background-image: var(--gradient-gold);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.obsidian-page .text-number-gradient {
+  background-image: linear-gradient(135deg, #dea08c 0%, #e84b14 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.obsidian-page .bg-gold-gradient {
+  background-image: var(--gradient-gold);
+}
+
+.obsidian-page .glass-panel {
+  background: rgb(var(--obsidian-graphite) / 55%);
+  border: 1px solid rgb(255 255 255 / 8%);
+  backdrop-filter: blur(18px) saturate(140%);
+}
+
+.obsidian-page .shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.obsidian-page .shimmer::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(110deg, transparent 30%, rgb(255 255 255 / 25%) 50%, transparent 70%);
+  transform: translateX(-100%);
+  animation: obsidian-shimmer 3.5s ease-in-out infinite;
+}
+
+.obsidian-page .animate-slow-zoom {
+  animation: obsidian-slow-zoom 20s ease-out forwards;
+}
+
+.obsidian-page #contact {
+  scroll-margin-top: 6rem;
+}
+
+.obsidian-page .obsidian-gallery-track {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.obsidian-page .obsidian-gallery-track::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes obsidian-shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  60%,
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes obsidian-slow-zoom {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.15);
+  }
+}

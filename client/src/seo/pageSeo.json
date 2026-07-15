@@ -13,6 +13,79 @@
     "robots": "index, follow"
   },
   "routes": {
+    "/obsidian": {
+      "title": "Obsidian Manchester Apartments | UK Property Investment",
+      "description": "Discover Obsidian Manchester apartments from £249,000, with premium amenities, up to 6% gross yield and dedicated support for UAE investors.",
+      "h1": "Obsidian Manchester Apartments",
+      "content": "Obsidian is a landmark 26-storey development of premium studios and one, two and three-bedroom apartments near Manchester and Salford city centre.",
+      "bullets": [
+        "Manchester apartments from £249,000",
+        "Up to 6% indicative gross rental yield",
+        "Premium resident amenities and 999-year lease",
+        "Dedicated property investment support for UAE buyers"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "keywords": "Obsidian Manchester, Manchester apartments for sale, Manchester property investment, UK property investment UAE, buy to let Manchester, Salford apartments, Obsidian apartments",
+      "siteName": "Obsidian Manchester",
+      "locale": "en_GB",
+      "language": "en-GB",
+      "author": "Obsidian Manchester",
+      "publisher": "Obsidian Manchester",
+      "favicon": "/Obsidian/S_Favicon.png",
+      "ogImage": "/Obsidian/Obsidian_logo.png",
+      "ogImageAlt": "Obsidian Manchester logo",
+      "jsonLd": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://www.sales-center.ae/obsidian#webpage",
+            "url": "https://www.sales-center.ae/obsidian",
+            "name": "Obsidian Manchester Apartments",
+            "description": "Premium studios and one, two and three-bedroom apartments at Obsidian Manchester, available from £249,000.",
+            "inLanguage": "en-GB",
+            "primaryImageOfPage": {
+              "@type": "ImageObject",
+              "url": "https://www.sales-center.ae/Obsidian/Obsidian_logo.png"
+            },
+            "mainEntity": {
+              "@id": "https://www.sales-center.ae/obsidian#development"
+            }
+          },
+          {
+            "@type": "ApartmentComplex",
+            "@id": "https://www.sales-center.ae/obsidian#development",
+            "name": "Obsidian Manchester",
+            "description": "A 26-storey collection of 250 premium apartments with resident amenities near Manchester and Salford city centre.",
+            "image": "https://www.sales-center.ae/Obsidian/Obsidian_logo.png",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Trinity Way",
+              "addressLocality": "Manchester",
+              "addressCountry": "GB"
+            },
+            "numberOfAccommodationUnits": 250,
+            "amenityFeature": [
+              { "@type": "LocationFeatureSpecification", "name": "Gymnasium", "value": true },
+              { "@type": "LocationFeatureSpecification", "name": "Cinema Room", "value": true },
+              { "@type": "LocationFeatureSpecification", "name": "Residents Lounge", "value": true },
+              { "@type": "LocationFeatureSpecification", "name": "Co-working Spaces", "value": true }
+            ]
+          },
+          {
+            "@type": "Offer",
+            "name": "Obsidian Manchester apartments from £249,000",
+            "url": "https://www.sales-center.ae/obsidian",
+            "price": "249000",
+            "priceCurrency": "GBP",
+            "availability": "https://schema.org/InStock",
+            "itemOffered": {
+              "@id": "https://www.sales-center.ae/obsidian#development"
+            }
+          }
+        ]
+      }
+    },
     "/theforge": {
       "title": "The Forge Liverpool Apartments | UK Property Investment",
       "description": "Invest in The Forge Liverpool apartments in the £2bn Pumpfields regeneration zone. Explore prices, floor plans, amenities, rental demand and projected growth for UAE investors.",
@@ -125,6 +198,23 @@
           }
         ]
       }
+    },
+    "/hudayriyat/thanks": {
+      "title": "Thank You | Hudayriyat Golf Estates",
+      "description": "Thank you for registering your interest in Hudayriyat Golf Estates. Our team will contact you with pricing, floor plans, and availability.",
+      "h1": "Thank You for Your Hudayriyat Golf Estates Inquiry",
+      "content": "Your Hudayriyat Golf Estates inquiry has been received. Our sales team will contact you with project information and current availability.",
+      "bullets": [
+        "Inquiry received",
+        "Sales advisor follow-up pending"
+      ],
+      "robots": "noindex, follow",
+      "siteName": "Hudayriyat Golf Estates",
+      "locale": "en_AE",
+      "language": "en-AE",
+      "favicon": "/Modon/M_favicon.png",
+      "ogImage": "/Modon/Logo.png",
+      "ogImageAlt": "Modon logo"
     },
     "/Damac/DamacIsland": {
       "title": "Damac Islands | Luxury Island Community in Dubai",
