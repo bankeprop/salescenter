@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "./Obsidian.css";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { DirhamSymbol } from "dirham/react";
 import {
     ArrowRight,
     Play,
@@ -41,7 +42,6 @@ import gallery9 from "../../Assests/Salboy/gallery9.webp";
 import gallery10 from "../../Assests/Salboy/gallery10.webp";
 import gallery11 from "../../Assests/Salboy/gallery11.webp";
 import gallery12 from "../../Assests/Salboy/gallery12.webp";
-import aedSymbol from "../../Assests/Salboy/aed-symbol.png";
 
 const webhookEndpoint = "https://script.google.com/macros/s/AKfycbxTrPUIKN5-vZAda8_PTCJ_Fdpry7a9P-SKrYNoXGuWIeRHnmb-AptkapEqihZdJiik2g/exec";
 
@@ -439,8 +439,8 @@ function Location() {
     return (
         <section id="location" className="bg-graphite pb-20 pt-5 md:pb-28 md:pt-8 lg:pb-32">
             <div className="mx-auto max-w-7xl px-6">
-                <div className="grid gap-16 lg:grid-cols-[1fr_1.4fr]">
-                    <div className="flex flex-col justify-center">
+                <div className="grid items-start gap-16 lg:grid-cols-[1fr_1.4fr] lg:items-center">
+                    <div>
                         <Reveal>
                             <div className="text-[11px] uppercase tracking-[0.4em] text-gold">— Location</div>
                         </Reveal>
@@ -473,12 +473,12 @@ function Location() {
                     </div>
 
                     <Reveal delay={0.2}>
-                        <div className="relative flex aspect-[4/5] items-center overflow-hidden rounded-2xl border border-white/10 bg-black p-3 sm:p-6 lg:aspect-auto">
+                        <div className="relative w-full">
                             <img
                                 src={locationMap}
                                 alt="Map showing Obsidian Manchester and nearby city-centre destinations"
                                 loading="lazy"
-                                className="h-auto w-full object-contain"
+                                className="block h-auto w-full object-contain mix-blend-lighten"
                             />
                         </div>
                     </Reveal>
@@ -652,10 +652,11 @@ function Investment() {
                                     <>
                                         <span>£2,000 /</span>
                                         <span className="inline-flex items-baseline">
-                                            <img
-                                                src={aedSymbol}
-                                                alt="UAE dirham"
-                                                className="mr-1 inline-block h-[0.72em] w-[0.72em] self-center object-contain invert"
+                                            <DirhamSymbol
+                                                size="0.72em"
+                                                weight="bold"
+                                                color="url(#obsidian-dirham-gradient)"
+                                                className="mr-1 inline-block self-center"
                                             />
                                             10,000
                                         </span>
@@ -955,12 +956,13 @@ function FinalCTA() {
                         <span className="block italic text-gold-gradient">
                             from £249,000 /{" "}
                             <span className="inline-flex items-baseline whitespace-nowrap">
-                                <img
-                                    src={aedSymbol}
-                                    alt="UAE dirham"
-                                    className="mr-1 inline-block h-[0.7em] w-[0.7em] self-center object-contain invert"
+                                <DirhamSymbol
+                                    size="0.7em"
+                                    weight="bold"
+                                    color="url(#obsidian-dirham-gradient)"
+                                    className="mr-1 inline-block self-center"
                                 />
-                                123,000
+                                1,230,000
                             </span>
                             .
                         </span>
@@ -1047,6 +1049,14 @@ function Obsidian() {
 
     return (
         <div className="obsidian-page dark min-h-screen bg-charcoal text-white antialiased">
+            <svg width="0" height="0" className="absolute" aria-hidden="true">
+                <defs>
+                    <linearGradient id="obsidian-dirham-gradient" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stopColor="#dea08c" />
+                        <stop offset="100%" stopColor="#e84b14" />
+                    </linearGradient>
+                </defs>
+            </svg>
             <Nav />
             <main>
                 <Hero />
