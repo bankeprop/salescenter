@@ -405,7 +405,7 @@ function LandmarkLiving() {
                                     k: (
                                         <span className="inline-flex items-center">
                                             <DirhamSymbol size="0.75em" weight="bold" className="mr-1" />
-                                            225K
+                                            25K
                                         </span>
                                     ),
                                     v: "Reservation",
@@ -837,7 +837,7 @@ function PaymentPlan() {
                                 <span className="inline-flex items-center whitespace-nowrap">
                                     <span className="mr-2">From</span>
                                     <DirhamSymbol size="0.72em" weight="bold" className="mr-1" />
-                                    225K
+                                    25K
                                 </span>
                             ),
                             l: "Reservation fee",
