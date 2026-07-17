@@ -426,6 +426,85 @@
         }
       }
     },
+    "/Berkeley/kings-road": {
+      "title": "One King's Road Park Fulham | London Apartments for Sale",
+      "description": "Discover One King's Road Park in Fulham, London SW6: suites and one to four-bedroom residences by Berkeley Group, with 25,000+ sq ft of private amenities and a 999-year lease.",
+      "h1": "One King's Road Park, Fulham London",
+      "content": "One King's Road Park is a landmark Berkeley Group development near King's Road in Fulham, offering luxury London residences, landscaped grounds and exceptional private amenities.",
+      "bullets": [
+        "Suites and one to four-bedroom London residences",
+        "More than 25,000 sq ft of residents' amenities",
+        "999-year leasehold tenure",
+        "Developed by Berkeley Group with Foster + Partners"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "keywords": "One King's Road Park, King's Road Park Fulham, Fulham apartments for sale, London property investment, Berkeley Group London, SW6 apartments, luxury apartments Fulham",
+      "siteName": "One King's Road Park",
+      "locale": "en_GB",
+      "language": "en-GB",
+      "author": "One King's Road Park",
+      "publisher": "Berkeley Group",
+      "favicon": "/Berkeley/favicon.png",
+      "ogImage": "/Berkeley/Logo.png",
+      "ogImageAlt": "One King's Road Park logo",
+      "jsonLd": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://www.sales-center.ae/Berkeley/kings-road#webpage",
+            "url": "https://www.sales-center.ae/Berkeley/kings-road",
+            "name": "One King's Road Park, Fulham London",
+            "description": "Luxury suites and one to four-bedroom residences by Berkeley Group near King's Road in Fulham, London SW6.",
+            "inLanguage": "en-GB",
+            "primaryImageOfPage": {
+              "@type": "ImageObject",
+              "url": "https://www.sales-center.ae/Berkeley/Logo.png"
+            },
+            "mainEntity": { "@id": "https://www.sales-center.ae/Berkeley/kings-road#development" }
+          },
+          {
+            "@type": "ApartmentComplex",
+            "@id": "https://www.sales-center.ae/Berkeley/kings-road#development",
+            "name": "One King's Road Park",
+            "description": "A collection of suites and one to four-bedroom residences with landscaped grounds and more than 25,000 sq ft of private amenities.",
+            "image": "https://www.sales-center.ae/Berkeley/Logo.png",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Fulham",
+              "addressRegion": "London",
+              "postalCode": "SW6",
+              "addressCountry": "GB"
+            },
+            "amenityFeature": [
+              { "@type": "LocationFeatureSpecification", "name": "25-metre swimming pool", "value": true },
+              { "@type": "LocationFeatureSpecification", "name": "Fitness suite", "value": true },
+              { "@type": "LocationFeatureSpecification", "name": "Residents' club", "value": true },
+              { "@type": "LocationFeatureSpecification", "name": "24-hour concierge", "value": true }
+            ]
+          },
+          {
+            "@type": "Organization",
+            "name": "Berkeley Group",
+            "url": "https://www.berkeleygroup.co.uk/"
+          }
+        ]
+      }
+    },
+    "/Berkeley/kings-road/thanks": {
+      "title": "Thank You | One King's Road Park",
+      "description": "Thank you for registering your interest in One King's Road Park. Our property team will contact you shortly.",
+      "h1": "Your One King's Road Park Enquiry Has Been Received",
+      "content": "Our property team will follow up with availability, pricing, floor plans and development details.",
+      "bullets": ["Enquiry received", "Property specialist follow-up pending"],
+      "robots": "noindex, follow",
+      "siteName": "One King's Road Park",
+      "locale": "en_GB",
+      "language": "en-GB",
+      "favicon": "/Berkeley/favicon.png",
+      "ogImage": "/Berkeley/Logo.png",
+      "ogImageAlt": "One King's Road Park logo"
+    },
     "/samana/samanabusinesshub/thanks": {
       "title": "Thank You | Samana Business Hub",
       "description": "Thank you for registering your interest in Samana Business Hub. Our team will contact you shortly with brochure, floor plan, and investment details.",

@@ -6,6 +6,7 @@ module.exports = {
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
         display: ["Playfair Display", "Georgia", "serif"],
+        serif: ["Cormorant Garamond", "Georgia", "serif"],
       },
       colors: {
         background: "var(--background)",
@@ -22,6 +23,12 @@ module.exports = {
         gold: "rgb(var(--obsidian-gold) / <alpha-value>)",
         charcoal: "rgb(var(--obsidian-charcoal) / <alpha-value>)",
         graphite: "rgb(var(--obsidian-graphite) / <alpha-value>)",
+        ink: "rgb(var(--krp-ink) / <alpha-value>)",
+        bronze: "rgb(var(--krp-bronze) / <alpha-value>)",
+        "bronze-dark": "rgb(var(--krp-bronze-dark) / <alpha-value>)",
+        "bronze-light": "rgb(var(--krp-bronze-light) / <alpha-value>)",
+        stone: "rgb(var(--krp-stone) / <alpha-value>)",
+        warm: "rgb(var(--krp-warm) / <alpha-value>)",
       },
       backgroundImage: {
         "gold-gradient": "var(--gradient-gold)",

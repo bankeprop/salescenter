@@ -27,6 +27,8 @@ import Hudriyat from './Pages/Modon/Hudriyat';
 import HudriyatThanks from './Pages/Modon/HudriyatThanks';
 import Obsidian from './Pages/Salboy/Obsidian';
 import ObsidianThanks from './Pages/Salboy/ObsidianThanks';
+import KingsRoad from './Pages/Berkeley/kingsRoad';
+import KingsRoadThanks from './Pages/Berkeley/KingsRoadThanks';
 
 function SeoManager() {
   const { pathname } = useLocation();
@@ -82,6 +84,9 @@ function App() {
 
         <Route path="/obsidian" element={<Obsidian />} />
         <Route path="/obsidian/thanks" element={<ObsidianThanks />} />
+
+        <Route path="/Berkeley/kings-road" element={<KingsRoad />} />
+        <Route path="/Berkeley/kings-road/thanks" element={<KingsRoadThanks />} />
 
         <Route path="/sitemap" element={<Navigate to="/sitemap.xml" replace />} />
 
