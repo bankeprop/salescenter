@@ -405,7 +405,7 @@ function LandmarkLiving() {
                                     k: (
                                         <span className="inline-flex items-center">
                                             <DirhamSymbol size="0.75em" weight="bold" className="mr-1" />
-                                            250K
+                                            225K
                                         </span>
                                     ),
                                     v: "Reservation",
@@ -837,7 +837,7 @@ function PaymentPlan() {
                                 <span className="inline-flex items-center whitespace-nowrap">
                                     <span className="mr-2">From</span>
                                     <DirhamSymbol size="0.72em" weight="bold" className="mr-1" />
-                                    250K
+                                    225K
                                 </span>
                             ),
                             l: "Reservation fee",
@@ -855,7 +855,7 @@ function PaymentPlan() {
                     ))}
                 </div>
                 <p className="mt-8 max-w-3xl text-xs italic text-ink/60">
-                    The reservation fee starts from AED 250,000. Contracts are expected to exchange within 21 days.
+                    The reservation fee starts from AED 25,000. Contracts are expected to exchange within 21 days.
                 </p>
             </div>
         </section>
