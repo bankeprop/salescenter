@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "./kingsRoad.css";
 import { motion, useScroll, useTransform, useInView, useMotionValue, useSpring } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { DirhamSymbol } from "dirham/react";
 
 const WEBHOOK_ENDPOINT =
     "https://script.google.com/macros/s/AKfycbxTrPUIKN5-vZAda8_PTCJ_Fdpry7a9P-SKrYNoXGuWIeRHnmb-AptkapEqihZdJiik2g/exec";
@@ -325,7 +326,7 @@ function Hero() {
 function PaymentStrip() {
     const steps = [
         { pct: "10%", label: "On Exchange of Contracts" },
-        { pct: "10%", label: "Twelve Months Later" },
+        { pct: "10%", label: "One Year Later" },
         { pct: "80%", label: "On Completion" },
     ];
     return (
@@ -400,7 +401,15 @@ function LandmarkLiving() {
                                 { k: "10/10/80", v: "Payment Plan" },
                                 { k: "999 yrs", v: "Tenure" },
                                 { k: "Q3 2029", v: "Completion" },
-                                { k: "£2,500+", v: "Reservation" },
+                                {
+                                    k: (
+                                        <span className="inline-flex items-center">
+                                            <DirhamSymbol size="0.75em" weight="bold" className="mr-1" />
+                                            250K
+                                        </span>
+                                    ),
+                                    v: "Reservation",
+                                },
                             ].map((s) => (
                                 <div key={s.v} className="border-t border-border pt-4">
                                     <div className="font-serif text-2xl text-ink">{s.k}</div>
@@ -426,8 +435,6 @@ const RESIDENCES = [
 ];
 
 function Residences() {
-    const [active, setActive] = useState(0);
-    const current = RESIDENCES[active];
     return (
         <section id="residences" className="py-20 md:py-28 bg-muted">
             <div className="container-editorial">
@@ -446,43 +453,16 @@ function Residences() {
                     </div>
                 </Reveal>
 
-                <div className="mt-16 grid lg:grid-cols-12 gap-10">
-                    <div className="lg:col-span-4 flex lg:flex-col gap-1 overflow-x-auto lg:overflow-visible">
-                        {RESIDENCES.map((r, i) => (
-                            <button
-                                key={r.key}
-                                onClick={() => setActive(i)}
-                                className={`text-left flex-shrink-0 lg:flex-shrink flex items-baseline justify-between gap-4 px-6 py-5 border-l-2 transition-all duration-500 ${active === i
-                                    ? "border-bronze bg-warm text-ink"
-                                    : "border-border text-ink/50 hover:text-ink hover:border-ink/40"
-                                    }`}
-                            >
-                                <span className="font-serif text-xl md:text-2xl">{r.key}</span>
-                                <span className="text-[10px] tracking-[0.2em] uppercase whitespace-nowrap">{r.count}</span>
-                            </button>
-                        ))}
-                    </div>
-                    <div className="lg:col-span-8">
-                        <motion.div
-                            key={active}
-                            initial={{ opacity: 0, scale: 1.02 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-                            className="aspect-[4/3] overflow-hidden bg-charcoal"
-                        >
-                            <img src={current.img} alt={current.key} className="h-full w-full object-cover" />
-                        </motion.div>
-                        <motion.p
-                            key={`t-${active}`}
-                            initial={{ opacity: 0, y: 12 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.7, delay: 0.15 }}
-                            className="mt-6 font-serif text-2xl text-ink/80 max-w-xl"
-                        >
-                            {current.desc}
-                        </motion.p>
-                        <p className="mt-4 text-xs italic text-ink/50">Current prices are available upon request.</p>
-                    </div>
+                <div className="mt-16 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-5">
+                    {RESIDENCES.map((residence, index) => (
+                        <Reveal key={residence.key} delay={index * 0.06} className="h-full bg-warm">
+                            <article className="flex h-full flex-col p-6 md:p-8">
+                                <h3 className="font-serif text-2xl text-ink md:text-3xl">{residence.key}</h3>
+                                <p className="mt-2 text-[10px] uppercase tracking-[0.22em] text-bronze">{residence.count}</p>
+                                <p className="mt-6 text-sm leading-relaxed text-ink/60">{residence.desc}</p>
+                            </article>
+                        </Reveal>
+                    ))}
                 </div>
             </div>
         </section>
@@ -807,11 +787,11 @@ function Investment() {
                         { k: 143, suf: "", l: "Residences in No.1" },
                     ].map((s, i) => (
                         <Reveal key={s.l} delay={i * 0.08} className="bg-charcoal">
-                            <div className="p-10">
-                                <div className="font-serif text-5xl md:text-6xl text-warm">
+                            <div className="p-6 lg:p-8 xl:p-10">
+                                <div className="whitespace-nowrap font-serif text-3xl text-warm lg:text-4xl xl:text-5xl">
                                     <Counter to={s.k} suffix={s.suf} />
                                 </div>
-                                <div className="mt-4 text-[10px] tracking-[0.28em] uppercase text-warm/60">{s.l}</div>
+                                <div className="mt-4 text-[9px] tracking-[0.24em] uppercase text-warm/60">{s.l}</div>
                             </div>
                         </Reveal>
                     ))}
@@ -852,7 +832,16 @@ function PaymentPlan() {
 
                 <div className="mt-14 grid md:grid-cols-4 gap-6">
                     {[
-                        { k: "From £2,500", l: "Reservation fee" },
+                        {
+                            k: (
+                                <span className="inline-flex items-center whitespace-nowrap">
+                                    <span className="mr-2">From</span>
+                                    <DirhamSymbol size="0.72em" weight="bold" className="mr-1" />
+                                    250K
+                                </span>
+                            ),
+                            l: "Reservation fee",
+                        },
                         { k: "10%", l: "On exchange of contracts" },
                         { k: "10%", l: "Twelve months after exchange" },
                         { k: "80%", l: "On completion" },
@@ -866,8 +855,7 @@ function PaymentPlan() {
                     ))}
                 </div>
                 <p className="mt-8 max-w-3xl text-xs italic text-ink/60">
-                    Reservation fees are £2,500 for properties priced up to £1 million and £5,000 for
-                    properties priced above £1 million. Contracts are expected to exchange within 21 days.
+                    The reservation fee starts from AED 250,000. Contracts are expected to exchange within 21 days.
                 </p>
             </div>
         </section>
