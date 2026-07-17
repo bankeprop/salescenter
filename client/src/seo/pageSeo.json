@@ -98,7 +98,10 @@
       "robots": "noindex, follow",
       "siteName": "Obsidian Manchester",
       "locale": "en_GB",
-      "language": "en-GB"
+      "language": "en-GB",
+      "favicon": "/Obsidian/S_Favicon.png",
+      "ogImage": "/Obsidian/Obsidian_logo.png",
+      "ogImageAlt": "Obsidian Manchester logo"
     },
     "/theforge": {
       "title": "The Forge Liverpool Apartments | UK Property Investment",
