@@ -426,7 +426,7 @@
         }
       }
     },
-    "/Berkeley/kings-road": {
+    "/berkeley/kings-road": {
       "title": "One King's Road Park Fulham | London Apartments for Sale",
       "description": "Discover One King's Road Park in Fulham, London SW6: suites and one to four-bedroom residences by Berkeley Group, with 25,000+ sq ft of private amenities and a 999-year lease.",
       "h1": "One King's Road Park, Fulham London",
@@ -452,8 +452,8 @@
         "@graph": [
           {
             "@type": "WebPage",
-            "@id": "https://www.sales-center.ae/Berkeley/kings-road#webpage",
-            "url": "https://www.sales-center.ae/Berkeley/kings-road",
+            "@id": "https://www.sales-center.ae/berkeley/kings-road#webpage",
+            "url": "https://www.sales-center.ae/berkeley/kings-road",
             "name": "One King's Road Park, Fulham London",
             "description": "Luxury suites and one to four-bedroom residences by Berkeley Group near King's Road in Fulham, London SW6.",
             "inLanguage": "en-GB",
@@ -461,11 +461,11 @@
               "@type": "ImageObject",
               "url": "https://www.sales-center.ae/Berkeley/Logo.png"
             },
-            "mainEntity": { "@id": "https://www.sales-center.ae/Berkeley/kings-road#development" }
+            "mainEntity": { "@id": "https://www.sales-center.ae/berkeley/kings-road#development" }
           },
           {
             "@type": "ApartmentComplex",
-            "@id": "https://www.sales-center.ae/Berkeley/kings-road#development",
+            "@id": "https://www.sales-center.ae/berkeley/kings-road#development",
             "name": "One King's Road Park",
             "description": "A collection of suites and one to four-bedroom residences with landscaped grounds and more than 25,000 sq ft of private amenities.",
             "image": "https://www.sales-center.ae/Berkeley/Logo.png",
@@ -491,12 +491,63 @@
         ]
       }
     },
-    "/Berkeley/kings-road/thanks": {
+    "/berkeley/kings-road/form": {
+      "title": "Private UK Property Consultation | One King's Road Park",
+      "description": "Request a private consultation for One King's Road Park in Fulham and receive tailored guidance on your London property purchase, payment options, mortgages and UK visa considerations.",
+      "h1": "Plan Your One King's Road Park Purchase",
+      "content": "Share your purchase plans to receive tailored property, payment, mortgage and UK visa guidance for One King's Road Park in Fulham, London.",
+      "bullets": [
+        "Private One King's Road Park consultation",
+        "Tailored purchase and payment guidance",
+        "Mortgage and UK visa considerations"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "keywords": "One King's Road Park consultation, London property consultation, Fulham apartments, UK property investment, London mortgage guidance, Berkeley Group London",
+      "siteName": "One King's Road Park",
+      "locale": "en_GB",
+      "language": "en-GB",
+      "author": "One King's Road Park",
+      "publisher": "Berkeley Group",
+      "favicon": "/Berkeley/favicon.png",
+      "ogImage": "/Berkeley/Logo.png",
+      "ogImageAlt": "One King's Road Park logo",
+      "jsonLd": {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://www.sales-center.ae/berkeley/kings-road/form#webpage",
+        "url": "https://www.sales-center.ae/berkeley/kings-road/form",
+        "name": "Private UK Property Consultation | One King's Road Park",
+        "description": "Request tailored property, payment, mortgage and UK visa guidance for One King's Road Park in Fulham, London.",
+        "inLanguage": "en-GB",
+        "isPartOf": {
+          "@id": "https://www.sales-center.ae/berkeley/kings-road#webpage"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://www.sales-center.ae/Berkeley/Logo.png"
+        }
+      }
+    },
+    "/berkeley/kings-road/thanks": {
       "title": "Thank You | One King's Road Park",
       "description": "Thank you for registering your interest in One King's Road Park. Our property team will contact you shortly.",
       "h1": "Your One King's Road Park Enquiry Has Been Received",
       "content": "Our property team will follow up with availability, pricing, floor plans and development details.",
       "bullets": ["Enquiry received", "Property specialist follow-up pending"],
+      "robots": "noindex, follow",
+      "siteName": "One King's Road Park",
+      "locale": "en_GB",
+      "language": "en-GB",
+      "favicon": "/Berkeley/favicon.png",
+      "ogImage": "/Berkeley/Logo.png",
+      "ogImageAlt": "One King's Road Park logo"
+    },
+    "/berkeley/kings-road/form/thanks": {
+      "title": "Consultation Requested | One King's Road Park",
+      "description": "Thank you for sharing your One King's Road Park purchase plans. A property specialist will contact you with tailored guidance.",
+      "h1": "Your One King's Road Park Consultation Has Been Requested",
+      "content": "A property specialist will review your purchase plans and follow up with tailored property, payment, mortgage and UK visa guidance.",
+      "bullets": ["Consultation request received", "Property specialist follow-up pending"],
       "robots": "noindex, follow",
       "siteName": "One King's Road Park",
       "locale": "en_GB",

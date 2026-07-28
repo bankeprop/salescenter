@@ -46,6 +46,10 @@
   color: rgb(var(--krp-bronze));
 }
 
+.kings-road-page .eyebrow.hero-eyebrow {
+  font-size: .8rem;
+}
+
 .kings-road-page .hairline {
   height: 1px;
   background: linear-gradient(90deg, transparent, rgb(var(--krp-bronze)) 20%, rgb(var(--krp-bronze)) 80%, transparent);

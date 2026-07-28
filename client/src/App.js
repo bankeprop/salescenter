@@ -29,6 +29,8 @@ import Obsidian from './Pages/Salboy/Obsidian';
 import ObsidianThanks from './Pages/Salboy/ObsidianThanks';
 import KingsRoad from './Pages/Berkeley/kingsRoad';
 import KingsRoadThanks from './Pages/Berkeley/KingsRoadThanks';
+import KingsroadForm from './Pages/Berkeley/KingsroadForm';
+import KingsroadFormThanks from './Pages/Berkeley/KingsroadFormThanks';
 
 function SeoManager() {
   const { pathname } = useLocation();
@@ -85,8 +87,14 @@ function App() {
         <Route path="/obsidian" element={<Obsidian />} />
         <Route path="/obsidian/thanks" element={<ObsidianThanks />} />
 
-        <Route path="/Berkeley/kings-road" element={<KingsRoad />} />
-        <Route path="/Berkeley/kings-road/thanks" element={<KingsRoadThanks />} />
+        <Route caseSensitive path="/berkeley/kings-road" element={<KingsRoad />} />
+        <Route caseSensitive path="/berkeley/kings-road/thanks" element={<KingsRoadThanks />} />
+        <Route caseSensitive path="/berkeley/kings-road/form" element={<KingsroadForm />} />
+        <Route caseSensitive path="/berkeley/kings-road/form/thanks" element={<KingsroadFormThanks />} />
+        <Route caseSensitive path="/Berkeley/kings-road" element={<Navigate to="/berkeley/kings-road" replace />} />
+        <Route caseSensitive path="/Berkeley/kings-road/thanks" element={<Navigate to="/berkeley/kings-road/thanks" replace />} />
+        <Route caseSensitive path="/Berkeley/kings-road/form" element={<Navigate to="/berkeley/kings-road/form" replace />} />
+        <Route caseSensitive path="/Berkeley/kings-road/form/thanks" element={<Navigate to="/berkeley/kings-road/form/thanks" replace />} />
 
         <Route path="/sitemap" element={<Navigate to="/sitemap.xml" replace />} />
 

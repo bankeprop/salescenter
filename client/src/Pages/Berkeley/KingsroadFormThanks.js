@@ -4,7 +4,7 @@ import heroImage from "../../Assests/Berkeley/heroExterior.jpg";
 import logo from "../../Assests/Berkeley/Logo.png";
 import "./kingsRoad.css";
 
-function KingsRoadThanks() {
+function KingsroadFormThanks() {
     return (
         <main className="kings-road-page relative min-h-screen overflow-hidden bg-charcoal text-warm">
             <img
@@ -27,17 +27,18 @@ function KingsRoadThanks() {
                         <Check className="h-8 w-8" strokeWidth={1.5} aria-hidden="true" />
                     </div>
 
-                    <p className="eyebrow mt-8 text-bronze-light">Thank You</p>
+                    <p className="eyebrow mt-8 text-bronze-light">Consultation Requested</p>
                     <h1 className="mt-4 text-4xl leading-tight text-warm sm:text-5xl">
-                        Your enquiry has been received.
+                        Thank you for sharing your purchase plans.
                     </h1>
                     <p className="mx-auto mt-5 max-w-lg text-base leading-7 text-warm/70">
-                        Our international property team will contact you shortly with current availability,
-                        pricing, floor plans and details for One King's Road Park.
+                        A property specialist will review your requirements and contact you shortly
+                        with tailored guidance on your One King's Road Park purchase, payment options,
+                        mortgage requirements and UK visa considerations.
                     </p>
 
-                    <Link to="/berkeley/kings-road" className="btn-bronze btn-bronze-hover mt-9">
-                        Return to the Development <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                    <Link to="/berkeley/kings-road/form" className="btn-bronze btn-bronze-hover mt-9">
+                        Explore the Development <ArrowRight className="h-4 w-4" aria-hidden="true" />
                     </Link>
                 </div>
             </section>
@@ -45,4 +46,4 @@ function KingsRoadThanks() {
     );
 }
 
-export default KingsRoadThanks;
+export default KingsroadFormThanks;
