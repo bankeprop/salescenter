@@ -1084,7 +1084,7 @@ function LeadForm() {
             `Investment Budget: ${fd.get("budget") || "Not selected"}`,
             `Customer Message: ${String(fd.get("message") || "No additional message").trim()}`,
         ].join("\n"));
-        payload.set("campaignName", "OneKingsRoadPark-Berkeley-London");
+        payload.set("campaignName", "BerkeleyKingsRoadPark-AD-KRP1-999695");
         payload.set("pageUrl", window.location.href);
 
         try {
@@ -1097,7 +1097,7 @@ function LeadForm() {
             });
             form.reset();
             setSubmitted(true);
-            navigate("/Berkeley/kings-road/thanks");
+            navigate("/berkeley/kings-road/thanks");
         } catch (error) {
             setSubmitError("Something went wrong. Please try again.");
         } finally {
