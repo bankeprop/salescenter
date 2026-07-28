@@ -215,7 +215,7 @@ function StepForm() {
             mobile: data.phone.trim(),
             project: "One King's Road Park",
             message: additionalDetails.join("\n"),
-            survey_comments: "",
+            survey_comments: "-",
             source: "sales-center.ae",
             language: "English",
             campaign: "BerkeleyKingsRoadPark-GGL",
