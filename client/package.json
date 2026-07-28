@@ -24,7 +24,6 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "prebuild": "node scripts/fetchOfflineListings.js",
     "start": "react-scripts start",
     "build": "react-scripts build && node scripts/prerenderSeoPages.js",
     "test": "react-scripts test",
