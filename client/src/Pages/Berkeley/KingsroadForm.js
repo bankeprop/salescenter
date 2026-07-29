@@ -216,11 +216,11 @@ function StepForm() {
             project: "One King's Road Park",
             message: additionalDetails.join("\n"),
             survey_comments: "-",
-            source: "sales-center.ae",
+            source: "Google",
             language: "English",
             campaign: "BerkeleyKingsRoadPark-GGL",
-            adset: "",
-            agentId: "",
+            adset: "-",
+            agentId: "-",
         };
 
         try {
