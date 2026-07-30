@@ -17,9 +17,14 @@ function Generic() {
 
         payload.set("name", formData.get("name"));
         payload.set("email", formData.get("email"));
-        payload.set("phone", String(formData.get("phone")).replace(/\D/g, ""));
-        payload.set("message", formData.get("message"));
-        payload.set("campaignName", "Sidra1DubaiHillsEstate-HU-887830");
+        payload.set("mobile", String(formData.get("phone")).replace(/\D/g, ""));
+        payload.set("project", "-");
+        payload.set("message", formData.get("message") || "-");
+        payload.set("survey_comments", "-");
+        payload.set("source", "Google");
+        payload.set("language", "English");
+        payload.set("campaign", "Sidra1DubaiHillsEstate-HU-887830");
+        payload.set("adset", "-");
         payload.set("pageUrl", window.location.href);
 
         try {
@@ -27,7 +32,7 @@ function Generic() {
             setSubmitError(false);
 
             await fetch(
-                "https://script.google.com/macros/s/AKfycbxTrPUIKN5-vZAda8_PTCJ_Fdpry7a9P-SKrYNoXGuWIeRHnmb-AptkapEqihZdJiik2g/exec",
+                "https://script.google.com/macros/s/AKfycbz5yIUe6VVdmTIq48VhHi778Zr5xLTPsVE-zc6E1ulLtTz6CD4i0V4FeAYJv2J0ZYYp1A/exec",
                 {
                     method: "POST",
                     body: payload,

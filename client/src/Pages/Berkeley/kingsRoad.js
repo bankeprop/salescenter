@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { DirhamSymbol } from "dirham/react";
 
 const WEBHOOK_ENDPOINT =
-    "https://script.google.com/macros/s/AKfycbxTrPUIKN5-vZAda8_PTCJ_Fdpry7a9P-SKrYNoXGuWIeRHnmb-AptkapEqihZdJiik2g/exec";
+    "https://script.google.com/macros/s/AKfycbz5yIUe6VVdmTIq48VhHi778Zr5xLTPsVE-zc6E1ulLtTz6CD4i0V4FeAYJv2J0ZYYp1A/exec";
 
 /* Official Berkeley International imagery (King's Road Park development page). */
 const IMG = {
@@ -1077,6 +1077,7 @@ function LeadForm() {
         payload.set("name", `${firstName} ${lastName}`.trim());
         payload.set("mobile", String(fd.get("phone") || "").trim());
         payload.set("email", String(fd.get("email") || "").trim());
+        payload.set("project", "-");
         payload.set("message", [
             "Project: One King's Road Park",
             `Country of Residence: ${fd.get("country") || "Not provided"}`,
@@ -1084,7 +1085,11 @@ function LeadForm() {
             `Investment Budget: ${fd.get("budget") || "Not selected"}`,
             `Customer Message: ${String(fd.get("message") || "No additional message").trim()}`,
         ].join("\n"));
-        payload.set("campaignName", "BerkeleyKingsRoadPark-AD-KRP1-999695");
+        payload.set("survey_comments", "-");
+        payload.set("source", "Google");
+        payload.set("language", "English");
+        payload.set("campaign", "BerkeleyKingsRoadPark-AD-KRP1-999695");
+        payload.set("adset", "-");
         payload.set("pageUrl", window.location.href);
 
         try {
@@ -1401,5 +1406,4 @@ function KingsRoad() {
 }
 
 export default KingsRoad;
-
 

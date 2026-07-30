@@ -5,7 +5,7 @@ import modonLogo from "../../Assests/Modon/Logo.png";
 
 const heroImage = "https://dubai-hill-estate.com/dashboard/uploads/media/media-20260713100138-c9bfe5011e33ff01.jpg";
 const mapImage = "https://dubai-hill-estate.com/dashboard/uploads/media/media-20260713101811-ce38e6b22a697358.jpg";
-const webhookEndpoint = "https://script.google.com/macros/s/AKfycbxTrPUIKN5-vZAda8_PTCJ_Fdpry7a9P-SKrYNoXGuWIeRHnmb-AptkapEqihZdJiik2g/exec";
+const webhookEndpoint = "https://script.google.com/macros/s/AKfycbz5yIUe6VVdmTIq48VhHi778Zr5xLTPsVE-zc6E1ulLtTz6CD4i0V4FeAYJv2J0ZYYp1A/exec";
 
 const button = "inline-flex min-h-14 items-center justify-center border border-transparent px-8 text-sm font-medium uppercase tracking-wide transition-colors md:min-h-16 md:text-base";
 const eyebrow = "text-[11px] font-semibold uppercase tracking-[.16em] text-neutral-500";
@@ -24,9 +24,14 @@ function LeadForm({ id }) {
         const payload = new FormData();
         payload.set("name", String(form.get("name") || "").trim());
         payload.set("email", String(form.get("email") || "").trim());
-        payload.set("phone", String(form.get("phone") || "").replace(/\D/g, ""));
+        payload.set("mobile", String(form.get("phone") || "").replace(/\D/g, ""));
+        payload.set("project", "-");
         payload.set("message", `Hudayriyat Golf Estates project details\nInvestment Range: ${form.get("budget") || "Not selected"}`);
-        payload.set("campaignName", "ModonHudayriyatGolfEstates-HU-GADS-488335");
+        payload.set("survey_comments", "-");
+        payload.set("source", "Google");
+        payload.set("language", "English");
+        payload.set("campaign", "ModonHudayriyatGolfEstates-HU-GADS-488335");
+        payload.set("adset", "-");
         payload.set("pageUrl", window.location.href);
 
         try {

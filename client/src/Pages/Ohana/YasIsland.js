@@ -108,8 +108,13 @@ function YasIsland() {
         if (phoneField) phoneField.value = fullPhone
 
         const formData = new FormData(form)
-        formData.set('phone', fullPhone)
-        formData.set('campaignName', 'Ohana-YasIsland')
+        formData.set('mobile', fullPhone)
+        formData.set('project', '-')
+        formData.set('survey_comments', '-')
+        formData.set('source', 'Google')
+        formData.set('language', 'English')
+        formData.set('campaign', 'Ohana-YasIsland')
+        formData.set('adset', '-')
         formData.set('pageUrl', window.location.href)
 
         try {
@@ -269,7 +274,7 @@ function YasIsland() {
                         <form
                             id="registerFormBottom"
                             onSubmit={handleSubmit}
-                            action="https://script.google.com/macros/s/AKfycbxTrPUIKN5-vZAda8_PTCJ_Fdpry7a9P-SKrYNoXGuWIeRHnmb-AptkapEqihZdJiik2g/exec"
+                            action="https://script.google.com/macros/s/AKfycbz5yIUe6VVdmTIq48VhHi778Zr5xLTPsVE-zc6E1ulLtTz6CD4i0V4FeAYJv2J0ZYYp1A/exec"
                             method="POST"
                             className="space-y-5"
                         >
@@ -340,8 +345,8 @@ function YasIsland() {
                                 />
                             </div>
 
-                            <input type="hidden" name="phone" id="full_phone" />
-                            <input type="hidden" name="campaignName" value="Ohana - YasIsland" />
+                            <input type="hidden" name="mobile" id="full_phone" />
+                            <input type="hidden" name="campaign" value="Ohana - YasIsland" />
                             <input type="hidden" name="pageUrl" value={window.location.href} />
 
                             <button

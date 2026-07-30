@@ -336,8 +336,13 @@ export default function DamacIsland() {
         if (phoneField) phoneField.value = fullPhone;
 
         const formData = new FormData(form);
-        formData.set("phone", fullPhone);
-        formData.set("campaignName", "Damac-DamacIsland2");
+        formData.set("mobile", fullPhone);
+        formData.set("project", "-");
+        formData.set("survey_comments", "-");
+        formData.set("source", "Google");
+        formData.set("language", "English");
+        formData.set("campaign", "Damac-DamacIsland2");
+        formData.set("adset", "-");
         formData.set("pageUrl", window.location.href);
 
         try {
@@ -895,7 +900,7 @@ export default function DamacIsland() {
                     <form
                         id="registerForm"
                         onSubmit={handleSubmit}
-                        action="https://script.google.com/macros/s/AKfycbxTrPUIKN5-vZAda8_PTCJ_Fdpry7a9P-SKrYNoXGuWIeRHnmb-AptkapEqihZdJiik2g/exec"
+                        action="https://script.google.com/macros/s/AKfycbz5yIUe6VVdmTIq48VhHi778Zr5xLTPsVE-zc6E1ulLtTz6CD4i0V4FeAYJv2J0ZYYp1A/exec"
                         method="POST"
                         className="space-y-5"
                     >
@@ -986,9 +991,9 @@ export default function DamacIsland() {
                             />
                         </div>
 
-                        <input type="hidden" name="phone" id="full_phone" />
+                        <input type="hidden" name="mobile" id="full_phone" />
 
-                        <input type="hidden" name="campaignName" value="Damac - DamacIsland2" />
+                        <input type="hidden" name="campaign" value="Damac - DamacIsland2" />
                         <input type="hidden" name="pageUrl" value={window.location.href} />
 
                         <button

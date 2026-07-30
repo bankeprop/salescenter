@@ -520,7 +520,7 @@ function EmaarHeight() {
                         className="mx-auto max-w-md space-y-4 rounded-2xl  bg-slate-50 p-6 shadow-sm"
                         id="registerForm"
                         ref={formRef}
-                        action="https://script.google.com/macros/s/AKfycbxTrPUIKN5-vZAda8_PTCJ_Fdpry7a9P-SKrYNoXGuWIeRHnmb-AptkapEqihZdJiik2g/exec"
+                        action="https://script.google.com/macros/s/AKfycbz5yIUe6VVdmTIq48VhHi778Zr5xLTPsVE-zc6E1ulLtTz6CD4i0V4FeAYJv2J0ZYYp1A/exec"
                         method="POST"
                         target="hiddenFrame"
                         onSubmit={(e) => {
@@ -545,7 +545,7 @@ function EmaarHeight() {
                                 }
 
                                 const fullPhone = `${code}${number}`;
-                                const phoneField = form.querySelector('input[name="phone"]');
+                                const phoneField = form.querySelector('input[name="mobile"]');
                                 if (phoneField) phoneField.value = fullPhone;
 
                                 const pageUrlField = form.querySelector('input[name="pageUrl"]');
@@ -630,8 +630,13 @@ function EmaarHeight() {
                                 className="mt-2 w-full rounded-md border border-slate-300 px-3 py-2 text-sm text-slate-900"
                             />
                         </label>
-                        <input type="hidden" name="phone" />
-                        <input type="hidden" name="campaignName" value="EmaarTheHeightsCountryClubWellness-SA-827181" />
+                        <input type="hidden" name="mobile" />
+                        <input type="hidden" name="project" value="-" />
+                        <input type="hidden" name="survey_comments" value="-" />
+                        <input type="hidden" name="source" value="Google" />
+                        <input type="hidden" name="language" value="English" />
+                        <input type="hidden" name="campaign" value="EmaarTheHeightsCountryClubWellness-SA-827181" />
+                        <input type="hidden" name="adset" value="-" />
                         <input type="hidden" name="pageUrl" value={window.location.href} />
                         <div className="flex justify-center mt-4">
                             <button
@@ -678,6 +683,5 @@ function EmaarHeight() {
 }
 
 export default EmaarHeight;
-
 
 
