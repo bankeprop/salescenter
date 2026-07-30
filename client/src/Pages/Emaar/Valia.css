@@ -1,0 +1,312 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Marcellus&display=swap");
+
+.valia-page {
+    --valia-night: #060c1e;
+    --valia-brass: #c89a57;
+    --valia-brass-deep: #966834;
+    --valia-blush: #f2cdc4;
+    --valia-mist: #f4f1ec;
+    --valia-gutter: clamp(24px, 6vw, 96px);
+    position: relative;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    overflow: hidden;
+    background-color: var(--valia-night);
+    background-position: right center;
+    background-size: cover;
+    color: var(--valia-mist);
+    font-family: "Jost", "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    isolation: isolate;
+}
+
+.valia-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    object-fit: cover;
+    object-position: 76% 42%;
+    animation: valia-drift 34s ease-in-out infinite alternate;
+}
+
+.valia-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+        linear-gradient(101deg, rgba(6, 12, 30, 0.9) 0%, rgba(6, 12, 30, 0.74) 26%, rgba(6, 12, 30, 0.42) 52%, rgba(6, 12, 30, 0.06) 74%, transparent 100%),
+        linear-gradient(to bottom, rgba(6, 12, 30, 0.55) 0%, transparent 24%, transparent 62%, rgba(6, 12, 30, 0.62) 100%);
+}
+
+.valia-header {
+    position: relative;
+    z-index: 1;
+    padding: clamp(26px, 4.6vh, 54px) var(--valia-gutter) 0;
+}
+
+.valia-eyebrow {
+    margin: 0 0 clamp(14px, 2.2vh, 22px);
+    color: rgba(244, 241, 236, 0.62);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.44em;
+    text-transform: uppercase;
+}
+
+.valia-logo {
+    display: block;
+    width: clamp(150px, 20vw, 250px);
+    height: auto;
+    object-fit: contain;
+}
+
+.valia-content {
+    position: relative;
+    z-index: 1;
+    align-self: center;
+    width: min(640px, 92vw);
+    padding: clamp(30px, 5vh, 58px) var(--valia-gutter) clamp(20px, 3vh, 34px);
+}
+
+.valia-hairline {
+    width: 132px;
+    height: 1px;
+    margin: 0 0 clamp(24px, 3.4vh, 34px);
+    background: linear-gradient(90deg, var(--valia-brass), rgba(200, 154, 87, 0.28) 55%, transparent);
+    transform-origin: left center;
+}
+
+.valia-content h1 {
+    margin: 0 0 clamp(16px, 2.4vh, 22px);
+    font-family: "Marcellus", "Times New Roman", serif;
+    font-size: clamp(2.05rem, 4.6vw, 3.5rem);
+    font-weight: 400;
+    letter-spacing: 0.005em;
+    line-height: 1.1;
+    text-wrap: balance;
+}
+
+.valia-content h1 em {
+    display: block;
+    color: var(--valia-blush);
+    font-style: normal;
+    white-space: nowrap;
+}
+
+.valia-description {
+    max-width: 34ch;
+    margin: 0 0 clamp(30px, 4.4vh, 42px);
+    color: rgba(244, 241, 236, 0.84);
+    font-size: clamp(1rem, 1.32vw, 1.14rem);
+    font-weight: 300;
+    letter-spacing: 0.012em;
+    line-height: 1.62;
+}
+
+.valia-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    padding: 17px 30px;
+    border: 0;
+    border-radius: 999px;
+    background: linear-gradient(160deg, #25d366, #1eae54);
+    box-shadow: 0 14px 34px -18px rgba(37, 211, 102, 0.65);
+    color: #062b16;
+    font-size: 0.83rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: transform 350ms cubic-bezier(0.2, 0.7, 0.3, 1), box-shadow 350ms ease, filter 350ms ease;
+}
+
+.valia-whatsapp svg {
+    width: 17px;
+    height: 17px;
+    flex: none;
+}
+
+.valia-whatsapp:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.08);
+    box-shadow: 0 20px 40px -18px rgba(37, 211, 102, 0.82);
+}
+
+.valia-whatsapp:focus-visible {
+    outline: 2px solid var(--valia-mist);
+    outline-offset: 4px;
+}
+
+.valia-back-link {
+    display: inline-block;
+    padding-bottom: 4px;
+    border-bottom: 1px solid rgba(200, 154, 87, 0.65);
+    color: var(--valia-mist);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: border-color 180ms ease, color 180ms ease;
+}
+
+.valia-back-link:hover {
+    border-color: var(--valia-blush);
+    color: var(--valia-blush);
+}
+
+.valia-back-link:focus-visible {
+    outline: 2px solid var(--valia-mist);
+    outline-offset: 5px;
+}
+
+.valia-rail {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 clamp(18px, 2.4vw, 30px);
+    padding: 0 var(--valia-gutter) clamp(26px, 4vh, 46px);
+    color: rgba(244, 241, 236, 0.56);
+    font-size: 0.66rem;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+}
+
+.valia-rail span {
+    display: inline-flex;
+    align-items: center;
+    gap: clamp(18px, 2.4vw, 30px);
+}
+
+.valia-rail span::after {
+    width: 1px;
+    height: 11px;
+    background: rgba(244, 241, 236, 0.26);
+    content: "";
+}
+
+.valia-rail span:last-child::after {
+    display: none;
+}
+
+.valia-reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    animation: valia-rise 950ms cubic-bezier(0.22, 0.7, 0.25, 1) forwards;
+}
+
+.valia-delay-1 { animation-delay: 150ms; }
+.valia-delay-2 { animation-delay: 340ms; }
+.valia-delay-3 { animation-delay: 620ms; }
+.valia-delay-4 { animation-delay: 780ms; }
+.valia-delay-5 { animation-delay: 940ms; }
+.valia-delay-6 { animation-delay: 1100ms; }
+
+.valia-hairline.valia-reveal {
+    opacity: 1;
+    transform: scaleX(0);
+    animation: valia-draw 1.1s cubic-bezier(0.22, 0.7, 0.25, 1) 500ms forwards;
+}
+
+@keyframes valia-drift {
+    from { transform: scale(1.02) translate3d(0, 0, 0); }
+    to { transform: scale(1.07) translate3d(-1.4%, -0.6%, 0); }
+}
+
+@keyframes valia-rise {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes valia-draw {
+    to { transform: scaleX(1); }
+}
+
+@media (max-width: 760px) {
+    .valia-video {
+        object-position: 70% 46%;
+        animation-duration: 44s;
+    }
+
+    .valia-overlay {
+        background: linear-gradient(to bottom, rgba(6, 12, 30, 0.78) 0%, rgba(6, 12, 30, 0.42) 30%, rgba(6, 12, 30, 0.5) 58%, rgba(6, 12, 30, 0.9) 100%);
+    }
+
+    .valia-content {
+        align-self: end;
+        width: 100%;
+    }
+
+    .valia-description {
+        max-width: 38ch;
+    }
+
+    .valia-whatsapp {
+        width: 100%;
+        justify-content: center;
+        padding: 18px 24px;
+    }
+
+    .valia-rail {
+        gap: 0 14px;
+        font-size: 0.6rem;
+        letter-spacing: 0.22em;
+    }
+
+    .valia-rail span {
+        gap: 14px;
+    }
+}
+
+@media (max-width: 760px) and (max-height: 580px) {
+    .valia-header {
+        padding-top: 18px;
+    }
+
+    .valia-content {
+        padding-top: 18px;
+        padding-bottom: 16px;
+    }
+
+    .valia-content h1 {
+        font-size: clamp(1.75rem, 5.5vw, 2.35rem);
+    }
+
+    .valia-hairline {
+        margin-bottom: 16px;
+    }
+
+    .valia-description {
+        margin-bottom: 18px;
+    }
+
+    .valia-rail {
+        padding-bottom: 18px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .valia-video,
+    .valia-reveal,
+    .valia-hairline.valia-reveal,
+    .valia-whatsapp {
+        animation: none;
+        transition: none;
+    }
+
+    .valia-video {
+        transform: scale(1.02);
+    }
+
+    .valia-reveal,
+    .valia-hairline.valia-reveal {
+        opacity: 1;
+        transform: none;
+    }
+}

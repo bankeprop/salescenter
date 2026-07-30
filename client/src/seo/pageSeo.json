@@ -325,6 +325,81 @@
       ],
       "robots": "noindex, follow"
     },
+    "/emaar/valia": {
+      "title": "Valia at Dubai Creek Harbour | Waterfront Living by Emaar",
+      "description": "Discover Valia at Dubai Creek Harbour by Emaar, offering iconic waterfront living beside Dubai Square Mall. Enquire for project details and availability.",
+      "h1": "Valia at Dubai Creek Harbour by Emaar",
+      "content": "Valia is an Emaar waterfront residential development at Dubai Creek Harbour, positioned alongside Dubai Square Mall and connected to Dubai's evolving retail and lifestyle destination.",
+      "bullets": [
+        "Waterfront residences at Dubai Creek Harbour",
+        "Located alongside Dubai Square Mall",
+        "Developed by Emaar"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "keywords": "Valia Dubai Creek Harbour, Valia by Emaar, Dubai Creek Harbour apartments, Emaar waterfront residences, Dubai Square Mall property",
+      "siteName": "Valia at Dubai Creek Harbour",
+      "locale": "en_AE",
+      "language": "en-AE",
+      "author": "Sales Center UAE",
+      "publisher": "Sales Center UAE",
+      "favicon": "/Emaar/valia-logo.png",
+      "ogImage": "/Emaar/valia.jpg",
+      "ogImageAlt": "Valia waterfront residences at Dubai Creek Harbour by Emaar",
+      "jsonLd": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://www.sales-center.ae/emaar/valia#webpage",
+            "url": "https://www.sales-center.ae/emaar/valia",
+            "name": "Valia at Dubai Creek Harbour by Emaar",
+            "description": "Waterfront residences at Dubai Creek Harbour located alongside Dubai Square Mall.",
+            "inLanguage": "en-AE",
+            "primaryImageOfPage": {
+              "@type": "ImageObject",
+              "url": "https://www.sales-center.ae/Emaar/valia.jpg"
+            },
+            "mainEntity": {
+              "@id": "https://www.sales-center.ae/emaar/valia#residence"
+            }
+          },
+          {
+            "@type": "Residence",
+            "@id": "https://www.sales-center.ae/emaar/valia#residence",
+            "name": "Valia",
+            "description": "Waterfront residences by Emaar at Dubai Creek Harbour, alongside Dubai Square Mall.",
+            "image": "https://www.sales-center.ae/Emaar/valia.jpg",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Dubai",
+              "addressRegion": "Dubai",
+              "addressCountry": "AE"
+            },
+            "brand": {
+              "@type": "Brand",
+              "name": "Emaar"
+            }
+          }
+        ]
+      }
+    },
+    "/emaar/valia/thanks": {
+      "title": "Thank You | Valia at Dubai Creek Harbour",
+      "description": "Thank you for enquiring about Valia at Dubai Creek Harbour. Continue in WhatsApp to receive project details and availability.",
+      "h1": "Thank You for Your Valia Enquiry",
+      "content": "Your Valia enquiry has been started. Continue in WhatsApp and our property team will assist with project details and availability.",
+      "bullets": [
+        "WhatsApp enquiry started",
+        "Property team follow-up available"
+      ],
+      "robots": "noindex, follow",
+      "siteName": "Valia at Dubai Creek Harbour",
+      "locale": "en_AE",
+      "language": "en-AE",
+      "favicon": "/Emaar/valia-logo.png",
+      "ogImage": "/Emaar/valia.jpg",
+      "ogImageAlt": "Valia waterfront residences at Dubai Creek Harbour by Emaar"
+    },
     "/Binghatti/MercedesBenzPlaces": {
       "title": "Mercedes-Benz Places by Binghatti | Downtown Dubai Residences",
       "description": "Explore Mercedes-Benz Places by Binghatti in Downtown Dubai, a branded residential tower with luxury suites, penthouses, and premium amenities.",
