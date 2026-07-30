@@ -31,6 +31,8 @@ import KingsRoad from './Pages/Berkeley/kingsRoad';
 import KingsRoadThanks from './Pages/Berkeley/KingsRoadThanks';
 import KingsroadForm from './Pages/Berkeley/KingsroadForm';
 import KingsroadFormThanks from './Pages/Berkeley/KingsroadFormThanks';
+import Valia from './Pages/Emaar/Valia';
+import ValiaThanks from './Pages/Emaar/ValiaThanks';
 
 function SeoManager() {
   const { pathname } = useLocation();
@@ -61,6 +63,9 @@ function App() {
         <Route path="/EmaarvalleyThanks" element={<EmaarvalleyThanks />} />
         <Route path="/Emaar/EmaarHeights" element={<EmaarHeight />} />
         <Route path="/Emaar/EmaarHeightsThanks" element={<EmaarHeightThank />} />
+        <Route caseSensitive path="/Emaar/Valia" element={<Navigate to="/emaar/valia" replace />} />
+        <Route path="/emaar/valia" element={<Valia />} />
+        <Route path="/emaar/valia/thanks" element={<ValiaThanks />} />
 
         <Route path="/Binghatti/MercedesBenzPlaces" element={<MercedesBenzPlaces />} />
         <Route path="/Binghatti/ThankYou" element={<MercedesThankYou />} />
