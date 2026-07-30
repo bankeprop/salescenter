@@ -60,7 +60,7 @@ function Valia() {
                     Live alongside <em>Dubai Square Mall</em>
                 </h1>
                 <p className="valia-description valia-reveal valia-delay-4">
-                    Where iconic waterfront living meets the future of retail.
+                    Where iconic waterfront living meets the<br /> future of retail.
                 </p>
 
                 <a
