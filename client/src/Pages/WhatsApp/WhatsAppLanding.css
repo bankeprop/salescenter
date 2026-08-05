@@ -1,0 +1,74 @@
+@media (max-width: 760px) {
+    .whatsapp-project-page {
+        --valia-gutter: clamp(22px, 7.5vw, 30px);
+    }
+
+    .whatsapp-project-page .valia-video {
+        object-position: 70% center;
+    }
+
+    .whatsapp-project-page .valia-header {
+        padding-top: max(28px, env(safe-area-inset-top));
+    }
+
+    .whatsapp-project-page .valia-content {
+        min-width: 0;
+        padding-top: 20px;
+        padding-bottom: 22px;
+    }
+
+    .whatsapp-project-page .valia-hairline {
+        width: 92px;
+        margin-bottom: 18px;
+    }
+
+    .whatsapp-project-page .valia-content h1 {
+        max-width: 100%;
+        margin-bottom: 14px;
+        font-size: clamp(1.75rem, 8vw, 2.15rem);
+        line-height: 1.08;
+        text-wrap: pretty;
+        overflow-wrap: anywhere;
+    }
+
+    .whatsapp-project-page .valia-content h1 em {
+        display: inline;
+        white-space: normal;
+    }
+
+    .whatsapp-project-page .valia-description {
+        max-width: 100%;
+        margin-bottom: 26px;
+        font-size: 0.93rem;
+        line-height: 1.55;
+    }
+
+    .whatsapp-project-page .valia-whatsapp {
+        min-height: 52px;
+        padding-inline: 18px;
+        font-size: 0.72rem;
+        letter-spacing: 0.13em;
+    }
+
+    .whatsapp-project-page .valia-rail {
+        justify-content: space-between;
+        gap: 8px;
+        padding-bottom: max(22px, env(safe-area-inset-bottom));
+        font-size: 0.52rem;
+        letter-spacing: 0.16em;
+    }
+
+    .whatsapp-project-page .valia-rail span {
+        gap: 8px;
+    }
+}
+
+@media (max-width: 380px) {
+    .whatsapp-project-page .valia-content h1 {
+        font-size: 1.65rem;
+    }
+
+    .whatsapp-project-page .valia-rail span::after {
+        display: none;
+    }
+}
