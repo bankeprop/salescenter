@@ -33,6 +33,12 @@ import KingsroadForm from './Pages/Berkeley/KingsroadForm';
 import KingsroadFormThanks from './Pages/Berkeley/KingsroadFormThanks';
 import Valia from './Pages/Emaar/Valia';
 import ValiaThanks from './Pages/Emaar/ValiaThanks';
+import KingsRoadWhatsapp from './Pages/Berkeley/KingsRoadWhatsapp';
+import KingsRoadWhatsappThanks from './Pages/Berkeley/KingsRoadWhatsappThanks';
+import ObsidianWhatsapp from './Pages/Salboy/ObsidianWhatsapp';
+import ObsidianWhatsappThanks from './Pages/Salboy/ObsidianWhatsappThanks';
+import TheForgeWhatsapp from './Pages/TheForge/TheForgeWhatsapp';
+import TheForgeWhatsappThanks from './Pages/TheForge/TheForgeWhatsappThanks';
 
 function SeoManager() {
   const { pathname } = useLocation();
@@ -66,6 +72,12 @@ function App() {
         <Route caseSensitive path="/Emaar/Valia" element={<Navigate to="/emaar/valia" replace />} />
         <Route path="/emaar/valia" element={<Valia />} />
         <Route path="/emaar/valia/thanks" element={<ValiaThanks />} />
+        <Route path="/berkeley/kings-road-whatsapp" element={<KingsRoadWhatsapp />} />
+        <Route path="/berkeley/kings-road-whatsapp/thanks" element={<KingsRoadWhatsappThanks />} />
+        <Route path="/obsidian-whatsapp" element={<ObsidianWhatsapp />} />
+        <Route path="/obsidian-whatsapp/thanks" element={<ObsidianWhatsappThanks />} />
+        <Route path="/theforge-whatsapp" element={<TheForgeWhatsapp />} />
+        <Route path="/theforge-whatsapp/thanks" element={<TheForgeWhatsappThanks />} />
 
         <Route path="/Binghatti/MercedesBenzPlaces" element={<MercedesBenzPlaces />} />
         <Route path="/Binghatti/ThankYou" element={<MercedesThankYou />} />

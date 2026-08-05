@@ -13,6 +13,72 @@
     "robots": "index, follow"
   },
   "routes": {
+    "/berkeley/kings-road-whatsapp": {
+      "title": "One King's Road Park, Fulham | WhatsApp Enquiry",
+      "description": "Enquire on WhatsApp about One King's Road Park in Fulham, London SW6, by Berkeley Group.",
+      "h1": "One King's Road Park WhatsApp Enquiry",
+      "content": "Request the latest prices, availability and project details for One King's Road Park.",
+      "bullets": ["Fulham, London SW6", "By Berkeley Group"],
+      "robots": "index, follow",
+      "keywords": "One King's Road Park, King's Road Park Fulham, Berkeley Group London",
+      "siteName": "One King's Road Park",
+      "locale": "en_GB",
+      "language": "en-GB",
+      "ogImage": "/Berkeley/Logo.png",
+      "ogImageAlt": "One King's Road Park logo"
+    },
+    "/berkeley/kings-road-whatsapp/thanks": {
+      "title": "Thank You | One King's Road Park WhatsApp Enquiry",
+      "description": "Thank you for enquiring about One King's Road Park.",
+      "h1": "Thank You for Your One King's Road Park Enquiry",
+      "content": "Continue in WhatsApp for current prices, availability and project details.",
+      "bullets": ["WhatsApp enquiry started"],
+      "robots": "noindex, follow"
+    },
+    "/obsidian-whatsapp": {
+      "title": "Obsidian Manchester | WhatsApp Enquiry",
+      "description": "Enquire on WhatsApp about premium apartments at Obsidian Manchester by Salboy.",
+      "h1": "Obsidian Manchester WhatsApp Enquiry",
+      "content": "Request the latest prices, availability and investment details for Obsidian Manchester.",
+      "bullets": ["Manchester City Centre", "By Salboy"],
+      "robots": "index, follow",
+      "keywords": "Obsidian Manchester, Manchester apartments, Salboy Obsidian",
+      "siteName": "Obsidian Manchester",
+      "locale": "en_GB",
+      "language": "en-GB",
+      "ogImage": "/Obsidian/Obsidian_logo.png",
+      "ogImageAlt": "Obsidian Manchester logo"
+    },
+    "/obsidian-whatsapp/thanks": {
+      "title": "Thank You | Obsidian Manchester WhatsApp Enquiry",
+      "description": "Thank you for enquiring about Obsidian Manchester.",
+      "h1": "Thank You for Your Obsidian Manchester Enquiry",
+      "content": "Continue in WhatsApp for current prices, availability and investment details.",
+      "bullets": ["WhatsApp enquiry started"],
+      "robots": "noindex, follow"
+    },
+    "/theforge-whatsapp": {
+      "title": "The Forge Liverpool | WhatsApp Enquiry",
+      "description": "Enquire on WhatsApp about premium city-centre apartments at The Forge Liverpool.",
+      "h1": "The Forge Liverpool WhatsApp Enquiry",
+      "content": "Request the latest prices, availability and investment details for The Forge Liverpool.",
+      "bullets": ["Pumpfields, Liverpool", "Premium city living"],
+      "robots": "index, follow",
+      "keywords": "The Forge Liverpool, Pumpfields apartments, Liverpool property investment",
+      "siteName": "The Forge Liverpool",
+      "locale": "en_GB",
+      "language": "en-GB",
+      "ogImage": "/TheForge/Logo.png",
+      "ogImageAlt": "The Forge Liverpool logo"
+    },
+    "/theforge-whatsapp/thanks": {
+      "title": "Thank You | The Forge Liverpool WhatsApp Enquiry",
+      "description": "Thank you for enquiring about The Forge Liverpool.",
+      "h1": "Thank You for Your The Forge Liverpool Enquiry",
+      "content": "Continue in WhatsApp for current prices, availability and investment details.",
+      "bullets": ["WhatsApp enquiry started"],
+      "robots": "noindex, follow"
+    },
     "/obsidian": {
       "title": "Obsidian Manchester Apartments | UK Property Investment",
       "description": "Discover Obsidian Manchester apartments from £249,000, with premium amenities, up to 6% gross yield and dedicated support for UAE investors.",
