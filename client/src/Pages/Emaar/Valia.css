@@ -36,9 +36,14 @@
     position: absolute;
     inset: 0;
     z-index: -1;
-    background:
-        linear-gradient(101deg, rgba(6, 12, 30, 0.9) 0%, rgba(6, 12, 30, 0.74) 26%, rgba(6, 12, 30, 0.42) 52%, rgba(6, 12, 30, 0.06) 74%, transparent 100%),
-        linear-gradient(to bottom, rgba(6, 12, 30, 0.55) 0%, transparent 24%, transparent 62%, rgba(6, 12, 30, 0.62) 100%);
+    background: linear-gradient(
+        90deg,
+        rgba(4, 8, 18, 0.78) 0%,
+        rgba(4, 8, 18, 0.58) 34%,
+        rgba(4, 8, 18, 0.2) 58%,
+        transparent 78%
+    );
+    pointer-events: none;
 }
 
 .valia-header {
@@ -67,7 +72,7 @@
     position: relative;
     z-index: 1;
     align-self: center;
-    width: min(640px, 92vw);
+    width: min(1100px, 92vw);
     padding: clamp(30px, 5vh, 58px) var(--valia-gutter) clamp(20px, 3vh, 34px);
 }
 
@@ -80,6 +85,7 @@
 }
 
 .valia-content h1 {
+    max-width: none;
     margin: 0 0 clamp(16px, 2.4vh, 22px);
     font-family: "Marcellus", "Times New Roman", serif;
     font-size: clamp(2.05rem, 4.6vw, 3.5rem);
@@ -89,21 +95,57 @@
     text-wrap: balance;
 }
 
+.valia-title-line {
+    display: block;
+    white-space: nowrap;
+}
+
 .valia-content h1 em {
     display: block;
-    color: var(--valia-blush);
-    font-style: normal;
+    color: #fff;
+    font-style: italic;
     white-space: nowrap;
 }
 
 .valia-description {
-    max-width: 34ch;
-    margin: 0 0 clamp(30px, 4.4vh, 42px);
-    color: rgba(244, 241, 236, 0.84);
+    max-width: 1050px;
+    margin: 0 0 clamp(22px, 3vh, 30px);
+    color: #fff;
     font-size: clamp(1rem, 1.32vw, 1.14rem);
     font-weight: 300;
     letter-spacing: 0.012em;
     line-height: 1.62;
+}
+
+.valia-details {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px 24px;
+    width: min(100%, 940px);
+    margin: 0 0 clamp(26px, 3.5vh, 36px);
+}
+
+.valia-detail {
+    min-width: 0;
+    padding-left: 14px;
+    border-left: 1px solid rgba(200, 154, 87, 0.48);
+}
+
+.valia-detail dt {
+    margin-bottom: 5px;
+    color: rgba(244, 241, 236, 0.58);
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.valia-detail dd {
+    margin: 0;
+    color: var(--valia-mist);
+    font-size: clamp(0.9rem, 1.25vw, 1.08rem);
+    font-weight: 500;
+    line-height: 1.25;
 }
 
 .valia-whatsapp {
@@ -222,6 +264,18 @@
     to { transform: scaleX(1); }
 }
 
+.valia-qr {
+    position: absolute;
+    right: clamp(16px, 2.5vw, 36px);
+    bottom: clamp(16px, 2.5vw, 30px);
+    z-index: 2;
+    width: clamp(82px, 8vw, 112px);
+    height: auto;
+    border: 4px solid rgba(255, 255, 255, 0.92);
+    border-radius: 6px;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+}
+
 @media (max-width: 760px) {
     .valia-video {
         object-position: 88% center;
@@ -236,8 +290,22 @@
         width: 100%;
     }
 
+    .valia-content h1 {
+        font-size: clamp(1.65rem, 7.8vw, 2.05rem);
+    }
+
     .valia-description {
         max-width: 38ch;
+    }
+
+    .valia-description br {
+        display: none;
+    }
+
+    .valia-details {
+        width: 100%;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px 12px;
     }
 
     .valia-whatsapp {
@@ -254,6 +322,14 @@
 
     .valia-rail span {
         gap: 14px;
+    }
+
+    .valia-qr {
+        top: 28px;
+        right: 14px;
+        bottom: auto;
+        width: 60px;
+        border-width: 3px;
     }
 }
 
@@ -276,6 +352,10 @@
     }
 
     .valia-description {
+        margin-bottom: 18px;
+    }
+
+    .valia-details {
         margin-bottom: 18px;
     }
 
