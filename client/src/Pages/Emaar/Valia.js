@@ -4,7 +4,15 @@ import { useNavigate } from "react-router-dom";
 import valiaImage from "../../Assests/Emaar/valia.jpeg";
 import valiaLogo from "../../Assests/Emaar/valia_logo.png";
 import valiaVideo from "../../Assests/Emaar/Valia_video.mp4";
+import valiaQr from "../../Assests/Emaar/valiaQR.jpeg";
 import "./Valia.css";
+
+const projectDetails = [
+    { label: "Launch price", value: "From AED ~2.06M." },
+    { label: "Payment plan", value: "80/20" },
+    { label: "Handover", value: "December 2030" },
+    { label: "ROI potential", value: "~6%" },
+];
 
 function Valia() {
     const navigate = useNavigate();
@@ -38,9 +46,6 @@ function Valia() {
             <div className="valia-overlay" aria-hidden="true" />
 
             <header className="valia-header">
-                {/* <p className="valia-eyebrow valia-reveal valia-delay-1">
-                    Dubai Creek Harbour
-                </p> */}
                 <img
                     className="valia-logo valia-reveal valia-delay-2"
                     src={valiaLogo}
@@ -57,14 +62,31 @@ function Valia() {
                     id="valia-title"
                     className="valia-reveal valia-delay-3"
                 >
-                    Live alongside <em>Dubai Square Mall</em>
+                    <span className="valia-title-line">
+                        Valia by Emaar Properties,
+                    </span>
+                    <span className="valia-title-line">
+                        Dubai Creek Harbour,
+                    </span>
+                    <span className="valia-title-line">Dubai</span>
                 </h1>
                 <p className="valia-description valia-reveal valia-delay-4">
-                    Where iconic waterfront living meets the<br /> future of retail.
+                    A new residential tower rising alongside Dubai Square Mall at
+                    Dubai Creek Harbour, Emaar&apos;s AED 180
+                    <br /> billion waterfront masterplan.
                 </p>
 
+                <dl className="valia-details valia-reveal valia-delay-5">
+                    {projectDetails.map(({ label, value }) => (
+                        <div className="valia-detail" key={label}>
+                            <dt>{label}</dt>
+                            <dd>{value}</dd>
+                        </div>
+                    ))}
+                </dl>
+
                 <a
-                    className="valia-whatsapp valia-reveal valia-delay-5"
+                    className="valia-whatsapp valia-reveal valia-delay-6"
                     href="https://wa.link/hcf57k"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -77,10 +99,15 @@ function Valia() {
             </section>
 
             <footer className="valia-rail valia-reveal valia-delay-6">
-                {/* <span>Dubai Creek Harbour</span> */}
                 <span>Waterfront residences</span>
                 <span>By Emaar</span>
             </footer>
+
+            <img
+                className="valia-qr valia-reveal valia-delay-6"
+                src={valiaQr}
+                alt="Scan to enquire about Valia on WhatsApp"
+            />
         </main>
     );
 }
