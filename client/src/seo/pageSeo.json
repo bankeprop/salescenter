@@ -70,6 +70,7 @@
       "siteName": "UK Property Investment | Sales Center",
       "locale": "en_GB",
       "language": "en-GB",
+      "favicon": "/UKInvestment/favicon.jpeg",
       "ogImage": "/UKInvestment/london-tower-bridge.png",
       "ogImageAlt": "Tower Bridge London at night"
     },
@@ -97,6 +98,7 @@
       "siteName": "UK Property Investment | Sales Center",
       "locale": "en_GB",
       "language": "en-GB",
+      "favicon": "/UKInvestment/favicon.jpeg",
       "ogImage": "/UKInvestment/london-tower-bridge.png",
       "ogImageAlt": "Tower Bridge London at night"
     },

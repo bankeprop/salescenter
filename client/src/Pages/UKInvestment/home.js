@@ -78,7 +78,7 @@ function Home() {
                 <div className="uk-investment-shell">
                     <section className="uk-investment-copy">
                         <p className="uk-eyebrow">FOR INTERNATIONAL INVESTORS</p>
-                        <h1>Own UK Rental Property -<br /><span>Wherever You Live</span></h1>
+                        <h1>Own UK Property<br /><span>Earn Rental Income. From Anywhere.</span></h1>
 
                         <ul className="uk-benefits">
                             {benefits.map((benefit, index) => <li key={index}>{benefit}</li>)}

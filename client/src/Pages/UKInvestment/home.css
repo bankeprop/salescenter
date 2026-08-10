@@ -15,9 +15,9 @@
 .uk-benefits { list-style: none; padding: 0; margin: 28px 0 30px; display: grid; gap: 15px; }
 .uk-benefits li { position: relative; padding-left: 31px; font-size: 15px; line-height: 1.48; }
 .uk-benefits li::before { content: '✓'; position: absolute; left: 0; top: -2px; color: #e7b44c; font-size: 23px; font-weight: 700; }
-.uk-whatsapp { width: min(100%, 405px); min-height: 53px; display: flex; align-items: center; justify-content: center; gap: 11px; border-radius: 9px; background: #22d36f; color: #fff; text-decoration: none; font-size: 15px; font-weight: 800; box-shadow: 0 10px 25px rgba(0,0,0,.22); transition: transform .2s, background .2s; }
-.uk-whatsapp:hover { background: #17bd5f; transform: translateY(-2px); }
-.uk-whatsapp svg { font-size: 25px; }
+.uk-whatsapp { width: min(100%, 405px); min-height: 53px; display: flex; align-items: center; justify-content: center; gap: 11px; border: 1px solid rgba(34, 211, 111, .7); border-radius: 9px; background: transparent; color: #fff; text-decoration: none; font-size: 15px; font-weight: 800; box-shadow: 0 10px 25px rgba(0,0,0,.22); transition: transform .2s, background .2s, border-color .2s; }
+.uk-whatsapp:hover { border-color: #22d36f; background: rgba(34, 211, 111, .1); transform: translateY(-2px); }
+.uk-whatsapp svg { color: #22d36f; font-size: 25px; }
 .uk-reply-time { margin: 18px 0 24px; color: #c8cdd6; font-size: 12px; }
 .uk-featured { margin: 18px 0 0; color: #c3c5ca; font-size: 11px; letter-spacing: .55px; }
 .uk-featured strong { font-weight: 800; }
@@ -46,7 +46,7 @@
 .uk-stats { background: #081526; border-top: 1px solid rgba(255,255,255,.05); }
 .uk-stats-inner { width: min(1120px, calc(100% - 160px)); min-height: 140px; margin: 0 auto; display: grid; grid-template-columns: repeat(5, 1fr); align-items: center; }
 .uk-stats-inner div { display: flex; flex-direction: column; align-items: center; gap: 13px; text-align: center; }
-.uk-stats-inner strong { color: #f0bd64; font-size: 30px; line-height: 1; font-weight: 800; }
+.uk-stats-inner strong { color: #f0bd64; font-size: clamp(34px, 2.45vw, 45px); line-height: 1; font-weight: 800; }
 .uk-stats-inner span { color: #e4e7ec; font-size: 14px; }
 .uk-services { padding: 75px 0; background: #f5f6f8; color: #06152a; }
 .uk-services-inner { width: min(1120px, calc(100% - 160px)); margin: 0 auto; }
@@ -123,12 +123,13 @@
   .uk-guide-card { padding: 29px 20px 22px; }
   .uk-guide-card h2 { font-size: 22px; }
   .uk-featured { line-height: 1.7; }
-  .uk-whatsapp { position: fixed; z-index: 900; right: 15px; bottom: calc(14px + env(safe-area-inset-bottom)); left: 15px; width: auto; min-height: 56px; padding: 9px 10px; gap: 8px; font-size: 11px; line-height: 1.2; box-shadow: 0 12px 30px rgba(0, 0, 0, .38); }
-  .uk-whatsapp svg { flex: 0 0 22px; width: 22px; height: 22px; }
-  .uk-whatsapp span { flex: 0 1 auto; white-space: nowrap; text-align: center; }
+  .uk-whatsapp { position: fixed; z-index: 900; right: 18px; bottom: calc(18px + env(safe-area-inset-bottom)); left: auto; width: 64px; height: 64px; min-height: 64px; padding: 0; border: 0; border-radius: 50%; background: #22d36f; box-shadow: 0 12px 30px rgba(0, 0, 0, .38); }
+  .uk-whatsapp:hover { background: #17bd5f; }
+  .uk-whatsapp svg { flex: 0 0 32px; width: 32px; height: 32px; color: #fff; }
+  .uk-whatsapp span { display: none; }
   .uk-stats-inner { width: calc(100% - 30px); grid-template-columns: repeat(2, 1fr); gap: 32px 12px; }
   .uk-stats-inner div:last-child { grid-column: 1 / -1; }
-  .uk-stats-inner strong { font-size: 25px; }
+  .uk-stats-inner strong { font-size: 38px; }
   .uk-stats-inner span { font-size: 12px; }
   .uk-services { padding: 55px 0; }
   .uk-services-inner { width: calc(100% - 30px); }
