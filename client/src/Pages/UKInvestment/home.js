@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import './home.css';
 import londonImage from '../../Assests/Berkeley/heroExterior.jpg';
 import liverpoolImage from '../../Assests/TheForge/hero-liverpool.jpg';
-import manchesterImage from '../../Assests/Salboy/hero-tower.jpg';
-import birminghamImage from '../../Assests/OfflineListing/image1.jpg';
+import manchesterImage from '../../Assests/UKInvestment/manchestr.jpeg';
+import birminghamImage from '../../Assests/UKInvestment/birmingham.jpeg';
 
 const WEBHOOK_ENDPOINT = 'https://script.google.com/macros/s/AKfycbz5yIUe6VVdmTIq48VhHi778Zr5xLTPsVE-zc6E1ulLtTz6CD4i0V4FeAYJv2J0ZYYp1A/exec';
 const WHATSAPP_MESSAGE = 'Hi, I am interested in UK Property Investment';
@@ -231,7 +231,7 @@ function Home() {
                         </details>
                         <details>
                             <summary>Who looks after the property and tenants?</summary>
-                            <p>Our management team can furnish the property, market it, find and vet tenants, collect rent, arrange maintenance and provide regular statements. This means your property can be managed for you without needing to be in the UK.</p>
+                            <p>Our extensive network of trusted management partners across the UK can provide a complete property management service, including tenant sourcing, rent collection, maintenance and regular reporting, allowing your property to be managed seamlessly from anywhere in the world.</p>
                         </details>
                         <details>
                             <summary>What taxes apply to overseas owners?</summary>
