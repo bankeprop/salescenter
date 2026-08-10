@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './ukQuiz.css';
 
 const WEBHOOK_ENDPOINT = 'https://script.google.com/macros/s/AKfycbz5yIUe6VVdmTIq48VhHi778Zr5xLTPsVE-zc6E1ulLtTz6CD4i0V4FeAYJv2J0ZYYp1A/exec';
@@ -7,7 +8,7 @@ const questions = [
     {
         key: 'budget',
         title: 'How much are you looking to invest?',
-        options: ['Under £50,000', '£50,000 – £100,000', '£100,000 – £250,000', '£250,000+'],
+        options: ['AED 950K - 1.5M', 'AED 1.5M - 2.5M', 'AED 2.5M - 3.5M', 'AED 3.5M +'],
     },
     {
         key: 'timeline',
@@ -22,6 +23,7 @@ const questions = [
 ];
 
 function UKQuiz() {
+    const navigate = useNavigate();
     const [step, setStep] = useState(0);
     const [answers, setAnswers] = useState({});
     const [submitted, setSubmitted] = useState(false);
@@ -66,6 +68,7 @@ function UKQuiz() {
             await fetch(WEBHOOK_ENDPOINT, { method: 'POST', body: payload, mode: 'no-cors' });
             form.reset();
             setSubmitted(true);
+            navigate('/invest-in-uk-Quiz/thank-you');
         } catch (error) {
             setSubmitError('Something went wrong. Please try again.');
         } finally {
@@ -80,7 +83,7 @@ function UKQuiz() {
                 <header>
                     <p className="uk-quiz-eyebrow">UK BUY-TO-LET · FULLY MANAGED</p>
                     <h1>See which UK properties match your<br />goals</h1>
-                    <p className="uk-quiz-intro">Answer 3 quick questions — takes 20 seconds. We’ll send a shortlist matched to your<br />budget, plus the investor’s guide.</p>
+                    <p className="uk-quiz-intro">Answer 3 quick questions in just 20 seconds, and our UK property investment team will get back to you.</p>
                 </header>
 
                 <div className="uk-quiz-progress" aria-label={`Quiz progress: step ${step + 1} of 4`}>
@@ -106,7 +109,7 @@ function UKQuiz() {
                         <input name="email" type="email" placeholder="Email*" aria-label="Email" required />
                         <input name="phone" type="tel" placeholder="Phone / WhatsApp (incl. country code)*" aria-label="Phone or WhatsApp" required />
                         <button className="uk-quiz-submit" type="submit" disabled={isSubmitting}>
-                            {isSubmitting ? 'Sending...' : 'Get My Shortlist + Guide →'}
+                            {isSubmitting ? 'Sending...' : 'Connect with our UK Propert Expert'}
                         </button>
                         <button className="uk-quiz-back" type="button" onClick={goBack}>← Back</button>
                         {submitError && <p className="uk-quiz-error" role="alert">{submitError}</p>}
@@ -121,10 +124,10 @@ function UKQuiz() {
                     </div>
                 )}
 
-                <footer className="uk-quiz-proof">
+                {/* <footer className="uk-quiz-proof">
                     <p><span>★</span> 4.7/5 from 186 Google reviews · £250M+ under advisory · Up to 15% total returns (7.8% avg net yield + capital growth) · Properties from £98,400, reserve from £5,000</p>
                     <p>As featured in Daily Mail · Rightmove · Zoopla · Manchester Evening News</p>
-                </footer>
+                </footer> */}
             </section>
         </main>
     );

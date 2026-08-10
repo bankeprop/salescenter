@@ -42,6 +42,7 @@ import TheForgeWhatsappThanks from './Pages/TheForge/TheForgeWhatsappThanks';
 import UKInvestmentHome from './Pages/UKInvestment/home';
 import UKInvestmentThankYou from './Pages/UKInvestment/ThankYou';
 import UKQuiz from './Pages/UKInvestment/ukQuiz';
+import UKQuizThankYou from './Pages/UKInvestment/QuizThankYou';
 
 function SeoManager() {
   const { pathname } = useLocation();
@@ -121,6 +122,7 @@ function App() {
         <Route path="/uk-investment" element={<UKInvestmentHome />} />
         <Route path="/uk-investment/thank-you" element={<UKInvestmentThankYou />} />
         <Route path="/invest-in-uk-Quiz" element={<UKQuiz />} />
+        <Route path="/invest-in-uk-Quiz/thank-you" element={<UKQuizThankYou />} />
 
       </Routes>
     </Router>

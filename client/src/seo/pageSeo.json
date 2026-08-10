@@ -31,6 +31,7 @@
       "language": "en-GB",
       "author": "Sales Center",
       "publisher": "Sales Center",
+      "favicon": "/UKInvestment/favicon.jpeg",
       "ogImage": "/UKInvestment/london-tower-bridge.png",
       "ogImageAlt": "Tower Bridge London at night representing UK property investment",
       "jsonLd": {
@@ -72,12 +73,26 @@
       "ogImage": "/UKInvestment/london-tower-bridge.png",
       "ogImageAlt": "Tower Bridge London at night"
     },
-    "/uk-quiz": {
+    "/invest-in-uk-Quiz": {
       "title": "Find Your UK Property Investment Match | Quick Quiz",
       "description": "Answer three quick questions to receive UK property investment opportunities matched to your budget, timeline and location.",
       "h1": "See Which UK Properties Match Your Goals",
       "content": "Complete the quick UK property investment quiz to request a personalised shortlist and international investor guide.",
       "bullets": ["Personalised UK property shortlist", "Takes approximately 20 seconds"],
+      "robots": "noindex, follow",
+      "siteName": "UK Property Investment | Sales Center",
+      "locale": "en_GB",
+      "language": "en-GB",
+      "favicon": "/UKInvestment/favicon.jpeg",
+      "ogImage": "/UKInvestment/london-tower-bridge.png",
+      "ogImageAlt": "Tower Bridge London at night"
+    },
+    "/invest-in-uk-Quiz/thank-you": {
+      "title": "Thank You | UK Property Investment Quiz",
+      "description": "Thank you for completing the UK property investment quiz. Our team will contact you with matched opportunities.",
+      "h1": "Your UK Property Investment Quiz Has Been Received",
+      "content": "Our UK property team will review your answers and follow up with opportunities matched to your goals.",
+      "bullets": ["Quiz completed", "Matched property follow-up pending"],
       "robots": "noindex, follow",
       "siteName": "UK Property Investment | Sales Center",
       "locale": "en_GB",
