@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+.uk-quiz-page, .uk-quiz-page * { box-sizing: border-box; }
+.uk-quiz-page { position: relative; min-height: 100vh; overflow: hidden; background: #071426 url('../../Assests/UKInvestment/london-tower-bridge.png') center/cover no-repeat; color: #fff; font-family: 'Inter', Arial, sans-serif; }
+.uk-quiz-overlay { position: absolute; inset: 0; background: rgba(4, 15, 30, .84); }
+.uk-quiz-shell { position: relative; z-index: 1; width: min(520px, calc(100% - 40px)); min-height: 100vh; margin: 0 auto; display: flex; flex-direction: column; padding: 38px 0 16px; text-align: center; }
+.uk-quiz-eyebrow { margin: 0 0 11px; color: #efb54f; font-size: 9px; letter-spacing: 2px; }
+.uk-quiz-shell h1 { margin: 0; font-size: 24px; line-height: 1.05; letter-spacing: -.4px; font-weight: 800; }
+.uk-quiz-intro { margin: 8px 0 0; color: #e2e5e9; font-size: 12px; line-height: 1.5; }
+.uk-quiz-progress { width: 100%; height: 5px; margin: 23px 0 29px; overflow: hidden; border-radius: 10px; background: rgba(255,255,255,.2); }
+.uk-quiz-progress span { display: block; height: 100%; border-radius: inherit; background: #e4b85f; transition: width .3s ease; }
+.uk-quiz-question h2, .uk-quiz-contact h2, .uk-quiz-success h2 { margin: 0 0 19px; font-size: 18px; line-height: 1.25; font-weight: 800; }
+.uk-quiz-options { display: grid; gap: 28px; }
+.uk-quiz-options button { min-height: 49px; padding: 11px 16px; border: 2px solid transparent; border-radius: 8px; background: #fff; color: #07152a; text-align: left; font: 600 13px 'Inter', sans-serif; cursor: pointer; transition: border-color .18s, transform .18s, background .18s; }
+.uk-quiz-options button:hover { border-color: #e4b85f; background: #fffaf1; transform: translateY(-2px); }
+.uk-quiz-back { margin: 15px auto 0; padding: 4px 10px; border: 0; background: transparent; color: #dce2e9; font: 400 12px 'Inter', sans-serif; cursor: pointer; }
+.uk-quiz-back:hover { color: #efb54f; }
+.uk-quiz-contact { display: grid; gap: 12px; }
+.uk-quiz-contact input { width: 100%; height: 43px; padding: 0 13px; border: 2px solid transparent; border-radius: 8px; outline: none; color: #07152a; font: 400 13px 'Inter', sans-serif; }
+.uk-quiz-contact input:focus { border-color: #e4b85f; }
+.uk-quiz-submit { min-height: 46px; margin-top: 65px; border: 0; border-radius: 8px; background: #d6ad5d; color: #07152a; font: 800 13px 'Inter', sans-serif; cursor: pointer; }
+.uk-quiz-submit:hover { background: #e5c275; }
+.uk-quiz-contact .uk-quiz-back { margin-top: 2px; }
+.uk-quiz-contact small { color: #aeb8c5; font-size: 10px; }
+.uk-quiz-success { margin: 80px 0; padding: 30px; border: 1px solid rgba(228,184,95,.4); border-radius: 12px; background: rgba(7,21,42,.72); }
+.uk-quiz-success p { margin: 0; color: #d8dee7; font-size: 14px; }
+.uk-quiz-proof { margin-top: auto; color: #c5ced9; font-size: 9px; line-height: 1.55; }
+.uk-quiz-proof p { margin: 0; }
+.uk-quiz-proof span { color: #d8a92e; font-size: 14px; }
+
+@media (max-width: 650px) {
+  .uk-quiz-page { overflow: auto; }
+  .uk-quiz-shell { width: calc(100% - 30px); padding-top: 32px; }
+  .uk-quiz-shell h1 { font-size: 25px; }
+  .uk-quiz-shell h1 br, .uk-quiz-intro br { display: none; }
+  .uk-quiz-progress { margin: 24px 0 30px; }
+  .uk-quiz-options { gap: 18px; }
+  .uk-quiz-submit { margin-top: 35px; }
+  .uk-quiz-proof { margin-top: 35px; }
+}

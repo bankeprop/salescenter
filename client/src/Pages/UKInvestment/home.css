@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+.uk-investment-page, .uk-investment-page * { box-sizing: border-box; }
+.uk-investment-page { color: #fff; font-family: 'Inter', Arial, sans-serif; background: #07101f; }
+.uk-investment-hero { position: relative; min-height: 100vh; overflow: hidden; background: #07101f url('../../Assests/UKInvestment/london-tower-bridge.png') center/cover no-repeat; }
+.uk-investment-overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(5,13,26,.9) 0%, rgba(5,13,26,.68) 49%, rgba(5,13,26,.32) 100%), linear-gradient(0deg, rgba(3,9,18,.42), transparent 50%); }
+.uk-investment-shell { position: relative; z-index: 1; width: min(1120px, calc(100% - 160px)); min-height: 100vh; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(350px, .85fr); gap: 58px; align-items: center; padding: 32px 0 18px; }
+.uk-investment-copy { max-width: 850px; }
+.uk-eyebrow { margin: 0 0 20px; color: #e2ad49; font-size: 13px; letter-spacing: 2.7px; }
+.uk-investment-copy h1 { margin: 0; font-size: clamp(34px, 2.45vw, 45px); line-height: 1; letter-spacing: -1.2px; font-weight: 800; }
+.uk-investment-copy h1 span { display: inline-block; margin-top: 10px; color: #f1bd60; }
+.uk-rating { display: flex; align-items: center; flex-wrap: wrap; gap: 4px; margin: 22px 0 27px; font-size: 13px; }
+.uk-rating strong { color: #e6bc68; }
+.uk-stars { color: #f2c42d; font-size: 17px; letter-spacing: 1.5px; line-height: 1; }
+.uk-benefits { list-style: none; padding: 0; margin: 0 0 30px; display: grid; gap: 15px; }
+.uk-benefits li { position: relative; padding-left: 31px; font-size: 15px; line-height: 1.48; }
+.uk-benefits li::before { content: '✓'; position: absolute; left: 0; top: -2px; color: #e7b44c; font-size: 23px; font-weight: 700; }
+.uk-whatsapp { width: min(100%, 405px); min-height: 53px; display: flex; align-items: center; justify-content: center; gap: 11px; border-radius: 9px; background: #22d36f; color: #fff; text-decoration: none; font-size: 15px; font-weight: 800; box-shadow: 0 10px 25px rgba(0,0,0,.22); transition: transform .2s, background .2s; }
+.uk-whatsapp:hover { background: #17bd5f; transform: translateY(-2px); }
+.uk-whatsapp svg { font-size: 25px; }
+.uk-reply-time { margin: 10px 0 24px; color: #c8cdd6; font-size: 12px; }
+.uk-featured { margin: 0; color: #c3c5ca; font-size: 11px; letter-spacing: .55px; }
+.uk-featured strong { font-weight: 800; }
+.uk-guide-card { align-self: center; margin: 0; padding: 27px 26px 19px; color: #07101f; background: #fff; border-radius: 16px; border-top: 4px solid #d4aa5a; overflow: hidden; }
+.uk-guide-card h2 { margin: 0 0 6px; font-size: 20px; line-height: 1.1; font-weight: 800; letter-spacing: -.3px; }
+.uk-guide-card > p { margin: 0 0 16px; color: #5c6575; font-size: 13px; line-height: 1.55; }
+.uk-guide-card form { display: grid; gap: 10px; }
+.uk-guide-card label { display: grid; gap: 5px; font-size: 12px; font-weight: 600; }
+.uk-guide-card input, .uk-guide-card select { width: 100%; height: 43px; padding: 0 13px; border: 1px solid #cbd3df; border-radius: 8px; background: #fff; color: #121820; font: 400 13px 'Inter', sans-serif; outline: none; }
+.uk-guide-card input:focus, .uk-guide-card select:focus { border-color: #c79b48; box-shadow: 0 0 0 3px rgba(199,155,72,.15); }
+.uk-guide-card input::placeholder { color: #6b7380; }
+.uk-guide-card button { height: 47px; margin-top: 5px; border: 0; border-radius: 8px; background: #d9b36a; color: #061020; font: 800 15px 'Inter', sans-serif; cursor: pointer; }
+.uk-guide-card button:hover { background: #e4c27f; }
+.uk-guide-card button:disabled { cursor: wait; opacity: .7; }
+.uk-guide-card button span { margin-left: 3px; }
+.uk-guide-card small { color: #828a98; text-align: center; font-size: 12px; }
+.uk-form-status { margin: 0; text-align: center; font-size: 11px; font-weight: 600; }
+.uk-form-status.success { color: #16834b; }
+.uk-form-status.error { color: #c33636; }
+.uk-stats { background: #081526; border-top: 1px solid rgba(255,255,255,.05); }
+.uk-stats-inner { width: min(1120px, calc(100% - 160px)); min-height: 140px; margin: 0 auto; display: grid; grid-template-columns: repeat(5, 1fr); align-items: center; }
+.uk-stats-inner div { display: flex; flex-direction: column; align-items: center; gap: 13px; text-align: center; }
+.uk-stats-inner strong { color: #f0bd64; font-size: 30px; line-height: 1; font-weight: 800; }
+.uk-stats-inner span { color: #e4e7ec; font-size: 14px; }
+.uk-services { padding: 75px 0; background: #f5f6f8; color: #06152a; }
+.uk-services-inner { width: min(1120px, calc(100% - 160px)); margin: 0 auto; }
+.uk-services-eyebrow { margin: 0 0 17px; color: #d29b42; font-size: 12px; letter-spacing: 3px; }
+.uk-services h2 { margin: 0 0 22px; font-size: clamp(26px, 2.1vw, 34px); line-height: 1.2; letter-spacing: -.5px; font-weight: 800; }
+.uk-services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.uk-services-grid article { min-height: 197px; padding: 29px 25px; border: 1px solid #dce1e8; border-radius: 12px; background: #fff; }
+.uk-services-grid article > span { display: block; margin-bottom: 14px; color: #d19b3e; font-size: 13px; font-weight: 800; letter-spacing: 1px; }
+.uk-services-grid h3 { margin: 0 0 10px; font-size: 17px; line-height: 1.3; font-weight: 800; }
+.uk-services-grid p { margin: 0; color: #45546a; font-size: 14px; line-height: 1.6; }
+.uk-opportunities { padding: 68px 0 48px; background: #10243c; color: #fff; }
+.uk-opportunities-inner { width: min(1120px, calc(100% - 160px)); margin: 0 auto; }
+.uk-opportunities-eyebrow { margin: 0 0 13px; color: #e5ad51; font-size: 11px; letter-spacing: 2.4px; }
+.uk-opportunities h2 { margin: 0 0 28px; font-size: clamp(25px, 2vw, 32px); line-height: 1.2; font-weight: 800; }
+.uk-property-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; align-items: stretch; }
+.uk-property-card { display: flex; flex-direction: column; overflow: hidden; border-radius: 12px; background: #fff; color: #07152a; }
+.uk-property-card > img { width: 100%; height: 185px; min-height: 185px; max-height: 185px; display: block; flex: 0 0 185px; object-fit: cover; object-position: center; }
+.uk-property-content { height: 100%; display: flex; flex-direction: column; padding: 20px; }
+.uk-property-location { margin: 0 0 8px; color: #c99036; font-size: 10px; font-weight: 700; letter-spacing: 1.25px; }
+.uk-property-content h3 { margin: 0 0 13px; font-size: 18px; line-height: 1.2; }
+.uk-property-price { display: flex; flex-direction: column; gap: 5px; margin-bottom: 16px; padding: 11px 12px; border: 1px solid #dbe1e9; border-radius: 8px; }
+.uk-property-price span { color: #748097; font-size: 9px; letter-spacing: .6px; text-transform: uppercase; }
+.uk-property-price strong { font-size: 15px; }
+.uk-property-metrics { display: grid; grid-template-columns: repeat(3, 1fr); margin-bottom: 15px; overflow: hidden; border: 1px solid #dbe1e9; border-radius: 8px; }
+.uk-property-metrics div { min-height: 61px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding: 7px 3px; text-align: center; }
+.uk-property-metrics div + div { border-left: 1px solid #dbe1e9; }
+.uk-property-metrics strong { font-size: 13px; white-space: nowrap; }
+.uk-property-metrics span { color: #748097; font-size: 8px; letter-spacing: .6px; }
+.uk-property-content ul { list-style: none; margin: 0 0 16px; padding: 0; display: grid; gap: 9px; }
+.uk-property-content li { position: relative; padding-left: 20px; color: #425169; font-size: 11px; line-height: 1.45; }
+.uk-property-content li::before { content: '✓'; position: absolute; left: 0; color: #d7a04a; font-weight: 800; }
+.uk-property-suits { margin: auto 0 14px; padding: 12px; border-radius: 8px; background: #f0f2f5; color: #344157; font-size: 10px; line-height: 1.45; }
+.uk-property-suits strong { color: #07152a; }
+.uk-property-content > a { display: flex; min-height: 45px; margin-top: auto; align-items: center; justify-content: center; border-radius: 7px; background: #071629; color: #fff; text-decoration: none; font-size: 11px; font-weight: 800; }
+.uk-property-content > a:hover { background: #173554; }
+.uk-opportunities-note { margin: 20px 15px 0; color: #91abc7; font-size: 9px; line-height: 1.5; }
+.uk-faq { padding: 72px 0 68px; background: #edf0f4; color: #07152a; }
+.uk-faq-inner { width: min(1120px, calc(100% - 160px)); margin: 0 auto; }
+.uk-faq-eyebrow { margin: 0 0 17px; color: #d09a42; font-size: 12px; letter-spacing: 3px; }
+.uk-faq h2 { margin: 0 0 20px; font-size: clamp(27px, 2.1vw, 34px); line-height: 1.2; font-weight: 800; }
+.uk-faq-list { display: grid; gap: 14px; }
+.uk-faq-list details { overflow: hidden; border: 1px solid #dce1e8; border-radius: 11px; background: #fff; }
+.uk-faq-list summary { position: relative; padding: 22px 25px 22px 44px; list-style: none; cursor: pointer; font-size: 17px; line-height: 1.35; font-weight: 800; }
+.uk-faq-list summary::-webkit-details-marker { display: none; }
+.uk-faq-list summary::before { content: '▶'; position: absolute; left: 24px; top: 23px; color: #27364a; font-size: 12px; transition: transform .2s ease; }
+.uk-faq-list details[open] summary::before { transform: rotate(90deg); }
+.uk-faq-list details[open] summary { padding-bottom: 12px; }
+.uk-faq-list details > p { margin: 0; padding: 0 25px 20px; color: #3f4f66; font-size: 15px; line-height: 1.65; }
+
+@media (max-width: 1050px) {
+  .uk-investment-hero { overflow: hidden; }
+  .uk-investment-shell { grid-template-columns: 1fr; gap: 40px; padding: 60px 0; }
+  .uk-guide-card { width: min(100%, 620px); max-height: none; border-radius: 18px; }
+  .uk-stats-inner { grid-template-columns: repeat(3, 1fr); gap: 35px 20px; padding: 38px 0; }
+  .uk-services-inner { width: calc(100% - 70px); }
+  .uk-services-grid { grid-template-columns: repeat(2, 1fr); }
+  .uk-opportunities-inner { width: calc(100% - 70px); }
+  .uk-property-grid { grid-template-columns: repeat(2, 1fr); }
+  .uk-faq-inner { width: calc(100% - 70px); }
+}
+@media (max-width: 1300px) and (min-width: 1051px) {
+  .uk-investment-shell { width: calc(100% - 100px); gap: 42px; }
+  .uk-stats-inner { width: calc(100% - 100px); }
+  .uk-services-inner { width: calc(100% - 100px); }
+  .uk-opportunities-inner { width: calc(100% - 100px); }
+  .uk-faq-inner { width: calc(100% - 100px); }
+}
+@media (max-width: 600px) {
+  .uk-investment-shell { width: min(100% - 30px, 1405px); padding: 38px 0; }
+  .uk-investment-copy h1 { font-size: 38px; line-height: 1.05; }
+  .uk-rating { line-height: 1.6; }
+  .uk-benefits { gap: 17px; }
+  .uk-benefits li { padding-left: 31px; font-size: 16px; }
+  .uk-guide-card { padding: 29px 20px 22px; }
+  .uk-guide-card h2 { font-size: 22px; }
+  .uk-featured { line-height: 1.7; }
+  .uk-stats-inner { width: calc(100% - 30px); grid-template-columns: repeat(2, 1fr); gap: 32px 12px; }
+  .uk-stats-inner div:last-child { grid-column: 1 / -1; }
+  .uk-stats-inner strong { font-size: 25px; }
+  .uk-stats-inner span { font-size: 12px; }
+  .uk-services { padding: 55px 0; }
+  .uk-services-inner { width: calc(100% - 30px); }
+  .uk-services h2 { font-size: 25px; }
+  .uk-services-grid { grid-template-columns: 1fr; gap: 15px; }
+  .uk-services-grid article { min-height: auto; padding: 25px 22px; }
+  .uk-opportunities { padding: 52px 0 40px; }
+  .uk-opportunities-inner { width: calc(100% - 30px); }
+  .uk-property-grid { grid-template-columns: 1fr; gap: 20px; }
+  .uk-property-card > img { height: 210px; min-height: 210px; max-height: 210px; flex-basis: 210px; }
+  .uk-faq { padding: 52px 0; }
+  .uk-faq-inner { width: calc(100% - 30px); }
+  .uk-faq-list summary { padding: 19px 18px 19px 39px; font-size: 15px; }
+  .uk-faq-list summary::before { left: 19px; top: 21px; }
+  .uk-faq-list details > p { padding: 0 19px 19px; font-size: 14px; }
+}
