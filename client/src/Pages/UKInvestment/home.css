@@ -12,14 +12,14 @@
 .uk-rating { display: flex; align-items: center; flex-wrap: wrap; gap: 4px; margin: 22px 0 27px; font-size: 13px; }
 .uk-rating strong { color: #e6bc68; }
 .uk-stars { color: #f2c42d; font-size: 17px; letter-spacing: 1.5px; line-height: 1; }
-.uk-benefits { list-style: none; padding: 0; margin: 0 0 30px; display: grid; gap: 15px; }
+.uk-benefits { list-style: none; padding: 0; margin: 28px 0 30px; display: grid; gap: 15px; }
 .uk-benefits li { position: relative; padding-left: 31px; font-size: 15px; line-height: 1.48; }
 .uk-benefits li::before { content: '✓'; position: absolute; left: 0; top: -2px; color: #e7b44c; font-size: 23px; font-weight: 700; }
 .uk-whatsapp { width: min(100%, 405px); min-height: 53px; display: flex; align-items: center; justify-content: center; gap: 11px; border-radius: 9px; background: #22d36f; color: #fff; text-decoration: none; font-size: 15px; font-weight: 800; box-shadow: 0 10px 25px rgba(0,0,0,.22); transition: transform .2s, background .2s; }
 .uk-whatsapp:hover { background: #17bd5f; transform: translateY(-2px); }
 .uk-whatsapp svg { font-size: 25px; }
-.uk-reply-time { margin: 10px 0 24px; color: #c8cdd6; font-size: 12px; }
-.uk-featured { margin: 0; color: #c3c5ca; font-size: 11px; letter-spacing: .55px; }
+.uk-reply-time { margin: 18px 0 24px; color: #c8cdd6; font-size: 12px; }
+.uk-featured { margin: 18px 0 0; color: #c3c5ca; font-size: 11px; letter-spacing: .55px; }
 .uk-featured strong { font-weight: 800; }
 .uk-guide-card { align-self: center; margin: 0; padding: 27px 26px 19px; color: #07101f; background: #fff; border-radius: 16px; border-top: 4px solid #d4aa5a; overflow: hidden; }
 .uk-guide-card { scroll-margin-top: 30px; }
@@ -38,6 +38,11 @@
 .uk-form-status { margin: 0; text-align: center; font-size: 11px; font-weight: 600; }
 .uk-form-status.success { color: #16834b; }
 .uk-form-status.error { color: #c33636; }
+.uk-guide-modal { position: fixed; z-index: 1000; inset: 0; display: grid; place-items: center; padding: 24px; overflow-y: auto; background: rgba(3, 11, 22, .78); backdrop-filter: blur(5px); }
+.uk-guide-modal-card { position: relative; width: min(410px, 100%); max-height: calc(100vh - 48px); overflow-y: auto; box-shadow: 0 28px 80px rgba(0, 0, 0, .42); animation: uk-modal-in .22s ease-out; }
+.uk-guide-card .uk-guide-modal-close { position: absolute; z-index: 2; top: 9px; right: 11px; width: 30px; height: 30px; margin: 0; padding: 0; border: 0; border-radius: 50%; background: #edf0f4; color: #07152a; font: 500 22px/1 Arial, sans-serif; cursor: pointer; }
+.uk-guide-card .uk-guide-modal-close:hover { background: #dce2e9; }
+@keyframes uk-modal-in { from { opacity: 0; transform: translateY(14px) scale(.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
 .uk-stats { background: #081526; border-top: 1px solid rgba(255,255,255,.05); }
 .uk-stats-inner { width: min(1120px, calc(100% - 160px)); min-height: 140px; margin: 0 auto; display: grid; grid-template-columns: repeat(5, 1fr); align-items: center; }
 .uk-stats-inner div { display: flex; flex-direction: column; align-items: center; gap: 13px; text-align: center; }
@@ -118,6 +123,9 @@
   .uk-guide-card { padding: 29px 20px 22px; }
   .uk-guide-card h2 { font-size: 22px; }
   .uk-featured { line-height: 1.7; }
+  .uk-whatsapp { position: fixed; z-index: 900; right: 15px; bottom: calc(14px + env(safe-area-inset-bottom)); left: 15px; width: auto; min-height: 56px; padding: 9px 10px; gap: 8px; font-size: 11px; line-height: 1.2; box-shadow: 0 12px 30px rgba(0, 0, 0, .38); }
+  .uk-whatsapp svg { flex: 0 0 22px; width: 22px; height: 22px; }
+  .uk-whatsapp span { flex: 0 1 auto; white-space: nowrap; text-align: center; }
   .uk-stats-inner { width: calc(100% - 30px); grid-template-columns: repeat(2, 1fr); gap: 32px 12px; }
   .uk-stats-inner div:last-child { grid-column: 1 / -1; }
   .uk-stats-inner strong { font-size: 25px; }

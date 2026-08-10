@@ -12,25 +12,26 @@ const WHATSAPP_MESSAGE = 'Hi, I am interested in UK Property Investment';
 const WHATSAPP_URL = `https://wa.me/97180022653?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
 const benefits = [
-    <>Up to <strong>15% total returns</strong> — 7.8% average net rental yield plus capital growth — paid to you anywhere in the world</>,
-    <><strong>UK mortgages arranged for overseas buyers</strong> — whatever country you live in</>,
+    <>Up to <strong>15% total returns</strong> - 7.5% average net rental yield plus capital growth — paid to you anywhere in the world</>,
+    <><strong>UK mortgages arranged for overseas buyers</strong></>,
     <>We handle everything: UK company setup, bank account, lawyers, furnishing, tenants</>,
-    <>Buy 100% remotely — you never need to set foot in the UK</>,
-    <>Properties from £98,400 · reserve from £5,000</>,
-    <>Trusted by investors in Nigeria, UAE, Saudi Arabia, Kenya &amp; 20+ countries</>,
+    <>Invest remotely with expert guidance from start to finish.</>,
+    <>Properties from AED 943K. Reserve from AED 10K</>,
+    <>Trusted by investors in UK, UAE, Saudi Arabia, Qatar & 20+ countries</>,
 ];
 
 function Home() {
     const navigate = useNavigate();
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState('');
+    const [isGuideModalOpen, setIsGuideModalOpen] = useState(false);
+    const [selectedOpportunity, setSelectedOpportunity] = useState({ city: '', campaign: '' });
 
-    const scrollToGuide = (event) => {
+    const openGuideModal = (event, city, campaign) => {
         event.preventDefault();
-        document.getElementById('guide-card')?.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start',
-        });
+        setSubmitStatus('');
+        setSelectedOpportunity({ city, campaign });
+        setIsGuideModalOpen(true);
     };
 
     const handleSubmit = async (event) => {
@@ -45,7 +46,7 @@ function Home() {
         payload.set('email', String(formData.get('email') || '').trim());
         payload.set('project', '-');
         payload.set('message', [
-            'Project: UK International Property Investment',
+            `Project: UK International Property Investment${selectedOpportunity.city ? ` - ${selectedOpportunity.city}` : ''}`,
             `Investment Budget: ${formData.get('budget') || 'Not selected'}`,
             `Investment Timeline: ${formData.get('timeline') || 'Not selected'}`,
             'Request: International Investor’s Guide and matched opportunity shortlist',
@@ -53,7 +54,7 @@ function Home() {
         payload.set('survey_comments', '-');
         payload.set('source', 'Google');
         payload.set('language', 'English');
-        payload.set('campaign', 'UKInvestment-AS-MICG-898762');
+        payload.set('campaign', selectedOpportunity.campaign || 'UKInvestment-AS-MICG-898762');
         payload.set('adset', '-');
         payload.set('pageUrl', window.location.href);
 
@@ -79,25 +80,19 @@ function Home() {
                         <p className="uk-eyebrow">FOR INTERNATIONAL INVESTORS</p>
                         <h1>Own UK Rental Property -<br /><span>Wherever You Live</span></h1>
 
-                        <div className="uk-rating" aria-label="Rated 4.7 out of 5 from 186 Google reviews">
-                            <span className="uk-stars">★★★★★</span>
-                            <strong>4.7/5</strong> from 186 Google reviews · £250M+ under advisory · London head office
-                        </div>
-
                         <ul className="uk-benefits">
                             {benefits.map((benefit, index) => <li key={index}>{benefit}</li>)}
                         </ul>
 
                         <a className="uk-whatsapp" href={WHATSAPP_URL} target="_blank" rel="noreferrer">
                             <FaWhatsapp aria-hidden="true" />
-                            <span>Chat with a UK adviser on WhatsApp</span>
+                            <span>Chat with  our expert UK advisor on WhatsApp</span>
                         </a>
-                        <p className="uk-reply-time">Typically replies within minutes, 9am–8pm UK time</p>
                         <p className="uk-featured">AS FEATURED IN&nbsp; <strong>DAILY MAIL · RIGHTMOVE · ZOOPLA · INTERNATIONAL PROPERTY &amp; TRAVEL</strong></p>
                     </section>
 
                     <aside className="uk-guide-card" id="guide-card">
-                        <h2>Prefer email? Get the International<br />Investor’s Guide</h2>
+                        <h2>Connect with Our UK Property Expert</h2>
                         <p>How overseas buyers purchase UK property: process, payments, taxes, management — plus a shortlist matched to your budget.</p>
 
                         <form id="guide-form" onSubmit={handleSubmit}>
@@ -107,7 +102,10 @@ function Home() {
                             <label>Investment budget*
                                 <select name="budget" defaultValue="" required>
                                     <option value="" disabled>Select...</option>
-                                    <option>£50,000 – £100,000</option><option>£100,000 – £250,000</option><option>£250,000+</option>
+                                    <option>AED 950K - 1.5M</option>
+                                    <option>AED 1.5M - 2.5M</option>
+                                    <option>AED 2.5M - 3.5M</option>
+                                    <option>AED 3.5M + </option>
                                 </select>
                             </label>
                             <label>When are you looking to invest?*
@@ -126,11 +124,11 @@ function Home() {
                                 </select>
                             </label>
                             <button type="submit" disabled={isSubmitting}>
-                                {isSubmitting ? 'Sending...' : <>Send Me the Guide <span>→</span></>}
+                                {isSubmitting ? 'Sending...' : <>Let's Go <span>→</span></>}
                             </button>
                             {submitStatus === 'success' && <p className="uk-form-status success">Thank you! Your guide request has been sent.</p>}
                             {submitStatus === 'error' && <p className="uk-form-status error">Something went wrong. Please try again.</p>}
-                            <small>No spam. Only the guide and opportunities matched to your budget.</small>
+                            <small>No spam. Only real opportunities matched to your budget.</small>
                         </form>
                     </aside>
                 </div>
@@ -138,25 +136,25 @@ function Home() {
 
             <section className="uk-stats" aria-label="UK investment track record">
                 <div className="uk-stats-inner">
-                    <div><strong>£250M+</strong><span>Assets under advisory</span></div>
-                    <div><strong>7.8%</strong><span>Average net yield (GY)</span></div>
-                    <div><strong>98%</strong><span>Capital return targets met</span></div>
-                    <div><strong>28</strong><span>Active UK projects</span></div>
-                    <div><strong>10+ yrs</strong><span>Track record</span></div>
+                    <div><strong>£1B+</strong><span>Assets under advisory</span></div>
+                    <div><strong>7.5%</strong><span>Average net yield</span></div>
+                    <div><strong>110%</strong><span>Average Cash-on-Cash Return</span></div>
+                    <div><strong>70+</strong><span>Active UK projects</span></div>
+                    <div><strong>14+ yrs</strong><span>of Experience</span></div>
                 </div>
             </section>
 
             <section className="uk-services">
                 <div className="uk-services-inner">
                     <p className="uk-services-eyebrow">EVERYTHING HANDLED FROM LONDON</p>
-                    <h2>The Complete Service for International Clients — You Never Need to Visit the UK</h2>
+                    <h2>The Complete Service for International Clients</h2>
                     <div className="uk-services-grid">
-                        <article><span>01</span><h3>Overseas mortgages — any country</h3><p>We arrange UK buy-to-let mortgages for clients living abroad, wherever you’re based. Lenders who understand international income, guided end-to-end by our brokers.</p></article>
-                        <article><span>02</span><h3>UK company &amp; bank account setup</h3><p>Many overseas investors buy through a UK limited company for tax efficiency. We handle the company formation and help you open the UK bank account — remotely.</p></article>
-                        <article><span>03</span><h3>Lawyers &amp; conveyancing</h3><p>Regulated UK solicitors acting for you: contracts, compliance, and secure payments into solicitor client accounts. Everything signed electronically.</p></article>
-                        <article><span>04</span><h3>Bespoke sourcing</h3><p>Off-market and pre-market UK properties matched to your budget — Manchester, Liverpool, Birmingham, Leeds, London and more. 28 active projects.</p></article>
-                        <article><span>05</span><h3>Furnishing &amp; full management</h3><p>FW Management furnishes your property, finds and vets tenants, collects rent and handles every issue. You receive statements and income — nothing else to do.</p></article>
-                        <article><span>06</span><h3>Non-resident guidance</h3><p>Non-Resident Landlord Scheme, currency exchange, and introductions to specialist tax advisers for overseas owners.</p></article>
+                        <article><span>01</span><h3>Overseas mortgages — any country</h3><p>We arrange UK buy-to-let mortgages for clients living abroad, wherever you’re based. Access lenders experienced with international income, with end-to-end guidance from our brokers.</p></article>
+                        <article><span>02</span><h3>UK Company & Bank Account Setup</h3><p>Many overseas investors purchase through a UK limited company for tax efficiency. We handle the company formation and help you open a UK bank account — all remotely.</p></article>
+                        <article><span>03</span><h3>Lawyers &amp; Conveyancing</h3><p>Regulated UK solicitors handle your contracts, compliance, and secure payments through solicitor client accounts. Everything is signed electronically.</p></article>
+                        <article><span>04</span><h3>Bespoke Sourcing</h3><p>Off-market and pre-market UK properties matched to your budget across Manchester, Liverpool, Birmingham, Leeds, London and more. 70 active projects.</p></article>
+                        <article><span>05</span><h3>Furnishing &amp; full management</h3><p>We furnish your property, find and vet tenants, collect rent and take care of any issues. You receive regular statements and your rental income, with nothing else to manage.</p></article>
+                        <article><span>06</span><h3>Non-resident guidance</h3><p>We help with the Non Resident Landlord Scheme, currency exchange and introductions to specialist tax advisers for overseas owners.</p></article>
                     </div>
                 </div>
             </section>
@@ -173,7 +171,7 @@ function Home() {
                                 <p className="uk-property-location">UNITED KINGDOM</p><h3>London</h3>
                                 <div className="uk-property-price"><span>Starting from</span><strong>AED 3.5M</strong></div>
                                 <ul><li>Prime investment opportunities across Greater London</li><li>Strong rental demand supported by a diverse tenant base</li><li>Established market with long-term capital growth potential</li></ul>
-                                <a href="#guide-card" onClick={scrollToGuide}>Get the opportunity pack →</a>
+                                <a href="#guide-card" onClick={(event) => openGuideModal(event, 'London', 'UKInvestment-AS-GLON-872832')}>Get the opportunity pack →</a>
                             </div>
                         </article>
 
@@ -183,7 +181,7 @@ function Home() {
                                 <p className="uk-property-location">UNITED KINGDOM</p><h3>Liverpool</h3>
                                 <div className="uk-property-price"><span>Starting from</span><strong>AED 983K</strong></div>
                                 <ul><li>High-yield opportunities in one of the UK’s strongest rental markets</li><li>Strong demand from students, professionals and young families</li><li>Excellent entry point with attractive rental returns</li></ul>
-                                <a href="#guide-card" onClick={scrollToGuide}>Get the opportunity pack →</a>
+                                <a href="#guide-card" onClick={(event) => openGuideModal(event, 'Liverpool', 'UKInvestment-AS-LIVP-904636')}>Get the opportunity pack →</a>
                             </div>
                         </article>
 
@@ -193,7 +191,7 @@ function Home() {
                                 <p className="uk-property-location">UNITED KINGDOM</p><h3>Manchester</h3>
                                 <div className="uk-property-price"><span>Starting from</span><strong>AED 1.2M</strong></div>
                                 <ul><li>High rental demand driven by a growing population and economy</li><li>Strong potential for both rental income and capital appreciation</li><li>Major regeneration and infrastructure investment supporting growth</li></ul>
-                                <a href="#guide-card" onClick={scrollToGuide}>Get the opportunity pack →</a>
+                                <a href="#guide-card" onClick={(event) => openGuideModal(event, 'Manchester', 'UKInvestment-AS-MANC-964003')}>Get the opportunity pack →</a>
                             </div>
                         </article>
 
@@ -201,13 +199,13 @@ function Home() {
                             <img src={birminghamImage} alt="Property investment opportunities in Birmingham" />
                             <div className="uk-property-content">
                                 <p className="uk-property-location">UNITED KINGDOM</p><h3>Birmingham</h3>
-                                <div className="uk-property-price"><span>Starting from</span><strong>AED 1.2M</strong></div>
+                                <div className="uk-property-price"><span>Starting from</span><strong>AED 1.5M</strong></div>
                                 <ul><li>One of the UK’s largest regional property investment markets</li><li>Strong tenant demand from professionals, students and families</li><li>Attractive combination of rental yields and long-term growth potential</li></ul>
-                                <a href="#guide-card" onClick={scrollToGuide}>Get the opportunity pack →</a>
+                                <a href="#guide-card" onClick={(event) => openGuideModal(event, 'Birmingham', 'UKInvestment-AS-BIRM-936027')}>Get the opportunity pack →</a>
                             </div>
                         </article>
                     </div>
-                    <p className="uk-opportunities-note">A selection from 28 active projects · Availability, prices and projected figures correct at July 2026 — request the pack for current opportunities matched to your budget. Projected returns are not guaranteed.</p>
+                    <p className="uk-opportunities-note">A selection from 70 active projects</p>
                 </div>
             </section>
 
@@ -218,31 +216,67 @@ function Home() {
                     <div className="uk-faq-list">
                         <details open>
                             <summary>Can I really buy UK property without visiting the UK?</summary>
-                            <p>Yes. Most of our international clients complete entirely remotely: video viewings, UK solicitors acting on your behalf, and electronic contract signing. Many first see their property in person after completion — or never.</p>
+                            <p>Yes. Most of our international clients complete the entire process remotely. You can arrange video viewings, have UK solicitors act on your behalf, and sign contracts electronically. Many clients see their property in person for the first time after completion, while some never need to visit at all.</p>
                         </details>
                         <details>
                             <summary>Can I get a UK mortgage while living overseas?</summary>
-                            <p>Yes. We work with specialist lenders and brokers experienced with international income and non-resident applicants. Available terms depend on your country, income, deposit and the property selected.</p>
+                            <p>Yes. We work with specialist lenders and mortgage brokers who understand international income and applications from overseas buyers. The terms available will depend on your country of residence, income, deposit and the property you choose.</p>
                         </details>
                         <details>
                             <summary>Should I buy in my own name or through a UK company?</summary>
-                            <p>Both routes are possible. The right structure depends on your tax position, investment plans and country of residence. We can introduce you to qualified UK tax and legal advisers before you decide.</p>
+                            <p>Both options are possible. The right choice depends on your tax position, investment plans and country of residence. We can connect you with qualified UK tax and legal advisers who can help you understand your options before you make a decision.</p>
                         </details>
                         <details>
                             <summary>How do payments work from my country?</summary>
-                            <p>Funds are normally transferred through regulated banks or currency specialists into your solicitor’s protected client account. Your solicitor verifies each payment and manages completion securely.</p>
+                            <p>Funds are usually transferred through regulated banks or currency specialists into your solicitor’s protected client account. Your solicitor will verify each payment and handle the completion process securely, so you can manage the purchase with confidence from overseas.</p>
                         </details>
                         <details>
                             <summary>Who looks after the property and tenants?</summary>
-                            <p>Our management team can furnish the property, market it, vet tenants, collect rent, arrange maintenance and provide regular statements, so the investment can be managed without you being in the UK.</p>
+                            <p>Our management team can furnish the property, market it, find and vet tenants, collect rent, arrange maintenance and provide regular statements. This means your property can be managed for you without needing to be in the UK.</p>
                         </details>
                         <details>
                             <summary>What taxes apply to overseas owners?</summary>
-                            <p>Potential costs include Stamp Duty Land Tax, tax on rental income and Capital Gains Tax when selling. The exact position varies, so independent tax advice should be taken for your personal circumstances.</p>
+                            <p>Potential costs can include Stamp Duty Land Tax, tax on rental income and Capital Gains Tax when you sell the property. The exact tax treatment depends on your circumstances, so we recommend getting independent tax advice before making a decision.</p>
                         </details>
                     </div>
                 </div>
             </section>
+
+            {isGuideModalOpen && (
+                <div className="uk-guide-modal" role="dialog" aria-modal="true" aria-labelledby="uk-modal-title" onMouseDown={() => setIsGuideModalOpen(false)}>
+                    <aside className="uk-guide-card uk-guide-modal-card" onMouseDown={(event) => event.stopPropagation()}>
+                        <button className="uk-guide-modal-close" type="button" aria-label="Close form" onClick={() => setIsGuideModalOpen(false)}>×</button>
+                        <h2 id="uk-modal-title">Connect with Our {selectedOpportunity.city || 'UK'} Property Expert</h2>
+                        <p>How overseas buyers purchase UK property: process, payments, taxes, management — plus a shortlist matched to your budget.</p>
+                        <form onSubmit={handleSubmit}>
+                            <label>Your name*<input name="name" type="text" autoFocus required /></label>
+                            <label>Email*<input name="email" type="email" required /></label>
+                            <label>WhatsApp number (incl. country code)*<input name="phone" type="tel" placeholder="+234 · +971 · +254 ..." required /></label>
+                            <label>Investment budget*
+                                <select name="budget" defaultValue="" required>
+                                    <option value="" disabled>Select...</option>
+                                    <option>AED 950K - 1.5M</option>
+                                    <option>AED 1.5M - 2.5M</option>
+                                    <option>AED 2.5M - 3.5M</option>
+                                    <option>AED 3.5M +</option>
+                                </select>
+                            </label>
+                            <label>When are you looking to invest?*
+                                <select name="timeline" defaultValue="" required>
+                                    <option value="" disabled>Select...</option>
+                                    <option>Ready now</option>
+                                    <option>1–3 months</option>
+                                    <option>3–6 months</option>
+                                    <option>Just researching</option>
+                                </select>
+                            </label>
+                            <button type="submit" disabled={isSubmitting}>{isSubmitting ? 'Sending...' : <>Let's Go <span>→</span></>}</button>
+                            {submitStatus === 'error' && <p className="uk-form-status error">Something went wrong. Please try again.</p>}
+                            <small>No spam. Only real opportunities matched to your budget.</small>
+                        </form>
+                    </aside>
+                </div>
+            )}
         </main>
     );
 }
