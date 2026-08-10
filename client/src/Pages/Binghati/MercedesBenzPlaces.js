@@ -93,7 +93,7 @@ function MercedesBenzPlaces() {
                 event.preventDefault();
                 return;
             }
-            const phoneField = form.querySelector('input[name="phone"]');
+            const phoneField = form.querySelector('input[name="mobile"]');
             if (phoneField) phoneField.value = `${countryCode}${number}`;
             const pageUrlField = form.querySelector('input[name="pageUrl"]');
             const href = typeof window !== "undefined" ? window.location.href : "";
@@ -292,7 +292,7 @@ function MercedesBenzPlaces() {
                             <form
                                 id="contact-form"
                                 ref={contactFormRef}
-                                action="https://script.google.com/macros/s/AKfycbxTrPUIKN5-vZAda8_PTCJ_Fdpry7a9P-SKrYNoXGuWIeRHnmb-AptkapEqihZdJiik2g/exec"
+                                action="https://script.google.com/macros/s/AKfycbz5yIUe6VVdmTIq48VhHi778Zr5xLTPsVE-zc6E1ulLtTz6CD4i0V4FeAYJv2J0ZYYp1A/exec"
                                 method="POST"
                                 target="hiddenFrame"
                                 onSubmit={handleContactSubmit}
@@ -337,8 +337,13 @@ function MercedesBenzPlaces() {
                                     <label className="text-sm font-semibold uppercase tracking-[0.16em] text-gray-200">Message</label>
                                     <textarea name="message" rows={3} className="w-full border-b border-white/40 bg-transparent px-1 py-3 text-white placeholder:text-gray-500 focus:border-white focus:outline-none" placeholder="Message" />
                                 </div>
-                                <input type="hidden" name="phone" />
-                                <input type="hidden" name="campaignName" value="Binghatti - MercedesBenzPlaces" />
+                                <input type="hidden" name="mobile" />
+                                <input type="hidden" name="project" value="-" />
+                                <input type="hidden" name="survey_comments" value="-" />
+                                <input type="hidden" name="source" value="Google" />
+                                <input type="hidden" name="language" value="English" />
+                                <input type="hidden" name="campaign" value="Binghatti - MercedesBenzPlaces" />
+                                <input type="hidden" name="adset" value="-" />
                                 <input type="hidden" name="pageUrl" value={typeof window !== "undefined" ? window.location.href : ""} />
                                 <p className="text-xs text-gray-300">By submitting, you agree to our terms &amp; conditions.</p>
                                 <button type="submit" className="w-full rounded-md border border-white/40 bg-gradient-to-r from-white/70 via-white/60 to-white/40 px-4 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-black transition hover:from-white hover:to-white">Meet Our Brand Ambassador</button>

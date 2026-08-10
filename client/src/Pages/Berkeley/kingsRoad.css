@@ -105,3 +105,41 @@
 @media (min-width: 1280px) {
   .kings-road-page .container-editorial { padding-inline: 4rem; }
 }
+
+/* King's Road consultation form: mobile-first readability and tap targets. */
+@media (max-width: 767px) {
+  .kings-road-page .container-editorial {
+    padding-inline: 1rem;
+  }
+
+  .kings-road-page .krp-form-title {
+    max-width: 9ch;
+    text-wrap: balance;
+  }
+
+  .kings-road-page .krp-form-intro {
+    max-width: 31rem;
+  }
+
+  .kings-road-page .krp-form-card {
+    border-radius: .25rem;
+    box-shadow: 0 22px 60px -32px rgb(0 0 0 / .45);
+  }
+
+  .kings-road-page .krp-question {
+    text-wrap: balance;
+  }
+
+  .kings-road-page .krp-choice {
+    flex: 1 1 7rem;
+  }
+
+  .kings-road-page .krp-form-control {
+    min-height: 3rem;
+    font-size: 1rem;
+  }
+
+  .kings-road-page .krp-form-action {
+    padding-inline: 1rem;
+  }
+}

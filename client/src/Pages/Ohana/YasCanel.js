@@ -9,7 +9,7 @@ const OHANA_LOGO = "https://cdn.prod.website-files.com/6953e1cc8ce6f26a3cb13814/
 const X_ICON = "https://cdn.prod.website-files.com/6953e1cc8ce6f26a3cb13814/6953e1cc8ce6f26a3cb1387f_x-icon.svg";
 
 const DEADLINE = "2026-01-27T11:00:00+04:00";
-const WEBHOOK_ENDPOINT = "https://script.google.com/macros/s/AKfycbxTrPUIKN5-vZAda8_PTCJ_Fdpry7a9P-SKrYNoXGuWIeRHnmb-AptkapEqihZdJiik2g/exec";
+const WEBHOOK_ENDPOINT = "https://script.google.com/macros/s/AKfycbz5yIUe6VVdmTIq48VhHi778Zr5xLTPsVE-zc6E1ulLtTz6CD4i0V4FeAYJv2J0ZYYp1A/exec";
 
 const languages = [
   { code: "en", href: "/" },
@@ -194,9 +194,18 @@ function YasCanel() {
       }
 
       formData.set("name", fullName);
-      formData.set("phone", `${countryCode}${mobile}`);
-      formData.set("campaignName", "Ohana-YasCanel");
+      formData.set("mobile", `${countryCode}${mobile}`);
+      formData.set("project", "-");
+      formData.set("survey_comments", "-");
+      formData.set("source", "Google");
+      formData.set("language", "English");
+      formData.set("campaign", "Ohana-YasCanel");
+      formData.set("adset", "-");
       formData.set("pageUrl", typeof window !== "undefined" ? window.location.href : "");
+      formData.delete("firstname");
+      formData.delete("lastname");
+      formData.delete("countryCode");
+      formData.delete("company");
 
       await fetch(WEBHOOK_ENDPOINT, {
         method: "POST",
@@ -459,9 +468,9 @@ function YasCanel() {
                     </label>
                   </div>
 
-                  <input type="hidden" name="campaignName" value="Ohana - YasCanel" />
+                  <input type="hidden" name="campaign" value="Ohana - YasCanel" />
                   <input type="hidden" name="pageUrl" value={typeof window !== "undefined" ? window.location.href : ""} />
-                  <input type="hidden" name="phone" />
+                  <input type="hidden" name="mobile" />
 
                   <div className="space-y-2 text-sm">
                     {status === "error" && statusMessage && (

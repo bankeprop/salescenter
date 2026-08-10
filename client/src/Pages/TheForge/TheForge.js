@@ -35,7 +35,7 @@ import logoImg from "../../Assests/TheForge/Logo.png";
 import "./TheForge.css";
 
 const WEBHOOK_ENDPOINT =
-  "https://script.google.com/macros/s/AKfycbxTrPUIKN5-vZAda8_PTCJ_Fdpry7a9P-SKrYNoXGuWIeRHnmb-AptkapEqihZdJiik2g/exec";
+  "https://script.google.com/macros/s/AKfycbz5yIUe6VVdmTIq48VhHi778Zr5xLTPsVE-zc6E1ulLtTz6CD4i0V4FeAYJv2J0ZYYp1A/exec";
 
 /* -------------------- Reveal on scroll -------------------- */
 function useReveal() {
@@ -1002,9 +1002,14 @@ function LeadForm() {
     const payload = new FormData();
     payload.set("name", name);
     payload.set("email", email);
-    payload.set("phone", phone);
+    payload.set("mobile", phone);
+    payload.set("project", "-");
     payload.set("message", message);
-    payload.set("campaignName", "TheForge-AS-LIVP-104706");
+    payload.set("survey_comments", "-");
+    payload.set("source", "Google");
+    payload.set("language", "English");
+    payload.set("campaign", "TheForge-AS-LIVP-104706");
+    payload.set("adset", "-");
     payload.set("pageUrl", window.location.href);
 
     try {

@@ -209,14 +209,19 @@ function SamanaBussinessHub() {
         const payload = new FormData();
         payload.set('name', form.name);
         payload.set('email', form.email);
-        payload.set('phone', sanitizedPhone);
+        payload.set('mobile', sanitizedPhone);
+        payload.set('project', '-');
         payload.set('message', form.interest ? `Interest: ${form.interest}` : 'Samana Business Hub investment details');
-        payload.set('campaignName', 'SamanaBusinessHub-HU-GADS-206631');
+        payload.set('survey_comments', '-');
+        payload.set('source', 'Google');
+        payload.set('language', 'English');
+        payload.set('campaign', 'SamanaBusinessHub-HU-GADS-206631');
+        payload.set('adset', '-');
         payload.set('pageUrl', window.location.href);
 
         try {
             setIsSubmitting(true);
-            await fetch('https://script.google.com/macros/s/AKfycbxTrPUIKN5-vZAda8_PTCJ_Fdpry7a9P-SKrYNoXGuWIeRHnmb-AptkapEqihZdJiik2g/exec', {
+            await fetch('https://script.google.com/macros/s/AKfycbz5yIUe6VVdmTIq48VhHi778Zr5xLTPsVE-zc6E1ulLtTz6CD4i0V4FeAYJv2J0ZYYp1A/exec', {
                 method: 'POST',
                 body: payload,
                 mode: 'no-cors'
@@ -642,4 +647,3 @@ function SamanaBussinessHub() {
 }
 
 export default SamanaBussinessHub;
-
