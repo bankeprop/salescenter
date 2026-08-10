@@ -20,8 +20,10 @@
 .uk-quiz-contact input:focus { border-color: #e4b85f; }
 .uk-quiz-submit { min-height: 46px; margin-top: 65px; border: 0; border-radius: 8px; background: #d6ad5d; color: #07152a; font: 800 13px 'Inter', sans-serif; cursor: pointer; }
 .uk-quiz-submit:hover { background: #e5c275; }
+.uk-quiz-submit:disabled { cursor: wait; opacity: .7; }
 .uk-quiz-contact .uk-quiz-back { margin-top: 2px; }
 .uk-quiz-contact small { color: #aeb8c5; font-size: 10px; }
+.uk-quiz-error { margin: 0; color: #ff9a9a; font-size: 11px; font-weight: 600; }
 .uk-quiz-success { margin: 80px 0; padding: 30px; border: 1px solid rgba(228,184,95,.4); border-radius: 12px; background: rgba(7,21,42,.72); }
 .uk-quiz-success p { margin: 0; color: #d8dee7; font-size: 14px; }
 .uk-quiz-proof { margin-top: auto; color: #c5ced9; font-size: 9px; line-height: 1.55; }
