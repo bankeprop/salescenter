@@ -13,6 +13,78 @@
     "robots": "index, follow"
   },
   "routes": {
+    "/uk-investment": {
+      "title": "UK Property Investment for International Buyers | Sales Center",
+      "description": "Explore fully managed UK buy-to-let property opportunities in London, Liverpool, Manchester and Birmingham, with mortgages, legal support and management for overseas investors.",
+      "h1": "Own UK Rental Property Wherever You Live",
+      "content": "Discover UK property investment opportunities for international buyers with remote purchasing, overseas mortgages, legal support, furnishing and full property management.",
+      "bullets": [
+        "UK buy-to-let opportunities for overseas investors",
+        "Properties in London, Liverpool, Manchester and Birmingham",
+        "Remote purchase, mortgage and property management support",
+        "Investment opportunities matched to your budget"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "keywords": "UK property investment, UK property for overseas buyers, buy to let UK, international property investors, London property investment, Liverpool property investment, Manchester property investment, Birmingham property investment, UK mortgages for overseas buyers",
+      "siteName": "UK Property Investment | Sales Center",
+      "locale": "en_GB",
+      "language": "en-GB",
+      "author": "Sales Center",
+      "publisher": "Sales Center",
+      "ogImage": "/UKInvestment/london-tower-bridge.png",
+      "ogImageAlt": "Tower Bridge London at night representing UK property investment",
+      "jsonLd": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://www.sales-center.ae/uk-investment#webpage",
+            "url": "https://www.sales-center.ae/uk-investment",
+            "name": "UK Property Investment for International Buyers",
+            "description": "Fully managed UK buy-to-let property opportunities and remote purchase support for international investors.",
+            "inLanguage": "en-GB"
+          },
+          {
+            "@type": "Service",
+            "name": "UK Property Investment Service for International Buyers",
+            "provider": {
+              "@type": "Organization",
+              "name": "Sales Center",
+              "url": "https://www.sales-center.ae"
+            },
+            "areaServed": "Worldwide",
+            "serviceType": "UK property investment sourcing and management",
+            "description": "Property sourcing, overseas mortgages, company and bank account setup, conveyancing, furnishing and management for international UK property investors."
+          }
+        ]
+      }
+    },
+    "/uk-investment/thank-you": {
+      "title": "Thank You | UK Property Investment Guide",
+      "description": "Thank you for requesting your UK property investment guide and matched opportunity shortlist.",
+      "h1": "Your UK Property Investment Request Has Been Received",
+      "content": "A UK property adviser will contact you with investment opportunities matched to your budget.",
+      "bullets": ["Guide request received", "Property adviser follow-up pending"],
+      "robots": "noindex, follow",
+      "siteName": "UK Property Investment | Sales Center",
+      "locale": "en_GB",
+      "language": "en-GB",
+      "ogImage": "/UKInvestment/london-tower-bridge.png",
+      "ogImageAlt": "Tower Bridge London at night"
+    },
+    "/uk-quiz": {
+      "title": "Find Your UK Property Investment Match | Quick Quiz",
+      "description": "Answer three quick questions to receive UK property investment opportunities matched to your budget, timeline and location.",
+      "h1": "See Which UK Properties Match Your Goals",
+      "content": "Complete the quick UK property investment quiz to request a personalised shortlist and international investor guide.",
+      "bullets": ["Personalised UK property shortlist", "Takes approximately 20 seconds"],
+      "robots": "noindex, follow",
+      "siteName": "UK Property Investment | Sales Center",
+      "locale": "en_GB",
+      "language": "en-GB",
+      "ogImage": "/UKInvestment/london-tower-bridge.png",
+      "ogImageAlt": "Tower Bridge London at night"
+    },
     "/berkeley/kings-road-whatsapp": {
       "title": "One King's Road Park, Fulham | WhatsApp Enquiry",
       "description": "Enquire on WhatsApp about One King's Road Park in Fulham, London SW6, by Berkeley Group.",
