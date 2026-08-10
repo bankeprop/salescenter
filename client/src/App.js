@@ -39,6 +39,9 @@ import ObsidianWhatsapp from './Pages/Salboy/ObsidianWhatsapp';
 import ObsidianWhatsappThanks from './Pages/Salboy/ObsidianWhatsappThanks';
 import TheForgeWhatsapp from './Pages/TheForge/TheForgeWhatsapp';
 import TheForgeWhatsappThanks from './Pages/TheForge/TheForgeWhatsappThanks';
+import UKInvestmentHome from './Pages/UKInvestment/home';
+import UKInvestmentThankYou from './Pages/UKInvestment/ThankYou';
+import UKQuiz from './Pages/UKInvestment/ukQuiz';
 
 function SeoManager() {
   const { pathname } = useLocation();
@@ -114,6 +117,10 @@ function App() {
         <Route caseSensitive path="/Berkeley/kings-road/form/thanks" element={<Navigate to="/berkeley/kings-road/form/thanks" replace />} />
 
         <Route path="/sitemap" element={<Navigate to="/sitemap.xml" replace />} />
+
+        <Route path="/uk-investment" element={<UKInvestmentHome />} />
+        <Route path="/uk-investment/thank-you" element={<UKInvestmentThankYou />} />
+        <Route path="/invest-in-uk-Quiz" element={<UKQuiz />} />
 
       </Routes>
     </Router>
