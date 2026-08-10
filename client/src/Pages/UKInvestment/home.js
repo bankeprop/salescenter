@@ -25,6 +25,14 @@ function Home() {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState('');
 
+    const scrollToGuide = (event) => {
+        event.preventDefault();
+        document.getElementById('guide-card')?.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+        });
+    };
+
     const handleSubmit = async (event) => {
         event.preventDefault();
         if (isSubmitting) return;
@@ -88,7 +96,7 @@ function Home() {
                         <p className="uk-featured">AS FEATURED IN&nbsp; <strong>DAILY MAIL · RIGHTMOVE · ZOOPLA · INTERNATIONAL PROPERTY &amp; TRAVEL</strong></p>
                     </section>
 
-                    <aside className="uk-guide-card">
+                    <aside className="uk-guide-card" id="guide-card">
                         <h2>Prefer email? Get the International<br />Investor’s Guide</h2>
                         <p>How overseas buyers purchase UK property: process, payments, taxes, management — plus a shortlist matched to your budget.</p>
 
@@ -165,7 +173,7 @@ function Home() {
                                 <p className="uk-property-location">UNITED KINGDOM</p><h3>London</h3>
                                 <div className="uk-property-price"><span>Starting from</span><strong>AED 3.5M</strong></div>
                                 <ul><li>Prime investment opportunities across Greater London</li><li>Strong rental demand supported by a diverse tenant base</li><li>Established market with long-term capital growth potential</li></ul>
-                                <a href="#guide-form">Get the opportunity pack →</a>
+                                <a href="#guide-card" onClick={scrollToGuide}>Get the opportunity pack →</a>
                             </div>
                         </article>
 
@@ -175,7 +183,7 @@ function Home() {
                                 <p className="uk-property-location">UNITED KINGDOM</p><h3>Liverpool</h3>
                                 <div className="uk-property-price"><span>Starting from</span><strong>AED 983K</strong></div>
                                 <ul><li>High-yield opportunities in one of the UK’s strongest rental markets</li><li>Strong demand from students, professionals and young families</li><li>Excellent entry point with attractive rental returns</li></ul>
-                                <a href="#guide-form">Get the opportunity pack →</a>
+                                <a href="#guide-card" onClick={scrollToGuide}>Get the opportunity pack →</a>
                             </div>
                         </article>
 
@@ -185,7 +193,7 @@ function Home() {
                                 <p className="uk-property-location">UNITED KINGDOM</p><h3>Manchester</h3>
                                 <div className="uk-property-price"><span>Starting from</span><strong>AED 1.2M</strong></div>
                                 <ul><li>High rental demand driven by a growing population and economy</li><li>Strong potential for both rental income and capital appreciation</li><li>Major regeneration and infrastructure investment supporting growth</li></ul>
-                                <a href="#guide-form">Get the opportunity pack →</a>
+                                <a href="#guide-card" onClick={scrollToGuide}>Get the opportunity pack →</a>
                             </div>
                         </article>
 
@@ -195,7 +203,7 @@ function Home() {
                                 <p className="uk-property-location">UNITED KINGDOM</p><h3>Birmingham</h3>
                                 <div className="uk-property-price"><span>Starting from</span><strong>AED 1.2M</strong></div>
                                 <ul><li>One of the UK’s largest regional property investment markets</li><li>Strong tenant demand from professionals, students and families</li><li>Attractive combination of rental yields and long-term growth potential</li></ul>
-                                <a href="#guide-form">Get the opportunity pack →</a>
+                                <a href="#guide-card" onClick={scrollToGuide}>Get the opportunity pack →</a>
                             </div>
                         </article>
                     </div>
