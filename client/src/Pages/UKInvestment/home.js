@@ -88,7 +88,6 @@ function Home() {
                             <FaWhatsapp aria-hidden="true" />
                             <span>Chat with  our expert UK advisor on WhatsApp</span>
                         </a>
-                        <p className="uk-featured">AS FEATURED IN&nbsp; <strong>DAILY MAIL · RIGHTMOVE · ZOOPLA · INTERNATIONAL PROPERTY &amp; TRAVEL</strong></p>
                     </section>
 
                     <aside className="uk-guide-card" id="guide-card">
@@ -140,7 +139,7 @@ function Home() {
                     <div><strong>7.5%</strong><span>Average net yield</span></div>
                     <div><strong>110%</strong><span>Average Cash-on-Cash Return</span></div>
                     <div><strong>70+</strong><span>Active UK projects</span></div>
-                    <div><strong>14+ yrs</strong><span>of Experience</span></div>
+                    <div><strong>14+</strong><span>Years of Experience</span></div>
                 </div>
             </section>
 
@@ -170,7 +169,7 @@ function Home() {
                             <div className="uk-property-content">
                                 <p className="uk-property-location">UNITED KINGDOM</p><h3>London</h3>
                                 <div className="uk-property-price"><span>Starting from</span><strong>AED 3.5M</strong></div>
-                                <ul><li>Prime investment opportunities across Greater London</li><li>Strong rental demand supported by a diverse tenant base</li><li>Established market with long-term capital growth potential</li></ul>
+                                <ul><li>Prime investment opportunities across London and Greater London</li><li>Strong rental demand supported by a diverse tenant base</li><li>Established market with long-term capital growth potential</li></ul>
                                 <a href="#guide-card" onClick={(event) => openGuideModal(event, 'London', 'UKInvestment-AS-GLON-872832')}>Get the opportunity pack →</a>
                             </div>
                         </article>
