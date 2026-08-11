@@ -63,7 +63,7 @@ function Home() {
             setSubmitStatus('');
             await fetch(WEBHOOK_ENDPOINT, { method: 'POST', body: payload, mode: 'no-cors' });
             form.reset();
-            navigate('/uk-investment/thank-you');
+            navigate('/uk-investment/thank-you', { state: { from: '/uk-investment' } });
         } catch (error) {
             setSubmitStatus('error');
         } finally {

@@ -68,7 +68,7 @@ function UKQuiz() {
             await fetch(WEBHOOK_ENDPOINT, { method: 'POST', body: payload, mode: 'no-cors' });
             form.reset();
             setSubmitted(true);
-            navigate('/invest-in-uk-Quiz/thank-you');
+            navigate('/uk-investment/thank-you', { state: { from: '/invest-in-uk-Quiz' } });
         } catch (error) {
             setSubmitError('Something went wrong. Please try again.');
         } finally {
