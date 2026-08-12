@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Marcellus&display=swap");
 
+@font-face {
+    font-family: "OptimaCustom";
+    src: url("../../Assests/Emaar/optima_new.ttf") format("truetype");
+    font-display: swap;
+}
+
 .valia-page {
     --valia-night: #060c1e;
     --valia-brass: #c89a57;
@@ -66,6 +72,38 @@
     width: clamp(150px, 20vw, 250px);
     height: auto;
     object-fit: contain;
+}
+
+.emaar-heights-logo {
+    margin-left: auto;
+}
+
+.emaar-heights-page,
+.emaar-heights-page .valia-content h1 {
+    font-family: "OptimaCustom", "Helvetica Neue", Arial, sans-serif;
+}
+
+.valia-overlay.emaar-heights-overlay {
+    background: linear-gradient(
+        90deg,
+        rgba(4, 8, 18, 0.84) 0%,
+        rgba(4, 8, 18, 0.76) 24%,
+        rgba(4, 8, 18, 0.62) 42%,
+        rgba(4, 8, 18, 0.44) 58%,
+        rgba(4, 8, 18, 0.26) 72%,
+        rgba(4, 8, 18, 0.1) 84%,
+        transparent 94%,
+        transparent 100%
+    );
+}
+
+.emaar-heights-page .valia-detail dt {
+    color: rgba(255, 255, 255, 0.92);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+.emaar-heights-page .valia-whatsapp {
+    font-weight: 600;
 }
 
 .valia-content {
@@ -283,6 +321,10 @@
 
     .valia-overlay {
         background: linear-gradient(to bottom, rgba(6, 12, 30, 0.78) 0%, rgba(6, 12, 30, 0.42) 30%, rgba(6, 12, 30, 0.5) 58%, rgba(6, 12, 30, 0.9) 100%);
+    }
+
+    .valia-overlay.emaar-heights-overlay {
+        background: rgba(4, 8, 18, 0.58);
     }
 
     .valia-content {
