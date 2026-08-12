@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import emaarHeightsImage from "../../Assests/Emaar/Emaarheight1.jpg";
-import emaarHeightsLogo from "../../Assests/Emaar/EmaarHeightsLogo.png";
+import emaarHeightsImage from "../../Assests/Emaar/heightWhatsapp.jpg";
+import emaarHeightsLogo from "../../Assests/Emaar/EmaarHeightsLogoWhite.png";
 import { resetFavicon, setFavicon } from "../../utils/favicon";
 import "./Valia.css";
 

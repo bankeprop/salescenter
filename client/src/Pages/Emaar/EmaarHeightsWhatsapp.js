@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import emaarHeightsImage from "../../Assests/Emaar/Emaarheight1.jpg";
-import emaarHeightsLogo from "../../Assests/Emaar/EmaarHeightsLogo.png";
+import emaarHeightsImage from "../../Assests/Emaar/heightWhatsapp.jpg";
+import emaarHeightsLogo from "../../Assests/Emaar/EmaarHeightsLogoWhite.png";
 import { resetFavicon, setFavicon } from "../../utils/favicon";
 import "./Valia.css";
 
@@ -12,6 +12,9 @@ const projectDetails = [
     { label: "Masterplan", value: "81 million sq. ft." },
     { label: "Development value", value: "AED 55 billion" },
 ];
+
+const whatsappUrl =
+    "https://api.whatsapp.com/send?phone=97180022653&text=Hi%2C%20can%20I%20get%20more%20info%20about%20Emaar%20The%20Heights%20Country%20Club%20and%20Wellness%0A%0A%0A";
 
 function EmaarHeightsWhatsapp() {
     const navigate = useNavigate();
@@ -35,7 +38,7 @@ function EmaarHeightsWhatsapp() {
     const handleWhatsAppClick = (event) => {
         event.preventDefault();
         window.open(
-            "https://wa.link/hcf57k",
+            whatsappUrl,
             "_blank",
             "noopener,noreferrer"
         );
@@ -88,7 +91,7 @@ function EmaarHeightsWhatsapp() {
 
                 <a
                     className="valia-whatsapp valia-reveal valia-delay-6"
-                    href="https://wa.link/hcf57k"
+                    href={whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={handleWhatsAppClick}
