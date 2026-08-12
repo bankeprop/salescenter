@@ -7,6 +7,8 @@ import "./Valia.css";
 
 function EmaarHeightsWhatsappThanks() {
     useEffect(() => {
+        const previousOverflow = document.body.style.overflow;
+        document.body.style.overflow = "hidden";
         setFavicon(emaarHeightsLogo);
         const faviconTimer = window.setTimeout(
             () => setFavicon(emaarHeightsLogo),
@@ -15,6 +17,7 @@ function EmaarHeightsWhatsappThanks() {
 
         return () => {
             window.clearTimeout(faviconTimer);
+            document.body.style.overflow = previousOverflow;
             resetFavicon();
         };
     }, []);
