@@ -7,6 +7,8 @@ import EmaarValley from './Pages/Emaar/EmaarValley';
 import EmaarvalleyThanks from './Pages/Emaar/EmaarValleyThank'
 import EmaarHeight from './Pages/Emaar/EmaarHeight';
 import EmaarHeightThank from './Pages/Emaar/EmaarHeightThank';
+import EmaarHeightsWhatsapp from './Pages/Emaar/EmaarHeightsWhatsapp';
+import EmaarHeightsWhatsappThanks from './Pages/Emaar/EmaarHeightsWhatsappThanks';
 import MercedesBenzPlaces from './Pages/Binghati/MercedesBenzPlaces';
 import MercedesThankYou from './Pages/Binghati/MercedesThankYou';
 import YasCanel from './Pages/Ohana/YasCanel';
@@ -72,6 +74,8 @@ function App() {
         <Route path="/EmaarvalleyThanks" element={<EmaarvalleyThanks />} />
         <Route path="/Emaar/EmaarHeights" element={<EmaarHeight />} />
         <Route path="/Emaar/EmaarHeightsThanks" element={<EmaarHeightThank />} />
+        <Route path="/emaar/emaar-heights-whatsapp" element={<EmaarHeightsWhatsapp />} />
+        <Route path="/emaar/emaar-heights-whatsapp/thanks" element={<EmaarHeightsWhatsappThanks />} />
         <Route caseSensitive path="/Emaar/Valia" element={<Navigate to="/emaar/valia" replace />} />
         <Route path="/emaar/valia" element={<Valia />} />
         <Route path="/emaar/valia/thanks" element={<ValiaThanks />} />

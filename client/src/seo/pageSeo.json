@@ -469,6 +469,29 @@
       ],
       "robots": "index, follow"
     },
+    "/emaar/emaar-heights-whatsapp": {
+      "title": "The Heights Country Club & Wellness by Emaar | Dubai Villas",
+      "description": "Discover The Heights Country Club & Wellness by Emaar, a wellness-inspired Dubai community with villas, greenways, fitness spaces, and country club amenities.",
+      "h1": "The Heights Country Club & Wellness by Emaar",
+      "content": "The Heights Country Club & Wellness by Emaar is a wellness-inspired Dubai community designed around villas, greenways, country club amenities, and active lifestyle spaces.",
+      "bullets": [
+        "Wellness-inspired Emaar community",
+        "Dubai villas with country club amenities",
+        "Greenways, fitness areas, and lifestyle spaces"
+      ],
+      "robots": "index, follow"
+    },
+    "/emaar/emaar-heights-whatsapp/thanks": {
+      "title": "Thank You | The Heights Country Club & Wellness",
+      "description": "Thank you for your enquiry about The Heights Country Club & Wellness by Emaar. Our property team will assist you shortly.",
+      "h1": "Thank You for Your Heights Enquiry",
+      "content": "WhatsApp has opened and our property team is ready to assist with The Heights villa details, availability, and pricing.",
+      "bullets": [
+        "WhatsApp enquiry started",
+        "Property team assistance available"
+      ],
+      "robots": "noindex, follow"
+    },
     "/Emaar/EmaarHeightsThanks": {
       "title": "Thank You | The Heights Country Club & Wellness",
       "description": "Thank you for registering your interest in The Heights Country Club & Wellness by Emaar. Our team will contact you shortly.",
