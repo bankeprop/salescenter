@@ -44,12 +44,22 @@ import TheForgeWhatsappThanks from './Pages/TheForge/TheForgeWhatsappThanks';
 import UKInvestmentHome from './Pages/UKInvestment/home';
 import UKInvestmentThankYou from './Pages/UKInvestment/ThankYou';
 import UKQuiz from './Pages/UKInvestment/ukQuiz';
+import SamanaFavicon from './Assests/Samana/Samanafavicon.ico';
 
 function SeoManager() {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    const applyCurrentPageSeo = () => applyPageSeo(getSeoForPath(pathname));
+    const applyCurrentPageSeo = () => {
+      const seo = getSeoForPath(pathname);
+      const normalizedPath = pathname.replace(/\/+$/, '') || '/';
+
+      applyPageSeo(
+        normalizedPath === '/samana/samanabusinesshub' || normalizedPath === '/samana/samanabusinesshub/thanks'
+          ? { ...seo, favicon: SamanaFavicon }
+          : seo
+      );
+    };
     applyCurrentPageSeo();
 
     const timeoutId = window.setTimeout(applyCurrentPageSeo, 0);
