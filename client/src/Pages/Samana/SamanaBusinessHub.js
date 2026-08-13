@@ -9,6 +9,7 @@ import {
     Coffee,
     CreditCard,
     DollarSign,
+    Download,
     FileText,
     Home,
     Layers3,
@@ -23,6 +24,8 @@ import Img13 from '../../Assests/Samana/cp2.13.jpg';
 import Img14 from '../../Assests/Samana/cp2.14.jpg';
 import Img15 from '../../Assests/Samana/cp2.15.jpg';
 import Img18 from '../../Assests/Samana/cp2.18.jpg';
+import BrochureImg from '../../Assests/Samana/book.png';
+import ExpertImg from '../../Assests/Samana/girl.png';
 import MapImg from '../../Assests/Samana/Map_Samana_Business_Hub.png';
 import SamanaLogo from '../../Assests/Samana/SamanaLogo.png';
 import SamanaBusinessHubLogo from '../../Assests/Samana/Samana_Business_Hub_logo.png';
@@ -164,6 +167,7 @@ const faqItems = [
 function SamanaBussinessHub() {
     const navigate = useNavigate();
     const [isNavOpen, setIsNavOpen] = useState(false);
+    const [isLeadModalOpen, setIsLeadModalOpen] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [form, setForm] = useState({
         name: '',
@@ -184,6 +188,23 @@ function SamanaBussinessHub() {
         };
     }, []);
 
+    useEffect(() => {
+        if (!isLeadModalOpen) return undefined;
+
+        const previousOverflow = document.body.style.overflow;
+        const handleEscape = (event) => {
+            if (event.key === 'Escape') setIsLeadModalOpen(false);
+        };
+
+        document.body.style.overflow = 'hidden';
+        document.addEventListener('keydown', handleEscape);
+
+        return () => {
+            document.body.style.overflow = previousOverflow;
+            document.removeEventListener('keydown', handleEscape);
+        };
+    }, [isLeadModalOpen]);
+
     const handleChange = (event) => {
         const { name, value } = event.target;
         setForm((previous) => ({
@@ -193,6 +214,12 @@ function SamanaBussinessHub() {
     };
 
     const handleNavClick = (href) => {
+        if (href === '#hero-form') {
+            setIsLeadModalOpen(true);
+            setIsNavOpen(false);
+            return;
+        }
+
         const target = document.querySelector(href);
         if (target) {
             const top = target.getBoundingClientRect().top + window.pageYOffset - 84;
@@ -576,6 +603,36 @@ function SamanaBussinessHub() {
                     ))}
                 </div>
             </section> */}
+            <section className="overflow-hidden bg-[#061524] text-white">
+                <div className="mx-auto grid max-w-[1280px] items-center gap-10 px-6 py-16 lg:grid-cols-2 lg:gap-14">
+                    <div className="relative z-10 text-center lg:text-left">
+                        <h2 className="text-2xl font-black uppercase sm:text-3xl">
+                            <span>Download </span>
+                            <span className="text-[#d8a65a]">Brochure</span>
+                        </h2>
+                        <div className="mx-auto my-6 h-0.5 w-16 bg-[#d8a65a] lg:mx-0" />
+                        <p className="mx-auto max-w-[550px] text-sm leading-6 text-[#d8dce3] lg:mx-0">
+                            Access comprehensive details on the master plan, offices, amenities, payment plan, and investment potential in Samana Business Hub.
+                        </p>
+                        <button
+                            type="button"
+                            onClick={() => handleNavClick('#hero-form')}
+                            className="mt-7 inline-flex h-14 w-full items-center justify-center gap-3 rounded bg-[#d8a65a] px-6 text-xs font-black uppercase tracking-[0.03em] text-[#040e1c] transition hover:-translate-y-0.5 hover:shadow-[0_10px_24px_rgba(216,166,90,.4)] sm:w-auto"
+                        >
+                            <Download size={20} aria-hidden="true" />
+                            <span>Download Brochure</span>
+                        </button>
+                    </div>
+
+                    <div className="relative flex items-center justify-center lg:justify-end">
+                        <img
+                            src={BrochureImg}
+                            alt="Samana Business Hub brochure"
+                            className="relative max-h-[440px] w-full max-w-[620px] object-contain"
+                        />
+                    </div>
+                </div>
+            </section>
 
             <section id="faq" className="mx-auto max-w-[820px] px-6 py-16">
                 <h2 className="text-center text-2xl font-black uppercase sm:text-3xl">Common Questions</h2>
@@ -593,15 +650,46 @@ function SamanaBussinessHub() {
                 </div>
             </section>
 
-            <section id="contact" className="bg-[#061524] px-6 py-16 text-white">
+            <section className="overflow-hidden bg-[#061524] text-white">
+                <div className="mx-auto grid max-w-[1280px] items-end gap-10 px-6 pt-16 lg:grid-cols-[1.2fr_0.8fr] lg:gap-14 lg:pt-0">
+                    <div className="pb-2 text-center lg:py-20 lg:text-left">
+                        <h2 className="text-2xl font-black uppercase leading-tight sm:text-3xl">
+                            <span className="mr-2 inline-block bg-[#d8a65a] px-2 py-1 text-[#061524]">Speak</span>
+                            <span>with a</span>
+                            <span className="mt-2 block">Samana Business Hub Expert</span>
+                        </h2>
+                        <div className="mx-auto my-6 h-0.5 w-16 bg-[#d8a65a] lg:mx-0" />
+                        <p className="mx-auto max-w-[650px] text-sm leading-6 text-[#d8dce3] lg:mx-0">
+                            Get personalized guidance on available offices, pricing, and opportunities within this landmark business destination.
+                        </p>
+                        <button
+                            type="button"
+                            onClick={() => handleNavClick('#hero-form')}
+                            className="mt-7 inline-flex h-14 w-full items-center justify-center rounded border border-[#d8a65a] bg-transparent px-6 text-xs font-black uppercase tracking-[0.03em] text-[#d8a65a] transition hover:bg-[#d8a65a] hover:text-[#040e1c] sm:w-auto"
+                        >
+                            Connect with Our Expert
+                        </button>
+                    </div>
+
+                    <div className="flex justify-center lg:justify-end">
+                        <img
+                            src={ExpertImg}
+                            alt="Samana Business Hub property expert"
+                            className="max-h-[440px] w-full max-w-[440px] object-contain object-bottom lg:max-h-[560px]"
+                        />
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" className="bg-white px-6 py-16 text-[#06101d]">
                 <div className="mx-auto grid max-w-[1280px] gap-12 lg:grid-cols-[1fr_420px] lg:items-center">
                     <div>
                         <div className="text-xs font-black uppercase tracking-[0.15em] text-[#d8a65a]">Secure Today's Pricing</div>
                         <h2 className="mt-3 max-w-xl text-3xl font-black uppercase leading-tight sm:text-4xl">READY TO INVEST IN SHEIKH ZAYED ROAD?</h2>
-                        <p className="mt-4 max-w-xl text-sm leading-6 text-[#d8dce3]">
+                        <p className="mt-4 max-w-xl text-sm font-bold leading-6 text-[#06101d]">
                             Request the latest pricing, floor plans, available units, and complete payment schedule before the next price revision.
                         </p>
-                        <ul className="mt-6 grid gap-3 text-sm sm:grid-cols-2">
+                        <ul className="mt-6 grid gap-3 text-sm font-bold text-[#06101d] sm:grid-cols-2">
                             {['From AED 2,070 per Sq.Ft.', '1% Monthly Payment Plan', '100% Freehold Ownership'].map((item) => (
                                 <li key={item} className="flex items-center gap-2">
                                     <Check size={16} className="text-[#d8a65a]" />
@@ -642,6 +730,32 @@ function SamanaBussinessHub() {
                     Get Pricing
                 </button>
             </div>
+
+            {isLeadModalOpen && (
+                <div
+                    className="fixed inset-0 z-[100] flex items-center justify-center bg-[#020812]/80 p-4 backdrop-blur-sm"
+                    role="dialog"
+                    aria-modal="true"
+                    aria-label="Investment enquiry form"
+                    onMouseDown={(event) => {
+                        if (event.target === event.currentTarget) setIsLeadModalOpen(false);
+                    }}
+                >
+                    <div className="relative max-h-[calc(100vh-2rem)] w-full max-w-[460px] overflow-y-auto rounded-md">
+                        <button
+                            type="button"
+                            onClick={() => setIsLeadModalOpen(false)}
+                            className="absolute right-4 top-4 z-10 rounded-full border border-white/20 bg-white/10 p-2 text-white transition hover:border-[#d8a65a] hover:text-[#d8a65a]"
+                            aria-label="Close enquiry form"
+                        >
+                            <X size={20} />
+                        </button>
+                        <div>
+                            {renderLeadForm('Get Complete Investment Pack', true)}
+                        </div>
+                    </div>
+                </div>
+            )}
         </main>
     );
 }
