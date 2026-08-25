@@ -248,6 +248,15 @@ function Nawroz() {
         className="nz-registration"
         aria-labelledby="registration-title"
       >
+        <div className="nz-registration__notice">
+          <h3>By Invitation Only</h3>
+          <p>
+            Attendance is strictly by confirmed RSVP. Please note that access to
+            the event will be granted only to guests who have received an RSVP
+            confirmation.
+          </p>
+        </div>
+
         <div className="nz-registration__panel">
           <h2 id="registration-title">Register to Attend</h2>
           <form
