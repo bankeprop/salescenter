@@ -44,6 +44,9 @@ import TheForgeWhatsappThanks from './Pages/TheForge/TheForgeWhatsappThanks';
 import UKInvestmentHome from './Pages/UKInvestment/home';
 import UKInvestmentThankYou from './Pages/UKInvestment/ThankYou';
 import UKQuiz from './Pages/UKInvestment/ukQuiz';
+import Nawroz from './Pages/nawroz';
+import NawrozThanks from './Pages/NawrozThanks';
+import NawrozFavicon from './Assests/Nawroz/favicon.jpeg';
 import SamanaFavicon from './Assests/Samana/Samanafavicon.ico';
 
 function SeoManager() {
@@ -53,9 +56,14 @@ function SeoManager() {
     const applyCurrentPageSeo = () => {
       const seo = getSeoForPath(pathname);
       const normalizedPath = pathname.replace(/\/+$/, '') || '/';
+      const isNawrozPage =
+        normalizedPath === '/nawroz-mamdani' ||
+        normalizedPath === '/nawroz-mamdani/thanks';
 
       applyPageSeo(
-        normalizedPath === '/samana/samanabusinesshub' || normalizedPath === '/samana/samanabusinesshub/thanks'
+        isNawrozPage
+          ? { ...seo, favicon: `${NawrozFavicon}?v=nawroz-2` }
+          : normalizedPath === '/samana/samanabusinesshub' || normalizedPath === '/samana/samanabusinesshub/thanks'
           ? { ...seo, favicon: SamanaFavicon }
           : seo
       );
@@ -136,6 +144,9 @@ function App() {
         <Route path="/uk-investment/thank-you" element={<UKInvestmentThankYou />} />
         <Route path="/invest-in-uk-Quiz" element={<UKQuiz />} />
         <Route path="/invest-in-uk-Quiz/thank-you" element={<Navigate to="/uk-investment/thank-you" replace />} />
+
+        <Route path="/nawroz-mamdani" element={<Nawroz />} />
+        <Route path="/nawroz-mamdani/thanks" element={<NawrozThanks />} />
 
       </Routes>
     </Router>

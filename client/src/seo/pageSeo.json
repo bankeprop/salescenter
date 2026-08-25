@@ -13,6 +13,90 @@
     "robots": "index, follow"
   },
   "routes": {
+    "/nawroz-mamdani/thanks": {
+      "title": "Registration Confirmed | Nawroz Mamdani BNI Event",
+      "description": "Your registration for Nawroz Mamdani's Dubai commercial real estate BNI feature presentation has been received.",
+      "h1": "Thank You for Registering",
+      "content": "Your registration has been received for the BNI feature presentation with Nawroz Mamdani on 22 September 2026.",
+      "bullets": [
+        "Registration received",
+        "Event details confirmed"
+      ],
+      "robots": "noindex, follow",
+      "siteName": "Dubai Commercial Real Estate | BNI",
+      "locale": "en_AE",
+      "language": "en-AE",
+      "favicon": "/favicon.png"
+    },
+    "/nawroz-mamdani": {
+      "title": "Dubai Commercial Real Estate Event | Nawroz Mamdani",
+      "description": "Join Nawroz Mamdani for a BNI presentation on Dubai commercial real estate data, the AED 6B masterplan and market outlook on 22 September 2026.",
+      "h1": "Dubai Commercial Real Estate: What the Data Is Really Saying",
+      "content": "Register for Nawroz Mamdani's BNI feature presentation covering Dubai's commercial property market, office market performance, the AED 6B masterplan and the data shaping the market's next phase of growth.",
+      "bullets": [
+        "Dubai commercial real estate data and H1 2026 office market insights",
+        "AED 6B masterplan and Dubai's evolving commercial centres",
+        "In-person presentation and networking breakfast on 22 September 2026"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "keywords": "Dubai commercial real estate event, Dubai office market 2026, BNI Dubai presentation, Nawroz Mamdani, Dubai commercial property data, AED 6B masterplan, Dubai real estate networking breakfast",
+      "siteName": "Dubai Commercial Real Estate | BNI",
+      "locale": "en_AE",
+      "language": "en-AE",
+      "author": "Nawroz Mamdani",
+      "publisher": "Sales Center",
+      "favicon": "/favicon.png",
+      "jsonLd": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://www.sales-center.ae/nawroz-mamdani#webpage",
+            "url": "https://www.sales-center.ae/nawroz-mamdani",
+            "name": "Dubai Commercial Real Estate Event | Nawroz Mamdani",
+            "description": "A BNI feature presentation by Nawroz Mamdani on Dubai commercial real estate data, market performance and the AED 6B masterplan.",
+            "inLanguage": "en-AE",
+            "mainEntity": {
+              "@id": "https://www.sales-center.ae/nawroz-mamdani#event"
+            }
+          },
+          {
+            "@type": "Event",
+            "@id": "https://www.sales-center.ae/nawroz-mamdani#event",
+            "name": "Dubai Commercial Real Estate: What the Data Is Really Saying",
+            "description": "An in-person BNI feature presentation covering Dubai commercial real estate data, office market performance, the AED 6B masterplan and the market outlook.",
+            "startDate": "2026-09-22T07:00:00+04:00",
+            "endDate": "2026-09-22T08:30:00+04:00",
+            "eventStatus": "https://schema.org/EventScheduled",
+            "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+            "location": {
+              "@type": "Place",
+              "name": "JW Marriott Hotel Marina, Dubai",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Dubai",
+                "addressRegion": "Dubai",
+                "addressCountry": "AE"
+              }
+            },
+            "performer": {
+              "@type": "Person",
+              "name": "Nawroz Mamdani",
+              "jobTitle": "Associate Director - Commercial",
+              "worksFor": {
+                "@type": "Organization",
+                "name": "Banke International Properties"
+              }
+            },
+            "organizer": {
+              "@type": "Organization",
+              "name": "BNI"
+            },
+            "url": "https://www.sales-center.ae/nawroz-mamdani"
+          }
+        ]
+      }
+    },
     "/uk-investment": {
       "title": "UK Property Investment for International Buyers | Sales Center",
       "description": "Explore fully managed UK buy-to-let property opportunities in London, Liverpool, Manchester and Birmingham, with mortgages, legal support and management for overseas investors.",
