@@ -734,7 +734,7 @@
 .nz-breakfast__background {
   z-index: -3;
   object-fit: cover;
-  object-position: center 48%;
+  object-position: center top;
 }
 
 .nz-breakfast__fade {
@@ -1347,7 +1347,7 @@
   }
 
   .nz-breakfast__background {
-    object-position: center center;
+    object-position: center top;
   }
 
   .nz-breakfast__container {
