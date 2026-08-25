@@ -34,11 +34,29 @@ function upsertCanonical(href) {
 }
 
 function applyFavicon(href) {
+  const cleanHref = href.split(/[?#]/)[0].toLowerCase();
+  const type = cleanHref.endsWith('.jpeg') || cleanHref.endsWith('.jpg')
+    ? 'image/jpeg'
+    : cleanHref.endsWith('.png')
+      ? 'image/png'
+      : cleanHref.endsWith('.svg')
+        ? 'image/svg+xml'
+        : 'image/x-icon';
+
   document.head
     .querySelectorAll('link[rel="icon"], link[rel="shortcut icon"], link[rel="apple-touch-icon"]')
-    .forEach((link) => {
-      link.href = href;
-    });
+    .forEach((link) => link.remove());
+
+  const icon = document.createElement('link');
+  icon.rel = 'icon';
+  icon.type = type;
+  icon.href = href;
+  document.head.appendChild(icon);
+
+  const appleTouchIcon = document.createElement('link');
+  appleTouchIcon.rel = 'apple-touch-icon';
+  appleTouchIcon.href = href;
+  document.head.appendChild(appleTouchIcon);
 }
 
 function applyJsonLd(jsonLd) {
