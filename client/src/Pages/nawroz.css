@@ -480,6 +480,31 @@
   text-transform: uppercase;
 }
 
+.nz-registration__notice {
+  width: min(100%, 74.25rem);
+  margin: 0 auto 1.75rem;
+  text-align: center;
+}
+
+.nz-registration__notice h3 {
+  margin: 0;
+  color: #d9a329;
+  font-family: var(--nz-display-font);
+  font-size: clamp(1.75rem, 2.4vw, 2.1rem);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.nz-registration__notice p {
+  max-width: 58rem;
+  margin: 0.65rem auto 0;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: clamp(0.9rem, 1.25vw, 1rem);
+  line-height: 1.55;
+}
+
 .nz-registration__form {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -941,6 +966,31 @@
   outline-offset: 3px;
 }
 
+/* Fluid large-screen layout: proportional 12% gutters with expanding content. */
+@media (min-width: 90rem) {
+  .nz-hero__container {
+    width: min(calc(100% - 6rem), max(74.625rem, 76%));
+  }
+
+  .nz-hero__layout {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  }
+
+  .nz-speaker__portrait-wrap,
+  .nz-speaker__caption {
+    width: min(100%, max(28.2rem, 29vw));
+  }
+
+  .nz-registration__notice,
+  .nz-registration__panel {
+    width: min(calc(100% - 4rem), max(74.25rem, 76%));
+  }
+
+  .nz-expectations__container {
+    width: min(calc(100% - 4rem), max(72.75rem, 76%));
+  }
+}
+
 @media (max-width: 68.75rem) {
   .nz-hero__container {
     width: min(calc(100% - 3rem), 65rem);
@@ -1233,6 +1283,18 @@
   .nz-registration__panel {
     padding: 1.35rem 1rem 1.15rem;
     border-radius: 1.15rem;
+  }
+
+  .nz-registration__notice {
+    margin-bottom: 1.4rem;
+  }
+
+  .nz-registration__notice h3 {
+    font-size: 1.55rem;
+  }
+
+  .nz-registration__notice p {
+    font-size: 0.88rem;
   }
 
   .nz-registration__panel h2 {
