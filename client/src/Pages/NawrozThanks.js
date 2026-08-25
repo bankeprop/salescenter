@@ -33,8 +33,7 @@ function NawrozThanks() {
         <p className="nz-thanks__eyebrow">Registration Confirmed</p>
         <h1 id="nawroz-thanks-title">Thank You</h1>
         <p className="nz-thanks__message">
-          Your registration has been received. We look forward to welcoming you
-          to the BNI Feature Presentation with Nawroz Mamdani.
+          Your registration has been received. Attendance is strictly by confirmed RSVP. Please note that access to the event will be granted only to guests who have received an RSVP confirmation.
         </p>
 
         <div className="nz-thanks__event">
