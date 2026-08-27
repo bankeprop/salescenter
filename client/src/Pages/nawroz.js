@@ -349,7 +349,7 @@ function Nawroz() {
           </div>
 
           <div className="nz-breakfast__cta">
-            <h2>Cut Through the Nose. Follow the Data.</h2>
+            <h2>Cut Through the Noise. Follow the Data..</h2>
             <p>
               If you want to understand where Dubai&apos;s Commercial property market is
               <br className="nz-breakfast__desktop-break" /> really heading this
