@@ -9,7 +9,7 @@ import "../Emaar/Valia.css";
 
 const projectDetails = [
     { label: "Starting price", value: "From AED 774,999" },
-    { label: "Residences", value: "Studios, 1, 2 & 3 bedrooms" },
+    { label: "Residences", value: "Studio" },
     { label: "Location", value: "Al Jaddaf, Dubai" },
     { label: "Connectivity", value: "Steps from Al Jaddaf Metro" },
     { label: "Availability", value: "Launching soon · Limited units" },
