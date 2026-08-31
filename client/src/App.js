@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from "r
 import DamacIsland from './Pages/Damac/DamacIsland';
 import DamacIslandsThanks from './Pages/Damac/DamacIslandsThanks';
 import EmaarValley from './Pages/Emaar/EmaarValley';
+import EmaarValleyWhatsapp from './Pages/Emaar/EmaarValleyWhatsapp';
+import EmaarValleyWhatsappThanks from './Pages/Emaar/EmaarValleyWhatsappThanks';
 import EmaarvalleyThanks from './Pages/Emaar/EmaarValleyThank'
 import EmaarHeight from './Pages/Emaar/EmaarHeight';
 import EmaarHeightThank from './Pages/Emaar/EmaarHeightThank';
@@ -11,6 +13,8 @@ import EmaarHeightsWhatsapp from './Pages/Emaar/EmaarHeightsWhatsapp';
 import EmaarHeightsWhatsappThanks from './Pages/Emaar/EmaarHeightsWhatsappThanks';
 import MercedesBenzPlaces from './Pages/Binghati/MercedesBenzPlaces';
 import MercedesThankYou from './Pages/Binghati/MercedesThankYou';
+import BinghattSpectreWhatsapp from './Pages/Binghati/BinghattSpectreWhatsapp';
+import BinghattSpectreWhatsappThanks from './Pages/Binghati/BinghattSpectreWhatsappThanks';
 import YasCanel from './Pages/Ohana/YasCanel';
 import DamacLagoonValencia from './Pages/Damac/DamacLagoonValencia';
 import DamacLagoonValenciaThanks from './Pages/Damac/DamacLagoonValenciaThanks';
@@ -48,6 +52,8 @@ import Nawroz from './Pages/nawroz';
 import NawrozThanks from './Pages/NawrozThanks';
 import NawrozFavicon from './Assests/Nawroz/favicon.jpeg';
 import SamanaFavicon from './Assests/Samana/Samanafavicon.ico';
+import EmaarValleyFavicon from './Assests/Emaar/EmaarValleyLogo.png';
+import BinghattiFavicon from './Assests/Binghatti/Binghatti.png';
 
 function SeoManager() {
   const { pathname } = useLocation();
@@ -59,10 +65,22 @@ function SeoManager() {
       const isNawrozPage =
         normalizedPath === '/nawroz-mamdani' ||
         normalizedPath === '/nawroz-mamdani/thanks';
+      const isEmaarValleyPage =
+        normalizedPath === '/Emaar/EmaarTheValley' ||
+        normalizedPath === '/emaar/emaar-valley-whatsapp' ||
+        normalizedPath === '/emaar/emaar-valley-whatsapp/thanks' ||
+        normalizedPath === '/EmaarvalleyThanks';
+      const isSpectrePage =
+        normalizedPath === '/binghatti/spectre-whatsapp' ||
+        normalizedPath === '/binghatti/spectre-whatsapp/thanks';
 
       applyPageSeo(
         isNawrozPage
           ? { ...seo, favicon: `${NawrozFavicon}?v=nawroz-2` }
+          : isEmaarValleyPage
+          ? { ...seo, favicon: EmaarValleyFavicon }
+          : isSpectrePage
+          ? { ...seo, favicon: BinghattiFavicon }
           : normalizedPath === '/samana/samanabusinesshub' || normalizedPath === '/samana/samanabusinesshub/thanks'
           ? { ...seo, favicon: SamanaFavicon }
           : seo
@@ -90,6 +108,8 @@ function App() {
 
         <Route path="/Emaar/EmaarTheValley" element={<EmaarValley />} />
         <Route path="/EmaarvalleyThanks" element={<EmaarvalleyThanks />} />
+        <Route path="/emaar/emaar-valley-whatsapp" element={<EmaarValleyWhatsapp />} />
+        <Route path="/emaar/emaar-valley-whatsapp/thanks" element={<EmaarValleyWhatsappThanks />} />
         <Route path="/Emaar/EmaarHeights" element={<EmaarHeight />} />
         <Route path="/Emaar/EmaarHeightsThanks" element={<EmaarHeightThank />} />
         <Route path="/emaar/emaar-heights-whatsapp" element={<EmaarHeightsWhatsapp />} />
@@ -106,6 +126,8 @@ function App() {
 
         <Route path="/Binghatti/MercedesBenzPlaces" element={<MercedesBenzPlaces />} />
         <Route path="/Binghatti/ThankYou" element={<MercedesThankYou />} />
+        <Route path="/binghatti/spectre-whatsapp" element={<BinghattSpectreWhatsapp />} />
+        <Route path="/binghatti/spectre-whatsapp/thanks" element={<BinghattSpectreWhatsappThanks />} />
 
         <Route path="/Ohana/YasCanel" element={<YasCanel />} />
         <Route path="/Ohana/YasIsland" element={<YasIsland />} />
