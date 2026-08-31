@@ -530,6 +530,29 @@
       ],
       "robots": "index, follow"
     },
+    "/emaar/emaar-valley-whatsapp": {
+      "title": "The Valley by Emaar | Family Villas and Townhouses in Dubai",
+      "description": "Explore The Valley by Emaar, a family-friendly Dubai community with villas, townhouses, green spaces, sports areas, and lifestyle amenities.",
+      "h1": "The Valley by Emaar",
+      "content": "The Valley by Emaar is a master-planned family community in Dubai with villas, townhouses, landscaped spaces, sports facilities, and everyday lifestyle amenities.",
+      "bullets": [
+        "Family community by Emaar",
+        "Villas and townhouses in Dubai",
+        "Green spaces, sports areas, and amenities"
+      ],
+      "robots": "index, follow"
+    },
+    "/emaar/emaar-valley-whatsapp/thanks": {
+      "title": "Thank You | The Valley by Emaar",
+      "description": "Thank you for your WhatsApp enquiry about The Valley by Emaar. Our property team will assist you with townhouse details, pricing, availability, and the payment plan.",
+      "h1": "Thank You for Your Emaar Valley Enquiry",
+      "content": "Your WhatsApp enquiry for The Valley by Emaar is ready to send. Our property team will follow up with project information and availability.",
+      "bullets": [
+        "WhatsApp enquiry opened",
+        "Property team follow-up pending"
+      ],
+      "robots": "noindex, follow"
+    },
     "/EmaarvalleyThanks": {
       "title": "Thank You | The Valley by Emaar",
       "description": "Thank you for registering your interest in The Valley by Emaar. Our team will contact you shortly with project details.",
@@ -661,6 +684,29 @@
       "favicon": "/Emaar/valia-logo.png",
       "ogImage": "/Emaar/valia.jpg",
       "ogImageAlt": "Valia waterfront residences at Dubai Creek Harbour by Emaar"
+    },
+    "/binghatti/spectre-whatsapp": {
+      "title": "Binghatti Spectre | Apartments in Al Jaddaf, Dubai",
+      "description": "Discover Binghatti Spectre in Al Jaddaf, featuring studios to 3-bedroom residences, offices and retail near Al Jaddaf Metro, starting from AED 774,999.",
+      "h1": "Binghatti Spectre in Al Jaddaf",
+      "content": "Binghatti Spectre is a mixed-use development in Al Jaddaf with residences, offices, retail, resort-style amenities and convenient access to Downtown Dubai.",
+      "bullets": [
+        "Studios to 3-bedroom residences",
+        "Starting from AED 774,999",
+        "Steps from Al Jaddaf Metro"
+      ],
+      "robots": "index, follow"
+    },
+    "/binghatti/spectre-whatsapp/thanks": {
+      "title": "Thank You | Binghatti Spectre",
+      "description": "Thank you for your Binghatti Spectre WhatsApp enquiry. Our property team will assist with available units, launch pricing, and project information.",
+      "h1": "Thank You for Your Binghatti Spectre Enquiry",
+      "content": "Your Binghatti Spectre WhatsApp enquiry is ready to send. Our property team will follow up with availability and launch information.",
+      "bullets": [
+        "WhatsApp enquiry opened",
+        "Property team follow-up pending"
+      ],
+      "robots": "noindex, follow"
     },
     "/Binghatti/MercedesBenzPlaces": {
       "title": "Mercedes-Benz Places by Binghatti | Downtown Dubai Residences",

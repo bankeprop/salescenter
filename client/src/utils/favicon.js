@@ -10,7 +10,9 @@ export function setFavicon(iconUrl) {
   })();
 
   // Bust cache to force browsers (esp. mobile) to refetch
-  const cacheBustedUrl = `${resolvedUrl}${resolvedUrl.includes("?") ? "&" : "?"}v=${Date.now()}`;
+  const cacheBustedUrl = resolvedUrl.startsWith("data:")
+    ? resolvedUrl
+    : `${resolvedUrl}${resolvedUrl.includes("?") ? "&" : "?"}v=${Date.now()}`;
 
   // Remove existing icon links to ensure browsers pick up the new one
   document
@@ -31,6 +33,47 @@ export function setFavicon(iconUrl) {
   createLink("icon", { type: "image/png", sizes: "192x192" });
   // iOS touch icon
   createLink("apple-touch-icon", { sizes: "180x180" });
+}
+
+export function setCroppedFavicon(iconUrl, crop) {
+  if (!iconUrl) return () => {};
+
+  const image = new Image();
+  let cancelled = false;
+
+  image.onload = () => {
+    if (cancelled) return;
+
+    const canvas = document.createElement("canvas");
+    canvas.width = 192;
+    canvas.height = 192;
+
+    const context = canvas.getContext("2d");
+    if (!context) return;
+
+    context.fillStyle = crop.background || "#ffffff";
+    context.fillRect(0, 0, canvas.width, canvas.height);
+    context.drawImage(
+      image,
+      crop.x,
+      crop.y,
+      crop.width,
+      crop.height,
+      24,
+      24,
+      144,
+      144
+    );
+
+    setFavicon(canvas.toDataURL("image/png"));
+  };
+
+  image.src = iconUrl;
+
+  return () => {
+    cancelled = true;
+    image.onload = null;
+  };
 }
 
 export function resetFavicon() {
