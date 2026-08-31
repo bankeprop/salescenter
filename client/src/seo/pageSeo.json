@@ -586,7 +586,9 @@
         "Dubai villas with country club amenities",
         "Greenways, fitness areas, and lifestyle spaces"
       ],
-      "robots": "index, follow"
+      "robots": "index, follow",
+      "ogImage": "/Emaar/emaar-heights-lp.jpg",
+      "ogImageAlt": "The Heights Country Club & Wellness by Emaar villas in Dubai"
     },
     "/emaar/emaar-heights-whatsapp/thanks": {
       "title": "Thank You | The Heights Country Club & Wellness",
@@ -695,7 +697,9 @@
         "Starting from AED 774,999",
         "Steps from Al Jaddaf Metro"
       ],
-      "robots": "index, follow"
+      "robots": "index, follow",
+      "ogImage": "/Binghatti/binghatti-spectre-lp.png",
+      "ogImageAlt": "Binghatti Spectre residences in Al Jaddaf, Dubai"
     },
     "/binghatti/spectre-whatsapp/thanks": {
       "title": "Thank You | Binghatti Spectre",
