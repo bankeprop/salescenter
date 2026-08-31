@@ -16,7 +16,7 @@ const projectDetails = [
 ];
 
 const whatsappUrl =
-    "https://api.whatsapp.com/send?phone=97180022653&text=Hi%2C%20can%20I%20get%20more%20information%20about%20Binghatti%20Spectre%20in%20Al%20Jaddaf%3F";
+    "https://api.whatsapp.com/send?phone=97180022653&text=Hi%2C%20can%20I%20get%20more%20information%20about%20Binghatti%20Spectre%3F";
 
 function BinghattSpectreWhatsapp() {
     const navigate = useNavigate();
