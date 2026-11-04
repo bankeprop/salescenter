@@ -1,46 +1,56 @@
 import { useState } from "react";
-import { homeTypes } from "../data";
+import { useNavigate } from "react-router-dom";
+import { homeTypes, webhookEndpoint, campaign } from "../data";
 import { btn } from "./ui";
 
 const initial = { name: "", email: "", phone: "", interest: homeTypes[0] };
 
 const field =
-  "w-full rounded-lg border border-black/15 bg-white px-3.5 py-3 text-sm text-[#14212b] focus:outline-none focus:ring-2 focus:ring-[#b8935a]";
-const label = "grid gap-1.5 text-xs font-medium text-[#14212b]";
+  "w-full rounded-md border border-black/15 bg-white px-3.5 py-3 text-sm text-[#00263a] focus:outline-none focus:ring-2 focus:ring-[#00617f]";
+const label = "grid gap-1.5 text-xs font-medium text-[#00263a]";
 const card =
-  "scroll-mt-24 rounded-2xl bg-white p-6 text-[#14212b] shadow-2xl sm:p-8";
+  "scroll-mt-24 rounded-md bg-white p-6 text-[#00263a] shadow-2xl sm:p-8";
 
-// Dummy form: no network request yet, only local validation and a success state.
 function RegisterForm({ id }) {
+  const navigate = useNavigate();
   const [values, setValues] = useState(initial);
-  const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const update = (key) => (event) =>
     setValues((prev) => ({ ...prev, [key]: event.target.value }));
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    setSubmitted(true);
-    setValues(initial);
-  };
+    if (isSubmitting) return;
 
-  if (submitted) {
-    return (
-      <div id={id} role="status" className={`${card} py-12 text-center`}>
-        <h3 className="font-['Playfair_Display',Georgia,serif] text-2xl">
-          Thank you for your interest.
-        </h3>
-        <p className="mt-2 text-sm text-black/70">
-          A Palm Springs specialist will be in touch shortly.
-        </p>
-      </div>
-    );
-  }
+    // Same payload shape as the other landing pages (Google Apps Script webhook).
+    const payload = new FormData();
+    payload.set("name", values.name.trim());
+    payload.set("email", values.email.trim());
+    payload.set("mobile", values.phone.replace(/\D/g, ""));
+    payload.set("project", "-");
+    payload.set("message", `Palm Springs by Nakheel
+Interested in: ${values.interest}`);
+    payload.set("survey_comments", "-");
+    payload.set("source", "Google");
+    payload.set("language", "English");
+    payload.set("campaign", campaign);
+    payload.set("adset", "-");
+    payload.set("pageUrl", window.location.href);
+
+    try {
+      setIsSubmitting(true);
+      await fetch(webhookEndpoint, { method: "POST", body: payload, mode: "no-cors" });
+      navigate("/palm-springs/thanks");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <form id={id} onSubmit={handleSubmit} className={`${card} grid gap-4`}>
       <div>
-        <h3 className="font-['Playfair_Display',Georgia,serif] text-2xl">
+        <h3 className="font-['Montserrat',sans-serif] font-bold uppercase tracking-wide text-2xl">
           Register your interest
         </h3>
         <p className="mt-1 text-sm text-black/60">
@@ -67,8 +77,8 @@ function RegisterForm({ id }) {
           ))}
         </select>
       </label>
-      <button type="submit" className={`${btn} w-full`}>
-        Register Your Interest
+      <button type="submit" disabled={isSubmitting} className={`${btn} w-full disabled:opacity-60`}>
+        {isSubmitting ? "Submitting..." : "Register Your Interest"}
       </button>
       <p className="text-[11px] text-black/50">
         By submitting, you agree to be contacted about your enquiry.

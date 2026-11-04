@@ -17,7 +17,7 @@ function Location() {
           {connections.map(({ place, time }) => (
             <li key={place} className="flex items-center justify-between gap-4 border-b border-black/10 py-4">
               <span className="text-sm sm:text-base">{place}</span>
-              <strong className="whitespace-nowrap text-[#1f5f6b]">{time}</strong>
+              <strong className="whitespace-nowrap text-[#00617f]">{time}</strong>
             </li>
           ))}
         </ul>

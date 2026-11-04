@@ -7,7 +7,7 @@ function Faq() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section id="faqs" className={`${section} bg-[#f6f1e9]`}>
+    <section id="faqs" className={`${section} bg-[#f3f1ef]`}>
       <div className={`${container} max-w-3xl`}>
         <span className={eyebrow}>FAQs</span>
         <h2 className={`${heading} mb-8`}>Frequently asked questions</h2>

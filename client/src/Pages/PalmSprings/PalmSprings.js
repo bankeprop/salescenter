@@ -10,7 +10,7 @@ import ClosingCta from "./components/ClosingCta";
 import Footer from "./components/Footer";
 
 const FONTS_HREF =
-  "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@400;500&display=swap";
+  "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap";
 
 function PalmSprings() {
   useEffect(() => {
@@ -28,7 +28,7 @@ function PalmSprings() {
   }, []);
 
   return (
-    <main className="font-['Poppins',sans-serif] text-[#14212b] antialiased">
+    <main className="font-['Montserrat',sans-serif] text-[#00263a] antialiased">
       <Header />
       <Hero />
       <Overview />

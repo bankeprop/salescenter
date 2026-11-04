@@ -51,6 +51,7 @@ import UKQuiz from './Pages/UKInvestment/ukQuiz';
 import Nawroz from './Pages/nawroz';
 import NawrozThanks from './Pages/NawrozThanks';
 import PalmSprings from './Pages/PalmSprings/PalmSprings';
+import PalmSpringsThanks from './Pages/PalmSprings/PalmSpringsThanks';
 import NawrozFavicon from './Assests/Nawroz/favicon.jpeg';
 import SamanaFavicon from './Assests/Samana/Samanafavicon.ico';
 import EmaarValleyFavicon from './Assests/Emaar/EmaarValleyLogo.png';
@@ -172,6 +173,7 @@ function App() {
         <Route path="/nawroz-mamdani/thanks" element={<NawrozThanks />} />
 
         <Route path="/palm-springs" element={<PalmSprings />} />
+        <Route path="/palm-springs/thanks" element={<PalmSpringsThanks />} />
 
       </Routes>
     </Router>

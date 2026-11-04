@@ -4,7 +4,7 @@ export const images = {
   hero: `${IMG}/bay-estates-official-pool.webp`,
   villa: `${IMG}/palm-jebel-ali-villa-bluejay-69-scaled-1.webp`,
   landmark: `${IMG}/palm-jebel-ali-a-nearby-landmark-shown-f-0b92e832.webp`,
-  nakheel: `${IMG}/nakheel-white.png`,
+  nakheel: `${IMG}/nakheel-logo.svg`,
 };
 
 export const navLinks = [
@@ -73,3 +73,9 @@ export const homeTypes = ["Townhouse", "Villa"];
 
 export const whatsappUrl =
   "https://api.whatsapp.com/send?phone=97180022653&text=Hi%2C%20can%20I%20get%20more%20information%20about%20Palm%20Springs%20by%20Nakheel%3F";
+
+export const webhookEndpoint =
+  "https://script.google.com/macros/s/AKfycbz5yIUe6VVdmTIq48VhHi778Zr5xLTPsVE-zc6E1ulLtTz6CD4i0V4FeAYJv2J0ZYYp1A/exec";
+
+// TODO: confirm the real campaign code with the campaign owner.
+export const campaign = "PalmSpringsNakheel-HU-TEST";

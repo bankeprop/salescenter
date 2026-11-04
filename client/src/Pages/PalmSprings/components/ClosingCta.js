@@ -4,7 +4,7 @@ import { btn, container, heading, section } from "./ui";
 
 function ClosingCta() {
   return (
-    <section className={`${section} bg-[#1f5f6b] text-center text-white`}>
+    <section className={`${section} bg-[#00263a] text-center text-white`}>
       <div className={container}>
         <h2 className={`${heading} mx-auto max-w-3xl`}>
           Make your next move. Register for the details.
@@ -16,7 +16,7 @@ function ClosingCta() {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className={`${btn} !bg-transparent border border-white`}
+            className={`${btn} !bg-transparent border border-white hover:!bg-white hover:!text-[#00263a]`}
           >
             <FaWhatsapp aria-hidden="true" /> WhatsApp
           </a>

@@ -9,7 +9,7 @@ function Overview() {
           src={images.landmark}
           alt="Palm Jebel Ali, a nearby landmark"
           loading="lazy"
-          className="aspect-[4/3] w-full rounded-2xl object-cover"
+          className="aspect-[4/3] w-full rounded-md object-cover"
         />
         <div>
           <span className={eyebrow}>The Location</span>
@@ -22,7 +22,7 @@ function Overview() {
           <dl className="mt-8 grid gap-6 sm:grid-cols-3">
             {stats.map(({ value, label }) => (
               <div key={label}>
-                <dt className="font-['Playfair_Display',Georgia,serif] text-2xl font-semibold text-[#b8935a]">
+                <dt className="font-['Montserrat',sans-serif] font-bold uppercase tracking-wide text-2xl font-semibold text-[#00617f]">
                   {value}
                 </dt>
                 <dd className="text-xs text-black/60">{label}</dd>
