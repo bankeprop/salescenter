@@ -149,7 +149,10 @@
       "description": "Thank you for requesting your UK property investment guide and matched opportunity shortlist.",
       "h1": "Your UK Property Investment Request Has Been Received",
       "content": "A UK property adviser will contact you with investment opportunities matched to your budget.",
-      "bullets": ["Guide request received", "Property adviser follow-up pending"],
+      "bullets": [
+        "Guide request received",
+        "Property adviser follow-up pending"
+      ],
       "robots": "noindex, follow",
       "siteName": "UK Property Investment | Sales Center",
       "locale": "en_GB",
@@ -163,7 +166,10 @@
       "description": "Answer three quick questions to receive UK property investment opportunities matched to your budget, timeline and location.",
       "h1": "See Which UK Properties Match Your Goals",
       "content": "Complete the quick UK property investment quiz to request a personalised shortlist and international investor guide.",
-      "bullets": ["Personalised UK property shortlist", "Takes approximately 20 seconds"],
+      "bullets": [
+        "Personalised UK property shortlist",
+        "Takes approximately 20 seconds"
+      ],
       "robots": "noindex, follow",
       "siteName": "UK Property Investment | Sales Center",
       "locale": "en_GB",
@@ -177,7 +183,10 @@
       "description": "Thank you for completing the UK property investment quiz. Our team will contact you with matched opportunities.",
       "h1": "Your UK Property Investment Quiz Has Been Received",
       "content": "Our UK property team will review your answers and follow up with opportunities matched to your goals.",
-      "bullets": ["Quiz completed", "Matched property follow-up pending"],
+      "bullets": [
+        "Quiz completed",
+        "Matched property follow-up pending"
+      ],
       "robots": "noindex, follow",
       "siteName": "UK Property Investment | Sales Center",
       "locale": "en_GB",
@@ -191,7 +200,10 @@
       "description": "Enquire on WhatsApp about One King's Road Park in Fulham, London SW6, by Berkeley Group.",
       "h1": "One King's Road Park WhatsApp Enquiry",
       "content": "Request the latest prices, availability and project details for One King's Road Park.",
-      "bullets": ["Fulham, London SW6", "By Berkeley Group"],
+      "bullets": [
+        "Fulham, London SW6",
+        "By Berkeley Group"
+      ],
       "robots": "index, follow",
       "keywords": "One King's Road Park, King's Road Park Fulham, Berkeley Group London",
       "siteName": "One King's Road Park",
@@ -205,7 +217,9 @@
       "description": "Thank you for enquiring about One King's Road Park.",
       "h1": "Thank You for Your One King's Road Park Enquiry",
       "content": "Continue in WhatsApp for current prices, availability and project details.",
-      "bullets": ["WhatsApp enquiry started"],
+      "bullets": [
+        "WhatsApp enquiry started"
+      ],
       "robots": "noindex, follow"
     },
     "/obsidian-whatsapp": {
@@ -213,7 +227,10 @@
       "description": "Enquire on WhatsApp about premium apartments at Obsidian Manchester by Salboy.",
       "h1": "Obsidian Manchester WhatsApp Enquiry",
       "content": "Request the latest prices, availability and investment details for Obsidian Manchester.",
-      "bullets": ["Manchester City Centre", "By Salboy"],
+      "bullets": [
+        "Manchester City Centre",
+        "By Salboy"
+      ],
       "robots": "index, follow",
       "keywords": "Obsidian Manchester, Manchester apartments, Salboy Obsidian",
       "siteName": "Obsidian Manchester",
@@ -227,7 +244,9 @@
       "description": "Thank you for enquiring about Obsidian Manchester.",
       "h1": "Thank You for Your Obsidian Manchester Enquiry",
       "content": "Continue in WhatsApp for current prices, availability and investment details.",
-      "bullets": ["WhatsApp enquiry started"],
+      "bullets": [
+        "WhatsApp enquiry started"
+      ],
       "robots": "noindex, follow"
     },
     "/theforge-whatsapp": {
@@ -235,7 +254,10 @@
       "description": "Enquire on WhatsApp about premium city-centre apartments at The Forge Liverpool.",
       "h1": "The Forge Liverpool WhatsApp Enquiry",
       "content": "Request the latest prices, availability and investment details for The Forge Liverpool.",
-      "bullets": ["Pumpfields, Liverpool", "Premium city living"],
+      "bullets": [
+        "Pumpfields, Liverpool",
+        "Premium city living"
+      ],
       "robots": "index, follow",
       "keywords": "The Forge Liverpool, Pumpfields apartments, Liverpool property investment",
       "siteName": "The Forge Liverpool",
@@ -249,7 +271,9 @@
       "description": "Thank you for enquiring about The Forge Liverpool.",
       "h1": "Thank You for Your The Forge Liverpool Enquiry",
       "content": "Continue in WhatsApp for current prices, availability and investment details.",
-      "bullets": ["WhatsApp enquiry started"],
+      "bullets": [
+        "WhatsApp enquiry started"
+      ],
       "robots": "noindex, follow"
     },
     "/obsidian": {
@@ -305,10 +329,26 @@
             },
             "numberOfAccommodationUnits": 250,
             "amenityFeature": [
-              { "@type": "LocationFeatureSpecification", "name": "Gymnasium", "value": true },
-              { "@type": "LocationFeatureSpecification", "name": "Cinema Room", "value": true },
-              { "@type": "LocationFeatureSpecification", "name": "Residents Lounge", "value": true },
-              { "@type": "LocationFeatureSpecification", "name": "Co-working Spaces", "value": true }
+              {
+                "@type": "LocationFeatureSpecification",
+                "name": "Gymnasium",
+                "value": true
+              },
+              {
+                "@type": "LocationFeatureSpecification",
+                "name": "Cinema Room",
+                "value": true
+              },
+              {
+                "@type": "LocationFeatureSpecification",
+                "name": "Residents Lounge",
+                "value": true
+              },
+              {
+                "@type": "LocationFeatureSpecification",
+                "name": "Co-working Spaces",
+                "value": true
+              }
             ]
           },
           {
@@ -848,7 +888,9 @@
               "@type": "ImageObject",
               "url": "https://www.sales-center.ae/Berkeley/Logo.png"
             },
-            "mainEntity": { "@id": "https://www.sales-center.ae/berkeley/kings-road#development" }
+            "mainEntity": {
+              "@id": "https://www.sales-center.ae/berkeley/kings-road#development"
+            }
           },
           {
             "@type": "ApartmentComplex",
@@ -864,10 +906,26 @@
               "addressCountry": "GB"
             },
             "amenityFeature": [
-              { "@type": "LocationFeatureSpecification", "name": "25-metre swimming pool", "value": true },
-              { "@type": "LocationFeatureSpecification", "name": "Fitness suite", "value": true },
-              { "@type": "LocationFeatureSpecification", "name": "Residents' club", "value": true },
-              { "@type": "LocationFeatureSpecification", "name": "24-hour concierge", "value": true }
+              {
+                "@type": "LocationFeatureSpecification",
+                "name": "25-metre swimming pool",
+                "value": true
+              },
+              {
+                "@type": "LocationFeatureSpecification",
+                "name": "Fitness suite",
+                "value": true
+              },
+              {
+                "@type": "LocationFeatureSpecification",
+                "name": "Residents' club",
+                "value": true
+              },
+              {
+                "@type": "LocationFeatureSpecification",
+                "name": "24-hour concierge",
+                "value": true
+              }
             ]
           },
           {
@@ -920,7 +978,10 @@
       "description": "Thank you for registering your interest in One King's Road Park. Our property team will contact you shortly.",
       "h1": "Your One King's Road Park Enquiry Has Been Received",
       "content": "Our property team will follow up with availability, pricing, floor plans and development details.",
-      "bullets": ["Enquiry received", "Property specialist follow-up pending"],
+      "bullets": [
+        "Enquiry received",
+        "Property specialist follow-up pending"
+      ],
       "robots": "noindex, follow",
       "siteName": "One King's Road Park",
       "locale": "en_GB",
@@ -934,7 +995,10 @@
       "description": "Thank you for sharing your One King's Road Park purchase plans. A property specialist will contact you with tailored guidance.",
       "h1": "Your One King's Road Park Consultation Has Been Requested",
       "content": "A property specialist will review your purchase plans and follow up with tailored property, payment, mortgage and UK visa guidance.",
-      "bullets": ["Consultation request received", "Property specialist follow-up pending"],
+      "bullets": [
+        "Consultation request received",
+        "Property specialist follow-up pending"
+      ],
       "robots": "noindex, follow",
       "siteName": "One King's Road Park",
       "locale": "en_GB",
@@ -953,6 +1017,125 @@
         "Brochure and floor plan follow-up pending"
       ],
       "robots": "noindex, follow"
+    },
+    "/palm-springs": {
+      "title": "Palm Springs by Nakheel | Villas & Townhouses Near Palm Jebel Ali",
+      "description": "Register your interest in Palm Springs by Nakheel: 3 & 4-bedroom townhouses and 4 & 5-bedroom villas near Palm Jebel Ali, with expected prices from AED 3.8M*.",
+      "h1": "Palm Springs by Nakheel: Villas & Townhouses Near Palm Jebel Ali",
+      "content": "Palm Springs by Nakheel is an upcoming community of 3 & 4-bedroom townhouses and 4 & 5-bedroom villas near Palm Jebel Ali, with direct access to Sheikh Zayed Road and expected prices from AED 3.8M*.",
+      "bullets": [
+        "3 & 4-bedroom townhouses and 4 & 5-bedroom villas",
+        "Expected prices from AED 3.8M*",
+        "Direct access to Sheikh Zayed Road",
+        "Close to Al Maktoum International Airport"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "keywords": "Palm Springs Nakheel, Nakheel villas Dubai, Nakheel townhouses, Palm Jebel Ali villas, villas near Palm Jebel Ali, townhouses Dubai, Nakheel new launch, Dubai villas from AED 3.8M",
+      "siteName": "Palm Springs by Nakheel",
+      "locale": "en_AE",
+      "language": "en-AE",
+      "author": "Nakheel",
+      "publisher": "Nakheel PJSC",
+      "favicon": "/PalmSprings/favicon-512.png",
+      "ogImage": "/PalmSprings/og-image.jpg",
+      "ogImageAlt": "Palm Springs by Nakheel villas and townhouses with pool and palm trees",
+      "jsonLd": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://www.sales-center.ae/palm-springs#webpage",
+            "url": "https://www.sales-center.ae/palm-springs",
+            "name": "Palm Springs by Nakheel | Villas & Townhouses Near Palm Jebel Ali",
+            "description": "3 & 4-bedroom townhouses and 4 & 5-bedroom villas near Palm Jebel Ali by Nakheel.",
+            "inLanguage": "en-AE",
+            "primaryImageOfPage": {
+              "@type": "ImageObject",
+              "url": "https://www.sales-center.ae/PalmSprings/og-image.jpg"
+            },
+            "about": {
+              "@id": "https://www.sales-center.ae/palm-springs#community"
+            }
+          },
+          {
+            "@type": "Residence",
+            "@id": "https://www.sales-center.ae/palm-springs#community",
+            "name": "Palm Springs by Nakheel",
+            "description": "Upcoming Nakheel community of townhouses and villas near Palm Jebel Ali, Dubai.",
+            "image": "https://www.sales-center.ae/PalmSprings/og-image.jpg",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Dubai",
+              "addressCountry": "AE"
+            },
+            "brand": {
+              "@id": "https://www.sales-center.ae/palm-springs#nakheel"
+            }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://www.sales-center.ae/palm-springs#nakheel",
+            "name": "Nakheel",
+            "url": "https://www.nakheel.com/en",
+            "logo": "https://www.nakheel.com/images/nakheelcorporatelibraries/logos/nakheel-log.svg"
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is Palm Springs by Nakheel?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Palm Springs is an upcoming community of townhouses and villas by Nakheel, located near Palm Jebel Ali with direct access to Sheikh Zayed Road."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is the expected starting price?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Expected prices start from AED 3.8M*. All pricing is preliminary and subject to change until official release."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do I get floor plans?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Register your interest and our property specialists will send floor plans for your preferred home type as soon as they are available."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What happens after I register?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A property specialist will contact you by phone, email or WhatsApp with pricing, the payment plan and early access to releases."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "/palm-springs/thanks": {
+      "title": "Registration Received | Palm Springs by Nakheel",
+      "description": "Your Palm Springs by Nakheel registration has been received. A specialist will be in touch shortly.",
+      "h1": "Thank You for Your Interest",
+      "content": "Your registration for Palm Springs by Nakheel has been received.",
+      "bullets": [
+        "Registration received"
+      ],
+      "robots": "noindex, follow",
+      "siteName": "Palm Springs by Nakheel",
+      "locale": "en_AE",
+      "language": "en-AE",
+      "author": "Nakheel",
+      "publisher": "Nakheel PJSC",
+      "favicon": "/PalmSprings/favicon-512.png",
+      "ogImage": "/PalmSprings/og-image.jpg",
+      "ogImageAlt": "Palm Springs by Nakheel villas and townhouses with pool and palm trees"
     }
   }
 }
