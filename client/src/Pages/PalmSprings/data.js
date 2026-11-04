@@ -77,5 +77,4 @@ export const whatsappUrl =
 export const webhookEndpoint =
   "https://script.google.com/macros/s/AKfycbz5yIUe6VVdmTIq48VhHi778Zr5xLTPsVE-zc6E1ulLtTz6CD4i0V4FeAYJv2J0ZYYp1A/exec";
 
-// TODO: confirm the real campaign code with the campaign owner.
-export const campaign = "PalmSpringsNakheel-HU-TEST";
+export const campaign = "PalmSprings-AS-GOOG-471483";
