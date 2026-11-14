@@ -65,14 +65,11 @@ export const faqs = [
   },
   {
     q: "What happens after I register?",
-    a: "A property specialist will contact you by phone, email or WhatsApp with pricing, the payment plan and early access to releases.",
+    a: "A property specialist will contact you by phone or email with pricing, the payment plan and early access to releases.",
   },
 ];
 
 export const homeTypes = ["Townhouse", "Villa"];
-
-export const whatsappUrl =
-  "https://api.whatsapp.com/send?phone=97180022653&text=Hi%2C%20can%20I%20get%20more%20information%20about%20Palm%20Springs%20by%20Nakheel%3F";
 
 export const webhookEndpoint =
   "https://script.google.com/macros/s/AKfycbz5yIUe6VVdmTIq48VhHi778Zr5xLTPsVE-zc6E1ulLtTz6CD4i0V4FeAYJv2J0ZYYp1A/exec";

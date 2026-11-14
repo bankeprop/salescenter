@@ -17,7 +17,6 @@ function Footer() {
           *Prices and details are preliminary and subject to change. Images are
           representational.
         </p>
-        <p>© 2026 Nakheel PJSC. All rights reserved.</p>
       </div>
     </footer>
   );
