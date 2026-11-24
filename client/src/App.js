@@ -56,6 +56,7 @@ import NawrozFavicon from './Assests/Nawroz/favicon.jpeg';
 import SamanaFavicon from './Assests/Samana/Samanafavicon.ico';
 import EmaarValleyFavicon from './Assests/Emaar/EmaarValleyLogo.png';
 import BinghattiFavicon from './Assests/Binghatti/Binghatti.png';
+import SheSphereForm from './Pages/SheSphere/Form';
 
 function SeoManager() {
   const { pathname } = useLocation();
@@ -102,6 +103,7 @@ function App() {
     <Router>
       <SeoManager />
       <Routes>
+        <Route path="/shesphere" element={<SheSphereForm />} />
         {/* <Route path="/" element={<Navigate to="/DamacIsland" />} /> */}
         <Route path="/Damac/DamacIsland" element={<DamacIsland />} />
         <Route path="/Damac/DamacIslandThanks" element={<DamacIslandsThanks />} />

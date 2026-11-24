@@ -13,6 +13,27 @@
     "robots": "index, follow"
   },
   "routes": {
+    "/shesphere": {
+      "title": "Join SheSphere | Expanding Influence. Elevating Impact.",
+      "description": "Join SheSphere, a community of empowered women. Connect, grow your presence, strengthen your voice, and create your impact with founder Aditi Jhunjhunwala.",
+      "h1": "Expanding influence. Elevating impact.",
+      "content": "SheSphere is a movement of empowered women shaping the future. Join a community where ambition meets purpose, voices grow stronger, and women grow into their full potential.",
+      "bullets": [
+        "Step into your power",
+        "Build your presence",
+        "Create your impact"
+      ],
+      "robots": "index, follow, max-image-preview:large",
+      "keywords": "SheSphere, women empowerment, women community, women leadership, professional growth",
+      "siteName": "SheSphere",
+      "author": "Aditi Jhunjhunwala",
+      "publisher": "SheSphere",
+      "language": "en",
+      "locale": "en_AE",
+      "favicon": "/SheSphere/SheSphere_Favicon.png",
+      "ogImage": "/SheSphere/Shesphere_logo.png",
+      "ogImageAlt": "SheSphere — Expanding influence. Elevating impact."
+    },
     "/nawroz-mamdani/thanks": {
       "title": "Registration Confirmed | Nawroz Mamdani BNI Event",
       "description": "Your registration for Nawroz Mamdani's Dubai commercial real estate BNI feature presentation has been received.",
