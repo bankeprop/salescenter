@@ -1,0 +1,43 @@
+.shesphere-page { min-height:100vh; padding:48px 28px; display:flex; align-items:center; justify-content:center; background:radial-gradient(ellipse at 5% 0%,#f7effc,transparent 55%),#e9daf2; color:#382544; font-family:'Helvetica Neue',Arial,sans-serif; }
+.shesphere-page * { box-sizing:border-box; }
+.shesphere-shell { width:1120px; max-width:100%; display:grid; grid-template-columns:1fr 1fr; border-radius:28px; overflow:hidden; background:#fffcff; box-shadow:0 24px 80px #49245e18; }
+.shesphere-story { position:relative; isolation:isolate; overflow:hidden; min-height:760px; padding:48px; display:flex; flex-direction:column; color:#fff8ff; background:#55316d; }
+.shesphere-story::before { content:''; position:absolute; z-index:-1; width:620px; height:620px; border-radius:50%; background:#73359b; opacity:.5; left:-430px; top:160px; }
+.shesphere-story::after { content:''; position:absolute; z-index:-1; width:380px; height:380px; border-radius:50%; border:1px solid #d9b9ed30; right:-180px; top:-220px; box-shadow:0 0 0 38px #d9b9ed09,0 0 0 76px #d9b9ed07; }
+.shesphere-brand { display:block; width:242px; max-width:100%; }
+.shesphere-brand img { display:block; width:100%; filter:brightness(0) invert(1); }
+.shesphere-story-copy { margin:79px 0 100px; position:relative; z-index:1; }
+.shesphere-eyebrow { margin:0 0 20px; font-size:10px; font-weight:600; letter-spacing:2.4px; text-transform:uppercase; }
+.shesphere-story .shesphere-eyebrow { color:#e2cbe9; }
+.shesphere-story h1 { margin:0 0 25px; font-family:Georgia,'Times New Roman',serif; font-size:clamp(34px,3.2vw,46px); font-weight:400; line-height:1.22; letter-spacing:-1.7px; }
+.shesphere-story h1 em { font-weight:400; color:#ead5f3; }
+.shesphere-intro { max-width:345px; font-size:14px; line-height:1.9; color:#e4d5eb; }
+.shesphere-manifesto { display:grid; gap:7px; border-left:1px solid #bb91d0; padding-left:20px; margin-top:33px; font-size:17px; font-weight:300; color:#f0e2f6; }
+.shesphere-founder { margin:auto 0 0; position:relative; z-index:1; font-size:10px; text-transform:uppercase; letter-spacing:1.6px; color:#dac1e5; }
+.shesphere-founder span { display:block; margin-top:9px; font-family:Georgia,serif; font-size:21px; font-style:italic; letter-spacing:0; text-transform:none; color:#fff; }
+.shesphere-flowers { position:absolute; right:-75px; bottom:-78px; width:320px; color:#d4b0f5; transform:rotate(-10deg); z-index:0; pointer-events:none; }
+.shesphere-form-panel { padding:65px 48px 35px; }
+.shesphere-form-panel .shesphere-eyebrow { color:#8d649f; margin-bottom:14px; }
+.shesphere-form-panel h2 { margin:0; font-family:Georgia,'Times New Roman',serif; font-size:48px; font-weight:400; letter-spacing:-1.7px; line-height:1.15; }
+.shesphere-form-panel h2 em { color:#793c9b; }
+.shesphere-form-intro { color:#84758b; font-size:13px; line-height:1.7; margin:16px 0 32px; }
+.shesphere-form { display:grid; grid-template-columns:1fr 1fr; gap:23px 18px; }
+.shesphere-field { min-width:0; }
+.shesphere-field-wide { grid-column:1 / -1; }
+.shesphere-field label { display:block; font-size:12px; font-weight:500; margin-bottom:9px; }
+.shesphere-field label span { color:#9770ab; }
+.shesphere-field input { width:100%; border:1px solid #e5dbea; border-radius:8px; padding:14px 13px; background:#fbf8fd; color:#382544; font:inherit; font-size:13px; transition:border-color .2s,box-shadow .2s; }
+.shesphere-field input::placeholder { color:#a496ac; opacity:1; }
+.shesphere-field input:focus { outline:none; border-color:#8650a2; box-shadow:0 0 0 3px #8854a217; }
+.shesphere-field-help { font-size:11px; color:#86758d; margin:7px 0 0; }
+.shesphere-form button { grid-column:1 / -1; border:none; border-radius:8px; background:#6c3291; color:white; font:inherit; font-size:14px; padding:16px 20px; margin-top:5px; display:flex; align-items:center; justify-content:center; gap:20px; cursor:pointer; transition:background .2s; }
+.shesphere-form button:hover { background:#552573; }
+.shesphere-form button:focus-visible,.shesphere-brand:focus-visible { outline:3px solid #bc8ad4; outline-offset:4px; }
+.shesphere-form button:disabled { opacity:.6; cursor:wait; }
+.shesphere-form button span { font-size:20px; line-height:1; }
+.shesphere-form-note { grid-column:1 / -1; text-align:center; font-size:11px; color:#93829b; margin:-9px 0 0; }
+.shesphere-status { grid-column:1 / -1; margin:0; font-size:13px; line-height:1.6; color:#6c3291; }
+.shesphere-status:empty { display:none; }
+@media (max-width:900px) { .shesphere-story { padding:36px 30px; } .shesphere-form-panel { padding:50px 30px 35px; } .shesphere-form { column-gap:12px; } .shesphere-form-panel h2 { font-size:42px; } }
+@media (max-width:700px) { .shesphere-page { padding:20px 14px; align-items:flex-start; } .shesphere-shell { grid-template-columns:1fr; border-radius:20px; } .shesphere-story { min-height:auto; padding:32px 28px; } .shesphere-brand { width:205px; } .shesphere-story-copy { margin:42px 0 35px; } .shesphere-story h1 { font-size:39px; } .shesphere-intro { max-width:390px; } .shesphere-manifesto { font-size:15px; } .shesphere-flowers { width:240px; right:-65px; bottom:-75px; opacity:.7; } .shesphere-founder { margin-top:0; } .shesphere-form-panel { padding:38px 28px; } }
+@media (max-width:380px) { .shesphere-form { grid-template-columns:1fr; } .shesphere-story h1 { font-size:34px; } .shesphere-eyebrow { font-size:9px; letter-spacing:1.8px; } .shesphere-form-panel { padding:32px 22px; } }
